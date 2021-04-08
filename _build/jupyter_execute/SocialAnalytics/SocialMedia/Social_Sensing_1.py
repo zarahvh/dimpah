@@ -12,8 +12,10 @@ import requests
 
 Now, we want to play with electricity rates and associated coordinate information for US locations by looking them up on data.gov. Let’s first define a place we are interested in. Because we want to use it again later, let’s assign address_ex = ‘1600 Amphitheatre Parkway, Mountain View, CA’. Do you know who ‘lives’ at this address?
 
+from ipynb.fs.full.keys import *
+
 address_x = '1600 Amphitheatre Parkway, Mountain View, CA'
-api_key = '9Vif2carl7eRwLscUNlio7MF7vKXPR9R9MwA3Bu9'
+api_key = gov_key
 url = 'https://developer.nrel.gov/api/utility_rates/v3.json'
 
 Requests has a get function that allows you to read/get data from remote sites.
@@ -67,9 +69,9 @@ In python there is a library that makes accessing Twitter data simple. Download 
 import tweepy
 
 
-consumer_key = 'zRK3Ag6JEBaVT4MxSOUpgaqIe'
-consumer_secret = '2h7R5e2jktfXc5u0HNJPJp5d7VTEVR8FImB89VCEeL1wpZLfZA'
-access_token = 'AAAAAAAAAAAAAAAAAAAAAP%2ByNgEAAAAALDNVyxMhq3kQ9aR7GWHx6t5tbVE%3DKGuE1bVwJdyecLmlwrRmH0ibomzKB9WSCyKEmJqa2K4P9upPxJ'
+consumer_key = twit_key
+consumer_secret = twit_secr
+access_token = twit_token
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, compression=True)
