@@ -1,0 +1,12 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: intro
+- file: content
+  sections:
+    - file: SocialMedia/Social_Sensing_1
+    - file: SocialMedia/Social_Sensing_2
+    - file: Text/Text_1
+    - file: Text/Text_2
+    - file: VisualsArts/Visuals_and_Arts
+    - file: VisualsArts/Visuals_and_Arts_2
