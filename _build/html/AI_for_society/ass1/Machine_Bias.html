@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Bias &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Civility in Communication" href="../ass2/Civility_in_Communication.html" />
+    <link rel="prev" title="AI for society" href="../../AI_for_society.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/AI_for_society/ass1/Machine_Bias.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAI_for_society/ass1/Machine_Bias.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/AI_for_society/ass1/Machine_Bias.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-analysis-of-the-dataset">
+   1- Descriptive analysis of the dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-the-dataset">
+     Get the dataset
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#further-data-cleaning">
+       Further data cleaning
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#columns-of-interest">
+       Columns of interest
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-turn">
+     Your turn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replication">
+   2 - Replication
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="machine-bias">
+<h1>Machine Bias<a class="headerlink" href="#machine-bias" title="Permalink to this headline">¶</a></h1>
+<p>The focus of this assignment will be on replicating and discussing the analysis of the <strong>COMPAS recidivism algorithm</strong> (Correctional Offender Management Profiling for Alternative Sanctions) made by ProPublica. See the <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">original article</a> for reference.</p>
+<p>This assignment is divided into three parts:</p>
+<ol class="simple">
+<li><p><strong>Before the laboratory</strong> (individually): start by reading the <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">original article</a> and the <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">methodology</a> used by the authors, and then perform the analysis proposed in Section 1 below. Your focus, before the laboratory, is to clearly understand the dataset and what it contains, as well as the claims made by ProPublica.</p></li>
+<li><p><strong>During the laboratory</strong> (in groups): delve deeper into the ‘fairness’ and ‘bias’ aspects of this story. What do you think the authors mean by ‘bias’? Which notion of ‘fairness’ they imply? Do you think their analysis supports their conclusions? Replicate (parts of) the original analysis and discuss results within your group, as detailed in Section 2 below. Make sure you refer to the <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">methodology</a> as you do this.</p></li>
+<li><p><strong>After the laboratory</strong> (in groups): finish your replication and read critical discussions of ProPublica’s work, found in <a class="reference external" href="http://www.crj.org/assets/2017/07/9_Machine_bias_rejoinder.pdf">1</a>, <a class="reference external" href="https://arxiv.org/abs/1610.07524">2</a>, <a class="reference external" href="https://arxiv.org/abs/1811.10154">3</a>, <a class="reference external" href="https://hdsr.mitpress.mit.edu/pub/7z10o269/release/4">4</a> or <a class="reference external" href="https://arxiv.org/abs/1701.08230">5</a>, among others. Write up your results and thoughts into a brief project report. Make sure to discuss the question of whether you think predictive systems should be used for this kind of screening activities at all, and if so when should you would consider them fair or <em>not</em> ‘biased’.</p></li>
+</ol>
+<blockquote>
+<div><p>Sections of text marked as this one contain direct quotes from the <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">original article</a> or <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">methodology</a>.</p>
+</div></blockquote>
+<p><em><strong>Note: ProPublica’s study has been criticized as flawed on several aspects. It is important that you maintain a critical outlook when replicating it, and read up such criticism when you are done with replication (step 3 above).</strong></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="descriptive-analysis-of-the-dataset">
+<h2>1- Descriptive analysis of the dataset<a class="headerlink" href="#descriptive-analysis-of-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p><strong>Please read these excerpts from the <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">methodology</a> first.</strong></p>
+<blockquote>
+<div><p><strong>Data source</strong>: Through a public records request, ProPublica obtained two years worth of COMPAS scores from the Broward County Sheriff’s Office in Florida. We received data for all 18,610 people who were scored in 2013 and 2014.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Data filtering</strong>: Because Broward County primarily uses the score to determine whether to release or detain a defendant before his or her trial, we discarded scores that were assessed at parole, probation or other stages in the criminal justice system. That left us with 11,757 people who were assessed at the pretrial stage.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>COMPAS recidivism scores</strong>:</p>
+<ul class="simple">
+<li><p>Each pretrial defendant received at least three COMPAS scores: “Risk of Recidivism,” “Risk of Violence” and “Risk of Failure to Appear.”</p></li>
+<li><p>COMPAS scores for each defendant ranged from 1 to 10, with ten being the highest risk. Scores 1 to 4 were labeled by COMPAS as “Low”; 5 to 7 were labeled “Medium”; and 8 to 10 were labeled “High.”</p></li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Data enrichment</strong>:</p>
+<ul class="simple">
+<li><p>Starting with the database of COMPAS scores, we built a profile of each person’s criminal history, both before and after they were scored. We collected public criminal records from the Broward County Clerk’s Office website through April 1, 2016. On average, defendants in our dataset were not incarcerated for 622.87 days (sd: 329.19).</p></li>
+<li><p>We matched the criminal records to the COMPAS records using a person’s first and last names and date of birth. This is the same technique used in the Broward County COMPAS validation study conducted by researchers at Florida State University in 2010. We downloaded around 80,000 criminal records from the Broward County Clerk’s Office website.</p></li>
+<li><p>To determine race, we used the race classifications used by the Broward County Sheriff’s Office, which identifies defendants as black, white, Hispanic, Asian and Native American. In 343 cases, the race was marked as Other.</p></li>
+<li><p>We also compiled each person’s record of incarceration. We received jail records from the Broward County Sheriff’s Office from January 2013 to April 2016, and we downloaded public incarceration records from the Florida Department of Corrections website.</p></li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Data evaluation</strong>: We found that sometimes people’s names or dates of birth were incorrectly entered in some records – which led to incorrect matches between an individual’s COMPAS score and his or her criminal records. We attempted to determine how many records were affected. In a random sample of 400 cases, we found an error rate of 3.75 percent (CI: +/- 1.8 percent).</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>How recidivism is defined</strong>: Northpointe defined recidivism as “a finger-printable arrest involving a charge and a filing for any uniform crime reporting (UCR) code.” We interpreted that to mean a criminal offense that resulted in a jail booking and took place after the crime for which the person was COMPAS scored. [..] <strong>For most of our analysis, we defined recidivism as a new arrest within two years.</strong></p>
+</div></blockquote>
+<div class="section" id="get-the-dataset">
+<h3>Get the dataset<a class="headerlink" href="#get-the-dataset" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the dataset</span>
+
+<span class="c1"># Create a &#39;dataset&#39; folder</span>
+<span class="o">!</span>mkdir -p dataset
+<span class="c1"># Remove existing one if needed</span>
+<span class="o">!</span>rm -f dataset/compas-scores-two-years.csv*
+<span class="c1"># Download</span>
+<span class="o">!</span>curl <span class="s1">&#39;https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv&#39;</span> -o dataset/compas-scores-two-years.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20 2486k   20  517k    0     0  2337k      0  0:00:01 --:--:--  0:00:01 2329k
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 2486k  100 2486k    0     0  3253k      0 --:--:-- --:--:-- --:--:-- 3250k
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the dataset</span>
+
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;dataset/compas-scores-two-years.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>compas_screening_date</th>
+      <th>sex</th>
+      <th>dob</th>
+      <th>age</th>
+      <th>age_cat</th>
+      <th>race</th>
+      <th>...</th>
+      <th>v_decile_score</th>
+      <th>v_score_text</th>
+      <th>v_screening_date</th>
+      <th>in_custody</th>
+      <th>out_custody</th>
+      <th>priors_count.1</th>
+      <th>start</th>
+      <th>end</th>
+      <th>event</th>
+      <th>two_year_recid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>miguel hernandez</td>
+      <td>miguel</td>
+      <td>hernandez</td>
+      <td>2013-08-14</td>
+      <td>Male</td>
+      <td>1947-04-18</td>
+      <td>69</td>
+      <td>Greater than 45</td>
+      <td>Other</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-08-14</td>
+      <td>2014-07-07</td>
+      <td>2014-07-14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>327</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>kevon dixon</td>
+      <td>kevon</td>
+      <td>dixon</td>
+      <td>2013-01-27</td>
+      <td>Male</td>
+      <td>1982-01-22</td>
+      <td>34</td>
+      <td>25 - 45</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-01-27</td>
+      <td>2013-01-26</td>
+      <td>2013-02-05</td>
+      <td>0</td>
+      <td>9</td>
+      <td>159</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>ed philo</td>
+      <td>ed</td>
+      <td>philo</td>
+      <td>2013-04-14</td>
+      <td>Male</td>
+      <td>1991-05-14</td>
+      <td>24</td>
+      <td>Less than 25</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>3</td>
+      <td>Low</td>
+      <td>2013-04-14</td>
+      <td>2013-06-16</td>
+      <td>2013-06-16</td>
+      <td>4</td>
+      <td>0</td>
+      <td>63</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>marcu brown</td>
+      <td>marcu</td>
+      <td>brown</td>
+      <td>2013-01-13</td>
+      <td>Male</td>
+      <td>1993-01-21</td>
+      <td>23</td>
+      <td>Less than 25</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>6</td>
+      <td>Medium</td>
+      <td>2013-01-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1174</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>bouthy pierrelouis</td>
+      <td>bouthy</td>
+      <td>pierrelouis</td>
+      <td>2013-03-26</td>
+      <td>Male</td>
+      <td>1973-01-22</td>
+      <td>43</td>
+      <td>25 - 45</td>
+      <td>Other</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-03-26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1102</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7214, 53)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;id&#39;, &#39;name&#39;, &#39;first&#39;, &#39;last&#39;, &#39;compas_screening_date&#39;, &#39;sex&#39;, &#39;dob&#39;,
+       &#39;age&#39;, &#39;age_cat&#39;, &#39;race&#39;, &#39;juv_fel_count&#39;, &#39;decile_score&#39;,
+       &#39;juv_misd_count&#39;, &#39;juv_other_count&#39;, &#39;priors_count&#39;,
+       &#39;days_b_screening_arrest&#39;, &#39;c_jail_in&#39;, &#39;c_jail_out&#39;, &#39;c_case_number&#39;,
+       &#39;c_offense_date&#39;, &#39;c_arrest_date&#39;, &#39;c_days_from_compas&#39;,
+       &#39;c_charge_degree&#39;, &#39;c_charge_desc&#39;, &#39;is_recid&#39;, &#39;r_case_number&#39;,
+       &#39;r_charge_degree&#39;, &#39;r_days_from_arrest&#39;, &#39;r_offense_date&#39;,
+       &#39;r_charge_desc&#39;, &#39;r_jail_in&#39;, &#39;r_jail_out&#39;, &#39;violent_recid&#39;,
+       &#39;is_violent_recid&#39;, &#39;vr_case_number&#39;, &#39;vr_charge_degree&#39;,
+       &#39;vr_offense_date&#39;, &#39;vr_charge_desc&#39;, &#39;type_of_assessment&#39;,
+       &#39;decile_score.1&#39;, &#39;score_text&#39;, &#39;screening_date&#39;,
+       &#39;v_type_of_assessment&#39;, &#39;v_decile_score&#39;, &#39;v_score_text&#39;,
+       &#39;v_screening_date&#39;, &#39;in_custody&#39;, &#39;out_custody&#39;, &#39;priors_count.1&#39;,
+       &#39;start&#39;, &#39;end&#39;, &#39;event&#39;, &#39;two_year_recid&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="further-data-cleaning">
+<h4>Further data cleaning<a class="headerlink" href="#further-data-cleaning" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>There are a number of reasons remove rows because of missing data:</p>
+<ul class="simple">
+<li><p>If the charge date of a defendants Compas scored crime was not within 30 days from when the person was arrested, we assume that because of data quality reasons, that we do not have the right offense.</p></li>
+<li><p>We coded the recidivist flag – <code class="docutils literal notranslate"><span class="pre">is_recid</span></code> – to be -1 if we could not find a compas case at all.</p></li>
+<li><p>In a similar vein, ordinary traffic offenses – those with a <code class="docutils literal notranslate"><span class="pre">c_charge_degree</span></code> of ‘O’ – will not result in Jail time are removed (only two of them).</p></li>
+<li><p>We filtered the underlying data from Broward county to include only those rows representing people who had either recidivated in two years, or had at least two years outside of a correctional facility.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="columns-of-interest">
+<h4>Columns of interest<a class="headerlink" href="#columns-of-interest" title="Permalink to this headline">¶</a></h4>
+<p>We also focus on the most important columns for this analysis, which are:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code>: Age of the defendant; numeric.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">age_cat</span></code>: Category of Age. It can be &lt; 25, 25-45, &gt;45.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c_charge_degree</span></code>: Degree of the crime. It is either M (Misdemeanor), F (Felony), or O (not causing jail time).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c_jail_in</span></code>: Time when the defendant was jailed; timestamp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c_jail_out</span></code>: Time when the defendant was released from the jail; timestamp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">days_b_screening_arrest</span></code>: Days between the arrest and COMPAS screening.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">decile_score</span></code>: The COMPAS score predicted by the system. It is between 0-10.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_recid</span></code>: A variable to indicate if recidivism was done by the defendant. It can be 0, 1, -1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">priors_count</span></code>: Count of prior crimes committed by the defendant; numeric.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">race</span></code>: Race of the defendant. It can be ‘African-American’, ‘Caucasian’, ‘Hispanic’, ‘Asian’, or ‘Other’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score_text</span></code>: Category of decile score. It can be Low (1-4), Medium (5-7), and High (8-10).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sex</span></code>: Sex of the defendant. It is either ‘Male’ or ‘Female’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">two_year_recid</span></code>: A variable to indicate if recidivism was done by the defendant within two years.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter columns</span>
+
+<span class="n">to_keep</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;c_charge_degree&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;age_cat&#39;</span><span class="p">,</span> <span class="s1">&#39;score_text&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;priors_count&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">,</span> <span class="s1">&#39;decile_score&#39;</span><span class="p">,</span> <span class="s1">&#39;is_recid&#39;</span><span class="p">,</span> <span class="s1">&#39;two_year_recid&#39;</span><span class="p">,</span> <span class="s1">&#39;c_jail_in&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;c_jail_out&#39;</span><span class="p">]</span>
+
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_raw</span><span class="p">[</span><span class="n">to_keep</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7214, 13)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove petty traffic offenses that do not cause jail time</span>
+<span class="n">cond_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">c_charge_degree</span> <span class="o">!=</span> <span class="s1">&#39;O&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove rows which do not have a compas score</span>
+<span class="n">cond_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">score_text</span> <span class="o">!=</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">is_recid</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Remove cases in which charge date is more than 30 days</span>
+<span class="n">cond_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">days_b_screening_arrest</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">days_b_screening_arrest</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">30</span><span class="p">)</span>
+
+
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[(</span><span class="n">cond_1</span> <span class="o">&amp;</span> <span class="n">cond_2</span> <span class="o">&amp;</span> <span class="n">cond_3</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6172, 13)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>c_charge_degree</th>
+      <th>race</th>
+      <th>age_cat</th>
+      <th>score_text</th>
+      <th>sex</th>
+      <th>priors_count</th>
+      <th>days_b_screening_arrest</th>
+      <th>decile_score</th>
+      <th>is_recid</th>
+      <th>two_year_recid</th>
+      <th>c_jail_in</th>
+      <th>c_jail_out</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>69</td>
+      <td>F</td>
+      <td>Other</td>
+      <td>Greater than 45</td>
+      <td>Low</td>
+      <td>Male</td>
+      <td>0</td>
+      <td>-1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2013-08-13 06:03:42</td>
+      <td>2013-08-14 05:41:20</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34</td>
+      <td>F</td>
+      <td>African-American</td>
+      <td>25 - 45</td>
+      <td>Low</td>
+      <td>Male</td>
+      <td>0</td>
+      <td>-1.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2013-01-26 03:45:27</td>
+      <td>2013-02-05 05:36:53</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>24</td>
+      <td>F</td>
+      <td>African-American</td>
+      <td>Less than 25</td>
+      <td>Low</td>
+      <td>Male</td>
+      <td>4</td>
+      <td>-1.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2013-04-13 04:58:34</td>
+      <td>2013-04-14 07:02:04</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>44</td>
+      <td>M</td>
+      <td>Other</td>
+      <td>25 - 45</td>
+      <td>Low</td>
+      <td>Male</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2013-11-30 04:50:18</td>
+      <td>2013-12-01 12:28:56</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>41</td>
+      <td>F</td>
+      <td>Caucasian</td>
+      <td>25 - 45</td>
+      <td>Medium</td>
+      <td>Male</td>
+      <td>14</td>
+      <td>-1.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2014-02-18 05:08:24</td>
+      <td>2014-02-24 12:18:30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="your-turn">
+<h3>Your turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h3>
+<p>Perform a descriptive analysis of the dataset, in particular focusing on the following variables: <code class="docutils literal notranslate"><span class="pre">age</span></code>, <code class="docutils literal notranslate"><span class="pre">race</span></code>, <code class="docutils literal notranslate"><span class="pre">sex</span></code>, and whether recidivism was done by someone (<code class="docutils literal notranslate"><span class="pre">is_recid</span></code>). Assess how the COMPAS scores (<code class="docutils literal notranslate"><span class="pre">score_text</span></code> and <code class="docutils literal notranslate"><span class="pre">decile_score</span></code>) distribute across these variables, and note your thoughts on what you see.</p>
+<p>A <strong>descriptive analysis</strong> is an open-ended exploration of a dataset. Useful steps to consider are exploring summary statistics of each variable (min, max, mean, median, data type, etc.); plotting its distribution; compare variables (e.g., check whether they correlate or plot them jointly); repeat the exploration grouping variables (e.g., plotting the distribution of variable y for different sub-groups according to variable y); and so forth. You should make sure to get acquainted with the dataset, as well as to explore in view of your research question.</p>
+<p><em>It is important that you compare both the COMPAS scores by group, and the predicted vs actual recidivism by group.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="replication">
+<h2>2 - Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h2>
+<p>A partial replication of these results will suffice, you are welcome and encouraged to dig deeper if you like.</p>
+<blockquote>
+<div><p>Our analysis found that:</p>
+<ol class="simple">
+<li><p>Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).</p></li>
+<li><p>White defendants were often predicted to be less risky than they were. Our analysis found that white defendants who re-offended within the next two years were mistakenly labeled low risk almost twice as often as black re-offenders (48 percent vs. 28 percent).</p></li>
+<li><p>The analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 45 percent more likely to be assigned higher risk scores than white defendants.</p></li>
+<li><p>Black defendants were also twice as likely as white defendants to be misclassified as being a higher risk of violent recidivism. And white violent recidivists were 63 percent more likely to have been misclassified as a low risk of violent recidivism, compared with black violent recidivists.</p></li>
+<li><p>The violent recidivism analysis also showed that even when controlling for prior crimes, future recidivism, age, and gender, black defendants were 77 percent more likely to be assigned higher risk scores than white defendants.</p></li>
+</ol>
+</div></blockquote>
+<p>Please replicate 1-4 above; 5 is optional but will still yield you bonus points.</p>
+<p>Points 1 and 2 require you to focus on an error analysis (are prediction errors consistent for different groups of people?). Points 3 to 5 can be done using a logistic regression model and interpreting coefficients using marginal effects or odds ratios. It is a good idea to split the group into (at least) two sub-groups: one focusing on 1-2 and one on 3-4. An extra sub-group could focus on bonus points, which can be acquired via 5 or via discussing and assessinng alternative definitions of fairnness to those used by ProPublica.</p>
+<p>Hints: consider using <a class="reference external" href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrices</a> for your error analysis, and <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a> for regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For point 5 above (violent recidivism), you will need to work with another dataset (which uses the same format and should be pre-processed in the same way)</span>
+<span class="c1"># Download the dataset</span>
+
+<span class="c1"># Create a &#39;dataset&#39; folder</span>
+<span class="o">!</span>mkdir -p dataset
+<span class="c1"># Remove existing one if needed</span>
+<span class="o">!</span>rm -f dataset/compas-scores-two-years-violent.csv*
+<span class="c1"># Download</span>
+<span class="o">!</span>curl <span class="s1">&#39;https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years-violent.csv&#39;</span> -o dataset/compas-scores-two-years-violent.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 1565k  100 1565k    0     0  3346k      0 --:--:-- --:--:-- --:--:-- 3352k
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_clean</span>
+<span class="n">df_black</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;African-American&#39;</span><span class="p">]</span>
+<span class="n">df_white</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Caucasian&#39;</span><span class="p">]</span>
+
+<span class="c1"># Make dictionairy for African-Americans controlled for certain variables</span>
+<span class="n">bb</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_black</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Hash function as key for dictionairy</span>
+    <span class="n">hashed</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">([</span><span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;c_charge_degree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;two_year_recid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_black</span><span class="p">[</span><span class="s1">&#39;age_cat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]])</span>
+    <span class="k">if</span> <span class="n">hashed</span> <span class="ow">in</span> <span class="n">bb</span><span class="p">:</span>
+        <span class="n">bb</span><span class="p">[</span><span class="n">hashed</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bb</span><span class="p">[</span><span class="n">hashed</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+<span class="c1"># Make dictionairy for Caucasians controlled for certain variables</span>
+<span class="n">bw</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_white</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Hash function as key for dictionairy</span>
+    <span class="n">hashed</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">([</span><span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;c_charge_degree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;two_year_recid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">df_white</span><span class="p">[</span><span class="s1">&#39;age_cat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]])</span>
+    <span class="k">if</span> <span class="n">hashed</span> <span class="ow">in</span> <span class="n">bw</span><span class="p">:</span>
+        <span class="n">bw</span><span class="p">[</span><span class="n">hashed</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">bw</span><span class="p">[</span><span class="n">hashed</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+<span class="c1"># Make specific dataframes based on indexes</span>
+<span class="n">score_w</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">score_b</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">bw</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">bb</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="c1"># Get list of indexes</span>
+        <span class="n">indexes_white</span> <span class="o">=</span> <span class="n">bw</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span>
+        <span class="n">indexes_black</span> <span class="o">=</span> <span class="n">bb</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span>
+        
+        <span class="c1"># Loop through indexes</span>
+        <span class="n">values_white</span> <span class="o">=</span> <span class="p">[</span><span class="n">df_white</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">indexes_white</span><span class="p">]</span>
+        <span class="n">values_black</span> <span class="o">=</span> <span class="p">[</span><span class="n">df_black</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">indexes_black</span><span class="p">]</span>
+        
+        <span class="c1"># Create dataframes out of data from indexes</span>
+        <span class="n">df_new_white</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values_white</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">df_new_black</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values_black</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        
+        <span class="c1"># Fit logistic regression on dataframes</span>
+        <span class="n">results_white</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;decile_score ~ sex + age_cat + priors_count + two_year_recid + age + c_charge_degree + days_b_screening_arrest&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_new_white</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+        <span class="n">results_black</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;decile_score ~ sex + age_cat + priors_count + two_year_recid + age + c_charge_degree + days_b_screening_arrest&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_new_black</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+        <span class="c1"># Compute results based on predictions of the fit</span>
+        <span class="k">if</span> <span class="n">results_black</span><span class="o">.</span><span class="n">predict</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">score_b</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">results_white</span><span class="o">.</span><span class="n">predict</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">score_w</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">score_b</span> <span class="o">/</span> <span class="n">score_w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.165289256198347
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./AI_for_society/ass1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../AI_for_society.html" title="previous page">AI for society</a>
+    <a class='right-next' id="next-link" href="../ass2/Civility_in_Communication.html" title="next page">Civility in Communication</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

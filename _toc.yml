@@ -1,23 +1,8 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
-#   sections:
-#     - file: SocialMedia/Social_Sensing_1
-#     - file: SocialMedia/Social_Sensing_2
-#     - file: Text/Text_1
-#     - file: Text/Text_2
-#     - file: VisualsArts/Visuals_and_Arts
-#     - file: VisualsArts/Visuals_and_Arts_2
-- file: intro
-# - file: content
 
-# - part: Social Analytics
-#   chapters:
-#   - file: SocialAnalytics/SocialMedia/Social_Sensing_1
-#   - file: SocialAnalytics/SocialMedia/Social_Sensing_2
-#   - file: SocialAnalytics/Text/Text_1
-#   - file: SocialAnalytics/Text/Text_2
-#   - file: SocialAnalytics/VisualsArts/Visuals_and_Arts
-#   - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_2
+- file: intro
+
   
 - file: social_analytics
   sections:
@@ -26,4 +11,20 @@
    - file: SocialAnalytics/Text/Text_1
    - file: SocialAnalytics/Text/Text_2
    - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_1
-   - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_2   
+   - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_2     
+- file: AI_for_society
+  sections:
+   - file: AI_for_society/ass1/Machine_Bias
+   - file: AI_for_society/ass2/Civility_in_Communication
+   - file: AI_for_society/ass3/Data_Exploration
+   - file: AI_for_society/ass3/US_Congress_Sponsors
+   - file: AI_for_society/ass3/Analysing_Communities_1
+   - file: AI_for_society/ass3/Analysing_Communities_2
+- file: Introduction
+  sections:
+   - file: Introduction/Introduction_1.1
+   - file: Introduction/Introduction_1.2
+   - file: Introduction/Introduction_2.1
+   - file: Introduction/Introduction_2.2
+ 
+   
