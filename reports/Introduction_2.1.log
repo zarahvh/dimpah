@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 1107, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/local/Cellar/python@3.9/3.9.2/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 852, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/local/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+df.loc[df['Freq']]
+df.nsmallest(1, 'Freq')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+[0;32m<ipython-input-37-e279e80020bd>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mdf[0m[0;34m.[0m[0mloc[0m[0;34m[[0m[0mdf[0m[0;34m[[0m[0;34m'Freq'[0m[0;34m][0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mdf[0m[0;34m.[0m[0mnsmallest[0m[0;34m([0m[0;36m1[0m[0;34m,[0m [0;34m'Freq'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py[0m in [0;36m__getitem__[0;34m(self, key)[0m
+[1;32m    893[0m [0;34m[0m[0m
+[1;32m    894[0m             [0mmaybe_callable[0m [0;34m=[0m [0mcom[0m[0;34m.[0m[0mapply_if_callable[0m[0;34m([0m[0mkey[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mobj[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 895[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_getitem_axis[0m[0;34m([0m[0mmaybe_callable[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0maxis[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    896[0m [0;34m[0m[0m
+[1;32m    897[0m     [0;32mdef[0m [0m_is_scalar_access[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mkey[0m[0;34m:[0m [0mTuple[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py[0m in [0;36m_getitem_axis[0;34m(self, key, axis)[0m
+[1;32m   1111[0m                     [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Cannot index with multidimensional key"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1112[0m [0;34m[0m[0m
+[0;32m-> 1113[0;31m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_getitem_iterable[0m[0;34m([0m[0mkey[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0maxis[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1114[0m [0;34m[0m[0m
+[1;32m   1115[0m             [0;31m# nested tuple slicing[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py[0m in [0;36m_getitem_iterable[0;34m(self, key, axis)[0m
+[1;32m   1051[0m [0;34m[0m[0m
+[1;32m   1052[0m         [0;31m# A collection of keys[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1053[0;31m         [0mkeyarr[0m[0;34m,[0m [0mindexer[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_get_listlike_indexer[0m[0;34m([0m[0mkey[0m[0;34m,[0m [0maxis[0m[0;34m,[0m [0mraise_missing[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1054[0m         return self.obj._reindex_with_indexers(
+[1;32m   1055[0m             [0;34m{[0m[0maxis[0m[0;34m:[0m [0;34m[[0m[0mkeyarr[0m[0;34m,[0m [0mindexer[0m[0;34m][0m[0;34m}[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0mallow_dups[0m[0;34m=[0m[0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py[0m in [0;36m_get_listlike_indexer[0;34m(self, key, axis, raise_missing)[0m
+[1;32m   1264[0m             [0mkeyarr[0m[0;34m,[0m [0mindexer[0m[0;34m,[0m [0mnew_indexer[0m [0;34m=[0m [0max[0m[0;34m.[0m[0m_reindex_non_unique[0m[0;34m([0m[0mkeyarr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1265[0m [0;34m[0m[0m
+[0;32m-> 1266[0;31m         [0mself[0m[0;34m.[0m[0m_validate_read_indexer[0m[0;34m([0m[0mkeyarr[0m[0;34m,[0m [0mindexer[0m[0;34m,[0m [0maxis[0m[0;34m,[0m [0mraise_missing[0m[0;34m=[0m[0mraise_missing[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1267[0m         [0;32mreturn[0m [0mkeyarr[0m[0;34m,[0m [0mindexer[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1268[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py[0m in [0;36m_validate_read_indexer[0;34m(self, key, indexer, axis, raise_missing)[0m
+[1;32m   1319[0m [0;34m[0m[0m
+[1;32m   1320[0m             [0;32mwith[0m [0moption_context[0m[0;34m([0m[0;34m"display.max_seq_items"[0m[0;34m,[0m [0;36m10[0m[0;34m,[0m [0;34m"display.width"[0m[0;34m,[0m [0;36m80[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1321[0;31m                 raise KeyError(
+[0m[1;32m   1322[0m                     [0;34m"Passing list-likes to .loc or [] with any missing labels "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1323[0m                     [0;34m"is no longer supported. "[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mKeyError[0m: "Passing list-likes to .loc or [] with any missing labels is no longer supported. The following labels were missing: Int64Index([139, 37, 11, 16, 414, 53], dtype='int64'). See https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#deprecate-loc-reindex-listlike"
+KeyError: "Passing list-likes to .loc or [] with any missing labels is no longer supported. The following labels were missing: Int64Index([139, 37, 11, 16, 414, 53], dtype='int64'). See https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#deprecate-loc-reindex-listlike"
+
