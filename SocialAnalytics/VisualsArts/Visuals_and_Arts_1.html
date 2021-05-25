@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visuals and Arts &#8212; DIMPAH</title>
+    <title>Visuals and Arts 1 &#8212; DIMPAH</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -74,6 +74,8 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../index.html">
   
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
   
   <h1 class="site-logo" id="site-title">DIMPAH</h1>
   
@@ -91,6 +93,35 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../../social_analytics.html">
    Social Analytics
@@ -118,7 +149,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Visuals and Arts
+     Visuals and Arts 1
     </a>
    </li>
    <li class="toctree-l2">
@@ -163,35 +194,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_2.html">
      Social Data from the Web
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../Introduction.html">
-   Introduction to Python
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
     </a>
    </li>
   </ul>
@@ -304,16 +306,10 @@
         
               <div>
                 
-  <div class="section" id="visuals-and-arts">
-<h1>Visuals and Arts<a class="headerlink" href="#visuals-and-arts" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="visuals-and-arts-1">
+<h1>Visuals and Arts 1<a class="headerlink" href="#visuals-and-arts-1" title="Permalink to this headline">¶</a></h1>
 <p>In this session, we will learn about the grammar of graphs that Leland Wilkinson introduced in the book Grammar of Graphics, Springer, New York, 2005. We will follow roughly the tutorial at <a class="reference external" href="http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html">http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html</a>, although the tutorial has many more examples and graphs than we will work with. But we will focus on a historical analysis and use the data and some examples from the excellent <a class="reference external" href="http://benschmidt.org/Crewlists">http://benschmidt.org/Crewlists</a>. I highly recommend reading both as complementary material to this session. Later in the session we will apply our knowledge to data from museums.</p>
 <p>The grammar of graphs defines independent building blocks for the things we want to do with graphs. Through their combination, the blocks give us any number of possible combinations to create perfect visualisations.</p>
-<p>For the code below we have to find a python package:
-R has an excellent package called ggplot2 that follows the grammar of graphics. Compared to the base package for plotting in R we met earlier it might seem quite verbose at first but it is very flexible, can integrate multiple themes that define the appearance of the graphs and does simply overall an excellent job at producing highly professional graphs. Load the second version of the package with library(ggplot2).</p>
-<ol class="simple">
-<li><p>install plotline (pip3 install plotnine in terminal)</p></li>
-<li></li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -330,65 +326,6 @@ R has an excellent package called ggplot2 that follows the grammar of graphics. 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crews</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/crews-sample.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">ae8ebf76bcb5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">crews</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/crews-sample.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span> 
-<span class="ne">--&gt; </span><span class="mi">610</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> 
-<span class="g g-Whitespace">    </span><span class="mi">612</span> 
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> 
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> 
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">817</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> 
-<span class="ne">--&gt; </span><span class="mi">819</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span> 
-<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1050</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1052</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1865</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1866</span>         <span class="c1"># open handles</span>
-<span class="ne">-&gt; </span><span class="mi">1867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1868</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1869</span>         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="s2">&quot;compression&quot;</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHanldes</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1362</span><span class="s2">         self.handles = get_handle(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span><span class="s2">             src,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span><span class="s2">             &quot;r&quot;,</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="s2">                 errors = &quot;replace&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="s2">             # Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">642</span><span class="s2">             handle = open(</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="s2">                 handle,</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">                 ioargs.mode,</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/crews-sample.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -581,11 +518,11 @@ R has an excellent package called ggplot2 that follows the grammar of graphics. 
 5&#39;9         909
 5&#39;5         829
            ... 
+4&#39;11&quot;         1
 6&#39;7 3/4       1
-6&#39;4&quot;          1
-3&#39;8&quot;          1
+5&#39;41/2        1
+5&#39;71/4&quot;       1
 4&#39; 11&quot;        1
-6&#39;6 1/2       1
 Name: Height, Length: 221, dtype: int64
 </pre></div>
 </div>
@@ -718,6 +655,30 @@ Height:date</p>
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>33017</td>
+      <td>33017</td>
+      <td>Van Dusen</td>
+      <td>Theodore</td>
+      <td>Chandler Price</td>
+      <td>Ship</td>
+      <td>7/24/1851</td>
+      <td>Theodore Van Dusen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Greenhand</td>
+      <td>1-200</td>
+      <td>NaN</td>
+      <td>2553</td>
+      <td>116.0</td>
+      <td>NaT</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <th>1</th>
       <td>29230</td>
       <td>29230</td>
@@ -738,7 +699,7 @@ Height:date</p>
       <td>NaN</td>
       <td>6339</td>
       <td>290.0</td>
-      <td>1876</td>
+      <td>1876-05-07</td>
       <td>72.0</td>
     </tr>
     <tr>
@@ -762,79 +723,55 @@ Height:date</p>
       <td>NaN</td>
       <td>14132</td>
       <td>658.0</td>
-      <td>1864</td>
+      <td>1864-02-01</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>55258</td>
-      <td>55258</td>
-      <td>King</td>
-      <td>James</td>
-      <td>Willis</td>
+      <th>3</th>
+      <td>65638</td>
+      <td>65638</td>
+      <td>Sensenback</td>
+      <td>John</td>
+      <td>Minerva II</td>
       <td>Bark</td>
-      <td>6/1/1857</td>
-      <td>King, James</td>
-      <td>NaN</td>
+      <td>5/15/1860</td>
+      <td>Sensenback, John</td>
+      <td>22.0</td>
       <td>NaN</td>
       <td>...</td>
+      <td>Light</td>
+      <td>NaN</td>
+      <td>Lehigh, Pa</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>15782</td>
-      <td>694.0</td>
-      <td>1857</td>
+      <td>9899</td>
+      <td>424.0</td>
+      <td>NaT</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>40652</td>
-      <td>40652</td>
-      <td>Breta</td>
-      <td>Sergio Des</td>
-      <td>President</td>
-      <td>Bark</td>
-      <td>7/10/1865</td>
-      <td>Breta, Sergio Des</td>
-      <td>16.0</td>
-      <td>69.0</td>
-      <td>...</td>
-      <td>Wooly</td>
-      <td>NaN</td>
-      <td>Boa Vista</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>11927</td>
-      <td>548.0</td>
-      <td>1865</td>
-      <td>69.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>28711</td>
-      <td>28711</td>
-      <td>Fryer</td>
-      <td>Abel</td>
-      <td>Fabius</td>
+      <th>4</th>
+      <td>7767</td>
+      <td>7767</td>
+      <td>Manater</td>
+      <td>Sanderson</td>
+      <td>Amazon</td>
       <td>Ship</td>
-      <td>7/7/1844</td>
-      <td>Abel Fryer</td>
-      <td>NaN</td>
+      <td>9/20/1828</td>
+      <td>Sanderson Manater</td>
+      <td>23.0</td>
       <td>NaN</td>
       <td>...</td>
+      <td>Light Brown</td>
+      <td>NaN</td>
+      <td>Tisbury, Ma</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Greenhand</td>
-      <td>1-195</td>
-      <td>DID NOT RETURN FROM VOYAGE</td>
-      <td>4777</td>
-      <td>222.0</td>
-      <td>1844</td>
+      <td>745</td>
+      <td>853.0</td>
+      <td>NaT</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -844,8 +781,7 @@ Height:date</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plt.figure(figsize=(10,5))</span>
-<span class="n">scatter</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crews</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Height&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crews</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Height&#39;</span><span class="p">)</span>
 <span class="n">scatter</span>
 </pre></div>
 </div>
@@ -882,7 +818,71 @@ Height:date</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x119447908&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">dda6fff7df73</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">scatter</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crews</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">scatter</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/seaborn/_decorators.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="p">)</span>
+<span class="nn">     45         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/seaborn/axisgrid.py</span> in <span class="ni">jointplot</span><span class="nt">(x, y, data, kind, color, height, ratio, space, dropna, xlim, ylim, marginal_ticks, joint_kws, marginal_kws, hue, palette, hue_order, hue_norm, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2181</span>     <span class="k">elif</span> <span class="n">kind</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;hex&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2182</span> 
+<span class="ne">-&gt; </span><span class="mi">2183</span>         <span class="n">x_bins</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">_freedman_diaconis_bins</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="mi">50</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2184</span>         <span class="n">y_bins</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">_freedman_diaconis_bins</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="mi">50</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2185</span>         <span class="n">gridsize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">x_bins</span><span class="p">,</span> <span class="n">y_bins</span><span class="p">]))</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/seaborn/distributions.py</span> in <span class="ni">_freedman_diaconis_bins</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2396</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2397</span>         <span class="k">return</span> <span class="mi">1</span>
+<span class="ne">-&gt; </span><span class="mi">2398</span>     <span class="n">h</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2399</span>     <span class="c1"># fall back to sqrt(a) bins if iqr is 0</span>
+<span class="g g-Whitespace">   </span><span class="mi">2400</span>     <span class="k">if</span> <span class="n">h</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/scipy/stats/stats.py</span> in <span class="ni">iqr</span><span class="nt">(x, axis, rng, scale, nan_policy, interpolation, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2917</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2918</span>     <span class="n">rng</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2919</span>     <span class="n">pct</span> <span class="o">=</span> <span class="n">percentile_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2920</span>                           <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2921</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">pct</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pct</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">percentile</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py</span> in <span class="ni">percentile</span><span class="nt">(a, q, axis, out, overwrite_input, interpolation, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3730</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">_quantile_is_valid</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3731</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Percentiles must be in the range [0, 100]&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3732</span>     <span class="k">return</span> <span class="n">_quantile_unchecked</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3733</span>         <span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">interpolation</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3734</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py</span> in <span class="ni">_quantile_unchecked</span><span class="nt">(a, q, axis, out, overwrite_input, interpolation, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3849</span>                         <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3850</span>     <span class="sd">&quot;&quot;&quot;Assumes that q is in [0, 1], and is an ndarray&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3851</span>     <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">_ureduce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">_quantile_ureduce_func</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3852</span>                     <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3853</span>                     <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py</span> in <span class="ni">_ureduce</span><span class="nt">(a, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3427</span>         <span class="n">keepdim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
+<span class="g g-Whitespace">   </span><span class="mi">3428</span> 
+<span class="ne">-&gt; </span><span class="mi">3429</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3430</span>     <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">keepdim</span>
+<span class="g g-Whitespace">   </span><span class="mi">3431</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py</span> in <span class="ni">_quantile_ureduce_func</span><span class="nt">(a, q, axis, out, overwrite_input, interpolation, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3965</span>             <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ap</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:,</span> <span class="o">...</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">3966</span> 
+<span class="ne">-&gt; </span><span class="mi">3967</span>         <span class="n">x1</span> <span class="o">=</span> <span class="n">take</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">indices_below</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span> <span class="o">*</span> <span class="n">weights_below</span>
+<span class="g g-Whitespace">   </span><span class="mi">3968</span>         <span class="n">x2</span> <span class="o">=</span> <span class="n">take</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">indices_above</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span> <span class="o">*</span> <span class="n">weights_above</span>
+<span class="g g-Whitespace">   </span><span class="mi">3969</span> 
+
+<span class="ne">UFuncTypeError</span>: ufunc &#39;multiply&#39; cannot use operands with types dtype(&#39;&lt;M8[ns]&#39;) and dtype(&#39;float64&#39;)
 </pre></div>
 </div>
 <img alt="../../_images/Visuals_and_Arts_1_22_1.png" src="../../_images/Visuals_and_Arts_1_22_1.png" />
@@ -1641,15 +1641,13 @@ luckily we can also change this using matplotlib’s plt.legend(), where we use 
 However to create a stacked area plot in python we actually need all the galleries in separate arrays in a nested one, so that we get y = [[Britain],[Modern],[Liverpool],[Stlves]]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># y = [tate_vis[&#39;Britain&#39;].tolist(), tate_vis[&#39;Modern&#39;].tolist(), tate_vis[&#39;Liverpool&#39;].tolist(),tate_vis[&#39;StIves&#39;].tolist()]</span>
-<span class="n">Britain</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tate_vis</span><span class="p">[</span><span class="s1">&#39;Britain&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Britain</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tate_vis</span><span class="p">[</span><span class="s1">&#39;Britain&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 <span class="n">Modern</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tate_vis</span><span class="p">[</span><span class="s1">&#39;Modern&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 <span class="n">Liverpool</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tate_vis</span><span class="p">[</span><span class="s1">&#39;Liverpool&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 <span class="n">StIves</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tate_vis</span><span class="p">[</span><span class="s1">&#39;StIves&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">Britain</span><span class="p">,</span><span class="n">Modern</span><span class="p">,</span><span class="n">Liverpool</span><span class="p">,</span><span class="n">StIves</span><span class="p">]</span>
 <span class="n">y</span>
-<span class="c1"># plt.stackplot( x=&#39;year&#39;, y=y)</span>
 </pre></div>
 </div>
 </div>

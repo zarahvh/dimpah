@@ -72,6 +72,8 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
   
   <h1 class="site-logo" id="site-title">DIMPAH</h1>
   
@@ -89,6 +91,35 @@
  </li>
 </ul>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../social_analytics.html">
    Social Analytics
@@ -116,7 +147,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
-     Visuals and Arts
+     Visuals and Arts 1
     </a>
    </li>
    <li class="toctree-l2">
@@ -161,35 +192,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
      Social Data from the Web
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../Introduction.html">
-   Introduction to Python
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
     </a>
    </li>
   </ul>
@@ -334,6 +336,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-and-predicting">
+   Modelling and Predicting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background-2-neural-networks">
+     Background 2: Neural Networks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Modelling and Predicting
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -446,26 +465,12 @@
 Perhaps the most common data format of freely available data are Comma-Separated Values (CSV) files, which, as the name suggests, uses the comma as a delimiter. CSV files can be imported to and exported from many common data repositories. To load CSV into python, we use pandas read_csv() function. You use it by specifying a path to the file you want to import, e.g. /path/to/mydata.csv, when calling the pd.read_csv() function after importing pandas again. Here we use it to load the data directly from the web.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">red</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
      <span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
 <span class="n">white</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
      <span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">b0105037cf86</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">red</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>      <span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">white</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1308,7 +1313,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-194-e6cf7d2f4def&gt;:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-e6cf7d2f4def&gt;:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1446,7 +1451,131 @@ Because we aim to predict new things, our next step should be to find out about 
 <p>We will use 75% of our data for the training and 25% for testing. First we randomly mix the data with  to ensure that all qualities are evenly distributed in both training and test data. Then, we use the first 4549 records (~75%) for the training dataset and then rest for the test data. Remember that data is extracted from data frames using the [row, column] syntax. A blank value for the row or column value indicates that all rows or columns should be included.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 75 % training, 25% testing random, random shuffle dataframe</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shuf</span> <span class="o">=</span> <span class="n">ndf</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">train_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.75</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shuf</span><span class="p">))</span>
+<span class="n">test_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shuf</span><span class="p">))</span>
+
+<span class="n">train_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[:</span><span class="n">train_n</span><span class="p">]</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[</span><span class="n">test_n</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are ready to model and because things are looking good with go directly to one the most advanced machine learning technique that uses the human brain as an inspiration.</p>
+</div>
+</div>
+<div class="section" id="modelling-and-predicting">
+<h2>Modelling and Predicting<a class="headerlink" href="#modelling-and-predicting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="background-2-neural-networks">
+<h3>Background 2: Neural Networks<a class="headerlink" href="#background-2-neural-networks" title="Permalink to this headline">¶</a></h3>
+<p>With the training data, we are ready to start learning a model for tasting wine. To classify our test instance, we will work with the best that current machine learning has to offer. We employ the help of neural networks, machines assembled in similar ways as the hundreds, thousands or millions of brain cells. These machines are supposed to learn and behave in a similar way to human brains. Kant would be proud of us – maybe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;neural-networks-1.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/PredictingModelling_48_0.png" src="../_images/PredictingModelling_48_0.png" />
+</div>
+</div>
+<p>Each neuron is made up of a cell body with a number of connections coming off it. These are numerous dendrites (carrying information toward the cell body) and a single axon (carrying information away). But computers are not alive. They are mechanical boxes and made not of the complex chains of brain cells, which are densely interconnected in complex and parallel ways - each one connected to perhaps 10,000 other brain cells. Computers are designed to store lots of data and rearrange that – as we have done many times and need instructions for that. To the day, we do not fully understand how brains learn. They can spontaneously put information together in astounding new ways and forge new connections. No computer currently comes close to that.</p>
+<p>The basic idea behind a neural network is to simulate those densely interconnected brain cells inside a computer so you can get it to learn things, recognize patterns and make decisions. Neural networks learn to improve their own analysis of the data. But neural networks remain mathematical equations and mean nothing to the computers themselves – unlike our own brain activities. They are still just highly interconnected numbers in boxes who constantly change.</p>
+<p>A typical neural network has anything from a few dozen to hundreds, thousands, or even millions of artificial neurons called units arranged in a series of layers, each of which connects to the layers on either side. Some of them are input units. In our case, these will be defined by the data for each feature in each observation. Each feature forms one input unit. Neural networks also have an output layer that responds to the information that is learned. In our case, these are the quality judgments we make with regard to the wines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;neural-networks-2.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/PredictingModelling_52_0.png" src="../_images/PredictingModelling_52_0.png" />
+</div>
+</div>
+<p>In-between the input units and output units are one or more layers of hidden units, which, together, form the majority of the artificial brain. The connections between one unit and another are represented by a number called a weight, which can be either positive (if one unit excites another) or negative (if one unit suppresses or inhibits another). The higher the weight, the more influence one unit has on another. Inputs are fed in from the left, activate the hidden units in the middle and feed out outputs from the right.</p>
+<p>But information flows backwards from the output units, too. For a neural network to learn, there has to be an element of feedback involved – just like we humans learn. With feedback, we compare what we tried to achieve with what we actually achieved and adjust our behaviour accordingly. Neural networks learn things in exactly the same way with a feedback process called backpropagation. Because we know from the training data the output we tried to achieve, we can compare it with the calculated values and modify the connections in the network to improve the outcome, working from the output units through the hidden units to the input units. Over time, this backpropagation causes the network to learn until a stable state is achieved. In our case, the network will lean how we taste wine.</p>
+<p>Neural Networks have become synonymous with the recent success of artificial intelligence. So much so that the Guardian declared that 2016 was the year of AI because of advancements in Neural Networks (<a class="reference external" href="https://www.theguardian.com/technology/2016/dec/28/2016-the-year-ai-came-of-age">https://www.theguardian.com/technology/2016/dec/28/2016-the-year-ai-came-of-age</a>).</p>
+</div>
+<div class="section" id="id1">
+<h3>Modelling and Predicting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Fortunately for us, we do not have to implement Neural Networks by ourselves but can rely on many existing algorithms in Python.</p>
+<p>Python Neural Network?? Tensorflow or Pytorch?? (Tensorflow al op laptop)</p>
+<p><a class="reference external" href="https://www.tensorflow.org/learn">https://www.tensorflow.org/learn</a></p>
+<p>First install tensorflow: pip3 install tensorflow</p>
+<p>–&gt; Maybe scikit learn is easier?? –&gt; Classifier? pip3 install scikit learn
+–&gt; Is tensorflow easier to visualize?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="nn">sk</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multilayer perceptron, classifier on quality --&gt; good or bad? (binary)</span>
+
+<span class="c1"># X and Y train and test</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">Y_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">Y_test</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">,</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py:63: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return f(*args, **kwargs)
+/usr/local/lib/python3.9/site-packages/sklearn/neural_network/_multilayer_perceptron.py:614: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn&#39;t converged yet.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLPClassifier(hidden_layer_sizes=(150, 100, 50), max_iter=300, random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">):</span>
+   <span class="n">diagonal_sum</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+   <span class="n">sum_of_all_elements</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+   <span class="k">return</span> <span class="n">diagonal_sum</span> <span class="o">/</span> <span class="n">sum_of_all_elements</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+
+<span class="c1"># tp, fn, fp, tn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1148  198]
+ [ 657 2870]]
 </pre></div>
 </div>
 </div>

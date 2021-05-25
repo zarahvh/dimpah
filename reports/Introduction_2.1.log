@@ -23,7 +23,7 @@ df.nsmallest(1, 'Freq')
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m<ipython-input-37-e279e80020bd>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-35-e279e80020bd>[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mdf[0m[0;34m.[0m[0mloc[0m[0;34m[[0m[0mdf[0m[0;34m[[0m[0;34m'Freq'[0m[0;34m][0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0mdf[0m[0;34m.[0m[0mnsmallest[0m[0;34m([0m[0;36m1[0m[0;34m,[0m [0;34m'Freq'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
