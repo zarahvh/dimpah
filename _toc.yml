@@ -27,5 +27,10 @@
    - file: AI_for_society/ass3/US_Congress_Sponsors
    - file: AI_for_society/ass3/Analysing_Communities_1
    - file: AI_for_society/ass3/Analysing_Communities_2
+- file: PredictingModelling
+  sections:
+   - file: PredictingModelling/LinearPrediction
+   - file: PredictingModelling/PredictingModelling
+   - file: PredictingModelling/Titanic
 
    
