@@ -1,4 +1,4 @@
-AI for society
+PredictingModelling
 =======================
 
-Something about the content of the AI for society assignments
+Something about the content of the PredictingModelling assignments
