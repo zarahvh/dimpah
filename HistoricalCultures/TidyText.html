@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unnest_tokens function &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/HistoricalCultures/TidyText.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FHistoricalCultures/TidyText.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/HistoricalCultures/TidyText.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   unnest_tokens function
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tidy-text-format">
+   The tidy text format
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-stopwords">
+   Removing stopwords
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarizing-word-frequencies">
+   Summarizing word frequencies
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-study-gutenberg">
+   Case Study Gutenberg
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gutenbergr">
+     Gutenbergr
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>In 2016, David Robinson’s published a great analysis of Donald Trump’s (<a class="reference external" href="http://varianceexplained.org/r/trump-tweets/">http://varianceexplained.org/r/trump-tweets/</a>). It got a lot of publicity and his collaboration with Julia Slige resulted in a new book and approach called tidytext (<a class="reference external" href="http://tidytextmining.com/">http://tidytextmining.com/</a>).</p>
+<p><a class="reference external" href="https://github.com/juliasilge/tidytext">https://github.com/juliasilge/tidytext</a> has become another package for advanced text analysis that has quickly gained a lot of support.</p>
+<p>The tidytext package allows to use tidytext principles (<a class="reference external" href="https://www.jstatsoft.org/article/view/v059i10">https://www.jstatsoft.org/article/view/v059i10</a>) with unstructured data/text.</p>
+<p>Let’s take a character vector with one element made of 3 sentences.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Using tidy data principles is important.</span>
+<span class="s2">In this package, we provide functions for tidy formats.</span>
+<span class="s2">The novels of Jane Austen can be so tidy!</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The dataset is not yet compatible with the tidy tools. The first step is to use unnest.</p>
+<div class="section" id="unnest-tokens-function">
+<h1>unnest_tokens function<a class="headerlink" href="#unnest-tokens-function" title="Permalink to this headline">¶</a></h1>
+<p>The unnest_token function splits a text column (input) into tokens (e.g. sentences, words, ngrams, etc.).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_split</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text_split</span><span class="p">,</span>
+    <span class="s2">&quot;line&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text_split</span><span class="p">)))</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next for the tidy text format.</p>
+</div>
+<div class="section" id="the-tidy-text-format">
+<h1>The tidy text format<a class="headerlink" href="#the-tidy-text-format" title="Permalink to this headline">¶</a></h1>
+<p>Tidy text format is define as ‘a table with one-term-per-row’.</p>
+<p>To tokenize into words (unigrams).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tidytext</span> <span class="kn">import</span> <span class="n">unnest_tokens</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">unnest_tokens</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>line</th>
+      <th>word</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>using</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>tidy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>data</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>principles</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>is</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>important</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>in</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>this</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>package</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>we</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>provide</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>functions</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>for</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>tidy</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>formats</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>the</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>novels</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>of</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>jane</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>austen</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>can</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>be</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>so</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>tidy</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>And tokenize into phrases (bigrams).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bigrams not available in pyhton function, is there a way around it?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="removing-stopwords">
+<h1>Removing stopwords<a class="headerlink" href="#removing-stopwords" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="n">stopwords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+
+<span class="n">new_table</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="o">~</span><span class="n">table</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">stopwords</span><span class="p">)]</span>
+<span class="n">new_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>line</th>
+      <th>word</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>using</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>tidy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>data</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>principles</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>important</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>package</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>provide</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>functions</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>tidy</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>formats</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>novels</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>jane</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>austen</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>tidy</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="summarizing-word-frequencies">
+<h1>Summarizing word frequencies<a class="headerlink" href="#summarizing-word-frequencies" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count function using nltk too? is it available in tidytext?</span>
+<span class="c1"># bind_tfidf what does it do?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">frequencytable</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span>
+    <span class="n">freq_table</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">freq_table</span><span class="p">:</span>
+            <span class="n">freq_table</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">freq_table</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">freq_table</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frequencytable</span><span class="p">(</span><span class="n">new_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{nan: 1,
+ &#39;using&#39;: 1,
+ &#39;tidy&#39;: 3,
+ &#39;data&#39;: 1,
+ &#39;principles&#39;: 1,
+ &#39;important&#39;: 1,
+ &#39;package&#39;: 1,
+ &#39;provide&#39;: 1,
+ &#39;functions&#39;: 1,
+ &#39;formats&#39;: 1,
+ &#39;novels&#39;: 1,
+ &#39;jane&#39;: 1,
+ &#39;austen&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="case-study-gutenberg">
+<h1>Case Study Gutenberg<a class="headerlink" href="#case-study-gutenberg" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gutenbergr">
+<h2>Gutenbergr<a class="headerlink" href="#gutenbergr" title="Permalink to this headline">¶</a></h2>
+<p>The gutenberg package (<a class="reference external" href="https://ropensci.org/tutorials/gutenbergr_tutorial.html">https://ropensci.org/tutorials/gutenbergr_tutorial.html</a>) provides access to the Project Gutenberg collection. The package contains tools for downloading books and for finding works of interest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gutenberg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sherlock holmes</span>
+
+<span class="c1"># Retrieve the first 10 titles of Arthur Conan Doyle in the Gutenberg library.</span>
+
+<span class="c1"># how to get the books? either download them beforehand or use beautifulsoup?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># removing stopwords and word count can be done using the previous functions again</span>
+<span class="c1"># ggplot in python</span>
+<span class="c1"># sentiment analysis --&gt; again using NLTK?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./HistoricalCultures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

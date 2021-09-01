@@ -1,0 +1,1903 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysing Shakespeare &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/HistoricalCultures/Analysing Shakespeare.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FHistoricalCultures/Analysing Shakespeare.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/HistoricalCultures/Analysing Shakespeare.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tf-idf">
+   TF/IDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#k-means-clustering">
+   k-means clustering
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="analysing-shakespeare">
+<h1>Analysing Shakespeare<a class="headerlink" href="#analysing-shakespeare" title="Permalink to this headline">¶</a></h1>
+<p>In this exercise, we will analyse Shakepeare using our new knowledge on text miming.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download shakespeare</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="s2">&quot;https://www.gutenberg.org/cache/epub/100/pg100.txt&quot;</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+
+<span class="c1"># print(len(page.text))</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the text can be split into several documents using \r\n\r\n\r\n in regex</span>
+<span class="c1"># these newlines seperate each document</span>
+
+<span class="n">shakespeare</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r\n\r\n\r\n</span><span class="s2"> &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the second split is the first story</span>
+<span class="n">shakespeare</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;                    1\r\n  From fairest creatures we desire increase,\r\n  That thereby beauty&#39;s rose might never die,\r\n  But as the riper should by time decease,\r\n  His tender heir might bear his memory:\r\n  But thou contracted to thine own bright eyes,\r\n  Feed&#39;st thy light&#39;s flame with self-substantial fuel,\r\n  Making a famine where abundance lies,\r\n  Thy self thy foe, to thy sweet self too cruel:\r\n  Thou that art now the world&#39;s fresh ornament,\r\n  And only herald to the gaudy spring,\r\n  Within thine own bud buriest thy content,\r\n  And tender churl mak&#39;st waste in niggarding:\r\n    Pity the world, or else this glutton be,\r\n    To eat the world&#39;s due, by the grave and thee.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert it to a dataframe</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">shakespeare</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">155</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1\r\n  From fairest creatu...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2\r\n  When forty winters ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3\r\n  Look in thy glass a...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4\r\n  Unthrifty lovelines...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5\r\n  Those hours that wi...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150\r\n  O from what power...</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>151\r\n  Love is too young...</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>152\r\n  In loving thee th...</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>153\r\n  Cupid laid by his...</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>154\r\n  The little Love-g...</td>
+    </tr>
+  </tbody>
+</table>
+<p>154 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p>Finally, let’s create a Shakespeare corpus and investigate the first 5 documents in it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">shakespeare_five</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">shakespeare_five</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>6\r\n  Then let not winter...</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next, we apply our usual text transformations to clean the text, using the Corpuser function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="n">stopwords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">Corpuser</span><span class="p">(</span><span class="n">corpus</span><span class="p">):</span>
+    <span class="n">corpus</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">]</span>
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">corpus</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create the DocumentTermMatrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then we create a frequency table</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="n">shakespeare</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">155</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">frequencytable</span><span class="p">(</span><span class="n">corpus</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">Corpuser</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+    <span class="n">freq_table</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">freq_table</span><span class="p">:</span>
+            <span class="n">freq_table</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">freq_table</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">freq_table</span>
+
+<span class="n">ft</span> <span class="o">=</span> <span class="n">frequencytable</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">docs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dtm</span><span class="p">(</span><span class="n">documents</span><span class="p">):</span>
+    <span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)):</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">frequencytable</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">})</span>
+        <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">dtm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dtm</span> <span class="o">=</span> <span class="n">dtm</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">dtm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shakespeare_dtm</span> <span class="o">=</span> <span class="n">dtm</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shakespeare_dtm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>144</th>
+      <th>145</th>
+      <th>146</th>
+      <th>147</th>
+      <th>148</th>
+      <th>149</th>
+      <th>150</th>
+      <th>151</th>
+      <th>152</th>
+      <th>153</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fairest</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>creatures</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>desire</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>increase</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>thereby</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>helena</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>gentlewoman</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>protected</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>diana</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>daughter</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2934 rows × 154 columns</p>
+</div></div></div>
+</div>
+<p>Let’s have a closer look at the first 10 docs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc10</span> <span class="o">=</span> <span class="n">shakespeare</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="n">frequencytable</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">doc10</span><span class="p">))</span>
+<span class="n">dtm_10</span> <span class="o">=</span> <span class="n">dtm</span><span class="p">(</span><span class="n">doc10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dtm_10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fairest</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>creatures</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>desire</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>increase</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>thereby</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>fairer</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>lodged</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>presence</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>kind</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>least</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>385 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p>There are many many empty entries (0), which means the words do not appear in the document. We can for example use only the 10 most occuring terms</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">top_n_terms</span><span class="p">(</span><span class="n">freqtab</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">sorted_ft</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">freqtab</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">freqtab</span> <span class="o">=</span> <span class="n">sorted_ft</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>  
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">freqtab</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">terms</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># def dtm_10(documents):</span>
+<span class="c1">#     dfs = []</span>
+<span class="c1">#     for i in range(len(documents)):</span>
+<span class="c1">#         table = frequencytable(str(documents[i]))</span>
+<span class="c1">#         i = pd.DataFrame.from_dict(table, orient=&#39;index&#39;, columns={i})</span>
+<span class="c1">#         dfs.append(i)</span>
+<span class="c1">#     dfs</span>
+<span class="c1">#     dtm = pd.concat(dfs, axis=1)</span>
+<span class="c1">#     dtm = dtm.fillna(0)</span>
+    
+<span class="c1">#     return dtm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top10</span> <span class="o">=</span> <span class="n">top_n_terms</span><span class="p">(</span><span class="n">ft</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">top10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;thou&#39;,
+ &#39;thy&#39;,
+ &#39;thee&#39;,
+ &#39;beauty&#39;,
+ &#39;self&#39;,
+ &#39;thine&#39;,
+ &#39;world&#39;,
+ &#39;art&#39;,
+ &#39;sweet&#39;,
+ &#39;another&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dtm_top10</span> <span class="o">=</span> <span class="n">dtm_10</span><span class="p">[</span><span class="n">dtm_10</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dtm_top10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>beauty</th>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>thou</th>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>thine</th>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>thy</th>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>self</th>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>sweet</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>art</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>world</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>thee</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>another</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Better, much better …</p>
+<p>Let’s find the 50 most frequent terms in Shakespeare next.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top50</span> <span class="o">=</span> <span class="n">top_n_terms</span><span class="p">(</span><span class="n">ft</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">top50</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;thou&#39;,
+ &#39;thy&#39;,
+ &#39;thee&#39;,
+ &#39;beauty&#39;,
+ &#39;self&#39;,
+ &#39;thine&#39;,
+ &#39;world&#39;,
+ &#39;art&#39;,
+ &#39;sweet&#39;,
+ &#39;another&#39;,
+ &#39;dost&#39;,
+ &#39;doth&#39;,
+ &#39;still&#39;,
+ &#39;ten&#39;,
+ &#39;one&#39;,
+ &#39;eyes&#39;,
+ &#39;make&#39;,
+ &#39;love&#39;,
+ &#39;die&#39;,
+ &#39;time&#39;,
+ &#39;shall&#39;,
+ &#39;treasure&#39;,
+ &#39;shame&#39;,
+ &#39;fair&#39;,
+ &#39;look&#39;,
+ &#39;glass&#39;,
+ &#39;whose&#39;,
+ &#39;age&#39;,
+ &#39;live&#39;,
+ &#39;single&#39;,
+ &#39;every&#39;,
+ &#39;summer&#39;,
+ &#39;winter&#39;,
+ &#39;times&#39;,
+ &#39;widow&#39;,
+ &#39;may&#39;,
+ &#39;desire&#39;,
+ &#39;might&#39;,
+ &#39;tender&#39;,
+ &#39;heir&#39;,
+ &#39;bear&#39;,
+ &#39;lies&#39;,
+ &#39;fresh&#39;,
+ &#39;within&#39;,
+ &#39;waste&#39;,
+ &#39;else&#39;,
+ &#39;deep&#39;,
+ &#39;youth&#39;,
+ &#39;lusty&#39;,
+ &#39;much&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tf-idf">
+<h2>TF/IDF<a class="headerlink" href="#tf-idf" title="Permalink to this headline">¶</a></h2>
+<p>We have discussed the tf/idf scoring for documents in the lecture.</p>
+<p>In python, tf/idf is easy to create using scikit learn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">vec</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">doc10</span><span class="p">)</span>
+ 
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">tfidf</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+ 
+<span class="n">matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.095221</td>
+    </tr>
+    <tr>
+      <th>abundance</th>
+      <td>0.104773</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>abuse</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.101153</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>acceptable</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.101153</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>adore</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.098791</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>worms</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.089725</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>worth</th>
+      <td>0.000000</td>
+      <td>0.096746</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wrinkles</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.102218</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>yet</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.085989</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.083982</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>youth</th>
+      <td>0.000000</td>
+      <td>0.082243</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.083982</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>483 rows × 10 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="k-means-clustering">
+<h2>k-means clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">¶</a></h2>
+<p>Using, tf-idf we can apply our favourite clustering technique k-means to understand common clusters of words.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 3, 9, 7, 6, 8, 2, 5, 0, 1], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which word belongs to which cluser</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define columns</span>
+<span class="c1"># why is there a 10 in there</span>
+
+<span class="n">kmeans_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">matrix</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">kmeans_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abundance</th>
+      <th>abuse</th>
+      <th>acceptable</th>
+      <th>adore</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.098791</td>
+      <td>0.167963</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.104773</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.000000</td>
+      <td>0.101153</td>
+      <td>0.101153</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.086895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The next command plots our clusters. It uses a technique called Principal Component Analysis (<a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">https://en.wikipedia.org/wiki/Principal_component_analysis</a>), which we can ignore now, but will revisit later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this doesn&#39;t look the same, where are all the dots, which words are used in the original assignment?</span>
+<span class="c1"># it also doesn&#39;t look as if that is all of them</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">kmeans_df</span><span class="p">),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span> <span class="s1">&#39;PC2&#39;</span><span class="p">])</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;PC2&quot;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;PC1&#39;, ylabel=&#39;PC2&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Analysing Shakespeare_34_1.png" src="../_images/Analysing Shakespeare_34_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PC1</th>
+      <th>PC2</th>
+      <th>cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.225066</td>
+      <td>0.010014</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.389413</td>
+      <td>-0.133791</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.629976</td>
+      <td>-0.308615</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.013279</td>
+      <td>-0.085945</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.186460</td>
+      <td>-0.304822</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.203013</td>
+      <td>0.019612</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.336907</td>
+      <td>0.805549</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.292109</td>
+      <td>-0.021721</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.426989</td>
+      <td>0.213749</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.080163</td>
+      <td>-0.194028</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./HistoricalCultures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

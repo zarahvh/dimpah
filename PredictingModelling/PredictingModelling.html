@@ -325,6 +325,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collect-data">
+     Collect Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#prepare-data">
      Prepare Data
     </a>
@@ -351,7 +356,34 @@
      Modelling and Predicting
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predicting">
+     Predicting
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-model">
+   Evaluate Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpret-the-results">
+     Interpret the Results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predicting-and-modelling-using-deep-learning">
+   Predicting and Modelling using Deep Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-boundaries">
+   Decision Boundaries
+  </a>
  </li>
 </ul>
 
@@ -463,6 +495,8 @@
 <p>I first thought of this example, when I learned that somebody else had already ‘outsmarted’ the best wine experts with machine learning: <a class="reference external" href="https://www.datanami.com/2015/02/20/outsmarting-wine-snobs-with-machine-learning/">https://www.datanami.com/2015/02/20/outsmarting-wine-snobs-with-machine-learning/</a>. Today we try and reproduce his approach.</p>
 <p>The first step for us is to download the data so that we can work with it. We have done this before but in the previous tutorials, I have mostly loaded the data for you. So, it’s best to repeat the steps again in detail.
 Perhaps the most common data format of freely available data are Comma-Separated Values (CSV) files, which, as the name suggests, uses the comma as a delimiter. CSV files can be imported to and exported from many common data repositories. To load CSV into python, we use pandas read_csv() function. You use it by specifying a path to the file you want to import, e.g. /path/to/mydata.csv, when calling the pd.read_csv() function after importing pandas again. Here we use it to load the data directly from the web.</p>
+<div class="section" id="collect-data">
+<h3>Collect Data<a class="headerlink" href="#collect-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -491,7 +525,14 @@ As we would like to follow the work by Cortez et al. as closely as possible, we 
 <p>Now we create single data frame for all the wines and declare that colour is factor. pd.concat is a function to bind two data frames row by row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">red</span><span class="p">,</span> <span class="n">white</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">red</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4899</span><span class="p">,</span> <span class="mi">6498</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">white</span><span class="p">,</span> <span class="n">red</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -539,83 +580,83 @@ As we would like to follow the work by Cortez et al. as closely as possible, we 
   <tbody>
     <tr>
       <th>0</th>
-      <td>7.4</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>1.9</td>
-      <td>0.076</td>
-      <td>11.0</td>
-      <td>34.0</td>
-      <td>0.99780</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>5</td>
-      <td>red</td>
+      <td>7.0</td>
+      <td>0.270</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.00100</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>7.8</td>
-      <td>0.88</td>
-      <td>0.00</td>
-      <td>2.6</td>
-      <td>0.098</td>
-      <td>25.0</td>
-      <td>67.0</td>
-      <td>0.99680</td>
-      <td>3.20</td>
-      <td>0.68</td>
-      <td>9.8</td>
-      <td>5</td>
-      <td>red</td>
+      <td>6.3</td>
+      <td>0.300</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.99400</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>7.8</td>
-      <td>0.76</td>
-      <td>0.04</td>
-      <td>2.3</td>
-      <td>0.092</td>
-      <td>15.0</td>
-      <td>54.0</td>
-      <td>0.99700</td>
+      <td>8.1</td>
+      <td>0.280</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.99510</td>
       <td>3.26</td>
-      <td>0.65</td>
-      <td>9.8</td>
-      <td>5</td>
-      <td>red</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>11.2</td>
-      <td>0.28</td>
-      <td>0.56</td>
-      <td>1.9</td>
-      <td>0.075</td>
-      <td>17.0</td>
-      <td>60.0</td>
-      <td>0.99800</td>
-      <td>3.16</td>
-      <td>0.58</td>
-      <td>9.8</td>
+      <td>7.2</td>
+      <td>0.230</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.99560</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
       <td>6</td>
-      <td>red</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>7.4</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>1.9</td>
-      <td>0.076</td>
-      <td>11.0</td>
-      <td>34.0</td>
-      <td>0.99780</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>5</td>
-      <td>red</td>
+      <td>7.2</td>
+      <td>0.230</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.99560</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>...</th>
@@ -634,84 +675,84 @@ As we would like to follow the work by Cortez et al. as closely as possible, we 
       <td>...</td>
     </tr>
     <tr>
-      <th>4893</th>
+      <th>6493</th>
       <td>6.2</td>
-      <td>0.21</td>
-      <td>0.29</td>
-      <td>1.6</td>
-      <td>0.039</td>
-      <td>24.0</td>
-      <td>92.0</td>
-      <td>0.99114</td>
-      <td>3.27</td>
-      <td>0.50</td>
+      <td>0.600</td>
+      <td>0.08</td>
+      <td>2.0</td>
+      <td>0.090</td>
+      <td>32.0</td>
+      <td>44.0</td>
+      <td>0.99490</td>
+      <td>3.45</td>
+      <td>0.58</td>
+      <td>10.5</td>
+      <td>5</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>5.9</td>
+      <td>0.550</td>
+      <td>0.10</td>
+      <td>2.2</td>
+      <td>0.062</td>
+      <td>39.0</td>
+      <td>51.0</td>
+      <td>0.99512</td>
+      <td>3.52</td>
+      <td>0.76</td>
       <td>11.2</td>
       <td>6</td>
-      <td>white</td>
+      <td>red</td>
     </tr>
     <tr>
-      <th>4894</th>
-      <td>6.6</td>
-      <td>0.32</td>
-      <td>0.36</td>
-      <td>8.0</td>
-      <td>0.047</td>
-      <td>57.0</td>
-      <td>168.0</td>
-      <td>0.99490</td>
-      <td>3.15</td>
-      <td>0.46</td>
-      <td>9.6</td>
+      <th>6495</th>
+      <td>6.3</td>
+      <td>0.510</td>
+      <td>0.13</td>
+      <td>2.3</td>
+      <td>0.076</td>
+      <td>29.0</td>
+      <td>40.0</td>
+      <td>0.99574</td>
+      <td>3.42</td>
+      <td>0.75</td>
+      <td>11.0</td>
+      <td>6</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>5.9</td>
+      <td>0.645</td>
+      <td>0.12</td>
+      <td>2.0</td>
+      <td>0.075</td>
+      <td>32.0</td>
+      <td>44.0</td>
+      <td>0.99547</td>
+      <td>3.57</td>
+      <td>0.71</td>
+      <td>10.2</td>
       <td>5</td>
-      <td>white</td>
+      <td>red</td>
     </tr>
     <tr>
-      <th>4895</th>
-      <td>6.5</td>
-      <td>0.24</td>
-      <td>0.19</td>
-      <td>1.2</td>
-      <td>0.041</td>
-      <td>30.0</td>
-      <td>111.0</td>
-      <td>0.99254</td>
-      <td>2.99</td>
-      <td>0.46</td>
-      <td>9.4</td>
-      <td>6</td>
-      <td>white</td>
-    </tr>
-    <tr>
-      <th>4896</th>
-      <td>5.5</td>
-      <td>0.29</td>
-      <td>0.30</td>
-      <td>1.1</td>
-      <td>0.022</td>
-      <td>20.0</td>
-      <td>110.0</td>
-      <td>0.98869</td>
-      <td>3.34</td>
-      <td>0.38</td>
-      <td>12.8</td>
-      <td>7</td>
-      <td>white</td>
-    </tr>
-    <tr>
-      <th>4897</th>
+      <th>6497</th>
       <td>6.0</td>
-      <td>0.21</td>
-      <td>0.38</td>
-      <td>0.8</td>
-      <td>0.020</td>
-      <td>22.0</td>
-      <td>98.0</td>
-      <td>0.98941</td>
-      <td>3.26</td>
-      <td>0.32</td>
-      <td>11.8</td>
+      <td>0.310</td>
+      <td>0.47</td>
+      <td>3.6</td>
+      <td>0.067</td>
+      <td>18.0</td>
+      <td>42.0</td>
+      <td>0.99549</td>
+      <td>3.39</td>
+      <td>0.66</td>
+      <td>11.0</td>
       <td>6</td>
-      <td>white</td>
+      <td>red</td>
     </tr>
   </tbody>
 </table>
@@ -728,7 +769,7 @@ As we would like to follow the work by Cortez et al. as closely as possible, we 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 6497 entries, 0 to 4897
+Int64Index: 6497 entries, 0 to 6497
 Data columns (total 13 columns):
  #   Column                Non-Null Count  Dtype  
 ---  ------                --------------  -----  
@@ -794,83 +835,83 @@ memory usage: 710.6+ KB
   <tbody>
     <tr>
       <th>0</th>
-      <td>7.4</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>1.9</td>
-      <td>0.076</td>
-      <td>11.0</td>
-      <td>34.0</td>
-      <td>0.9978</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>5</td>
-      <td>red</td>
+      <td>7.0</td>
+      <td>0.27</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.0010</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>7.8</td>
-      <td>0.88</td>
-      <td>0.00</td>
-      <td>2.6</td>
-      <td>0.098</td>
-      <td>25.0</td>
-      <td>67.0</td>
-      <td>0.9968</td>
-      <td>3.20</td>
-      <td>0.68</td>
-      <td>9.8</td>
-      <td>5</td>
-      <td>red</td>
+      <td>6.3</td>
+      <td>0.30</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.9940</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>7.8</td>
-      <td>0.76</td>
-      <td>0.04</td>
-      <td>2.3</td>
-      <td>0.092</td>
-      <td>15.0</td>
-      <td>54.0</td>
-      <td>0.9970</td>
+      <td>8.1</td>
+      <td>0.28</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.9951</td>
       <td>3.26</td>
-      <td>0.65</td>
-      <td>9.8</td>
-      <td>5</td>
-      <td>red</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>11.2</td>
-      <td>0.28</td>
-      <td>0.56</td>
-      <td>1.9</td>
-      <td>0.075</td>
-      <td>17.0</td>
-      <td>60.0</td>
-      <td>0.9980</td>
-      <td>3.16</td>
-      <td>0.58</td>
-      <td>9.8</td>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
       <td>6</td>
-      <td>red</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>7.4</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>1.9</td>
-      <td>0.076</td>
-      <td>11.0</td>
-      <td>34.0</td>
-      <td>0.9978</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>5</td>
-      <td>red</td>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>6</td>
+      <td>white</td>
     </tr>
   </tbody>
 </table>
@@ -887,7 +928,7 @@ memory usage: 710.6+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/PredictingModelling_25_1.png" src="../_images/PredictingModelling_25_1.png" />
+<img alt="../_images/PredictingModelling_27_1.png" src="../_images/PredictingModelling_27_1.png" />
 </div>
 </div>
 <p>In order to make our life a little easier, we now would like to reduce the 9 quality classes to 2 (good or bad). This is also part of the original example.</p>
@@ -917,6 +958,7 @@ Name: quality, dtype: int64
 </div>
 <p>Unfortunately, we now have many more ‘good’ quality wine observations, which might be a problem later when we start training a model. Why do you think this might be the case? But it can’t be helped and we go on analysing.</p>
 <p>It’s time to prepare our data for its machine learning adventures.</p>
+</div>
 <div class="section" id="prepare-data">
 <h3>Prepare Data<a class="headerlink" href="#prepare-data" title="Permalink to this headline">¶</a></h3>
 <p>The next step is very important for many machine learning algorithms based on feature spaces. We need to standardize the features, as the distances in the space are dependent on how the features are measured. In particular, if certain features have much larger values than others, the distance measurements will be strongly dominated by the larger values. This wasn’t a problem for us before with the food data, as both sweetness and crunchiness were measured on a scale from 1 to 10. But suppose we added another measure on a scale from 1 to 1,000,000. This measure would dwarf the contribution of the other scales. The distances in the feature space would get out of scale.</p>
@@ -933,10 +975,7 @@ Name: quality, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what is x in this function? we need the minimum and maximum value of an array? </span>
-<span class="c1"># But x is not the array so we need the array as well?</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
 <span class="n">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">li</span><span class="p">)</span>
 </pre></div>
@@ -992,163 +1031,163 @@ Name: quality, dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>7.4</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>1.9</td>
-      <td>0.076</td>
-      <td>11.0</td>
-      <td>34.0</td>
-      <td>0.9978</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>7.0</td>
+      <td>0.27</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.0010</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>7.8</td>
-      <td>0.88</td>
-      <td>0.00</td>
-      <td>2.6</td>
-      <td>0.098</td>
-      <td>25.0</td>
-      <td>67.0</td>
-      <td>0.9968</td>
-      <td>3.20</td>
-      <td>0.68</td>
-      <td>9.8</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>6.3</td>
+      <td>0.30</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.9940</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>7.8</td>
-      <td>0.76</td>
-      <td>0.04</td>
-      <td>2.3</td>
-      <td>0.092</td>
-      <td>15.0</td>
-      <td>54.0</td>
-      <td>0.9970</td>
+      <td>8.1</td>
+      <td>0.28</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.9951</td>
       <td>3.26</td>
-      <td>0.65</td>
-      <td>9.8</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>11.2</td>
-      <td>0.28</td>
-      <td>0.56</td>
-      <td>1.9</td>
-      <td>0.075</td>
-      <td>17.0</td>
-      <td>60.0</td>
-      <td>0.9980</td>
-      <td>3.16</td>
-      <td>0.58</td>
-      <td>9.8</td>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
       <td>good</td>
-      <td>red</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>7.4</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>1.9</td>
-      <td>0.076</td>
-      <td>11.0</td>
-      <td>34.0</td>
-      <td>0.9978</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>7.4</td>
-      <td>0.66</td>
-      <td>0.00</td>
-      <td>1.8</td>
-      <td>0.075</td>
-      <td>13.0</td>
-      <td>40.0</td>
-      <td>0.9978</td>
-      <td>3.51</td>
-      <td>0.56</td>
-      <td>9.4</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>8.1</td>
+      <td>0.28</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.9951</td>
+      <td>3.26</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>7.9</td>
-      <td>0.60</td>
-      <td>0.06</td>
-      <td>1.6</td>
-      <td>0.069</td>
-      <td>15.0</td>
-      <td>59.0</td>
-      <td>0.9964</td>
-      <td>3.30</td>
-      <td>0.46</td>
-      <td>9.4</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>6.2</td>
+      <td>0.32</td>
+      <td>0.16</td>
+      <td>7.0</td>
+      <td>0.045</td>
+      <td>30.0</td>
+      <td>136.0</td>
+      <td>0.9949</td>
+      <td>3.18</td>
+      <td>0.47</td>
+      <td>9.6</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>7.3</td>
-      <td>0.65</td>
-      <td>0.00</td>
-      <td>1.2</td>
-      <td>0.065</td>
-      <td>15.0</td>
-      <td>21.0</td>
-      <td>0.9946</td>
-      <td>3.39</td>
-      <td>0.47</td>
-      <td>10.0</td>
+      <td>7.0</td>
+      <td>0.27</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.0010</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
       <td>good</td>
-      <td>red</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>7.8</td>
-      <td>0.58</td>
-      <td>0.02</td>
-      <td>2.0</td>
-      <td>0.073</td>
-      <td>9.0</td>
-      <td>18.0</td>
-      <td>0.9968</td>
-      <td>3.36</td>
-      <td>0.57</td>
+      <td>6.3</td>
+      <td>0.30</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.9940</td>
+      <td>3.30</td>
+      <td>0.49</td>
       <td>9.5</td>
       <td>good</td>
-      <td>red</td>
+      <td>white</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>7.5</td>
-      <td>0.50</td>
-      <td>0.36</td>
-      <td>6.1</td>
-      <td>0.071</td>
-      <td>17.0</td>
-      <td>102.0</td>
-      <td>0.9978</td>
-      <td>3.35</td>
-      <td>0.80</td>
-      <td>10.5</td>
-      <td>bad</td>
-      <td>red</td>
+      <td>8.1</td>
+      <td>0.22</td>
+      <td>0.43</td>
+      <td>1.5</td>
+      <td>0.044</td>
+      <td>28.0</td>
+      <td>129.0</td>
+      <td>0.9938</td>
+      <td>3.22</td>
+      <td>0.45</td>
+      <td>11.0</td>
+      <td>good</td>
+      <td>white</td>
     </tr>
   </tbody>
 </table>
@@ -1233,73 +1272,73 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.297521</td>
-      <td>0.413333</td>
-      <td>0.000000</td>
-      <td>0.019939</td>
-      <td>0.111296</td>
-      <td>0.034722</td>
-      <td>0.064516</td>
-      <td>0.206092</td>
-      <td>0.612403</td>
-      <td>0.191011</td>
-      <td>0.202899</td>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.330579</td>
-      <td>0.533333</td>
-      <td>0.000000</td>
-      <td>0.030675</td>
-      <td>0.147841</td>
-      <td>0.083333</td>
-      <td>0.140553</td>
-      <td>0.186813</td>
-      <td>0.372093</td>
-      <td>0.258427</td>
-      <td>0.260870</td>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.330579</td>
-      <td>0.453333</td>
-      <td>0.024096</td>
-      <td>0.026074</td>
-      <td>0.137874</td>
-      <td>0.048611</td>
-      <td>0.110599</td>
-      <td>0.190669</td>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
       <td>0.418605</td>
-      <td>0.241573</td>
-      <td>0.260870</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.611570</td>
-      <td>0.133333</td>
-      <td>0.337349</td>
-      <td>0.019939</td>
-      <td>0.109635</td>
-      <td>0.055556</td>
-      <td>0.124424</td>
-      <td>0.209948</td>
-      <td>0.341085</td>
-      <td>0.202247</td>
-      <td>0.260870</td>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.297521</td>
-      <td>0.413333</td>
-      <td>0.000000</td>
-      <td>0.019939</td>
-      <td>0.111296</td>
-      <td>0.034722</td>
-      <td>0.064516</td>
-      <td>0.206092</td>
-      <td>0.612403</td>
-      <td>0.191011</td>
-      <td>0.202899</td>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
     </tr>
   </tbody>
 </table>
@@ -1313,7 +1352,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-e6cf7d2f4def&gt;:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-35-e6cf7d2f4def&gt;:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1329,7 +1368,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <h3>Define the Training Data<a class="headerlink" href="#define-the-training-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ndf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ndf</span>
 </pre></div>
 </div>
 </div>
@@ -1369,81 +1408,172 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.297521</td>
-      <td>0.413333</td>
-      <td>0.000000</td>
-      <td>0.019939</td>
-      <td>0.111296</td>
-      <td>0.034722</td>
-      <td>0.064516</td>
-      <td>0.206092</td>
-      <td>0.612403</td>
-      <td>0.191011</td>
-      <td>0.202899</td>
-      <td>bad</td>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
+      <td>good</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.330579</td>
-      <td>0.533333</td>
-      <td>0.000000</td>
-      <td>0.030675</td>
-      <td>0.147841</td>
-      <td>0.083333</td>
-      <td>0.140553</td>
-      <td>0.186813</td>
-      <td>0.372093</td>
-      <td>0.258427</td>
-      <td>0.260870</td>
-      <td>bad</td>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
+      <td>good</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.330579</td>
-      <td>0.453333</td>
-      <td>0.024096</td>
-      <td>0.026074</td>
-      <td>0.137874</td>
-      <td>0.048611</td>
-      <td>0.110599</td>
-      <td>0.190669</td>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
       <td>0.418605</td>
-      <td>0.241573</td>
-      <td>0.260870</td>
-      <td>bad</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
+      <td>good</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.611570</td>
-      <td>0.133333</td>
-      <td>0.337349</td>
-      <td>0.019939</td>
-      <td>0.109635</td>
-      <td>0.055556</td>
-      <td>0.124424</td>
-      <td>0.209948</td>
-      <td>0.341085</td>
-      <td>0.202247</td>
-      <td>0.260870</td>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
       <td>good</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.297521</td>
-      <td>0.413333</td>
-      <td>0.000000</td>
-      <td>0.019939</td>
-      <td>0.111296</td>
-      <td>0.034722</td>
-      <td>0.064516</td>
-      <td>0.206092</td>
-      <td>0.612403</td>
-      <td>0.191011</td>
-      <td>0.202899</td>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>0.198347</td>
+      <td>0.346667</td>
+      <td>0.048193</td>
+      <td>0.021472</td>
+      <td>0.134551</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.150183</td>
+      <td>0.565891</td>
+      <td>0.202247</td>
+      <td>0.362319</td>
       <td>bad</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>0.173554</td>
+      <td>0.313333</td>
+      <td>0.060241</td>
+      <td>0.024540</td>
+      <td>0.088040</td>
+      <td>0.131944</td>
+      <td>0.103687</td>
+      <td>0.154425</td>
+      <td>0.620155</td>
+      <td>0.303371</td>
+      <td>0.463768</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>0.206612</td>
+      <td>0.286667</td>
+      <td>0.078313</td>
+      <td>0.026074</td>
+      <td>0.111296</td>
+      <td>0.097222</td>
+      <td>0.078341</td>
+      <td>0.166377</td>
+      <td>0.542636</td>
+      <td>0.297753</td>
+      <td>0.434783</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>0.173554</td>
+      <td>0.376667</td>
+      <td>0.072289</td>
+      <td>0.021472</td>
+      <td>0.109635</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.161172</td>
+      <td>0.658915</td>
+      <td>0.275281</td>
+      <td>0.318841</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>0.181818</td>
+      <td>0.153333</td>
+      <td>0.283133</td>
+      <td>0.046012</td>
+      <td>0.096346</td>
+      <td>0.059028</td>
+      <td>0.082949</td>
+      <td>0.161558</td>
+      <td>0.519380</td>
+      <td>0.247191</td>
+      <td>0.434783</td>
+      <td>good</td>
     </tr>
   </tbody>
 </table>
+<p>6497 rows × 12 columns</p>
 </div></div></div>
 </div>
 <p>We have 6497 wine quality observations with 2384 labelled bad and 4113 labelled good.
@@ -1456,7 +1586,7 @@ Because we aim to predict new things, our next step should be to find out about 
 <span class="n">test_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shuf</span><span class="p">))</span>
 
 <span class="n">train_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[:</span><span class="n">train_n</span><span class="p">]</span>
-<span class="n">test_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[</span><span class="n">test_n</span><span class="p">:]</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[</span><span class="n">train_n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
@@ -1478,7 +1608,7 @@ Because we aim to predict new things, our next step should be to find out about 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/PredictingModelling_48_0.png" src="../_images/PredictingModelling_48_0.png" />
+<img alt="../_images/PredictingModelling_50_0.png" src="../_images/PredictingModelling_50_0.png" />
 </div>
 </div>
 <p>Each neuron is made up of a cell body with a number of connections coming off it. These are numerous dendrites (carrying information toward the cell body) and a single axon (carrying information away). But computers are not alive. They are mechanical boxes and made not of the complex chains of brain cells, which are densely interconnected in complex and parallel ways - each one connected to perhaps 10,000 other brain cells. Computers are designed to store lots of data and rearrange that – as we have done many times and need instructions for that. To the day, we do not fully understand how brains learn. They can spontaneously put information together in astounding new ways and forge new connections. No computer currently comes close to that.</p>
@@ -1493,7 +1623,7 @@ Because we aim to predict new things, our next step should be to find out about 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/PredictingModelling_52_0.png" src="../_images/PredictingModelling_52_0.png" />
+<img alt="../_images/PredictingModelling_54_0.png" src="../_images/PredictingModelling_54_0.png" />
 </div>
 </div>
 <p>In-between the input units and output units are one or more layers of hidden units, which, together, form the majority of the artificial brain. The connections between one unit and another are represented by a number called a weight, which can be either positive (if one unit excites another) or negative (if one unit suppresses or inhibits another). The higher the weight, the more influence one unit has on another. Inputs are fed in from the left, activate the hidden units in the middle and feed out outputs from the right.</p>
@@ -1503,11 +1633,9 @@ Because we aim to predict new things, our next step should be to find out about 
 <div class="section" id="id1">
 <h3>Modelling and Predicting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Fortunately for us, we do not have to implement Neural Networks by ourselves but can rely on many existing algorithms in Python.</p>
-<p>Python Neural Network?? Tensorflow or Pytorch?? (Tensorflow al op laptop)</p>
-<p><a class="reference external" href="https://www.tensorflow.org/learn">https://www.tensorflow.org/learn</a></p>
-<p>First install tensorflow: pip3 install tensorflow</p>
-<p>–&gt; Maybe scikit learn is easier?? –&gt; Classifier? pip3 install scikit learn
-–&gt; Is tensorflow easier to visualize?</p>
+<p>One of the most common libraries in python used for machine learning is scikit-learn: <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a></p>
+<p>To instill scikit learn, type pip3 install scikit-learn into your terminal.</p>
+<p>For now we will use scikit’s MLPclassifier, a Multi-layer Perceptron classifier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="nn">sk</span>
@@ -1516,12 +1644,10 @@ Because we aim to predict new things, our next step should be to find out about 
 </div>
 </div>
 </div>
+<p>We first divide our train and test set into predictor and target variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multilayer perceptron, classifier on quality --&gt; good or bad? (binary)</span>
-
-<span class="c1"># X and Y train and test</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">Y_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
 
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -1530,6 +1656,7 @@ Because we aim to predict new things, our next step should be to find out about 
 </div>
 </div>
 </div>
+<p>And then build the classifier</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">,</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1550,21 +1677,25 @@ Because we aim to predict new things, our next step should be to find out about 
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="predicting">
+<h3>Predicting<a class="headerlink" href="#predicting" title="Permalink to this headline">¶</a></h3>
+<p>Next, we can start predicting unknown behaviour, which - as said - we simulate with the test dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">):</span>
-   <span class="n">diagonal_sum</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
-   <span class="n">sum_of_all_elements</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-   <span class="k">return</span> <span class="n">diagonal_sum</span> <span class="o">/</span> <span class="n">sum_of_all_elements</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Let’s check out the details of our predictions and compare predictions with test data using scikit’s confusion matrix function which prints the true positives, false negatives, false positives an true negatives consequently.</p>
+</div>
+</div>
+<div class="section" id="evaluate-model">
+<h2>Evaluate Model<a class="headerlink" href="#evaluate-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -1574,11 +1705,744 @@ Because we aim to predict new things, our next step should be to find out about 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1148  198]
- [ 657 2870]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[390 142]
+ [227 865]]
 </pre></div>
 </div>
 </div>
+</div>
+<p>Next, let’s look at the accuracy of our prediction.</p>
+<p>Accuracy is defined as the number of times our predictions have been correct compared to the overall number of predictions. So, we take all cases where the predictions where right in the above table (bad-bad and good good) and compare these with the overall number of observations in the test data or len(test_set). Please replace in the calculation below the numbers you have got.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">432</span> <span class="o">+</span> <span class="mi">835</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7801724137931034
+</pre></div>
+</div>
+</div>
+</div>
+<p>~75% of our predictions are correct. Please, note that the exact number can be either a bit higher or lower depending on the random test and training datasets.</p>
+<p>Not bad – especially considering that most wine experts would probably not be able to agree to such a degree. However, we would of course like to improve on our predictions. So, let’s investigate this further.</p>
+<p>From the table, we can see that the machine is much better at predicting good quality wine rather than bad one. This should not be surprising, since we already know that we do not have enough training data for bad wine. Let’s plot our results next.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x101a8a160&gt;
+</pre></div>
+</div>
+<img alt="../_images/PredictingModelling_72_1.png" src="../_images/PredictingModelling_72_1.png" />
+</div>
+</div>
+<div class="section" id="interpret-the-results">
+<h3>Interpret the Results<a class="headerlink" href="#interpret-the-results" title="Permalink to this headline">¶</a></h3>
+<p>In order to further interpret the model, a good approach is to understand which features have influenced the models behaviour and which features are redundant because the results they support are supported by other features. This way we get closer to the secret why people like certain wines. Let’s find out first which features influence the quality decisions most.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">permutation_importance</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">,</span>
+                          <span class="n">n_repeats</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+          <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+     <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_std</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ndf</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:}</span><span class="s2"> &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alcohol 0.092
+density 0.071
+total sulfur dioxide 0.071
+volatile acidity 0.068
+residual sugar 0.056
+free sulfur dioxide 0.044
+pH 0.036
+sulphates 0.034
+fixed acidity 0.032
+citric acid 0.025
+chlorides 0.015
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imps</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">imps</span><span class="p">,</span> <span class="n">ndf</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="mi">11</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;importance&#39;</span><span class="p">])</span>
+<span class="n">features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fixed acidity</th>
+      <td>0.031917</td>
+    </tr>
+    <tr>
+      <th>volatile acidity</th>
+      <td>0.068247</td>
+    </tr>
+    <tr>
+      <th>citric acid</th>
+      <td>0.025041</td>
+    </tr>
+    <tr>
+      <th>residual sugar</th>
+      <td>0.056301</td>
+    </tr>
+    <tr>
+      <th>chlorides</th>
+      <td>0.015333</td>
+    </tr>
+    <tr>
+      <th>free sulfur dioxide</th>
+      <td>0.044376</td>
+    </tr>
+    <tr>
+      <th>total sulfur dioxide</th>
+      <td>0.070874</td>
+    </tr>
+    <tr>
+      <th>density</th>
+      <td>0.070874</td>
+    </tr>
+    <tr>
+      <th>pH</th>
+      <td>0.035530</td>
+    </tr>
+    <tr>
+      <th>sulphates</th>
+      <td>0.033908</td>
+    </tr>
+    <tr>
+      <th>alcohol</th>
+      <td>0.092118</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;importance&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/PredictingModelling_77_1.png" src="../_images/PredictingModelling_77_1.png" />
+</div>
+</div>
+<p>No wine feature really dominates human taste, but density is the most important one – followed by residual sugar and total sulfur dioxide.</p>
+<p>In order to check for redundant features that we do not need for the prediction, we can use correlation for numerical features. Remember that a correlation indicates the extent to which two or more features fluctuate together. A positive correlation indicates the extent to which those variables increase or decrease in parallel. The higher the correlation between variables therefore the easier it will be to use just one of them, as the others do not influence the overall outcome.</p>
+<p>We will plot a heatmap of the correlations using seaborn,</p>
+<p>The correlation coefficient has values between -1 to 1</p>
+<p>— A value closer to 0 implies weaker correlation (exact 0 implying no correlation)</p>
+<p>— A value closer to 1 implies stronger positive correlation</p>
+<p>— A value closer to -1 implies stronger negative correlation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">cor</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cor</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/PredictingModelling_80_0.png" src="../_images/PredictingModelling_80_0.png" />
+</div>
+</div>
+<p>corr() delivers the correlations between all features in train_set and sns.heatmap plots them. In the plot, you can clearly see that the two sulfur.dioxide measures are correlated. A negative correlation indicates the extent to which one variable increases as the other decreases. According to the plot density and alcohol drive taste opinions apart.</p>
+<p>The next step would be to try and improve the model performance. We could, for instance, make the network more complex or change the normalisation. The possibilities are literally endless. This kind of work is what keeps an analyst really occupied. In our case this might be difficult though as we do not have enough data on bad wines. We could try and get more data and organise another tasting competition, but going to Portugal is expensive. We rather look at a recent innovation of the neural network called ‘deep learning’ next. Deep learning is essentially a way to learn much more complex neural network architectures, more layers of hidden neurons and more complex connections.</p>
+<p>There is an excellent TED talk on deep learning: <a class="reference external" href="https://www.youtube.com/watch?v=xx310zM3tLs">https://www.youtube.com/watch?v=xx310zM3tLs</a> Google, Facebook, Bing and all the others currently invest millions into new services based on deep learning. Facebook, for instance, has released DeepText (<a class="reference external" href="http://www.wired.co.uk/article/inside-deeptext-facebook-deep-learning-algorithm">http://www.wired.co.uk/article/inside-deeptext-facebook-deep-learning-algorithm</a>) to understand the textual content of millions of posts.</p>
+</div>
+</div>
+<div class="section" id="predicting-and-modelling-using-deep-learning">
+<h2>Predicting and Modelling using Deep Learning<a class="headerlink" href="#predicting-and-modelling-using-deep-learning" title="Permalink to this headline">¶</a></h2>
+<p>To create deep learning models in Python we will use Keras, a deep learning API in extension to scikit-learn</p>
+<p>Before we do this, we have to change the class (quality) to binary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nndf</span> <span class="o">=</span> <span class="n">ndf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">nndf</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nndf</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bad&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">nndf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
+      <td>0.418605</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>0.198347</td>
+      <td>0.346667</td>
+      <td>0.048193</td>
+      <td>0.021472</td>
+      <td>0.134551</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.150183</td>
+      <td>0.565891</td>
+      <td>0.202247</td>
+      <td>0.362319</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>0.173554</td>
+      <td>0.313333</td>
+      <td>0.060241</td>
+      <td>0.024540</td>
+      <td>0.088040</td>
+      <td>0.131944</td>
+      <td>0.103687</td>
+      <td>0.154425</td>
+      <td>0.620155</td>
+      <td>0.303371</td>
+      <td>0.463768</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>0.206612</td>
+      <td>0.286667</td>
+      <td>0.078313</td>
+      <td>0.026074</td>
+      <td>0.111296</td>
+      <td>0.097222</td>
+      <td>0.078341</td>
+      <td>0.166377</td>
+      <td>0.542636</td>
+      <td>0.297753</td>
+      <td>0.434783</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>0.173554</td>
+      <td>0.376667</td>
+      <td>0.072289</td>
+      <td>0.021472</td>
+      <td>0.109635</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.161172</td>
+      <td>0.658915</td>
+      <td>0.275281</td>
+      <td>0.318841</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>0.181818</td>
+      <td>0.153333</td>
+      <td>0.283133</td>
+      <td>0.046012</td>
+      <td>0.096346</td>
+      <td>0.059028</td>
+      <td>0.082949</td>
+      <td>0.161558</td>
+      <td>0.519380</td>
+      <td>0.247191</td>
+      <td>0.434783</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>6497 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>We import the necessary modules from scikit and keras</p>
+<p>I you haven’t downloaded keras yet, download it by typing pip3 install keras in your terminak</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="c1"># Keras specific</span>
+<span class="kn">import</span> <span class="nn">keras</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like before, we get the x and y values and split the dataset into a train and test set, this time using scikit’s train_test_split function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">nndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">nndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4872, 11)
+(1625, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">11</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+
+<span class="c1"># Compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> 
+              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> 
+            <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/20
+153/153 [==============================] - 16s 2ms/step - loss: 0.5911 - accuracy: 0.6733
+Epoch 2/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5278 - accuracy: 0.7259
+Epoch 3/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5217 - accuracy: 0.7429
+Epoch 4/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5158 - accuracy: 0.7405
+Epoch 5/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5060 - accuracy: 0.7562
+Epoch 6/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4940 - accuracy: 0.7608
+Epoch 7/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4963 - accuracy: 0.7620
+Epoch 8/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4927 - accuracy: 0.7690
+Epoch 9/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4966 - accuracy: 0.7566
+Epoch 10/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4919 - accuracy: 0.7645
+Epoch 11/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4745 - accuracy: 0.7737
+Epoch 12/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4852 - accuracy: 0.7626
+Epoch 13/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4730 - accuracy: 0.7702
+Epoch 14/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4959 - accuracy: 0.7577
+Epoch 15/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4710 - accuracy: 0.7798
+Epoch 16/20
+153/153 [==============================] - 0s 3ms/step - loss: 0.4802 - accuracy: 0.7722
+Epoch 17/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4806 - accuracy: 0.7670
+Epoch 18/20
+153/153 [==============================] - 0s 3ms/step - loss: 0.4808 - accuracy: 0.7678
+Epoch 19/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4631 - accuracy: 0.7788
+Epoch 20/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4904 - accuracy: 0.7545
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x14f100c70&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred_train</span><span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy on training data: </span><span class="si">{}</span><span class="s1">% </span><span class="se">\n</span><span class="s1"> Error on training data: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>   
+
+<span class="n">pred_test</span><span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">scores2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy on test data: </span><span class="si">{}</span><span class="s1">% </span><span class="se">\n</span><span class="s1"> Error on test data: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scores2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">scores2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on training data: 0.7736042737960815% 
+ Error on training data: 0.22639572620391846
+Accuracy on test data: 0.7470769286155701% 
+ Error on test data: 0.25292307138442993
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decision-boundaries">
+<h2>Decision Boundaries<a class="headerlink" href="#decision-boundaries" title="Permalink to this headline">¶</a></h2>
+<p>As a final experiment, let’s try and generate those decision boundaries you read about in your readings, which decide in our case about the wines and whether they are good or bad.</p>
+<p>We would like to create a feature space to visualise this decision. To this end, we first need to map our 11 features into 2 features, because we cannot visualise an 11-dimensional space that humans could read. A standard strategy for reducing the dimensions of a problem like this is to apply Principal Component Analysis (PCA) (<a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">https://en.wikipedia.org/wiki/Principal_component_analysis</a>). It is a fairly complicated method. If you are interested, we can discuss it in class and there are also good explanations in your readings. Here, it is enough to know that for each wine observation it will find its position in a lower-dimensional feature space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">nnndf</span> <span class="o">=</span> <span class="n">nndf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># scale data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">nnndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">nnndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">principalComponents</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">principalDf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">principalComponents</span>
+             <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;principal component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;principal component 2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">principalDf</span><span class="p">,</span> <span class="n">nnndf</span><span class="p">[[</span><span class="s1">&#39;quality&#39;</span><span class="p">]]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>principal component 1</th>
+      <th>principal component 2</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.778618</td>
+      <td>3.042330</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.129793</td>
+      <td>-0.491683</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.194738</td>
+      <td>0.378754</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.807306</td>
+      <td>0.589593</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.807306</td>
+      <td>0.589593</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>-2.043117</td>
+      <td>-0.895009</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>-2.274810</td>
+      <td>-0.423711</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>-2.479566</td>
+      <td>-0.392779</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>-1.258701</td>
+      <td>-0.383373</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>6498 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">target</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span><span class="n">colors</span><span class="p">):</span>
+    <span class="n">indicesToKeep</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indicesToKeep</span><span class="p">,</span> <span class="s1">&#39;principal component 1&#39;</span><span class="p">]</span>
+               <span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indicesToKeep</span><span class="p">,</span> <span class="s1">&#39;principal component 2&#39;</span><span class="p">]</span>
+               <span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">color</span>
+               <span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+    
+<span class="n">qualities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;good&#39;</span><span class="p">,</span> <span class="s1">&#39;bad&#39;</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">qualities</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/PredictingModelling_96_0.png" src="../_images/PredictingModelling_96_0.png" />
+</div>
+</div>
+<p>Next we will visualise the decision boundaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
+
+<span class="c1"># How to plot the decision boundaries?</span>
+<span class="c1"># this is from https://stackoverflow.com/questions/43778380/how-to-draw-decision-boundary-in-svm-sklearn-data-in-python</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span><span class="n">C</span><span class="o">=</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">principalComponents</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># generate grid for plotting</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">principalComponents</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">principalComponents</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+
+<span class="c1"># create decision boundary plot</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py:63: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return f(*args, **kwargs)
+</pre></div>
+</div>
+<img alt="../_images/PredictingModelling_98_1.png" src="../_images/PredictingModelling_98_1.png" />
 </div>
 </div>
 </div>
