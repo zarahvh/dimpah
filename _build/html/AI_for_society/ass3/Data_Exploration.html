@@ -94,6 +94,35 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../social_analytics.html">
    Social Analytics
   </a>
@@ -120,7 +149,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
-     Visuals and Arts
+     Visuals and Arts 1
     </a>
    </li>
    <li class="toctree-l2">
@@ -165,35 +194,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Analysing_Communities_2.html">
      Social Data from the Web
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../Introduction.html">
-   Introduction to Python
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
     </a>
    </li>
   </ul>
@@ -256,11 +256,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAI_for_society/ass3/Data_Exploration.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FAI_for_society/ass3/Data_Exploration.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -281,7 +281,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/AI_for_society/ass3/Data_Exploration.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/AI_for_society/ass3/Data_Exploration.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -406,68 +406,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
 
-<span class="n">votes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Votes.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">7</span><span class="n">d6c08ba8f1f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Run the code below</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">votes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/Votes.csv&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">609</span> 
-<span class="ne">--&gt; </span><span class="mi">610</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">611</span> 
-<span class="g g-Whitespace">    </span><span class="mi">612</span> 
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> 
-<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">462</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span> 
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">817</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> 
-<span class="ne">--&gt; </span><span class="mi">819</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span> 
-<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1050</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1052</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1865</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1866</span>         <span class="c1"># open handles</span>
-<span class="ne">-&gt; </span><span class="mi">1867</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1868</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1869</span>         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="s2">&quot;compression&quot;</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHanldes</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1362</span><span class="s2">         self.handles = get_handle(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1363</span><span class="s2">             src,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span><span class="s2">             &quot;r&quot;,</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="s2">                 errors = &quot;replace&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="s2">             # Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">642</span><span class="s2">             handle = open(</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="s2">                 handle,</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">                 ioargs.mode,</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/Votes.csv&#39;
+<span class="n">votes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/Votes.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -905,231 +844,6 @@
       <td>Paraguay</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>160</td>
-      <td>3</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1948</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>258</td>
-      <td>5</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1950</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>258</td>
-      <td>5</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1950</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>282</td>
-      <td>5</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1950</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>282</td>
-      <td>5</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1950</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>360</td>
-      <td>7</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1952</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>360</td>
-      <td>7</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1952</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>391</td>
-      <td>8</td>
-      <td>2</td>
-      <td>150</td>
-      <td>1953</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>391</td>
-      <td>8</td>
-      <td>2</td>
-      <td>150</td>
-      <td>1953</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>412</td>
-      <td>9</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1954</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>412</td>
-      <td>9</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1954</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>429</td>
-      <td>10</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1955</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>429</td>
-      <td>10</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1955</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>477</td>
-      <td>11</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1956</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>477</td>
-      <td>11</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1956</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>527</td>
-      <td>12</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1957</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>527</td>
-      <td>12</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1957</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>539</td>
-      <td>12</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1957</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>539</td>
-      <td>12</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1957</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>555</td>
-      <td>13</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1958</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>555</td>
-      <td>13</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1958</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>630</td>
-      <td>15</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1960</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>630</td>
-      <td>15</td>
-      <td>1</td>
-      <td>150</td>
-      <td>1960</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>640</td>
-      <td>15</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1960</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>640</td>
-      <td>15</td>
-      <td>3</td>
-      <td>150</td>
-      <td>1960</td>
-      <td>Paraguay</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -1137,231 +851,6 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>15916</th>
-      <td>5262</td>
-      <td>68</td>
-      <td>1</td>
-      <td>947</td>
-      <td>2013</td>
-      <td>Tuvalu</td>
-    </tr>
-    <tr>
-      <th>15917</th>
-      <td>5276</td>
-      <td>68</td>
-      <td>1</td>
-      <td>947</td>
-      <td>2013</td>
-      <td>Tuvalu</td>
-    </tr>
-    <tr>
-      <th>15918</th>
-      <td>5319</td>
-      <td>69</td>
-      <td>1</td>
-      <td>947</td>
-      <td>2014</td>
-      <td>Tuvalu</td>
-    </tr>
-    <tr>
-      <th>15919</th>
-      <td>5339</td>
-      <td>69</td>
-      <td>1</td>
-      <td>947</td>
-      <td>2014</td>
-      <td>Tuvalu</td>
-    </tr>
-    <tr>
-      <th>15920</th>
-      <td>5432</td>
-      <td>70</td>
-      <td>1</td>
-      <td>947</td>
-      <td>2015</td>
-      <td>Tuvalu</td>
-    </tr>
-    <tr>
-      <th>15921</th>
-      <td>5445</td>
-      <td>70</td>
-      <td>1</td>
-      <td>947</td>
-      <td>2015</td>
-      <td>Tuvalu</td>
-    </tr>
-    <tr>
-      <th>15922</th>
-      <td>4791</td>
-      <td>62</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2007</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15923</th>
-      <td>4826</td>
-      <td>62</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2007</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15924</th>
-      <td>4868</td>
-      <td>63</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2008</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15925</th>
-      <td>4884</td>
-      <td>63</td>
-      <td>2</td>
-      <td>341</td>
-      <td>2008</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15926</th>
-      <td>5007</td>
-      <td>64</td>
-      <td>2</td>
-      <td>341</td>
-      <td>2009</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15927</th>
-      <td>5032</td>
-      <td>64</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2009</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15928</th>
-      <td>5130</td>
-      <td>66</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2011</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15929</th>
-      <td>5345</td>
-      <td>69</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2014</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15930</th>
-      <td>5428</td>
-      <td>70</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2015</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15931</th>
-      <td>5432</td>
-      <td>70</td>
-      <td>1</td>
-      <td>341</td>
-      <td>2015</td>
-      <td>Montenegro</td>
-    </tr>
-    <tr>
-      <th>15932</th>
-      <td>4813</td>
-      <td>62</td>
-      <td>1</td>
-      <td>946</td>
-      <td>2007</td>
-      <td>Kiribati</td>
-    </tr>
-    <tr>
-      <th>15933</th>
-      <td>5289</td>
-      <td>68</td>
-      <td>2</td>
-      <td>946</td>
-      <td>2013</td>
-      <td>Kiribati</td>
-    </tr>
-    <tr>
-      <th>15934</th>
-      <td>5338</td>
-      <td>69</td>
-      <td>1</td>
-      <td>946</td>
-      <td>2014</td>
-      <td>Kiribati</td>
-    </tr>
-    <tr>
-      <th>15935</th>
-      <td>5369</td>
-      <td>69</td>
-      <td>1</td>
-      <td>946</td>
-      <td>2014</td>
-      <td>Kiribati</td>
-    </tr>
-    <tr>
-      <th>15936</th>
-      <td>5406</td>
-      <td>70</td>
-      <td>1</td>
-      <td>946</td>
-      <td>2015</td>
-      <td>Kiribati</td>
-    </tr>
-    <tr>
-      <th>15937</th>
-      <td>5448</td>
-      <td>70</td>
-      <td>1</td>
-      <td>946</td>
-      <td>2015</td>
-      <td>Kiribati</td>
-    </tr>
-    <tr>
-      <th>15938</th>
-      <td>5198</td>
-      <td>67</td>
-      <td>1</td>
-      <td>626</td>
-      <td>2012</td>
-      <td>South Sudan</td>
-    </tr>
-    <tr>
-      <th>15939</th>
-      <td>5228</td>
-      <td>67</td>
-      <td>2</td>
-      <td>626</td>
-      <td>2012</td>
-      <td>South Sudan</td>
-    </tr>
-    <tr>
-      <th>15940</th>
-      <td>5243</td>
-      <td>67</td>
-      <td>1</td>
-      <td>626</td>
-      <td>2012</td>
-      <td>South Sudan</td>
     </tr>
     <tr>
       <th>15941</th>
@@ -1532,412 +1021,12 @@
       <td>0.023256</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>1946</td>
-      <td>Cuba</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1946</td>
-      <td>Egypt</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.093023</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>1946</td>
-      <td>El Salvador</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1946</td>
-      <td>Ethiopia</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1946</td>
-      <td>France</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1946</td>
-      <td>Haiti</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1946</td>
-      <td>Honduras</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>1946</td>
-      <td>India</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1946</td>
-      <td>India</td>
-      <td>3</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>1946</td>
-      <td>Iraq</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>1946</td>
-      <td>Luxembourg</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>1946</td>
-      <td>Luxembourg</td>
-      <td>3</td>
-      <td>43</td>
-      <td>0.093023</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>1946</td>
-      <td>Netherlands</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>1946</td>
-      <td>Paraguay</td>
-      <td>3</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>1946</td>
-      <td>Peru</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>1946</td>
-      <td>Poland</td>
-      <td>3</td>
-      <td>43</td>
-      <td>0.046512</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>1946</td>
-      <td>South Africa</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>1946</td>
-      <td>United Kingdom</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>1946</td>
-      <td>United States of America</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>1946</td>
-      <td>Uruguay</td>
-      <td>1</td>
-      <td>43</td>
-      <td>0.023256</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>1947</td>
-      <td>Argentina</td>
-      <td>1</td>
-      <td>50</td>
-      <td>0.020000</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>1947</td>
-      <td>Argentina</td>
-      <td>3</td>
-      <td>50</td>
-      <td>0.020000</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>1947</td>
-      <td>Belarus</td>
-      <td>1</td>
-      <td>50</td>
-      <td>0.040000</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>1947</td>
-      <td>Brazil</td>
-      <td>1</td>
-      <td>50</td>
-      <td>0.020000</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>1947</td>
-      <td>Chile</td>
-      <td>2</td>
-      <td>50</td>
-      <td>0.020000</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>8482</th>
-      <td>2015</td>
-      <td>South Sudan</td>
-      <td>2</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8483</th>
-      <td>2015</td>
-      <td>Spain</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8484</th>
-      <td>2015</td>
-      <td>St. Kitts and Nevis</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.010791</td>
-    </tr>
-    <tr>
-      <th>8485</th>
-      <td>2015</td>
-      <td>St. Lucia</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8486</th>
-      <td>2015</td>
-      <td>St. Vincent and the Grenadines</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.010791</td>
-    </tr>
-    <tr>
-      <th>8487</th>
-      <td>2015</td>
-      <td>Swaziland</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.014388</td>
-    </tr>
-    <tr>
-      <th>8488</th>
-      <td>2015</td>
-      <td>Switzerland</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8489</th>
-      <td>2015</td>
-      <td>Switzerland</td>
-      <td>2</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8490</th>
-      <td>2015</td>
-      <td>Tajikistan</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8491</th>
-      <td>2015</td>
-      <td>Tanzania</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.010791</td>
-    </tr>
-    <tr>
-      <th>8492</th>
-      <td>2015</td>
-      <td>Thailand</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8493</th>
-      <td>2015</td>
-      <td>Togo</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8494</th>
-      <td>2015</td>
-      <td>Tonga</td>
-      <td>2</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8495</th>
-      <td>2015</td>
-      <td>Turkey</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8496</th>
-      <td>2015</td>
-      <td>Turkmenistan</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8497</th>
-      <td>2015</td>
-      <td>Tuvalu</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8498</th>
-      <td>2015</td>
-      <td>Uganda</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8499</th>
-      <td>2015</td>
-      <td>Ukraine</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8500</th>
-      <td>2015</td>
-      <td>Ukraine</td>
-      <td>3</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8501</th>
-      <td>2015</td>
-      <td>United Kingdom</td>
-      <td>3</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8502</th>
-      <td>2015</td>
-      <td>Uruguay</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.010791</td>
-    </tr>
-    <tr>
-      <th>8503</th>
-      <td>2015</td>
-      <td>Uzbekistan</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8504</th>
-      <td>2015</td>
-      <td>Vanuatu</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.007194</td>
-    </tr>
-    <tr>
-      <th>8505</th>
-      <td>2015</td>
-      <td>Venezuela</td>
-      <td>3</td>
-      <td>278</td>
-      <td>0.003597</td>
-    </tr>
-    <tr>
-      <th>8506</th>
-      <td>2015</td>
-      <td>Vietnam</td>
-      <td>1</td>
-      <td>278</td>
-      <td>0.003597</td>
     </tr>
     <tr>
       <th>8507</th>

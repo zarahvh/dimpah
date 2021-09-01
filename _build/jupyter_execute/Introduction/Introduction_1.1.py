@@ -73,9 +73,6 @@ In Python functions are called with arguments in brackets. Please first import m
 import math
 math.sqrt(9)
 
-#  Function with 3 arguments
-# Fucntion with different arguments?
-
 This was a lot of stuff for the first lesson. Unfortunately, this is necessary but once you have learned one programming language all of this becomes quite obvious and repetitive. Before we finish we need to learn one more important concept that is specific to Python. With so-called lists, you can collect several elements in the same variable. This is immensely useful as we see later.
 
 Let’s try lists, which store an ordered set of values called elements. A list can contain any number of elements using brackets. Type in numeric_list = [1,,49] to create a numeric list of three numbers and then print it out. 
@@ -94,8 +91,6 @@ To check that the new vector exists, please type string_list
 
 string_list
 
-# Python lists can contain different elements
-
 Lists are useful to, for instance, hold your poker winnings during the week. You do not play on Saturday and Sunday, but record all the other 5 days, by entering poker_list = [140, -50, 20, -120, 240]. Thank you datacamp.com for this example! An excellent resource to learn R btw, but unfortunately you have to pay for it.
 
 poker_list = [140, -50, 20, -120, 240]
@@ -103,8 +98,6 @@ poker_list = [140, -50, 20, -120, 240]
 You feel this is your lucky week. So, you play roulette, too. Please record your winnings with roulette_list =[-24, -50, 100, -350, 10].
 
 roulette_list =[-24, -50, 100, -350, 10]
-
-# Python equivalent to names? --> Dict?
 
 Because you prefer it organised, you would now like to name each of the entries. This is possible in Python with dictionaries. Please create a dict by typing names = {}
 
@@ -118,8 +111,6 @@ names_poker['Monday']
 And the same for the roulette winnings
 
 names_roulette = {'Monday': -24,'Tuesday': -50, 'Wednesday': 200, 'Thursday': -350, 'Friday': 10}
-
-# For the addition as well we would need to add a for loop as well as for dividing each value by 100
 
 Next, you are interested in how much you win in poker and roulette per day. You can simply add up all the elements in the vectors. Remember that we can use built-in functions like sqrt? To add up elements in a list we can use the function sum. Try it with sum(poker_list).
 
@@ -159,7 +150,6 @@ Print out  roulette_selection_list.
 
  roulette_selection_list
 
-# Sin only works for entire list using numpy or for loop, already want to introduce that here?
 import numpy as np
 
 sin = np.arange(1,20,0.1)

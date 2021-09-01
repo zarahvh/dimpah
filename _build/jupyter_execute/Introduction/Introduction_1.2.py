@@ -4,6 +4,8 @@ The final new concept for today is the matrix. It has little to do with the movi
 
 Let’s try this and move on from your gambling. We will now introduce an example from social analytics brought to us by dataquest.com, which we will come back to again later in the course. You have a LinkedIn account and a Facebook account and want to find out which one has more views and is more successful. You collected the views per day for a particular week in two arrays. Type in linkedin = [16, 9, 13, 5, 2, 17, 14]
 
+import numpy as np
+
 linkedin = np.array([16, 9, 13, 5, 2, 17, 14])
 
 And now create facebook = [17, 7, 5, 16, 8, 13, 14]
@@ -11,8 +13,6 @@ And now create facebook = [17, 7, 5, 16, 8, 13, 14]
 facebook = np.array([17, 7, 5, 16, 8, 13, 14])
 
 Python doesn't have a built-in function for matrices. However, we can create a matrix by treating it as a list of a list. Or an numpy array of arrays (using numpy? --> possibility of booleans)
-
-import numpy as np
 
 views = np.array([linkedin, 
          facebook])

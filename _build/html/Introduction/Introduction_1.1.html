@@ -93,6 +93,35 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../social_analytics.html">
    Social Analytics
@@ -120,7 +149,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
-     Visuals and Arts
+     Visuals and Arts 1
     </a>
    </li>
    <li class="toctree-l2">
@@ -165,35 +194,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
      Social Data from the Web
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../Introduction.html">
-   Introduction to Python
-  </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Introduction_2.2.html">
-     Introduction to Python 2.2
     </a>
    </li>
   </ul>
@@ -256,11 +256,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FIntroduction/Introduction_1.1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FIntroduction/Introduction_1.1.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -281,7 +281,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Introduction/Introduction_1.1.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Introduction/Introduction_1.1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -494,14 +494,6 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Function with 3 arguments</span>
-<span class="c1"># Fucntion with different arguments?</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>This was a lot of stuff for the first lesson. Unfortunately, this is necessary but once you have learned one programming language all of this becomes quite obvious and repetitive. Before we finish we need to learn one more important concept that is specific to Python. With so-called lists, you can collect several elements in the same variable. This is immensely useful as we see later.</p>
 <p>Let’s try lists, which store an ordered set of values called elements. A list can contain any number of elements using brackets. Type in numeric_list = [1,,49] to create a numeric list of three numbers and then print it out.</p>
 <div class="cell docutils container">
@@ -545,13 +537,6 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python lists can contain different elements</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Lists are useful to, for instance, hold your poker winnings during the week. You do not play on Saturday and Sunday, but record all the other 5 days, by entering poker_list = [140, -50, 20, -120, 240]. Thank you <a class="reference external" href="http://datacamp.com">datacamp.com</a> for this example! An excellent resource to learn R btw, but unfortunately you have to pay for it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,13 +549,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roulette_list</span> <span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">350</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python equivalent to names? --&gt; Dict?</span>
 </pre></div>
 </div>
 </div>
@@ -607,13 +585,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_roulette</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Monday&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="s1">&#39;Tuesday&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">350</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the addition as well we would need to add a for loop as well as for dividing each value by 100</span>
 </pre></div>
 </div>
 </div>
@@ -723,8 +694,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin only works for entire list using numpy or for loop, already want to introduce that here?</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sin</span><span class="p">)</span>
@@ -786,7 +756,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119a267f0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/Introduction_1.1_74_1.png" src="../_images/Introduction_1.1_74_1.png" />
+<img alt="../_images/Introduction_1.1_70_1.png" src="../_images/Introduction_1.1_70_1.png" />
 </div>
 </div>
 </div>

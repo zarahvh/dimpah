@@ -2,20 +2,17 @@
 
 Up to now we have mainly used this session to introduce how to produce visuals of data. This is important but Manovich also had the analysis of images and other multimedia in mind when he first defined Cultural Analytics. Next, we talk therefore about a few simple exercises to work with images. We will see that basic image manipulation is actually quite simple because images are matrixes and can be manipulated just like any other matrix.
 
-# RGB in python??
-
 Let's start by reading the jpeg picture using PIL and imshow to display the image inline,
 
 
 from matplotlib.pyplot import imshow
 import numpy as np
 from PIL import Image
+import matplotlib as plt
 
 %matplotlib inline
 
 Gogh = Image.open('data/vanGogh_selfPortrait.jpg')
-
-
 
 Next, convert the values of the image into a numpy array and check out the dimensions of vanGogh with numpy: np.shape(vanGogh)
 
@@ -140,7 +137,6 @@ Apparently the most common colors in the pictures are white (#ffffff) and black 
 # This still has to be worked out a little bit further but the basis there
 # I wasn't sure yet how to do the part with the face API
 
-# What are the x values in the histogram in the R file?
 flt = nGogh.flatten()
 sns.histplot(data = nGogh, x=flt)
 
@@ -154,4 +150,3 @@ sns.histplot(data = nGogh, x=fltg, color='green')
 plt.show()
 sns.histplot(data = nGogh, x=fltb, color='blue')
 plt.show()
-

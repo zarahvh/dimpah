@@ -4,6 +4,13 @@
 - file: intro
 
   
+  
+- file: Introduction
+  sections:
+   - file: Introduction/Introduction_1.1
+   - file: Introduction/Introduction_1.2
+   - file: Introduction/Introduction_2.1
+   - file: Introduction/Introduction_2.2
 - file: social_analytics
   sections:
    - file: SocialAnalytics/SocialMedia/Social_Sensing_1
@@ -20,11 +27,5 @@
    - file: AI_for_society/ass3/US_Congress_Sponsors
    - file: AI_for_society/ass3/Analysing_Communities_1
    - file: AI_for_society/ass3/Analysing_Communities_2
-- file: Introduction
-  sections:
-   - file: Introduction/Introduction_1.1
-   - file: Introduction/Introduction_1.2
-   - file: Introduction/Introduction_2.1
-   - file: Introduction/Introduction_2.2
- 
+
    

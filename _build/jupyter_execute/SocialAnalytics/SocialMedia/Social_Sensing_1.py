@@ -301,7 +301,8 @@ df200.plot.scatter(x='friends_count', y='follower_count',)
 
 Ok, there are not too many strong performers in my followers’ list. In order to confirm this, let’s check the counts for all my followers with a plot. 
 
-df200['follower_count'].count_values.plot()
+# Need to reload entire assignment first
+# df200['follower_count'].count_values.plot()
 
 So, most of my followers do not have too many followers themselves apart from one outlier. My influence is really limited. Let’s quickly move on then.
 

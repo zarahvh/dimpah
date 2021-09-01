@@ -54,7 +54,7 @@ The 2014 elections gave the Republicans control of the Senate (and control of bo
 
 #Run the code below
 
-congress_114 = pd.read_csv("../data/114_congress.csv")
+congress_114 = pd.read_csv("data/114_congress.csv")
 
 To warm up check the first five entries of the dataset. It contains the name of a particular senator, his/her party and home state as well as for each bill whether the senator voted for the bill (1) or against it (0). 
 

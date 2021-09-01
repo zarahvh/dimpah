@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 #Run the code below
 
-teens = pd.read_csv("../data/snsdata.csv")
+teens = pd.read_csv("data/snsdata.csv")
 
 Print out the first couple of rows from the teens dataset.
 

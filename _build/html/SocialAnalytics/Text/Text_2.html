@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visuals and Arts" href="../VisualsArts/Visuals_and_Arts_1.html" />
+    <link rel="next" title="Visuals and Arts 1" href="../VisualsArts/Visuals_and_Arts_1.html" />
     <link rel="prev" title="Analysing Historical Cultures 1" href="Text_1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,6 +93,35 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../../social_analytics.html">
    Social Analytics
@@ -120,7 +149,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../VisualsArts/Visuals_and_Arts_1.html">
-     Visuals and Arts
+     Visuals and Arts 1
     </a>
    </li>
    <li class="toctree-l2">
@@ -165,35 +194,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_2.html">
      Social Data from the Web
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../Introduction.html">
-   Introduction to Python
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
     </a>
    </li>
   </ul>
@@ -256,11 +256,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSocialAnalytics/Text/Text_2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FSocialAnalytics/Text/Text_2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -281,7 +281,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/SocialAnalytics/Text/Text_2.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/SocialAnalytics/Text/Text_2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -564,16 +564,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load English tokenizer, tagger, parser and NER</span>
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Process whole documents</span>
-<span class="n">text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/20070123.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/20070123.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
@@ -583,13 +581,7 @@
 <p>With the function below you should see the kind of entities that are contained in your submission document. Try it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analyze syntax</span>
-<span class="c1"># print(&quot;Noun phrases:&quot;, [chunk.text for chunk in doc.noun_chunks])</span>
-<span class="c1"># print(&quot;Verbs:&quot;, [token.lemma_ for token in doc if token.pos_ == &quot;VERB&quot;])</span>
-
-<span class="c1"># Find named entities, phrases and concepts</span>
-<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
-<span class="c1">#     print(entity.label_)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">entity</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1009,27 +1001,6 @@ Brad Borevitz PERSON
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">PyreadrError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">4118</span><span class="n">bc15e1e7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">stopwords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pyreadr</span><span class="o">.</span><span class="n">read_r</span><span class="p">(</span><span class="s1">&#39;data/sotu_all.rda&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;sotu_all&#39;</span><span class="p">]</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/pyreadr/pyreadr.py</span> in <span class="ni">read_r</span><span class="nt">(path, use_objects, timezone)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">47</span>         <span class="k">raise</span> <span class="n">PyreadrError</span><span class="p">(</span><span class="s2">&quot;File </span><span class="si">{0}</span><span class="s2"> does not exist!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> 
-
-<span class="ne">PyreadrError</span>: File data/sotu_all.rda does not exist!
-</pre></div>
-</div>
-</div>
 </div>
 <p>And prepare the lexicon of positive and negative words</p>
 <div class="cell docutils container">
@@ -1427,7 +1398,7 @@ Brad Borevitz PERSON
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Text_1.html" title="previous page">Analysing Historical Cultures 1</a>
-    <a class='right-next' id="next-link" href="../VisualsArts/Visuals_and_Arts_1.html" title="next page">Visuals and Arts</a>
+    <a class='right-next' id="next-link" href="../VisualsArts/Visuals_and_Arts_1.html" title="next page">Visuals and Arts 1</a>
 
         </div>
         

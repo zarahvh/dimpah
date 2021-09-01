@@ -1,14 +1,9 @@
-# Visuals and Arts
+# Visuals and Arts 1
 
 In this session, we will learn about the grammar of graphs that Leland Wilkinson introduced in the book Grammar of Graphics, Springer, New York, 2005. We will follow roughly the tutorial at http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html, although the tutorial has many more examples and graphs than we will work with. But we will focus on a historical analysis and use the data and some examples from the excellent http://benschmidt.org/Crewlists. I highly recommend reading both as complementary material to this session. Later in the session we will apply our knowledge to data from museums.
 
 The grammar of graphs defines independent building blocks for the things we want to do with graphs. Through their combination, the blocks give us any number of possible combinations to create perfect visualisations.
 
-For the code below we have to find a python package:
-R has an excellent package called ggplot2 that follows the grammar of graphics. Compared to the base package for plotting in R we met earlier it might seem quite verbose at first but it is very flexible, can integrate multiple themes that define the appearance of the graphs and does simply overall an excellent job at producing highly professional graphs. Load the second version of the package with library(ggplot2).
-
-1. install plotline (pip3 install plotnine in terminal)
-2. 
 
 import pandas as pd
 import numpy as np
@@ -52,7 +47,6 @@ Height:date
 
 crews.head()
 
-# plt.figure(figsize=(10,5))
 scatter = sns.scatterplot(data=crews,x='date', y='Height')
 scatter
 
@@ -207,7 +201,6 @@ tidy_vis
 Success! Because the visitor numbers represent together the total number of visitors to the TATE Galleries in Britain, you would like to create a stacked area plot.
 However to create a stacked area plot in python we actually need all the galleries in separate arrays in a nested one, so that we get y = [[Britain],[Modern],[Liverpool],[Stlves]]
 
-# y = [tate_vis['Britain'].tolist(), tate_vis['Modern'].tolist(), tate_vis['Liverpool'].tolist(),tate_vis['StIves'].tolist()]
 Britain = [int(str.replace(item,',','')) for item in tate_vis['Britain'].tolist()]
 Modern = [int(str.replace(item,',','')) for item in tate_vis['Modern'].tolist()]
 Liverpool = [int(str.replace(item,',','')) for item in tate_vis['Liverpool'].tolist()]
@@ -215,13 +208,10 @@ StIves = [int(str.replace(item,',','')) for item in tate_vis['StIves'].tolist()]
 
 y = [Britain,Modern,Liverpool,StIves]
 y
-# plt.stackplot( x='year', y=y)
 
 plt.style.use("default")
 plt.stackplot(tate_vis['year'],y, labels=['Britain','Modern', 'Liverpool', 'StIves'])
 plt.legend(loc='upper left')
 plt.show()
 
-
 What have we learned? Still have to put a quick summary here
-

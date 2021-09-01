@@ -1,20 +1,8 @@
 # Introduction to Python 2.1
 
-# introductions to interactive data analysis with Python
-# These should be four sessions to introduce Python and Pandas with some visualisation
-
 
 In this assignment we will explore and visualise real lige datasets using Python and Pandas
 Before we can explore real life datasets, we need to, however, first discuss some more advanced Python constructs.
-
---> Lists? --> arrays
---> Is matrix needed?
-
-
-
-Explanation arrays
-
-First import numpy
 
 Let's first create a vector by creating an array from 1 to 9 np.array(range(1,10)
 
@@ -55,7 +43,6 @@ Let's create a vector containing months=np.array(['March', 'April', 'January', â
 
 
 
-# No option in python to store array in factors
 months=np.array(['March', 'April', 'January', 'November', 'January', 'September', 'October', 'September', 'November', 'August', 'January', 'November', 'November', 'February', 'May', 'August', 'July', 'December', 'August', 'August', 'September', 'November', 'February', 'April']) 
 
 months
@@ -145,11 +132,6 @@ For our final apply example, run np.size(days)
 
 np.size(days)
 
-# In thhe original assigment these functions are used for size of a dataframe while numpy doesn't work for that,
-# but pandas does, should this be about pandas then instead of numpy? and then on operations for dataframes
-# But umpy functions do work on pandas dataframe columns
-# Not really a lapply sapply apply in python
-
 Something about built ins in pandas? 
 
 To add 2 to each element in a numpy array we simply type the name of the array + 2
@@ -209,9 +191,7 @@ df.nlargest(1, 'Freq')
 
 min and max are measures of the diversity or spread of data. Knowing about the spread provides a sense of the dataâ€™s highs and lows, and whether most values are like or unlike the mean and median. The span between the minimum and maximum value is known as the range. 
 
-# Doesnt really exist in python
-
-The range function returns both the minimum and maximum value. With the diff function you could get the absolute difference. Do you know how? The first and third quartiles, Q1 and Q3, refer to the value below or above which one quarter of the values are found. Along with the median (Q2), the quartiles divide a dataset into four portions, each with the same number of values. Check out np.quantile(df['Freq'], [0.25,0.5, 0.75, 1])
+The first and third quartiles, Q1 and Q3, refer to the value below or above which one quarter of the values are found. Along with the median (Q2), the quartiles divide a dataset into four portions, each with the same number of values. Check out np.quantile(df['Freq'], [0.25,0.5, 0.75, 1])
 
 np.quantile(df['Freq'], [0.25,0.5, 0.75, 1])
 

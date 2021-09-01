@@ -199,9 +199,10 @@ LDA = gensim.models.LdaMulticore(corpus=td,
                                        id2word=Dict,
                                        num_topics=n)
 
+Now we want to print the most keywords in the 10 topics
+
 from pprint import pprint
 
-# Now we want to print the most keywords in the 10 topics
 pprint(LDA.print_topics())
 
 So how do we interpret this? It shows the top 10 keywords that contribute to each topic. 
@@ -211,7 +212,7 @@ For example the keywords for topic 0 are: ‘america’, ‘new’, ‘congress�
 
 LDA.show_topic(topicid=4, topn=20)
 
-# Gensim LDA doesn't easily allow for the comparis of the topic models to each of the documents
+# Gensim LDA doesn't easily allow for the comparison of the topic models to each of the documents
 # other options are possible though, but what would be suited for the assignment?
 
 Not bad. Both word clouds and topic modelling deliver some interesting insights. We now feel confident to explore the whole corpus. In the end, we would like to establish some simple linguistic statistics such as the most frequent words/terms in a collection as well as word trends that tell us about the ups and downs of concepts during the history of policy-making in the USA. Check out http://stateoftheunion.onetwothree.net/sotuGraph/index.html for a visualisation to compare two concepts in the SOTU speeches. 
@@ -250,20 +251,6 @@ TF-IDF stands for term frequency–inverse document frequency, it shows you how 
 (Maybe show the formula here? Do we need more explaining?)
 
 Use the vectorizer to calculate the TF-IDF and then use these values to create a new dataframe, the document term matrix, that shows for each speech (as a column) the word (row) and its tf-idf (value).
-
-# We might be able to do this with gensim as well, but it is a bit more complex to get it in the right format
-# from gensim.models import TfidfModel
-
-# dictionary = corpora.Dictionary()
-# corpus = [dictionary.doc2bow(doc, allow_update=True) for doc in docs]
-
-# model = TfidfModel(corpus)
-# # tfidf = models.TfidfModel(BoW_corpus, smartirs='ntc')
-# # for doc in model[corpus]:
-# #    print([[dictionary[id], np.around(freq)] for id, freq in doc])
-# vector = model[corpus[0]] 
-# for word in vector:
-#     print()
 
 import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -408,4 +395,3 @@ print(highest)
 Within your working group, go back to the ten topics you have found and try and give each of them a title that describes it. Sometimes this is not so easy, because the corpus is quite small. But do try your best.
 
 Let’s move on to the second part of this session.
-

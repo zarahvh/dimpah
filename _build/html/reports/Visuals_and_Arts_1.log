@@ -17,63 +17,74 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-crews = pd.read_csv("data/crews-sample.csv", parse_dates=['date'])
+scatter = sns.jointplot(data=crews,x='date', y='Height', alpha=0.15, color='red', kind='hex')
+scatter
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m<ipython-input-2-ae8ebf76bcb5>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mcrews[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m"data/crews-sample.csv"[0m[0;34m,[0m [0mparse_dates[0m[0;34m=[0m[0;34m[[0m[0;34m'date'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)[0m
-[1;32m    608[0m     [0mkwds[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mkwds_defaults[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    609[0m [0;34m[0m[0m
-[0;32m--> 610[0;31m     [0;32mreturn[0m [0m_read[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    611[0m [0;34m[0m[0m
-[1;32m    612[0m [0;34m[0m[0m
+[0;31mUFuncTypeError[0m                            Traceback (most recent call last)
+[0;32m<ipython-input-13-dda6fff7df73>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mscatter[0m [0;34m=[0m [0msns[0m[0;34m.[0m[0mjointplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mcrews[0m[0;34m,[0m[0mx[0m[0;34m=[0m[0;34m'date'[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;34m'Height'[0m[0;34m,[0m [0malpha[0m[0;34m=[0m[0;36m0.15[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0;34m'red'[0m[0;34m,[0m [0mkind[0m[0;34m=[0m[0;34m'hex'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mscatter[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py[0m in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
-[1;32m    460[0m [0;34m[0m[0m
-[1;32m    461[0m     [0;31m# Create the parser.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 462[0;31m     [0mparser[0m [0;34m=[0m [0mTextFileReader[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    463[0m [0;34m[0m[0m
-[1;32m    464[0m     [0;32mif[0m [0mchunksize[0m [0;32mor[0m [0miterator[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.9/site-packages/seaborn/_decorators.py[0m in [0;36minner_f[0;34m(*args, **kwargs)[0m
+[1;32m     44[0m             )
+[1;32m     45[0m         [0mkwargs[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0;34m{[0m[0mk[0m[0;34m:[0m [0marg[0m [0;32mfor[0m [0mk[0m[0;34m,[0m [0marg[0m [0;32min[0m [0mzip[0m[0;34m([0m[0msig[0m[0;34m.[0m[0mparameters[0m[0;34m,[0m [0margs[0m[0;34m)[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 46[0;31m         [0;32mreturn[0m [0mf[0m[0;34m([0m[0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     47[0m     [0;32mreturn[0m [0minner_f[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     48[0m [0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, f, engine, **kwds)[0m
-[1;32m    817[0m             [0mself[0m[0;34m.[0m[0moptions[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m [0;34m=[0m [0mkwds[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m    818[0m [0;34m[0m[0m
-[0;32m--> 819[0;31m         [0mself[0m[0;34m.[0m[0m_engine[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    820[0m [0;34m[0m[0m
-[1;32m    821[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.9/site-packages/seaborn/axisgrid.py[0m in [0;36mjointplot[0;34m(x, y, data, kind, color, height, ratio, space, dropna, xlim, ylim, marginal_ticks, joint_kws, marginal_kws, hue, palette, hue_order, hue_norm, **kwargs)[0m
+[1;32m   2181[0m     [0;32melif[0m [0mkind[0m[0;34m.[0m[0mstartswith[0m[0;34m([0m[0;34m"hex"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2182[0m [0;34m[0m[0m
+[0;32m-> 2183[0;31m         [0mx_bins[0m [0;34m=[0m [0mmin[0m[0;34m([0m[0m_freedman_diaconis_bins[0m[0;34m([0m[0mgrid[0m[0;34m.[0m[0mx[0m[0;34m)[0m[0;34m,[0m [0;36m50[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2184[0m         [0my_bins[0m [0;34m=[0m [0mmin[0m[0;34m([0m[0m_freedman_diaconis_bins[0m[0;34m([0m[0mgrid[0m[0;34m.[0m[0my[0m[0;34m)[0m[0;34m,[0m [0;36m50[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2185[0m         [0mgridsize[0m [0;34m=[0m [0mint[0m[0;34m([0m[0mnp[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0;34m[[0m[0mx_bins[0m[0;34m,[0m [0my_bins[0m[0;34m][0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py[0m in [0;36m_make_engine[0;34m(self, engine)[0m
-[1;32m   1048[0m             )
-[1;32m   1049[0m         [0;31m# error: Too many arguments for "ParserBase"[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1050[0;31m         [0;32mreturn[0m [0mmapping[0m[0;34m[[0m[0mengine[0m[0;34m][0m[0;34m([0m[0mself[0m[0;34m.[0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0moptions[0m[0;34m)[0m  [0;31m# type: ignore[call-arg][0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1051[0m [0;34m[0m[0m
-[1;32m   1052[0m     [0;32mdef[0m [0m_failover_to_python[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.9/site-packages/seaborn/distributions.py[0m in [0;36m_freedman_diaconis_bins[0;34m(a)[0m
+[1;32m   2396[0m     [0;32mif[0m [0mlen[0m[0;34m([0m[0ma[0m[0;34m)[0m [0;34m<[0m [0;36m2[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2397[0m         [0;32mreturn[0m [0;36m1[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2398[0;31m     [0mh[0m [0;34m=[0m [0;36m2[0m [0;34m*[0m [0mstats[0m[0;34m.[0m[0miqr[0m[0;34m([0m[0ma[0m[0;34m)[0m [0;34m/[0m [0;34m([0m[0mlen[0m[0;34m([0m[0ma[0m[0;34m)[0m [0;34m**[0m [0;34m([0m[0;36m1[0m [0;34m/[0m [0;36m3[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2399[0m     [0;31m# fall back to sqrt(a) bins if iqr is 0[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2400[0m     [0;32mif[0m [0mh[0m [0;34m==[0m [0;36m0[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, src, **kwds)[0m
-[1;32m   1865[0m [0;34m[0m[0m
-[1;32m   1866[0m         [0;31m# open handles[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1867[0;31m         [0mself[0m[0;34m.[0m[0m_open_handles[0m[0;34m([0m[0msrc[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1868[0m         [0;32massert[0m [0mself[0m[0;34m.[0m[0mhandles[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1869[0m         [0;32mfor[0m [0mkey[0m [0;32min[0m [0;34m([0m[0;34m"storage_options"[0m[0;34m,[0m [0;34m"encoding"[0m[0;34m,[0m [0;34m"memory_map"[0m[0;34m,[0m [0;34m"compression"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.9/site-packages/scipy/stats/stats.py[0m in [0;36miqr[0;34m(x, axis, rng, scale, nan_policy, interpolation, keepdims)[0m
+[1;32m   2917[0m [0;34m[0m[0m
+[1;32m   2918[0m     [0mrng[0m [0;34m=[0m [0msorted[0m[0;34m([0m[0mrng[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2919[0;31m     pct = percentile_func(x, rng, axis=axis, interpolation=interpolation,
+[0m[1;32m   2920[0m                           keepdims=keepdims)
+[1;32m   2921[0m     [0mout[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0msubtract[0m[0;34m([0m[0mpct[0m[0;34m[[0m[0;36m1[0m[0;34m][0m[0;34m,[0m [0mpct[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/parsers.py[0m in [0;36m_open_handles[0;34m(self, src, kwds)[0m
-[1;32m   1360[0m         [0mLet[0m [0mthe[0m [0mreaders[0m [0mopen[0m [0mIOHanldes[0m [0mafter[0m [0mthey[0m [0mare[0m [0mdone[0m [0;32mwith[0m [0mtheir[0m [0mpotential[0m [0mraises[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1361[0m         """
-[0;32m-> 1362[0;31m         self.handles = get_handle(
-[0m[1;32m   1363[0m             [0msrc[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1364[0m             [0;34m"r"[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<__array_function__ internals>[0m in [0;36mpercentile[0;34m(*args, **kwargs)[0m
 
-[0;32m/usr/local/lib/python3.9/site-packages/pandas/io/common.py[0m in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
-[1;32m    640[0m                 [0merrors[0m [0;34m=[0m [0;34m"replace"[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    641[0m             [0;31m# Encoding[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 642[0;31m             handle = open(
-[0m[1;32m    643[0m                 [0mhandle[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    644[0m                 [0mioargs[0m[0;34m.[0m[0mmode[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py[0m in [0;36mpercentile[0;34m(a, q, axis, out, overwrite_input, interpolation, keepdims)[0m
+[1;32m   3730[0m     [0;32mif[0m [0;32mnot[0m [0m_quantile_is_valid[0m[0;34m([0m[0mq[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3731[0m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Percentiles must be in the range [0, 100]"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 3732[0;31m     return _quantile_unchecked(
+[0m[1;32m   3733[0m         a, q, axis, out, overwrite_input, interpolation, keepdims)
+[1;32m   3734[0m [0;34m[0m[0m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'data/crews-sample.csv'
-FileNotFoundError: [Errno 2] No such file or directory: 'data/crews-sample.csv'
+[0;32m/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py[0m in [0;36m_quantile_unchecked[0;34m(a, q, axis, out, overwrite_input, interpolation, keepdims)[0m
+[1;32m   3849[0m                         interpolation='linear', keepdims=False):
+[1;32m   3850[0m     [0;34m"""Assumes that q is in [0, 1], and is an ndarray"""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 3851[0;31m     r, k = _ureduce(a, func=_quantile_ureduce_func, q=q, axis=axis, out=out,
+[0m[1;32m   3852[0m                     [0moverwrite_input[0m[0;34m=[0m[0moverwrite_input[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3853[0m                     interpolation=interpolation)
+
+[0;32m/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py[0m in [0;36m_ureduce[0;34m(a, func, **kwargs)[0m
+[1;32m   3427[0m         [0mkeepdim[0m [0;34m=[0m [0;34m([0m[0;36m1[0m[0;34m,[0m[0;34m)[0m [0;34m*[0m [0ma[0m[0;34m.[0m[0mndim[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3428[0m [0;34m[0m[0m
+[0;32m-> 3429[0;31m     [0mr[0m [0;34m=[0m [0mfunc[0m[0;34m([0m[0ma[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   3430[0m     [0;32mreturn[0m [0mr[0m[0;34m,[0m [0mkeepdim[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3431[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/site-packages/numpy/lib/function_base.py[0m in [0;36m_quantile_ureduce_func[0;34m(a, q, axis, out, overwrite_input, interpolation, keepdims)[0m
+[1;32m   3965[0m             [0mn[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0misnan[0m[0;34m([0m[0map[0m[0;34m[[0m[0;34m-[0m[0;36m1[0m[0;34m:[0m[0;34m,[0m [0;34m...[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3966[0m [0;34m[0m[0m
+[0;32m-> 3967[0;31m         [0mx1[0m [0;34m=[0m [0mtake[0m[0;34m([0m[0map[0m[0;34m,[0m [0mindices_below[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0maxis[0m[0;34m)[0m [0;34m*[0m [0mweights_below[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   3968[0m         [0mx2[0m [0;34m=[0m [0mtake[0m[0;34m([0m[0map[0m[0;34m,[0m [0mindices_above[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0maxis[0m[0;34m)[0m [0;34m*[0m [0mweights_above[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3969[0m [0;34m[0m[0m
+
+[0;31mUFuncTypeError[0m: ufunc 'multiply' cannot use operands with types dtype('<M8[ns]') and dtype('float64')
+UFuncTypeError: ufunc 'multiply' cannot use operands with types dtype('<M8[ns]') and dtype('float64')
 

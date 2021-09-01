@@ -99,6 +99,3 @@ df.plot.bar(stacked=True)
 plt.title('Views')
 plt.xticks(ticks=[0,1,2,3,4,5,6],labels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
 plt.show()
-
-# Plotting on maps in python is kind of comlicated, not an easy package but either requires github or an API
-# Is there another way around it or maybe too much for an introduction lesson?

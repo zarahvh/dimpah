@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="AI for society" href="../../AI_for_society.html" />
-    <link rel="prev" title="Visuals and Arts" href="Visuals_and_Arts_1.html" />
+    <link rel="prev" title="Visuals and Arts 1" href="Visuals_and_Arts_1.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,6 +93,35 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../../social_analytics.html">
    Social Analytics
@@ -120,7 +149,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Visuals_and_Arts_1.html">
-     Visuals and Arts
+     Visuals and Arts 1
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -165,35 +194,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_2.html">
      Social Data from the Web
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../Introduction.html">
-   Introduction to Python
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
     </a>
    </li>
   </ul>
@@ -256,11 +256,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSocialAnalytics/VisualsArts/Visuals_and_Arts_2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FSocialAnalytics/VisualsArts/Visuals_and_Arts_2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -281,7 +281,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/SocialAnalytics/VisualsArts/Visuals_and_Arts_2.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/SocialAnalytics/VisualsArts/Visuals_and_Arts_2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -309,19 +309,13 @@
   <div class="section" id="visuals-and-arts-2">
 <h1>Visuals and Arts 2<a class="headerlink" href="#visuals-and-arts-2" title="Permalink to this headline">¶</a></h1>
 <p>Up to now we have mainly used this session to introduce how to produce visuals of data. This is important but Manovich also had the analysis of images and other multimedia in mind when he first defined Cultural Analytics. Next, we talk therefore about a few simple exercises to work with images. We will see that basic image manipulation is actually quite simple because images are matrixes and can be manipulated just like any other matrix.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RGB in python??</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Let’s start by reading the jpeg picture using PIL and imshow to display the image inline,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">imshow</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
@@ -353,10 +347,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10a010a90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x102459e80&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Visuals_and_Arts_2_8_1.png" src="../../_images/Visuals_and_Arts_2_8_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_7_1.png" src="../../_images/Visuals_and_Arts_2_7_1.png" />
 </div>
 </div>
 <p>If we handle the image as a numpy array we can also manipulate it as we would a numpy array, by for example cropping it:</p>
@@ -380,10 +374,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11679d220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10a8c43d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Visuals_and_Arts_2_11_1.png" src="../../_images/Visuals_and_Arts_2_11_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_10_1.png" src="../../_images/Visuals_and_Arts_2_10_1.png" />
 </div>
 </div>
 <p>Rotation of images is also funny.
@@ -402,10 +396,10 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x117263f40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10b1df370&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Visuals_and_Arts_2_14_1.png" src="../../_images/Visuals_and_Arts_2_14_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_13_1.png" src="../../_images/Visuals_and_Arts_2_13_1.png" />
 </div>
 </div>
 <p>Next we filter out the blue and the green colour channels so that we are left only with the red:</p>
@@ -419,10 +413,10 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x116846ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10b2a8eb0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Visuals_and_Arts_2_16_1.png" src="../../_images/Visuals_and_Arts_2_16_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_15_1.png" src="../../_images/Visuals_and_Arts_2_15_1.png" />
 </div>
 </div>
 <p>Finally, we would like to produce a black and white van Gogh. A black and white image consists of a single pixel value for all RGB channels. For each of the channels, we simply need to calculate the average of all three colour channels. First, let us make a copy again</p>
@@ -444,13 +438,13 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">fafa87d512e0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">fafa87d512e0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">BW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">nGogh</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">imshow</span><span class="p">(</span><span class="n">BW</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
 
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+<span class="ne">AttributeError</span>: module &#39;matplotlib&#39; has no attribute &#39;get_cmap&#39;
 </pre></div>
 </div>
 </div>
@@ -473,7 +467,7 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x132f74eb8&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Visuals_and_Arts_2_23_1.png" src="../../_images/Visuals_and_Arts_2_23_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_22_1.png" src="../../_images/Visuals_and_Arts_2_22_1.png" />
 </div>
 </div>
 <p>That is almost it for today. I think you got the idea that images are pixel matrixes/arrays based on colour channels that you can manipulate like any other matrix of numbers. Using this knowledge, you could analyse, for instance, digital images of paintings to find out whether they are by the same artist. Take a look at a Kaggle competition (<a class="reference external" href="https://www.kaggle.com/c/painter-by-numbers">https://www.kaggle.com/c/painter-by-numbers</a>), which promises to develop an algorithm to detect art forgeries. The algorithm is supposed to assess with certainty that paintings are by van Gogh or not. For the competition, they use images freely available from <a class="reference external" href="https://www.wikiart.org/">https://www.wikiart.org/</a>. You could also download a few from the site and apply your newly learned skills</p>
@@ -507,7 +501,7 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Visuals_and_Arts_2_26_0.png" src="../../_images/Visuals_and_Arts_2_26_0.png" />
+<img alt="../../_images/Visuals_and_Arts_2_25_0.png" src="../../_images/Visuals_and_Arts_2_25_0.png" />
 </div>
 </div>
 <p>Such average images always look like ghosts in my experience. But you can hopefully recognise the shape of a person. Next, let us ask what kind of colours the average DH person prefers to wear. Try to run the functions rgb_max(img) and rgb2hex() to get the most common colour in hex from an image.</p>
@@ -577,7 +571,7 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Visuals_and_Arts_2_35_0.png" src="../../_images/Visuals_and_Arts_2_35_0.png" />
+<img alt="../../_images/Visuals_and_Arts_2_34_0.png" src="../../_images/Visuals_and_Arts_2_34_0.png" />
 </div>
 </div>
 <p>Apparently the most common colors in the pictures are white (#ffffff) and black (#000000), eventhough it shows up as white in the chart</p>
@@ -591,8 +585,7 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What are the x values in the histogram in the R file?</span>
-<span class="n">flt</span> <span class="o">=</span> <span class="n">nGogh</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flt</span> <span class="o">=</span> <span class="n">nGogh</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">nGogh</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">flt</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -601,7 +594,7 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Visuals_and_Arts_2_38_1.png" src="../../_images/Visuals_and_Arts_2_38_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_37_1.png" src="../../_images/Visuals_and_Arts_2_37_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -625,9 +618,9 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Visuals_and_Arts_2_40_0.png" src="../../_images/Visuals_and_Arts_2_40_0.png" />
-<img alt="../../_images/Visuals_and_Arts_2_40_1.png" src="../../_images/Visuals_and_Arts_2_40_1.png" />
-<img alt="../../_images/Visuals_and_Arts_2_40_2.png" src="../../_images/Visuals_and_Arts_2_40_2.png" />
+<img alt="../../_images/Visuals_and_Arts_2_39_0.png" src="../../_images/Visuals_and_Arts_2_39_0.png" />
+<img alt="../../_images/Visuals_and_Arts_2_39_1.png" src="../../_images/Visuals_and_Arts_2_39_1.png" />
+<img alt="../../_images/Visuals_and_Arts_2_39_2.png" src="../../_images/Visuals_and_Arts_2_39_2.png" />
 </div>
 </div>
 </div>
@@ -657,7 +650,7 @@ The NumPy function that rotates ndarray is np.rot90(), so let us rotate the mast
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Visuals_and_Arts_1.html" title="previous page">Visuals and Arts</a>
+    <a class='left-prev' id="prev-link" href="Visuals_and_Arts_1.html" title="previous page">Visuals and Arts 1</a>
     <a class='right-next' id="next-link" href="../../AI_for_society.html" title="next page">AI for society</a>
 
         </div>

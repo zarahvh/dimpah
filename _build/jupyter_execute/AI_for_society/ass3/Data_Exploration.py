@@ -49,7 +49,7 @@ import matplotlib.pyplot as plt
 
 #Run the code below
 
-votes = pd.read_csv("../data/Votes.csv")
+votes = pd.read_csv("data/Votes.csv")
 
 Check out the dataset with head().
 

@@ -85,23 +85,15 @@ We would like to concentrate on the online information extraction service https:
 
 import spacy
 
-# Load English tokenizer, tagger, parser and NER
 nlp = spacy.load("en_core_web_sm")
 
-# Process whole documents
 text = open('data/20070123.txt', 'r')
 text = text.read()
 doc = nlp(text)
 
 With the function below you should see the kind of entities that are contained in your submission document. Try it.
 
-# Analyze syntax
-# print("Noun phrases:", [chunk.text for chunk in doc.noun_chunks])
-# print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
-
-# Find named entities, phrases and concepts
 for entity in doc.ents:
-#     print(entity.label_)
     print(entity.text, entity.label_)
 
 Extracting entities can be a useful in the automatic analysis of texts. We can use the entities to understand content better or even provide effective links between different texts. If we know that two documents are about the same place, for instance, it seems logical that there is a link between them based on the place. Because I have worked a lot with computational archives, where we want to link collections and documents, I have done a lot of work in information extraction – especially with heterogeneous historical material. I have also been involved with analysing testimonies and other oral histories. Here, a typical question is the kind of sentiment a memory expresses. Is it a positive or negative memory? If so to what degree? These are the kinds of questions that automated sentiment analysis can answer, which we cover next.

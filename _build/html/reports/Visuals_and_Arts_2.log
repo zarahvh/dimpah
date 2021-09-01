@@ -23,12 +23,12 @@ imshow(BW, cmap = plt.get_cmap('gray'))
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-11-fafa87d512e0>[0m in [0;36m<module>[0;34m[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m<ipython-input-10-fafa87d512e0>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0mBW[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0mnGogh[0m[0;34m,[0m [0maxis[0m[0;34m=[0m[0;34m-[0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;34m[0m[0m
 [0;32m----> 3[0;31m [0mimshow[0m[0;34m([0m[0mBW[0m[0;34m,[0m [0mcmap[0m [0;34m=[0m [0mplt[0m[0;34m.[0m[0mget_cmap[0m[0;34m([0m[0;34m'gray'[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'plt' is not defined
-NameError: name 'plt' is not defined
+[0;31mAttributeError[0m: module 'matplotlib' has no attribute 'get_cmap'
+AttributeError: module 'matplotlib' has no attribute 'get_cmap'
 

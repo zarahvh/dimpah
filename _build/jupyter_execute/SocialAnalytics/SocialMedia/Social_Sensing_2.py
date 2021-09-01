@@ -105,10 +105,6 @@ graph = Graph.DictList(
           vertex_name_attr='id',
           edge_foreign_keys=('from', 'to'));
 
-# vseq = graph.vs
-# for v in vseq:
-#     print(v['color'])
-
 We then plot the graph using the graph.vs of the colors the same as we did with the ids
 
 layout = graph.layout("kamada_kawai")
@@ -195,4 +191,3 @@ prop= graph.community_label_propagation()
 plot(prop, mark_groups=True)
 
 That’s it for today. You have learned a lot of things about how to create social sensing networks. This is one of the most important social analytics techniques, and you can impress friends and family now with pretty graphs using the structure of social networks. Next time, we will look into content analysis using text mining.
-
