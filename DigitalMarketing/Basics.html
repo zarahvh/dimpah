@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; DIMPAH</title>
+    <title>Digital marketing and Python - The basics &#8212; DIMPAH</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -95,27 +95,7 @@
   <a class="reference internal" href="../Introduction.html">
    Introduction to Python
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
-    </a>
-   </li>
+  <ul class="simple collapse-ul">
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -200,7 +180,7 @@
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../PredictingModelling.html">
-   AI for society
+   PredictingModelling
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -325,7 +305,17 @@
             Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#digital-marketing-and-data-science">
+   Digital Marketing and Data Science
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-data-exploration">
+   Standard Data Exploration
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -338,7 +328,273 @@
         
               <div>
                 
-  
+  <div class="section" id="digital-marketing-and-python-the-basics">
+<h1>Digital marketing and Python - The basics<a class="headerlink" href="#digital-marketing-and-python-the-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="digital-marketing-and-data-science">
+<h2>Digital Marketing and Data Science<a class="headerlink" href="#digital-marketing-and-data-science" title="Permalink to this headline">¶</a></h2>
+<p>Python can easily perform complex data manipulations, such as regression analysis, market basket research, prediction, cluster analysis, customer segmentation and much more, which are common in marketing analytics. Using specific libraries, you can access your data from Google Analytics, Web Logs, and many more marketing-related software, helping bring all your data into one place for more thorough analysis.</p>
+<p>For a lot of marketing analysis, you will be dealing with average sized data sets and not necessarily the Big Data size that is usually associated with data science. Although data science skills aren’t necessary to be a digital marketer, they will help you analyse and better understand the data so that you can make data-driven business decisions that will improve your marketing methods and therefore improve performance. They will help you rely less on tools.</p>
+<p>To find out more about data science in marketing check out:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ama.org/publications/MarketingNews/Pages/data-science-latest-in-demand-skill-marketing.aspx">https://www.ama.org/publications/MarketingNews/Pages/data-science-latest-in-demand-skill-marketing.aspx</a></p></li>
+<li><p><a class="reference external" href="https://lab.getapp.com/marketing-analytics-data-analysis-in-marketing/">https://lab.getapp.com/marketing-analytics-data-analysis-in-marketing/</a></p></li>
+<li><p>DATACAMP’s Marketing classes. Most of these notebooks are based on these tutorials</p></li>
+</ul>
+</div>
+<div class="section" id="standard-data-exploration">
+<h2>Standard Data Exploration<a class="headerlink" href="#standard-data-exploration" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this first notebook is to introduce you to a typical marketing dataset and demonstrate that the techniques you already know apply here as well.</p>
+<p>We load example sales data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">salesdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;salesData.csv&quot;</span><span class="p">)</span>
+<span class="n">salesdata</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>nItems</th>
+      <th>nCats</th>
+      <th>nBrands</th>
+      <th>nPurch</th>
+      <th>salesLast3Mon</th>
+      <th>salesThisMon</th>
+      <th>daysSinceLastPurch</th>
+      <th>meanItemPrice</th>
+      <th>meanShoppingCartValue</th>
+      <th>customerDuration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+      <td>5122.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2740.341468</td>
+      <td>186.269426</td>
+      <td>36.358649</td>
+      <td>81.915072</td>
+      <td>19.877587</td>
+      <td>1322.604492</td>
+      <td>605.846193</td>
+      <td>6.277235</td>
+      <td>12.253981</td>
+      <td>91.810634</td>
+      <td>644.078485</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1573.603725</td>
+      <td>136.885007</td>
+      <td>13.357449</td>
+      <td>48.013472</td>
+      <td>12.545377</td>
+      <td>370.696876</td>
+      <td>184.196839</td>
+      <td>8.926092</td>
+      <td>16.403479</td>
+      <td>61.891531</td>
+      <td>151.560904</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>188.990000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.866555</td>
+      <td>17.351562</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1381.250000</td>
+      <td>83.000000</td>
+      <td>27.000000</td>
+      <td>45.000000</td>
+      <td>11.000000</td>
+      <td>1067.300000</td>
+      <td>480.982500</td>
+      <td>2.000000</td>
+      <td>6.016695</td>
+      <td>54.429474</td>
+      <td>547.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2742.500000</td>
+      <td>157.000000</td>
+      <td>37.000000</td>
+      <td>75.500000</td>
+      <td>17.000000</td>
+      <td>1332.135000</td>
+      <td>607.810000</td>
+      <td>3.000000</td>
+      <td>8.529072</td>
+      <td>76.565747</td>
+      <td>649.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4098.750000</td>
+      <td>258.000000</td>
+      <td>47.000000</td>
+      <td>111.000000</td>
+      <td>26.000000</td>
+      <td>1573.530000</td>
+      <td>731.535000</td>
+      <td>7.000000</td>
+      <td>13.185741</td>
+      <td>110.610227</td>
+      <td>745.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>5455.000000</td>
+      <td>1469.000000</td>
+      <td>73.000000</td>
+      <td>517.000000</td>
+      <td>88.000000</td>
+      <td>2790.580000</td>
+      <td>1362.780000</td>
+      <td>89.000000</td>
+      <td>377.900000</td>
+      <td>914.040000</td>
+      <td>1355.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>salesData is about customers and their sales in the last three months. Otherwise:</p>
+<ul class="simple">
+<li><p>id: identification number of customer</p></li>
+<li><p>mostFreqStore: store person bought mostly from</p></li>
+<li><p>mostFreqCat: category person purchased mostly</p></li>
+<li><p>nCats: number of different categories</p></li>
+<li><p>preferredBrand: brand person purchased mostly</p></li>
+<li><p>nBrands: number of different brands</p></li>
+</ul>
+<p>Next we want to visualise the correlation in the dataset. Do you remember .corr() ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">cor</span> <span class="o">=</span> <span class="n">salesdata</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cor</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Basics_5_0.png" src="../_images/Basics_5_0.png" />
+</div>
+</div>
+<p>The following boxplots show how salesThisMon is dependent on the preferredBrand and mostFreqStore.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">salesdata</span><span class="p">[</span><span class="s1">&#39;mostFreqStore&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">salesdata</span><span class="p">[</span><span class="s1">&#39;salesThisMon&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;mostFreqStore&#39;, ylabel=&#39;salesThisMon&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Basics_7_1.png" src="../_images/Basics_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">salesdata</span><span class="p">[</span><span class="s1">&#39;preferredBrand&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">salesdata</span><span class="p">[</span><span class="s1">&#39;salesThisMon&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;preferredBrand&#39;, ylabel=&#39;salesThisMon&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Basics_8_1.png" src="../_images/Basics_8_1.png" />
+</div>
+</div>
+<p>Which features are  well suited to explain the sales of this month?</p>
+<p>There seems to be definitely something about the Stockton store, while for the brands the situation seems to be much less obvious.</p>
+<p>As a final exercise, let’s check out a quick linear regression analysis. We would like to investigate further the relationships of days since last purchase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">salesdata</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;daysSinceLastPurch&#39;</span> <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;salesThisMon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12bad14f0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Basics_10_1.png" src="../_images/Basics_10_1.png" />
+</div>
+</div>
+<p>There is obviously a negative relationship between the days since the last purchase and the sales this months.</p>
+<p>Let’s control for brand next.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">salesdata</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;daysSinceLastPurch&#39;</span> <span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;salesThisMon&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;preferredBrand&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x12baf0700&gt;
+</pre></div>
+</div>
+<img alt="../_images/Basics_12_1.png" src="../_images/Basics_12_1.png" />
+</div>
+</div>
+<p>As you can see, for some brands, the time delay effect is less strong.</p>
+<p>I hope you can  see how the methods we have used in the module can easily be applied to digital marketing data. Next we will investigate several examples of specific digital marketing analysis.</p>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
