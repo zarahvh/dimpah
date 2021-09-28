@@ -1,4 +1,4 @@
 Intro
 ============================
 
-Intro about the DH workbook
+Introduction about the DH workbook
