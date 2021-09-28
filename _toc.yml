@@ -32,5 +32,8 @@
    - file: PredictingModelling/LinearPrediction
    - file: PredictingModelling/PredictingModelling
    - file: PredictingModelling/Titanic
-
+- file: FocusGroup
+  sections:
+   - file: FocusGroup/Communities_of_Digital_Culture_and_Society_1
+   - file: FocusGroup/Communities_of_Digital_Culture_and_Society_2
    

@@ -178,3 +178,7 @@ sns.scatterplot(x="PC1",y="PC2",hue="cluster",data=data)
 
 data
 
+kmeans_df
+
+kmeans.labels_
+

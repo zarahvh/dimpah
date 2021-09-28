@@ -21,23 +21,80 @@ iris = pd.read_csv('iris.csv', delimiter=';')
 
 iris.head()
 
+## Grammar of Graphics
+
+Just to repeat what we have learned in today's lecture. The grammar of graphics describes:
+
+- A set of rules for creation of graphics
+- Each graphic is made up of several independent components
+- Each component can be manipulated
+- We can combine components in a specific way to create graphics
+
+To speak the grammar of graphics we need to define:
+
+- Data (noun/subject)
+- Aesthetic mappings (adjectives)
+- Geom (verb)
+- Stat (adverb)
+- Position (preposition)
+
+## Seaborn
+
+### Seaborn countplot
+
 # https://www.kaggle.com/zachgold/python-iris-data-visualizations
 # plot sepal length count (bar)
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-# plot sepal width against length (scatter)
+fig_dims = (12, 8)
+fig, ax = plt.subplots(figsize=fig_dims)
+sns.countplot(x="sepal_length", data=iris, ax=ax)
 
-# add species with colors
+### Seaborn scatterplot
 
-# distribution of species
+sns.relplot(x="sepal_length", y="sepal_width", data=iris)
 
-# line plot with the same
+### Using color to represent the species
 
-# boxplot for lenght and species
+sns.relplot(x="sepal_length", y="sepal_width", data=iris, hue="species")
 
-# facets for length?
+### Distribution of species
 
-# themes?
+sns.countplot(x="species", data=iris)
 
-# color schemes?
+### Line plot 
 
-# shiny app?
+A line plot does not really makes sense here, because the points are not related/connected but for the same of a demonstration of how to do them with data.
+
+sns.relplot(x="petal_length", y="petal_width", data=iris, hue="species", kind='line')
+
+### Boxplot
+
+sns.boxplot(x='species', y='sepal_length', data=iris)
+
+### Facets
+
+g = sns.FacetGrid(iris,  col="species")
+g.map_dataframe(sns.histplot, x="sepal_length")
+
+g = sns.FacetGrid(iris,  row="species")
+g.map_dataframe(sns.histplot, x="sepal_length")
+
+### Linear regression line
+Use sns.lmplot() to add a linear regression line
+
+sns.lmplot(x="sepal_length", y="sepal_width", data=iris, hue="species", height=10)
+
+## Themes
+We can also change the overall look of our theme using sns.set_style()
+
+sns.set_style("darkgrid", {"axes.facecolor": ".9"})
+sns.relplot(x="sepal_length", y="sepal_width", data=iris, hue="species")
+
+### Colour scheme
+We can easily adjust the colours using the palette parameter
+
+sns.relplot(x="sepal_length", y="sepal_width", data=iris, hue="species", palette="bright")
+
+# interactive plots in python?
