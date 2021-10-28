@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R graphs and Gephi &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Eighteenth Century beta of PRISM" href="Reveredetection.html" />
+    <link rel="prev" title="Whatsapp" href="../APIs/Whatsapp.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/PredictingModelling.html">
+     Predicting Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../FocusGroup.html">
+   Focus Group
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
+     Social Networking Communities
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/Churn.html">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Reveredetection.html">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../VisualsArts/AdvancedVisualisation.html">
+     Lots of fun with Python visualisations
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/SocialSensing/Graphs/Igraph.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FSocialSensing/Graphs/Igraph.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/SocialSensing/Graphs/Igraph.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delitsch-school-class-network">
+   Delitsch School Class Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data">
+   The Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-statistics-with-python-igraph">
+     Simple Statistics with Python igraph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-the-graph">
+     Change the graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hubs-authorities">
+     Hubs/Authorities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twitter-network-analysis">
+   Twitter Network Analysis
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="r-graphs-and-gephi">
+<h1>R graphs and Gephi<a class="headerlink" href="#r-graphs-and-gephi" title="Permalink to this headline">¶</a></h1>
+<p>This exercise will teach you how to use Python together with the popular visualisation environment Igraph.
+The paper you read today, used both to perfection: Pablo Barbera, John T. Jost, Jonathan Nagler, Joshua Tucker, and Richard Bonneau: “Tweeting from Left to Right: Is Online Political Communication More Than an Echo Chamber?”.</p>
+<p>Check out the paper’s code at <a class="reference external" href="https://github.com/pablobarbera/echo_chambers">https://github.com/pablobarbera/echo_chambers</a> and in particular <a class="reference external" href="https://github.com/pablobarbera/echo_chambers/blob/master/03_analysis/14-network-visualization.r">https://github.com/pablobarbera/echo_chambers/blob/master/03_analysis/14-network-visualization.r</a>, which produces all the wonderful network visualisations you have seen in the text. If we would have access to the data we could just rerun the analysis.</p>
+<p>The exercise today will teach you how to produce such Igraph graphs based on an Python analysis. Well, we will take the first steps at least.</p>
+<div class="section" id="delitsch-school-class-network">
+<h2>Delitsch School Class Network<a class="headerlink" href="#delitsch-school-class-network" title="Permalink to this headline">¶</a></h2>
+<p>Our first example is the friendship network of a German boys’ school class from 1880/1881. It’s based on the probably first ever collected social network dataset, assembled by the primary school teacher Johannes Delitsch. The data was reanalyzed and compiled for the article: Heidler, R., Gamper, M., Herz, A., Eßer, F. (2014): Relationship patterns in the 19th century: The friendship network in a German boys’ school class from 1880 to 1881 revisited. Social Networks 13: 1–13..</p>
+<p>Let’s load igraph first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">igraph</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-data">
+<h2>The Data<a class="headerlink" href="#the-data" title="Permalink to this headline">¶</a></h2>
+<p>The Delitsch data is prepared for you. You can load it with igraph.read() from igraph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">igraph</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;Delitsch-Network.gml &quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check out the vertices (nodes) labels and create a quick plot of the graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">igraph</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">summary</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IGRAPH D--- 53 179 -- 
++ attr: Handicapped (v), Lokationposition1highest53lowest (v), Repeater (v), Sweetsgiver (v), graphics (v), id (v), label (v), id (e), value (e)
+IGRAPH D--- 53 179 --
++ attr: Handicapped (v), Lokationposition1highest53lowest (v), Repeater (v),
+  Sweetsgiver (v), graphics (v), id (v), label (v), id (e), value (e)
++ edges:
+ 0 -&gt;  3  4 36                              29 -&gt;  0 13 45 49
+ 1 -&gt; 14 24 50                              30 -&gt; 13 14 23 29 40
+ 2 -&gt;  1  3  8 15 35                        31 -&gt; 35
+ 3 -&gt;  9 13 22 35 45 48                     32 -&gt; 21 26
+ 4 -&gt;  0  5 13 23                           33 -&gt;
+ 5 -&gt;  1  3  4 13                           34 -&gt;  4
+ 6 -&gt; 10 15                                 35 -&gt;  6 10 22 23 28 31 44 46 49
+ 7 -&gt;                                       36 -&gt; 10 49
+ 8 -&gt; 40 49                                 37 -&gt;  0  2 10 14 16 17 22 24 35
+38 40 48
+ 9 -&gt;  3                                    38 -&gt; 22 32 36
+10 -&gt;  6  8 13 14 27                        39 -&gt;
+11 -&gt; 43                                    40 -&gt;  8 12 20 23 50
+12 -&gt; 40                                    41 -&gt; 16 22 44
+13 -&gt;  0 14 22 45                           42 -&gt; 14 16 22 45
+14 -&gt;  4  5  6 13 16 22 24 45 50            43 -&gt;  0 11
+15 -&gt;  2 13 14 18                           44 -&gt; 14 15 21 30 40 43
+16 -&gt; 14                                    45 -&gt;  0 13 14 22
+17 -&gt;  0 10 22 37 38 45                     46 -&gt; 14 16
+18 -&gt;                                       47 -&gt;
+19 -&gt;                                       48 -&gt; 10 14 21 24 29 37 40 41 44
+20 -&gt; 40                                    49 -&gt;  8 13 14 45
+21 -&gt;  0  1  2  5 10 14 20 40 43 48         50 -&gt; 13 23 24
+22 -&gt;  4 13 14 45                           51 -&gt; 13 18 45 52
+23 -&gt;  4 20 40 50                           52 -&gt; 14 29 40 51
+24 -&gt;  1 48 50
+25 -&gt; 13 15 45
+26 -&gt; 32
+27 -&gt; 10
+28 -&gt; 14 22
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cairocffi</span>
+<span class="c1"># layout = g.layout(&quot;kk&quot;)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">VertexClustering</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Igraph_7_0.svg" src="../../_images/Igraph_7_0.svg" /></div>
+</div>
+<div class="section" id="simple-statistics-with-python-igraph">
+<h3>Simple Statistics with Python igraph<a class="headerlink" href="#simple-statistics-with-python-igraph" title="Permalink to this headline">¶</a></h3>
+<p>To demonstrate that you can use Python as a statistical engine to support your Graphi work, we now run a few simple statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># node degree</span>
+<span class="n">node_degree</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="c1"># degree distribution</span>
+<span class="n">degree_distr</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">degree_distribution</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ??</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">node_degree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12929e5b0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/Igraph_10_1.png" src="../../_images/Igraph_10_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="change-the-graph">
+<h3>Change the graph<a class="headerlink" href="#change-the-graph" title="Permalink to this headline">¶</a></h3>
+<p>Next we update the graph to prepare it for its Gephi visualisation. You should know already how this works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">vertex_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/usr/local/lib/python3.9/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/__init__.py</span> in <span class="ni">_repr_svg_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>         <span class="n">context</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="c1"># Plot the graph on this context</span>
+<span class="ne">--&gt; </span><span class="mi">352</span>         <span class="bp">self</span><span class="o">.</span><span class="n">redraw</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="c1"># No idea why this is needed but python crashes without</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">context</span><span class="o">.</span><span class="n">show_page</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/__init__.py</span> in <span class="ni">redraw</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span>                     <span class="n">ctx</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>                 <span class="n">plotter</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>                 <span class="k">if</span> <span class="n">opacity</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>                     <span class="n">ctx</span><span class="o">.</span><span class="n">pop_group_to_source</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/__init__.py</span> in <span class="ni">__plot__</span><span class="nt">(self, context, bbox, palette, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3732</span>             <span class="k">del</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;drawer_factory&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">3733</span>         <span class="n">drawer</span> <span class="o">=</span> <span class="n">drawer_factory</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3734</span>         <span class="n">drawer</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3735</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3736</span>     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/graph.py</span> in <span class="ni">draw</span><span class="nt">(self, graph, palette, *args, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span> 
+<span class="g g-Whitespace">    </span><span class="mi">223</span>         <span class="c1"># Calculate/get the layout of the graph</span>
+<span class="ne">--&gt; </span><span class="mi">224</span>         <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_layout</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;layout&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">graph</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> 
+<span class="g g-Whitespace">    </span><span class="mi">226</span>         <span class="c1"># Determine the size of the margin on each side</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/graph.py</span> in <span class="ni">ensure_layout</span><span class="nt">(self, layout, graph)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>             <span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>             <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="k">return</span> <span class="n">layout</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/layout.py</span> in <span class="ni">__init__</span><span class="nt">(self, coords, dim)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         if coords:</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">             self._coords = [list(coord) for coord in coords]</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             self._coords = []</span>
+
+<span class="ne">TypeError</span>: &#39;module&#39; object is not iterable
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;igraph.drawing.Plot at 0x1292cacd0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hubs-authorities">
+<h3>Hubs/Authorities<a class="headerlink" href="#hubs-authorities" title="Permalink to this headline">¶</a></h3>
+<p>Let’s do one more example analysis. Network hubs are expected to contain vertices with a large number of outgoing links, while authorities would get many incoming links from hubs.</p>
+<p>Let’s plot both.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hs</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">hub_score</span><span class="p">()</span>
+<span class="n">asc</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">authority_score</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">vertex_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">vertex_size</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">hub_score</span><span class="p">()</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/usr/local/lib/python3.9/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/__init__.py</span> in <span class="ni">_repr_svg_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>         <span class="n">context</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="c1"># Plot the graph on this context</span>
+<span class="ne">--&gt; </span><span class="mi">352</span>         <span class="bp">self</span><span class="o">.</span><span class="n">redraw</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="c1"># No idea why this is needed but python crashes without</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">context</span><span class="o">.</span><span class="n">show_page</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/__init__.py</span> in <span class="ni">redraw</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span>                     <span class="n">ctx</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>                 <span class="n">plotter</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>                 <span class="k">if</span> <span class="n">opacity</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>                     <span class="n">ctx</span><span class="o">.</span><span class="n">pop_group_to_source</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/__init__.py</span> in <span class="ni">__plot__</span><span class="nt">(self, context, bbox, palette, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3732</span>             <span class="k">del</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;drawer_factory&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">3733</span>         <span class="n">drawer</span> <span class="o">=</span> <span class="n">drawer_factory</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3734</span>         <span class="n">drawer</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3735</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3736</span>     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/graph.py</span> in <span class="ni">draw</span><span class="nt">(self, graph, palette, *args, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span> 
+<span class="g g-Whitespace">    </span><span class="mi">223</span>         <span class="c1"># Calculate/get the layout of the graph</span>
+<span class="ne">--&gt; </span><span class="mi">224</span>         <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_layout</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;layout&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">graph</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> 
+<span class="g g-Whitespace">    </span><span class="mi">226</span>         <span class="c1"># Determine the size of the margin on each side</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/graph.py</span> in <span class="ni">ensure_layout</span><span class="nt">(self, layout, graph)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>             <span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>             <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="k">return</span> <span class="n">layout</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/layout.py</span> in <span class="ni">__init__</span><span class="nt">(self, coords, dim)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         if coords:</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">             self._coords = [list(coord) for coord in coords]</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             self._coords = []</span>
+
+<span class="ne">TypeError</span>: &#39;module&#39; object is not iterable
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;igraph.drawing.Plot at 0x12940f2e0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">vertex_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">vertex_size</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">authority_score</span><span class="p">()</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/usr/local/lib/python3.9/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/__init__.py</span> in <span class="ni">_repr_svg_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>         <span class="n">context</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="c1"># Plot the graph on this context</span>
+<span class="ne">--&gt; </span><span class="mi">352</span>         <span class="bp">self</span><span class="o">.</span><span class="n">redraw</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="c1"># No idea why this is needed but python crashes without</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">context</span><span class="o">.</span><span class="n">show_page</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/__init__.py</span> in <span class="ni">redraw</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span>                     <span class="n">ctx</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>                 <span class="n">plotter</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>                 <span class="k">if</span> <span class="n">opacity</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>                     <span class="n">ctx</span><span class="o">.</span><span class="n">pop_group_to_source</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/__init__.py</span> in <span class="ni">__plot__</span><span class="nt">(self, context, bbox, palette, *args, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3732</span>             <span class="k">del</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;drawer_factory&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">3733</span>         <span class="n">drawer</span> <span class="o">=</span> <span class="n">drawer_factory</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3734</span>         <span class="n">drawer</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3735</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3736</span>     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/graph.py</span> in <span class="ni">draw</span><span class="nt">(self, graph, palette, *args, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span> 
+<span class="g g-Whitespace">    </span><span class="mi">223</span>         <span class="c1"># Calculate/get the layout of the graph</span>
+<span class="ne">--&gt; </span><span class="mi">224</span>         <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_layout</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;layout&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">graph</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> 
+<span class="g g-Whitespace">    </span><span class="mi">226</span>         <span class="c1"># Determine the size of the margin on each side</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/drawing/graph.py</span> in <span class="ni">ensure_layout</span><span class="nt">(self, layout, graph)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>             <span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>             <span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="k">return</span> <span class="n">layout</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/layout.py</span> in <span class="ni">__init__</span><span class="nt">(self, coords, dim)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         if coords:</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">             self._coords = [list(coord) for coord in coords]</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             self._coords = []</span>
+
+<span class="ne">TypeError</span>: &#39;module&#39; object is not iterable
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;igraph.drawing.Plot at 0x12940f1f0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="twitter-network-analysis">
+<h2>Twitter Network Analysis<a class="headerlink" href="#twitter-network-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The Delitsch network is quite interesting, but maybe you are more excited by being able to visualise Twitter networks?</p>
+<p>First we do our Twitter thing and set up the environment for searching Twitter from R. I have defined a token for you and use this opportunity to show you how to load it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">ipynb.fs.full.keys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">tweepy</span>
+
+<span class="n">consumer_key</span> <span class="o">=</span> <span class="n">twit_key</span>
+<span class="n">consumer_secret</span> <span class="o">=</span> <span class="n">twit_secr</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">twit_token</span>
+
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">bdaa438e5bc8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">ipynb.fs.full.keys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">consumer_key</span> <span class="o">=</span> <span class="n">twit_key</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipynb.fs.full.keys&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we search Twitter for the ‘truth’. Up to 100 recent Tweets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tweepy</span> <span class="k">as</span> <span class="nn">tw</span>
+<span class="n">tweets</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">,</span> 
+                           <span class="n">q</span><span class="o">=</span><span class="s1">&#39;truth&#39;</span><span class="p">,</span>
+                           <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">users_text</span> <span class="o">=</span> <span class="p">[[</span><span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">screen_name</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">followers_count</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">favourites_count</span><span class="p">]</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">]</span>
+<span class="c1"># users_text</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">users_text</span><span class="p">,</span> 
+                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s1">&#39;followers&#39;</span><span class="p">,</span> <span class="s1">&#39;favourites_count&#39;</span><span class="p">])</span>
+<span class="n">tweet_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user</th>
+      <th>text</th>
+      <th>followers</th>
+      <th>favourites_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1OusmaneSembene</td>
+      <td>Mina ngeke ngi celebrate umthengisi,no matter ...</td>
+      <td>8676</td>
+      <td>8367</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>pureeastside</td>
+      <td>RT @garyhgoodridge: The truth is everybody is ...</td>
+      <td>617</td>
+      <td>12915</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Rachell02423929</td>
+      <td>RT @rosemcgowan: This man is being murdered in...</td>
+      <td>21</td>
+      <td>795</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SimpleS18790446</td>
+      <td>RT @SteveTiger999: A seemingly inviolable law:...</td>
+      <td>1403</td>
+      <td>51745</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>rogerlwhite</td>
+      <td>RT @Iain_L: The wonderful thing is that despit...</td>
+      <td>5531</td>
+      <td>107006</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Nathanael_Mammo</td>
+      <td>"It's happening to Ethiopia today. Tomorrow it...</td>
+      <td>223</td>
+      <td>4518</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Here4Pakistan</td>
+      <td>RT @sayedzbukhari: TRUTH ALWAYS WINS!\nUpon co...</td>
+      <td>175</td>
+      <td>47991</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>neymrqz</td>
+      <td>RT @rebellicca: I ask you to honor the day by ...</td>
+      <td>3472</td>
+      <td>30774</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>elsancl07</td>
+      <td>RT @bbyadult: just wanted to show off my shirt...</td>
+      <td>739</td>
+      <td>8239</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Casparnova</td>
+      <td>RT @UltimateComics: Crissa's Top 5!\nSpooky wi...</td>
+      <td>12650</td>
+      <td>29679</td>
+    </tr>
+  </tbody>
+</table>
+<p>99 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># edges &lt;- gt_edges(tweets, text, screen_name, status_id)</span>
+<span class="c1"># #edges &lt;- edges[!duplicated(edges),]</span>
+<span class="c1"># nodes &lt;- gt_nodes(edges, meta = TRUE)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot a quick histogram of followers_count to demonstrate what we could do with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet_df</span><span class="p">[</span><span class="s1">&#39;followers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Igraph_25_1.png" src="../../_images/Igraph_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collect edges and nodes with the count for the favourite</span>
+<span class="c1"># but what are the relations? the nodes are the users but what is the edge, is it the amount of followers?</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user_name&#39;</span><span class="p">])</span>
+<span class="c1"># nodes[&#39;userid&#39;] = graphdata.follower.unique()</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;user_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tweet_df</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">relations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;followers&#39;</span><span class="p">])</span>
+<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;followers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tweet_df</span><span class="p">[</span><span class="s1">&#39;followers&#39;</span><span class="p">]</span>
+<span class="c1"># relations[&#39;follower&#39;] = graphdata[&#39;follower&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="o">.</span><span class="n">DictList</span><span class="p">(</span>
+          <span class="n">vertices</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+          <span class="n">edges</span><span class="o">=</span><span class="n">relations</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+          <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+          <span class="n">vertex_name_attr</span><span class="o">=</span><span class="s1">&#39;user_name&#39;</span><span class="p">,</span>
+          <span class="n">edge_foreign_keys</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;followers&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mi">252</span><span class="n">b3ecb4371</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="o">.</span><span class="n">DictList</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>           <span class="n">vertices</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>           <span class="n">edges</span><span class="o">=</span><span class="n">relations</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>           <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>           <span class="n">vertex_name_attr</span><span class="o">=</span><span class="s1">&#39;user_name&#39;</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/igraph/__init__.py</span> in <span class="ni">DictList</span><span class="nt">(klass, vertices, edges, directed, vertex_name_attr, edge_foreign_keys, iterative)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2749</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2750</span>         <span class="c1"># Construct the edges</span>
+<span class="ne">-&gt; </span><span class="mi">2751</span>         <span class="n">efk_src</span><span class="p">,</span> <span class="n">efk_dest</span> <span class="o">=</span> <span class="n">edge_foreign_keys</span>
+<span class="g g-Whitespace">   </span><span class="mi">2752</span>         <span class="k">if</span> <span class="n">iterative</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2753</span>             <span class="n">g</span> <span class="o">=</span> <span class="n">klass</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">[],</span> <span class="n">directed</span><span class="p">,</span> <span class="p">{},</span> <span class="n">vertex_attrs</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: too many values to unpack (expected 2)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./SocialSensing/Graphs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../APIs/Whatsapp.html" title="previous page">Whatsapp</a>
+    <a class='right-next' id="next-link" href="Reveredetection.html" title="next page">Eighteenth Century beta of PRISM</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
