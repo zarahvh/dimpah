@@ -1,0 +1,1428 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eighteenth Century beta of PRISM &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visuals Arts" href="../../VisualsArts.html" />
+    <link rel="prev" title="R graphs and Gephi" href="Igraph.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/PredictingModelling.html">
+     Predicting Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../FocusGroup.html">
+   Focus Group
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
+     Social Networking Communities
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/Churn.html">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Igraph.html">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../VisualsArts/AdvancedVisualisation.html">
+     Lots of fun with Python visualisations
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/SocialSensing/Graphs/Reveredetection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FSocialSensing/Graphs/Reveredetection.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/SocialSensing/Graphs/Reveredetection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-paul-revere">
+   Finding Paul Revere
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#betweeness">
+     Betweeness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenvector">
+     Eigenvector
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#community-detection">
+     Community Detection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-of-centralities">
+     Comparison of centralities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="eighteenth-century-beta-of-prism">
+<h1>Eighteenth Century beta of PRISM<a class="headerlink" href="#eighteenth-century-beta-of-prism" title="Permalink to this headline">¶</a></h1>
+<p>This is a simple but effective example of the power of social network analysis using the principles of using connection to detect ‘suspicous activity’ in the network of American revolutionaries in the 18th century before the American revolution. We will play with the principles of the NSA’s PRISM programme <a class="reference external" href="https://en.wikipedia.org/wiki/PRISM_(surveillance_program)">https://en.wikipedia.org/wiki/PRISM_(surveillance_program)</a> but apply these to the 18th century.</p>
+<p>The code is adapted from <a class="reference external" href="https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/">https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/</a> and
+<a class="reference external" href="https://github.com/kjhealy/revere/blob/master/revere.R">https://github.com/kjhealy/revere/blob/master/revere.R</a>. Check out Kieran’s wonderful work: <a class="reference external" href="https://kieranhealy.org/">https://kieranhealy.org/</a></p>
+<p>Kieran introduces his ideas with: ‘A brief demonstration of the surprising effectiveness of even the simplest techniques of the new-fangled Social Networke Analysis in the pursuit of those who would seek to undermine the liberty enjoyed by His Majesty’s subjects. This is in connection with the discussion of the role of “metadata” in certain recent events and the assurances of various respectable parties that the government was merely “sifting through this so-called metadata” and that the “information acquired does not include the content of any communications”. I will show how we can use this “metadata” to find key persons involved in terrorist groups operating within the Colonies at the present time (…).’ (<a class="reference external" href="https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/">https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/</a>).</p>
+<p>Let’s load the library igraph next, which you should already have installed. Otherwise, please install it first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">igraph</span> <span class="k">as</span> <span class="nn">ig</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The data for the analysis is based on the appendix of David Hackett Fischer: Paul Revere’s ride. Oxford University Press, 1995. Kieran has done the work of creating the dataset for us. Let’s load the data from his github pages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Paul</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;PaulRevereAppD.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Paul</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StAndrewsLodge</th>
+      <th>LoyalNine</th>
+      <th>NorthCaucus</th>
+      <th>LongRoomClub</th>
+      <th>TeaParty</th>
+      <th>BostonCommittee</th>
+      <th>LondonEnemies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Adams.John</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Adams.Samuel</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Allen.Dr</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Appleton.Nathaniel</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Ash.Gilbert</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next we create an adjacency matrix (<a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">https://en.wikipedia.org/wiki/Adjacency_matrix</a>) using matrix multiplication (%*%). This is quite basic matrix stuff, but you do not need to know how this is exactly calculated. If you are nevertheless interested, please check out <a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_multiplication">https://en.wikipedia.org/wiki/Matrix_multiplication</a>. t is the transpase operator in R (<a class="reference external" href="https://en.wikipedia.org/wiki/Transpose">https://en.wikipedia.org/wiki/Transpose</a>). We will create two new adjacency matrixes. The first one counts the number of times a person is in the same group with another person. The second matrix counts the number of members per group.</p>
+<p>You could easily implement the count of groups and people with, for instance, a for loop but matrix multiplication is much more efficient.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Count the number of groups two persons are part of!</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">Paul</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Paul</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">person</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Adams.John</th>
+      <th>Adams.Samuel</th>
+      <th>Allen.Dr</th>
+      <th>Appleton.Nathaniel</th>
+      <th>Ash.Gilbert</th>
+      <th>Austin.Benjamin</th>
+      <th>Austin.Samuel</th>
+      <th>Avery.John</th>
+      <th>Baldwin.Cyrus</th>
+      <th>Ballard.John</th>
+      <th>...</th>
+      <th>Whitwell.William</th>
+      <th>Williams.Jeremiah</th>
+      <th>Williams.Jonathan</th>
+      <th>Williams.Thomas</th>
+      <th>Willis.Nathaniel</th>
+      <th>Wingfield.William</th>
+      <th>Winslow.John</th>
+      <th>Winthrop.John</th>
+      <th>Wyeth.Joshua</th>
+      <th>Young.Thomas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Adams.John</th>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Adams.Samuel</th>
+      <td>2</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Allen.Dr</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Appleton.Nathaniel</th>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Ash.Gilbert</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 254 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Members in a group</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">Paul</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Paul</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StAndrewsLodge</th>
+      <th>LoyalNine</th>
+      <th>NorthCaucus</th>
+      <th>LongRoomClub</th>
+      <th>TeaParty</th>
+      <th>BostonCommittee</th>
+      <th>LondonEnemies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>StAndrewsLodge</th>
+      <td>53</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>LoyalNine</th>
+      <td>2</td>
+      <td>10</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>NorthCaucus</th>
+      <td>3</td>
+      <td>3</td>
+      <td>59</td>
+      <td>5</td>
+      <td>13</td>
+      <td>9</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>LongRoomClub</th>
+      <td>2</td>
+      <td>0</td>
+      <td>5</td>
+      <td>17</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>TeaParty</th>
+      <td>3</td>
+      <td>2</td>
+      <td>13</td>
+      <td>2</td>
+      <td>97</td>
+      <td>3</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next we do some clean up and define all the matrix diagonals as NA, as they are meaningless and transform the dataframe into one that we can use for the graph</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">333</span><span class="p">)</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">333</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="n">groun</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">groun</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">,</span><span class="s1">&#39;to&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+<span class="n">groun</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>from</th>
+      <th>to</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>StAndrewsLodge</td>
+      <td>LoyalNine</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>StAndrewsLodge</td>
+      <td>NorthCaucus</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>StAndrewsLodge</td>
+      <td>LongRoomClub</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>StAndrewsLodge</td>
+      <td>TeaParty</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>StAndrewsLodge</td>
+      <td>BostonCommittee</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">])</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groun</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groun</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+
+<span class="n">relations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">])</span>
+<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groun</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">]</span>
+<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groun</span><span class="p">[</span><span class="s1">&#39;to&#39;</span><span class="p">]</span>
+
+<span class="n">G_group</span> <span class="o">=</span> <span class="n">ig</span><span class="o">.</span><span class="n">Graph</span><span class="o">.</span><span class="n">DictList</span><span class="p">(</span>
+          <span class="n">vertices</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+          <span class="n">edges</span><span class="o">=</span><span class="n">relations</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+          <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+          <span class="n">vertex_name_attr</span><span class="o">=</span><span class="s1">&#39;group&#39;</span><span class="p">,</span>
+          <span class="n">edge_foreign_keys</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cairocffi</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">G_group</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;Fruchterman_reingold&quot;</span><span class="p">)</span>
+<span class="n">ig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">G_group</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">G_group</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">],</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G_group</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Reveredetection_12_0.svg" src="../../_images/Reveredetection_12_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">333</span><span class="p">)</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">333</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="n">personn</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">personn</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">,</span><span class="s1">&#39;to&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+<span class="n">person_df</span> <span class="o">=</span> <span class="n">personn</span><span class="p">[</span><span class="n">personn</span><span class="o">.</span><span class="n">weight</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">person_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>from</th>
+      <th>to</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adams.John</td>
+      <td>Adams.Samuel</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adams.John</td>
+      <td>Allen.Dr</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adams.John</td>
+      <td>Appleton.Nathaniel</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Adams.John</td>
+      <td>Ballard.John</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Adams.John</td>
+      <td>Barber.Nathaniel</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">])</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">person_df</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">person_df</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+<span class="n">nodes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Revere.Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+
+<span class="n">relations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">])</span>
+<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">person_df</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">]</span>
+<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">person_df</span><span class="p">[</span><span class="s1">&#39;to&#39;</span><span class="p">]</span>
+<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">person_df</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+
+<span class="n">G_person</span> <span class="o">=</span> <span class="n">ig</span><span class="o">.</span><span class="n">Graph</span><span class="o">.</span><span class="n">DictList</span><span class="p">(</span>
+          <span class="n">vertices</span><span class="o">=</span><span class="n">nodes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+          <span class="n">edges</span><span class="o">=</span><span class="n">relations</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
+          <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+          <span class="n">vertex_name_attr</span><span class="o">=</span><span class="s1">&#39;person&#39;</span><span class="p">,</span>
+          <span class="n">edge_foreign_keys</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plotting the people in the data and their connections, reveals …? We mark Paul Revere in red.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cairocffi</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">G_person</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>
+<span class="n">ig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">G_person</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">G_person</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">],</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">*</span><span class="mf">0.08</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G_person</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span> <span class="n">edge_arrow_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">vertex_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Reveredetection_16_0.svg" src="../../_images/Reveredetection_16_0.svg" /></div>
+</div>
+<div class="section" id="finding-paul-revere">
+<h2>Finding Paul Revere<a class="headerlink" href="#finding-paul-revere" title="Permalink to this headline">¶</a></h2>
+<p>Next we apply a number of typical graph measures to get clarity about a complex networks such as the one above. Don’t worry if you do not understand them immediately. You can find many explanations on the web that should help you. If after this you have an intuition that should be enough.</p>
+<div class="section" id="betweeness">
+<h3>Betweeness<a class="headerlink" href="#betweeness" title="Permalink to this headline">¶</a></h3>
+<p>Betweenness is a measure of the centrality of everyone in our graph, which is roughly the number of “shortest paths” between any two people in our network that pass through the person of interest. Or put more simply: “If I have to get from person a to person z, how likely is it that the quickest way is through person x?”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">betw</span> <span class="o">=</span> <span class="n">G_person</span><span class="o">.</span><span class="n">betweenness</span><span class="p">()</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;betweenness&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">betw</span>
+<span class="n">betw_sorted</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;betweenness&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">betw_sorted</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>person</th>
+      <th>weight</th>
+      <th>color</th>
+      <th>betweenness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>199</th>
+      <td>Revere.Paul</td>
+      <td>NaN</td>
+      <td>red</td>
+      <td>4371.598675</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>Urann.Thomas</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>2371.051282</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>Warren.Joseph</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>2256.137689</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>Peck.Samuel</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>1418.915474</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Chase.Thomas</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>1219.742276</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Bass.Henry</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>1219.742276</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Barber.Nathaniel</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>1040.361581</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Proctor.Edward</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>847.923067</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Condy.JamesFoster</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>847.923067</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Grant.Moses</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>847.923067</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="eigenvector">
+<h3>Eigenvector<a class="headerlink" href="#eigenvector" title="Permalink to this headline">¶</a></h3>
+<p>The Eigenvector on the other hand measures centrality weighted by a person’s connection to other central people.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eg</span> <span class="o">=</span> <span class="n">G_person</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">()</span>
+<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;eg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eg</span>
+<span class="n">eg_sorted</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eg&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">eg_sorted</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>person</th>
+      <th>weight</th>
+      <th>color</th>
+      <th>betweenness</th>
+      <th>eg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>199</th>
+      <td>Revere.Paul</td>
+      <td>NaN</td>
+      <td>red</td>
+      <td>4371.598675</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Barber.Nathaniel</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>1040.361581</td>
+      <td>0.968090</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Bass.Henry</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>1219.742276</td>
+      <td>0.966538</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Chase.Thomas</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>1219.742276</td>
+      <td>0.966538</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Proctor.Edward</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>847.923067</td>
+      <td>0.963693</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Grant.Moses</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>847.923067</td>
+      <td>0.963693</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Condy.JamesFoster</td>
+      <td>1.0</td>
+      <td>blue</td>
+      <td>847.923067</td>
+      <td>0.963693</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>Urann.Thomas</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>2371.051282</td>
+      <td>0.905632</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Young.Thomas</td>
+      <td>2.0</td>
+      <td>blue</td>
+      <td>520.953655</td>
+      <td>0.889691</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>Molineux.William</td>
+      <td>NaN</td>
+      <td>blue</td>
+      <td>520.953655</td>
+      <td>0.889691</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="community-detection">
+<h3>Community Detection<a class="headerlink" href="#community-detection" title="Permalink to this headline">¶</a></h3>
+<p>Finally, let’s try community detection to again find Paul Revere at the centre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">com</span> <span class="o">=</span> <span class="n">G_person</span><span class="o">.</span><span class="n">community_walktrap</span><span class="p">()</span>
+<span class="n">clp</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">as_clustering</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">clp</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span> <span class="n">mark_groups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">G_person</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Reveredetection_24_0.svg" src="../../_images/Reveredetection_24_0.svg" /></div>
+</div>
+</div>
+<div class="section" id="comparison-of-centralities">
+<h3>Comparison of centralities<a class="headerlink" href="#comparison-of-centralities" title="Permalink to this headline">¶</a></h3>
+<p>Last but not least, let’s compare the centrality of suspicious characters in the network. Paul Revere is way on top.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotations</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;eg&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">=</span><span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;betweenness&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">annotations</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Reveredetection_26_0.png" src="../../_images/Reveredetection_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./SocialSensing/Graphs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Igraph.html" title="previous page">R graphs and Gephi</a>
+    <a class='right-next' id="next-link" href="../../VisualsArts.html" title="next page">Visuals Arts</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

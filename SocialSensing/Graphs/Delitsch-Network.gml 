@@ -1,0 +1,2265 @@
+graph
+[
+  Creator "Gephi"
+  directed 1
+  node
+  [
+    id 1
+    label "Schlegel"
+    graphics
+    [
+      x 74.989586
+      y 203.8327
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "1.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 2
+    label "Albert Hager"
+    graphics
+    [
+      x -168.49187
+      y 211.74205
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "2.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 3
+    label "Böger"
+    graphics
+    [
+      x -2.3935747
+      y 61.87052
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "3.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 4
+    label "Meier"
+    graphics
+    [
+      x 3.1825972
+      y -17.121704
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "4.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 5
+    label "Meinhold"
+    graphics
+    [
+      x 89.9628
+      y 4.0028067
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "5.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 6
+    label "Herold"
+    graphics
+    [
+      x 193.13638
+      y 187.07721
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "6.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 7
+    label "Rettig"
+    graphics
+    [
+      x -136.54898
+      y -128.44186
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "7.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 8
+    label "Meyer"
+    graphics
+    [
+      x -53.302288
+      y -48.71188
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "8.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 9
+    label "Schneider"
+    graphics
+    [
+      x 123.5097
+      y -124.38531
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "9.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 10
+    label "Köchel"
+    graphics
+    [
+      x 147.34386
+      y -106.34426
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "10.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 11
+    label "Wolf"
+    graphics
+    [
+      x -45.640244
+      y -105.983925
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "11.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 12
+    label "Ernst"
+    graphics
+    [
+      x -61.133564
+      y -130.54636
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "12.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 13
+    label "Trampler"
+    graphics
+    [
+      x 6.5196824
+      y 74.44067
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "13.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 14
+    label "Vetter"
+    graphics
+    [
+      x -119.77073
+      y 42.095837
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "1"
+    Lokationposition1highest53lowest "14.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 15
+    label "Pfeil"
+    graphics
+    [
+      x -82.27269
+      y 165.65585
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "1"
+    Lokationposition1highest53lowest "15.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 16
+    label "Pröse"
+    graphics
+    [
+      x 113.16006
+      y 89.834465
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "16.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 17
+    label "Holzmüller"
+    graphics
+    [
+      x 137.34842
+      y 141.6668
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "17.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 18
+    label "Eisenreich"
+    graphics
+    [
+      x 93.22042
+      y -117.42033
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "18.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 19
+    label "Pröhl"
+    graphics
+    [
+      x 26.306082
+      y -111.45326
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "19.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 20
+    label "Reinh. Zimmermann"
+    graphics
+    [
+      x -31.697824
+      y 149.6058
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "20.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 21
+    label "Schaller"
+    graphics
+    [
+      x 69.01773
+      y 191.3156
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "21.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 22
+    label "Stolze"
+    graphics
+    [
+      x 184.20096
+      y -92.26391
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "22.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 23
+    label "Schnabel"
+    graphics
+    [
+      x -39.220592
+      y 188.30943
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "1"
+    Lokationposition1highest53lowest "23.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 24
+    label "Schmidt"
+    graphics
+    [
+      x 155.12048
+      y -69.07349
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "24.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 25
+    label "Fritzsche"
+    graphics
+    [
+      x -176.50931
+      y -146.93597
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "25.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 26
+    label "Röhling"
+    graphics
+    [
+      x 57.665558
+      y -84.00297
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "26.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 27
+    label "Rudolf"
+    graphics
+    [
+      x 54.566387
+      y -81.18843
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "27.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 28
+    label "Hofmann"
+    graphics
+    [
+      x -9.91678
+      y 35.587074
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "28.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 29
+    label "Kießling"
+    graphics
+    [
+      x -71.66586
+      y -21.730457
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "29.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 30
+    label "Räubert"
+    graphics
+    [
+      x -115.78414
+      y 68.24005
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "30.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 31
+    label "Haas"
+    graphics
+    [
+      x 46.17056
+      y -128.52248
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "31.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 32
+    label "Bernhardt"
+    graphics
+    [
+      x 65.83277
+      y 56.849743
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "32.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 33
+    label "Rausch"
+    graphics
+    [
+      x -128.91846
+      y -82.98323
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "33.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 34
+    label "Bernh. Schubert"
+    graphics
+    [
+      x -170.2904
+      y -129.4705
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "34.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 35
+    label "Flach"
+    graphics
+    [
+      x 84.38506
+      y 47.024963
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "35.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 36
+    label "Groß"
+    graphics
+    [
+      x -170.97134
+      y -68.7062
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "36.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 37
+    label "Kneisel"
+    graphics
+    [
+      x -33.39127
+      y 73.99699
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "37.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 38
+    label "Seifert"
+    graphics
+    [
+      x -125.62422
+      y 115.768814
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "38.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 39
+    label "Thrum"
+    graphics
+    [
+      x 31.666752
+      y -52.55951
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "39.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 40
+    label "Hergert"
+    graphics
+    [
+      x 95.81283
+      y 53.478138
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "40.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 41
+    label "Lasch"
+    graphics
+    [
+      x 132.83447
+      y -48.966736
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "41.0"
+    Sweetsgiver "1"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 42
+    label "O. Müller"
+    graphics
+    [
+      x -57.791973
+      y 117.076454
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "42.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 43
+    label "R. Müller"
+    graphics
+    [
+      x 10.991704
+      y -53.992603
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "43.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 44
+    label "Pröse"
+    graphics
+    [
+      x 175.20926
+      y -63.76642
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "44.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 45
+    label "Rich. Zimmermann"
+    graphics
+    [
+      x -29.940952
+      y -15.936353
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "45.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 46
+    label "R. Schubert"
+    graphics
+    [
+      x -139.05122
+      y -134.30206
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "1"
+    Lokationposition1highest53lowest "46.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 47
+    label "Wilhelm"
+    graphics
+    [
+      x 41.504765
+      y -106.80273
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "47.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 48
+    label "Neidhardt"
+    graphics
+    [
+      x 170.77086
+      y 99.39784
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "48.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 49
+    label "Fährmann"
+    graphics
+    [
+      x -160.7472
+      y -17.60531
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "49.0"
+    Sweetsgiver "0"
+    Handicapped "1"
+  ]
+  node
+  [
+    id 50
+    label "Pippig"
+    graphics
+    [
+      x -27.023117
+      y 46.266567
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "50.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 51
+    label "Golla"
+    graphics
+    [
+      x -91.724556
+      y 16.238708
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "51.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 52
+    label "Ebersbach"
+    graphics
+    [
+      x -69.2142
+      y -30.194885
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "52.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  node
+  [
+    id 53
+    label "Albin Hager"
+    graphics
+    [
+      x -65.39238
+      y -121.96193
+      z 0.0
+      w 4.0
+      h 4.0
+      d 4.0
+      fill "#999999"
+    ]
+    Repeater "0"
+    Lokationposition1highest53lowest "53.0"
+    Sweetsgiver "0"
+    Handicapped "0"
+  ]
+  edge
+  [
+    id 16
+    source 1
+    target 4
+    value 1.0
+  ]
+  edge
+  [
+    id 20
+    source 1
+    target 5
+    value 1.0
+  ]
+  edge
+  [
+    id 131
+    source 1
+    target 37
+    value 1.0
+  ]
+  edge
+  [
+    id 61
+    source 2
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 112
+    source 2
+    target 25
+    value 1.0
+  ]
+  edge
+  [
+    id 173
+    source 2
+    target 51
+    value 1.0
+  ]
+  edge
+  [
+    id 9
+    source 3
+    target 2
+    value 1.0
+  ]
+  edge
+  [
+    id 17
+    source 3
+    target 4
+    value 1.0
+  ]
+  edge
+  [
+    id 32
+    source 3
+    target 9
+    value 1.0
+  ]
+  edge
+  [
+    id 78
+    source 3
+    target 16
+    value 1.0
+  ]
+  edge
+  [
+    id 127
+    source 3
+    target 36
+    value 1.0
+  ]
+  edge
+  [
+    id 36
+    source 4
+    target 10
+    value 1.0
+  ]
+  edge
+  [
+    id 47
+    source 4
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 96
+    source 4
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 128
+    source 4
+    target 36
+    value 1.0
+  ]
+  edge
+  [
+    id 154
+    source 4
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 165
+    source 4
+    target 49
+    value 1.0
+  ]
+  edge
+  [
+    id 1
+    source 5
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 26
+    source 5
+    target 6
+    value 1.0
+  ]
+  edge
+  [
+    id 48
+    source 5
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 107
+    source 5
+    target 24
+    value 1.0
+  ]
+  edge
+  [
+    id 10
+    source 6
+    target 2
+    value 1.0
+  ]
+  edge
+  [
+    id 18
+    source 6
+    target 4
+    value 1.0
+  ]
+  edge
+  [
+    id 21
+    source 6
+    target 5
+    value 1.0
+  ]
+  edge
+  [
+    id 49
+    source 6
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 37
+    source 7
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 79
+    source 7
+    target 16
+    value 1.0
+  ]
+  edge
+  [
+    id 137
+    source 9
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 169
+    source 9
+    target 50
+    value 1.0
+  ]
+  edge
+  [
+    id 19
+    source 10
+    target 4
+    value 1.0
+  ]
+  edge
+  [
+    id 29
+    source 11
+    target 7
+    value 1.0
+  ]
+  edge
+  [
+    id 33
+    source 11
+    target 9
+    value 1.0
+  ]
+  edge
+  [
+    id 50
+    source 11
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 62
+    source 11
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 118
+    source 11
+    target 28
+    value 1.0
+  ]
+  edge
+  [
+    id 148
+    source 12
+    target 44
+    value 1.0
+  ]
+  edge
+  [
+    id 138
+    source 13
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 2
+    source 14
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 63
+    source 14
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 97
+    source 14
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 155
+    source 14
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 22
+    source 15
+    target 5
+    value 1.0
+  ]
+  edge
+  [
+    id 27
+    source 15
+    target 6
+    value 1.0
+  ]
+  edge
+  [
+    id 30
+    source 15
+    target 7
+    value 1.0
+  ]
+  edge
+  [
+    id 51
+    source 15
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 82
+    source 15
+    target 17
+    value 1.0
+  ]
+  edge
+  [
+    id 98
+    source 15
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 113
+    source 15
+    target 25
+    value 1.0
+  ]
+  edge
+  [
+    id 156
+    source 15
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 174
+    source 15
+    target 51
+    value 1.0
+  ]
+  edge
+  [
+    id 13
+    source 16
+    target 3
+    value 1.0
+  ]
+  edge
+  [
+    id 52
+    source 16
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 64
+    source 16
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 88
+    source 16
+    target 19
+    value 1.0
+  ]
+  edge
+  [
+    id 65
+    source 17
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 3
+    source 18
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 38
+    source 18
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 99
+    source 18
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 133
+    source 18
+    target 38
+    value 1.0
+  ]
+  edge
+  [
+    id 135
+    source 18
+    target 39
+    value 1.0
+  ]
+  edge
+  [
+    id 157
+    source 18
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 139
+    source 21
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 4
+    source 22
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 11
+    source 22
+    target 2
+    value 1.0
+  ]
+  edge
+  [
+    id 14
+    source 22
+    target 3
+    value 1.0
+  ]
+  edge
+  [
+    id 28
+    source 22
+    target 6
+    value 1.0
+  ]
+  edge
+  [
+    id 39
+    source 22
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 66
+    source 22
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 90
+    source 22
+    target 21
+    value 1.0
+  ]
+  edge
+  [
+    id 140
+    source 22
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 149
+    source 22
+    target 44
+    value 1.0
+  ]
+  edge
+  [
+    id 166
+    source 22
+    target 49
+    value 1.0
+  ]
+  edge
+  [
+    id 23
+    source 23
+    target 5
+    value 1.0
+  ]
+  edge
+  [
+    id 53
+    source 23
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 67
+    source 23
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 158
+    source 23
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 24
+    source 24
+    target 5
+    value 1.0
+  ]
+  edge
+  [
+    id 91
+    source 24
+    target 21
+    value 1.0
+  ]
+  edge
+  [
+    id 141
+    source 24
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 175
+    source 24
+    target 51
+    value 1.0
+  ]
+  edge
+  [
+    id 12
+    source 25
+    target 2
+    value 1.0
+  ]
+  edge
+  [
+    id 167
+    source 25
+    target 49
+    value 1.0
+  ]
+  edge
+  [
+    id 176
+    source 25
+    target 51
+    value 1.0
+  ]
+  edge
+  [
+    id 54
+    source 26
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 80
+    source 26
+    target 16
+    value 1.0
+  ]
+  edge
+  [
+    id 159
+    source 26
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 125
+    source 27
+    target 33
+    value 1.0
+  ]
+  edge
+  [
+    id 40
+    source 28
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 68
+    source 29
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 100
+    source 29
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 5
+    source 30
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 55
+    source 30
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 160
+    source 30
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 170
+    source 30
+    target 50
+    value 1.0
+  ]
+  edge
+  [
+    id 56
+    source 31
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 69
+    source 31
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 108
+    source 31
+    target 24
+    value 1.0
+  ]
+  edge
+  [
+    id 120
+    source 31
+    target 30
+    value 1.0
+  ]
+  edge
+  [
+    id 142
+    source 31
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 129
+    source 32
+    target 36
+    value 1.0
+  ]
+  edge
+  [
+    id 93
+    source 33
+    target 22
+    value 1.0
+  ]
+  edge
+  [
+    id 117
+    source 33
+    target 27
+    value 1.0
+  ]
+  edge
+  [
+    id 25
+    source 35
+    target 5
+    value 1.0
+  ]
+  edge
+  [
+    id 31
+    source 36
+    target 7
+    value 1.0
+  ]
+  edge
+  [
+    id 41
+    source 36
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 101
+    source 36
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 109
+    source 36
+    target 24
+    value 1.0
+  ]
+  edge
+  [
+    id 119
+    source 36
+    target 29
+    value 1.0
+  ]
+  edge
+  [
+    id 124
+    source 36
+    target 32
+    value 1.0
+  ]
+  edge
+  [
+    id 151
+    source 36
+    target 45
+    value 1.0
+  ]
+  edge
+  [
+    id 164
+    source 36
+    target 47
+    value 1.0
+  ]
+  edge
+  [
+    id 171
+    source 36
+    target 50
+    value 1.0
+  ]
+  edge
+  [
+    id 42
+    source 37
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 172
+    source 37
+    target 50
+    value 1.0
+  ]
+  edge
+  [
+    id 6
+    source 38
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 15
+    source 38
+    target 3
+    value 1.0
+  ]
+  edge
+  [
+    id 43
+    source 38
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 70
+    source 38
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 83
+    source 38
+    target 17
+    value 1.0
+  ]
+  edge
+  [
+    id 87
+    source 38
+    target 18
+    value 1.0
+  ]
+  edge
+  [
+    id 102
+    source 38
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 114
+    source 38
+    target 25
+    value 1.0
+  ]
+  edge
+  [
+    id 130
+    source 38
+    target 36
+    value 1.0
+  ]
+  edge
+  [
+    id 136
+    source 38
+    target 39
+    value 1.0
+  ]
+  edge
+  [
+    id 143
+    source 38
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 168
+    source 38
+    target 49
+    value 1.0
+  ]
+  edge
+  [
+    id 103
+    source 39
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 126
+    source 39
+    target 33
+    value 1.0
+  ]
+  edge
+  [
+    id 132
+    source 39
+    target 37
+    value 1.0
+  ]
+  edge
+  [
+    id 34
+    source 41
+    target 9
+    value 1.0
+  ]
+  edge
+  [
+    id 46
+    source 41
+    target 13
+    value 1.0
+  ]
+  edge
+  [
+    id 92
+    source 41
+    target 21
+    value 1.0
+  ]
+  edge
+  [
+    id 110
+    source 41
+    target 24
+    value 1.0
+  ]
+  edge
+  [
+    id 177
+    source 41
+    target 51
+    value 1.0
+  ]
+  edge
+  [
+    id 84
+    source 42
+    target 17
+    value 1.0
+  ]
+  edge
+  [
+    id 104
+    source 42
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 152
+    source 42
+    target 45
+    value 1.0
+  ]
+  edge
+  [
+    id 71
+    source 43
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 85
+    source 43
+    target 17
+    value 1.0
+  ]
+  edge
+  [
+    id 105
+    source 43
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 161
+    source 43
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 7
+    source 44
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 45
+    source 44
+    target 12
+    value 1.0
+  ]
+  edge
+  [
+    id 72
+    source 45
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 81
+    source 45
+    target 16
+    value 1.0
+  ]
+  edge
+  [
+    id 94
+    source 45
+    target 22
+    value 1.0
+  ]
+  edge
+  [
+    id 123
+    source 45
+    target 31
+    value 1.0
+  ]
+  edge
+  [
+    id 144
+    source 45
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 150
+    source 45
+    target 44
+    value 1.0
+  ]
+  edge
+  [
+    id 8
+    source 46
+    target 1
+    value 1.0
+  ]
+  edge
+  [
+    id 57
+    source 46
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 73
+    source 46
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 106
+    source 46
+    target 23
+    value 1.0
+  ]
+  edge
+  [
+    id 74
+    source 47
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 86
+    source 47
+    target 17
+    value 1.0
+  ]
+  edge
+  [
+    id 44
+    source 49
+    target 11
+    value 1.0
+  ]
+  edge
+  [
+    id 75
+    source 49
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 95
+    source 49
+    target 22
+    value 1.0
+  ]
+  edge
+  [
+    id 115
+    source 49
+    target 25
+    value 1.0
+  ]
+  edge
+  [
+    id 121
+    source 49
+    target 30
+    value 1.0
+  ]
+  edge
+  [
+    id 134
+    source 49
+    target 38
+    value 1.0
+  ]
+  edge
+  [
+    id 145
+    source 49
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 147
+    source 49
+    target 42
+    value 1.0
+  ]
+  edge
+  [
+    id 153
+    source 49
+    target 45
+    value 1.0
+  ]
+  edge
+  [
+    id 35
+    source 50
+    target 9
+    value 1.0
+  ]
+  edge
+  [
+    id 58
+    source 50
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 76
+    source 50
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 162
+    source 50
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 59
+    source 51
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 111
+    source 51
+    target 24
+    value 1.0
+  ]
+  edge
+  [
+    id 116
+    source 51
+    target 25
+    value 1.0
+  ]
+  edge
+  [
+    id 60
+    source 52
+    target 14
+    value 1.0
+  ]
+  edge
+  [
+    id 89
+    source 52
+    target 19
+    value 1.0
+  ]
+  edge
+  [
+    id 163
+    source 52
+    target 46
+    value 1.0
+  ]
+  edge
+  [
+    id 179
+    source 52
+    target 53
+    value 1.0
+  ]
+  edge
+  [
+    id 77
+    source 53
+    target 15
+    value 1.0
+  ]
+  edge
+  [
+    id 122
+    source 53
+    target 30
+    value 1.0
+  ]
+  edge
+  [
+    id 146
+    source 53
+    target 41
+    value 1.0
+  ]
+  edge
+  [
+    id 178
+    source 53
+    target 52
+    value 1.0
+  ]
+]

@@ -7,6 +7,7 @@ There are many such dictinonaries produced by linguists but also other communiti
 Here, we will use hatebase to develop a hate speech detector for tweets by counting the number of hate words in tweets. We will concentrate on the English language. You can go to https://www.hatebase.org/ and explore the search functions to take a look at the English terms in hatebase. 
 
 
+
 Next, we need to download the hatebase dictionary, which is unfortunately not that easy. You need to register for an API key and then work relatively hard to get the API to return all English hate speech terms. 
 
 I have commented out the hate_vocabulary(api_key) function that speaks to https://www.hatebase.org/ and instead provided you with a direct import from a local CSV file. If you want to, for instance, download the dictionary for another language than English, you need to un-commnent those lines.
@@ -18,7 +19,6 @@ hate_df = pd.read_csv('https://raw.githubusercontent.com/goto4711/social-cultura
 hate_df.head()
 
 Next we access Twitter the way we learned today. The code is set to a query Twitter about 'Trump' below but is not active. In order to activate it, you need to add your Twitter API details. You can of course also change the search_term.
-
 
 import tweepy
 import requests
@@ -32,7 +32,6 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, compression=True)
 
 search_term = 'Trump'
-# tweets = tweepy.Cursor(api.search, q = search_term)
 tweets = api.search(q=search_term)
 
 for tweet in tweets:
@@ -41,7 +40,6 @@ for tweet in tweets:
 Rather than performing a live Twitter search, I have saved the a search on 'Trump' from the day of his 2017 inauguration. That's the read.csv command further down. Please, note that the file was created with the old twitteR library, which means that some of the column names are different from what you are used to. But the one we are interested in is still called 'text'.
 
 tweets = pd.read_csv("https://raw.githubusercontent.com/goto4711/social-cultural-analytics/master/trump-tweets-20-1.csv", encoding='latin-1')
-                
 
 Let's take a look at tweets. You will see all texts as well as a lot of other information.
 
@@ -49,22 +47,23 @@ tweets.head()
 
 Next we start with our standard text mining workflow 
 
-Unfortunately, tweets can be difficult to process, as people use very different types of language, of formatting, etc. I have therefore provided you with a clean_tweets function, which applies to all the texts in the tweets and save the results in a tweets_text list.
+Unfortunately, tweets can be difficult to process, as people use very different types of language, of formatting, etc. I have therefore provided you with a clean_tweets function, which applies to all the texts in the tweets and save the results in a tweet_list
 
 def clean_tweets(df):
     text = df['text']
     tweet_list = []
     for tweet in text:
-#         print(tweet)
         tweet = tweet.split()
-        for word in tweet:
-            if len(word) < 3:
-                word.replace(word, "")
+        tweet = ["" if len(word) < 3 else word for word in tweet]
         tweet_list.append(tweet)
     return tweet_list
     
 tweet_list = clean_tweets(tweets)
-tweet_list_str = str([tweet for tweets in tweet_list for tweet in tweets])
+tweet_list_new = []
+for tweet in tweet_list:
+    tweet_str = " ".join(tweet)
+    tweet_list_new.append(tweet_str)
+
 
 Next, our ususal steps to prepare a TM corpus.
 
@@ -83,88 +82,55 @@ def Corpuser(corpus):
     
     return corpus
 
-Corpuser(tweet_list_str)
+# tweet_corp = Corpuser(tweet_list_new)
+# print(tweet_corp)
 
-Our next TM workflow step will be to create a term-document-matrix to count the terms in the documents. You might have noticed above that the hatebase vocabulary contains not just single words but also phrases of more than one word such as 'African catfish'. As we also learned today, these are so-called bigrams (2 word phrases). So, we create two term-document-matrices one for the single words (also called unigrams) and one for the bigrams.
+docs = []
+for tweet in tweet_list_new:
+    doc = Corpuser(tweet)
+    docs.append(str(doc))
 
 
+Our next TM workflow step will be to create a term-document-matrix to count the terms in the documents.
 
-# first we create a frequency table
+from nltk import *
 
-def frequencytable(corpus):
-    words = Corpuser(corpus)
-    freq_table = {}
-    for word in words:
-        if word in freq_table:
-            freq_table[word] += 1
-        else:
-            freq_table[word] = 1
-    return freq_table
+tf = FreqDist(docs)
+print(tf)
 
-table = frequencytable(tweet_list_str)
+from sklearn.feature_extraction.text import CountVectorizer 
 
-# then create the actual dataframe where each tweet is a column
-# possible for a few tweets but might be too complex for 1000?
-# is it needed to distinguish every tweet or is it about the entire corpus? --> Yes you want to know 
-# how many tweets contain hatespeech
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(docs)
+dtm = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
+dtm = dtm.T
+dtm
 
-dfs = []
-for i in range(1000):
-    table = frequencytable(str(tweet_list[i]))
-    i = pd.DataFrame.from_dict(table, orient='index', columns={i})
-    dfs.append(i)
+All we have to do now is find out which rownames (terms) of tdm correspond to terms in our hate speech dictionary. The columns (docs) of tdm that are larger than 0 are then the tweets which contain hate speech words.
 
-merged_df = pd.concat(dfs, axis=1)
-merged_df = merged_df.fillna(0)
-
-merged_df
-
-# now we check which of the tweets contain hate speech thus therefore match withe the hate speech dictionary
-# --> but where are the hate speech words? is it about the offensivenes?
-# what exactly is being done with the bigram?
-
-# hate_dff = hate_df.loc[hate_df['offensiveness'] > 0]
-
-hate_dict = hate_df[['word', 'offensiveness']]
-
-hate_dict
-
-All we have to do now is find out which rownames (terms) of tdm correspond to terms in our hate speech dictionary. 
-
-# we drop the rownames that are not in the hate_dict
+The python function isin answers the question: 'Where do the values in the hate vocabulary appear in the dataframe'
 
 hate_voc = hate_dict['word'].values.tolist()
 hate_voc = [word.lower() for word in hate_voc if word.isalpha()]
 
-hate_speech = merged_df[merged_df.index.isin(hate_voc)]
+hate_speech = dtm[dtm.index.isin(hate_voc)]
 
-The columns (docs) of tdm that are larger than 0 are then the tweets which contain hate speech words.
-
-
-
-# hate = hate_speech[hate_speech > 0]
-
-hate_voc
-
-# what is the hate speech vocab??
 hate_speech
 
-merged_df
+Now we only need to find the indexes of these words to see to which tweet they belong. The columns (docs) of tdm that are larger than 0 are then the tweets which contain hate speech words.
 
-exists = 'trump' in tweets.text
-print(exists)
+hate_speecht = hate_speech.T
+bitch = hate_speecht.index[hate_speecht['bitch'] > 0].to_list()
+idiot = hate_speecht.index[hate_speecht['idiot'] > 0].to_list()
+print(bitch)
+print(idiot)
 
-merged_df.index.isin(hate_voc)
+Let's check out the tweets that contain 'bitch
 
-merged_df.index
+tweets_bitch = tweets.iloc[bitch]['text']
+for tweet in tweets_bitch:
+    print(tweet)
 
-words = word_tokenize(tweet_list_str)
-words = [word.replace(" ", "") for word in words]
-words = [word.lower() for word in words if word.isalpha()]
+Some of these are very angry about Trump, but probably still not really hate speech. This shows the limitations of the approach to use simple words and phrases.
 
-exists = 'trump' in words
-print(exists)
-
-words
-
-# Why doesn't it find the words that are there? such as bitch, bubble, etc....
+But this approach can still be useful to filter tweets for manual review by editors. Twitters and others actually have engines like this. It is frequently used in apps like http://www.huffingtonpost.com/entry/donald-trump-stock-alert_us_586e67dce4b0c4be0af325fc, which sends alerts when Donald Trump tweets about your stocks.

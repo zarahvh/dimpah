@@ -1,3 +1,5 @@
+# TidyText
+
 In 2016, David Robinson's published a great analysis of Donald Trump's (http://varianceexplained.org/r/trump-tweets/). It got a lot of publicity and his collaboration with Julia Slige resulted in a new book and approach called tidytext (http://tidytextmining.com/). 
 
 https://github.com/juliasilge/tidytext has become another package for advanced text analysis that has quickly gained a lot of support.
@@ -8,8 +10,7 @@ Let's take a character vector with one element made of 3 sentences.
 
 import pandas as pd
 
-text = """
-Using tidy data principles is important.
+text = """Using tidy data principles is important.
 In this package, we provide functions for tidy formats.
 The novels of Jane Austen can be so tidy!
 """
@@ -40,10 +41,6 @@ from tidytext import unnest_tokens
 table = unnest_tokens(df, "word", "text")
 table
 
-And tokenize into phrases (bigrams).
-
-# bigrams not available in pyhton function, is there a way around it?
-
 ## Removing stopwords
 
 import nltk
@@ -57,36 +54,85 @@ new_table
 
 ## Summarizing word frequencies
 
-# Count function using nltk too? is it available in tidytext?
-# bind_tfidf what does it do?
+from nltk.probability import FreqDist
 
-def frequencytable(df):
-    words = df['word']
-    freq_table = {}
-    for word in words:
-        if word in freq_table:
-            freq_table[word] += 1
-        else:
-            freq_table[word] = 1
-    return freq_table
+words = new_table['word'].values
+FreqDist(words).most_common(20)
 
-frequencytable(new_table)
-
-## Case Study Gutenberg
+## Case Study Austen
 
 ### Gutenbergr
 
-The gutenberg package (https://ropensci.org/tutorials/gutenbergr_tutorial.html) provides access to the Project Gutenberg collection. The package contains tools for downloading books and for finding works of interest.
+We will use the Gutenberg package from NLTK again to this time analyse the texts of Jane Austen
 
-import gutenberg
 
-# sherlock holmes
+import nltk
+nltk.corpus.gutenberg.fileids()
 
-# Retrieve the first 10 titles of Arthur Conan Doyle in the Gutenberg library.
+emma = nltk.corpus.gutenberg.sents('austen-emma.txt')
+persuasion = nltk.corpus.gutenberg.words('austen-persuasion.txt')
+sense = nltk.corpus.gutenberg.words('austen-sense.txt')
 
-# how to get the books? either download them beforehand or use beautifulsoup?
+Transform into a tidy dataset..
 
-# removing stopwords and word count can be done using the previous functions again
-# ggplot in python
-# sentiment analysis --> again using NLTK?
+sense
 
+def to_tidy(corp):
+    new = []
+    for word in corp:
+        string = " ".join(word)
+        new.append(string)
+
+    corp_str = ''
+    for sent in new: 
+        corp_str += sent
+
+    text_split = corp_str.split('.')
+
+    df = pd.DataFrame({
+        "text": text_split,
+        "line": list(range(len(text_split)))
+    })
+    return df
+
+emma_df = to_tidy(emma)
+emma_table = unnest_tokens(emma_df, "word", "text")
+
+emma_table
+
+Remove stopwords
+
+emma_table = emma_table[~emma_table['word'].isin(stopwords)]
+
+emma_table
+
+Calculate frequencies
+
+words = new_table2['word'].values
+FreqDist(words).most_common(20)
+
+## Sentiment analysis Austen
+
+We can perform a sentiment analysis on these texts with NLTK.
+
+NLTK has a built-in sentiment analyzer: VADER (Valence Aware Dictionary and sEntiment Reasoner).
+
+from nltk.sentiment import SentimentIntensityAnalyzer
+sia = SentimentIntensityAnalyzer()
+sia.polarity_scores(str(emma_new))
+
+We can check for each sentence whether it is positive or negative
+
+# from:  https://www.codeproject.com/Articles/5269445/Using-Pre-trained-VADER-Models-for-NLTK-Sentiment
+scores = {'pos': 0, 'neg': 0, 'neu': 0}
+for sent in emma_new:
+    score = sia.polarity_scores(sent)
+    if score['pos'] > 0.5:
+        result['pos'] += 1
+    elif score['neg'] > 0.5:
+        result['neg'] += 1
+    elif score['neu'] > 0.5:
+        result['neu'] += 1
+print(scores)
+
+As we can see most sentences in Emma are neutral

@@ -17,14 +17,36 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-len(tweets)
+import requests
+import datetime
+from ipynb.fs.full.keys import *
+
+import tweepy
+
+consumer_key = twit_key
+consumer_secret = twit_secr
+access_token = twit_token
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, compression=True)
+
+
+
+# get tweets from certain dates?
+startDate = datetime.datetime(2021, 5, 24, 0, 0, 0)
+endDate =   datetime.datetime(2021, 5, 24, 0, 0, 0)
+
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-2-b554e1b1bbc4>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mlen[0m[0;34m([0m[0mtweets[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mNameError[0m: name 'tweets' is not defined
-NameError: name 'tweets' is not defined
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;32m<ipython-input-1-daffd50e237a>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0mrequests[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;32mimport[0m [0mdatetime[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0;32mfrom[0m [0mipynb[0m[0;34m.[0m[0mfs[0m[0;34m.[0m[0mfull[0m[0;34m.[0m[0mkeys[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m [0;34m[0m[0m
+[1;32m      5[0m [0;32mimport[0m [0mtweepy[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'ipynb.fs.full.keys'
+ModuleNotFoundError: No module named 'ipynb.fs.full.keys'
 

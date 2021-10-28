@@ -10,8 +10,6 @@ You need to download the Plain-Text versions (ASCII).
 
 Set my_folder to the directory you used to download the books. Do you remember the relative and absolute paths and how to set your working directory?
 
-# mycorpus laden
-
 Wonderland = open("MyCorpus/11-0.txt", "r")
 Pride = open("MyCorpus/1342-0.txt", "r")
 Tale = open("MyCorpus/98-0.txt", "r")
@@ -22,7 +20,7 @@ Pride = Pride.read()
 Tale = Tale.read()
 Yellow = Yellow.read()
 
-Now we simply use NLTK to clean the text and to create a corpus out of these texts.
+### Clean corpus
 
 import nltk
 from nltk.tokenize import word_tokenize
@@ -41,10 +39,10 @@ def Corpuser(corpus):
     
     return corpus
 
-Corpuser(Wonderland)
-Corpuser(Pride)
-Corpuser(Tale)
-Corpuser(Yellow)
+won_corp = Corpuser(Wonderland)
+pride_corp = Corpuser(Pride)
+tale_corp = Corpuser(Tale)
+yel_corp = Corpuser(Yellow)
 
 Success! Let's look at the content of the second book. 
 
@@ -52,38 +50,15 @@ print(Pride)
 
 ### Create DocumentTermMatrix
 
-# first we create a frequency table
-
-def frequencytable(corpus):
-    words = Corpuser(corpus)
-    freq_table = {}
-    for word in words:
-        if word in freq_table:
-            freq_table[word] += 1
-        else:
-            freq_table[word] = 1
-    return freq_table
-
-
-ft_won = frequencytable(Wonderland)
-ft_prid = frequencytable(Pride)
-ft_tale = frequencytable(Tale)
-ft_yell = frequencytable(Yellow)
-
-
-
-# create dataframe from dict
 import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer 
 
-df_won = pd.DataFrame.from_dict(ft_won, orient='index', columns={'wonderland'})
-df_prid = pd.DataFrame.from_dict(ft_prid, orient='index', columns={'Pride'})
-df_tale = pd.DataFrame.from_dict(ft_tale, orient='index', columns={'Tale'})
-df_yell = pd.DataFrame.from_dict(ft_yell, orient='index', columns={'Yellow'})
+docs = [str(won_corp), str(pride_corp), str(tale_corp), str(yel_corp)]
+vectorizer = CountVectorizer(min_df=2)
+X = vectorizer.fit_transform(docs)
 
-merged_df = pd.concat([df_won, df_prid, df_tale, df_yell], axis=1)
-merged_df = merged_df.fillna(0)
-
-merged_df
+dtm = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
+dtm
 
 You can now do any of the advanced processing we discussed. Here, we will simply add a few visualisations, starting with word clouds.
 
@@ -92,11 +67,10 @@ You can now do any of the advanced processing we discussed. Here, we will simply
 
 ### Wordclouds
 
-
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-corpus = str(Corpuser(Wonderland) + Corpuser(Pride) + Corpuser(Tale) + Corpuser(Yellow))
+corpus = str(won_corp + pride_corp + tale_corp + yel_corp)
 wordcloud = WordCloud(width = 800, height = 800, 
                 background_color ='white',  
                 min_font_size = 10).generate(corpus) 
@@ -106,7 +80,7 @@ plt.imshow(wordcloud)
 plt.axis("off") 
 plt.tight_layout(pad = 0) 
   
-plt.show() 
+plt.show()
 
 The commonality wordcloud visualises common words across documents, which is of couse in this small corpus identical to the normal word cloud.
 
@@ -124,9 +98,9 @@ plt.tight_layout(pad = 0)
   
 plt.show() 
 
-#  comparison cloud not available in python, we could plot two wordclouds from different texts
+We can also compare the wordclouds of two books
 
-corpus = str(Corpuser(Wonderland))
+corpus = str(won_corp)
 wordcloud = WordCloud(width = 800, height = 800, 
                 background_color ='white',  
                 min_font_size = 10,
@@ -139,7 +113,7 @@ plt.tight_layout(pad = 0)
   
 plt.show() 
 
-corpus = str(Corpuser(Tale))
+corpus = str(tale_corp)
 wordcloud = WordCloud(width = 800, height = 800, 
                 background_color ='white',  
                 min_font_size = 10).generate(corpus) 
@@ -151,16 +125,11 @@ plt.tight_layout(pad = 0)
   
 plt.show() 
 
+### Most frequent terms
 
+from nltk import *
 
-## Plot term frequencies
+freqdist = FreqDist(won_corp+pride_corp+tale_corp+yel_corp)
+freqdist.most_common(15)
 
-# Wonderland
-
-sort = df_won.sort_values(by=['wonderland'], ascending=False)
-
-top15 = sort[:15]
-
-top15.plot.bar()
-
-# Word networks?
+freqdist.plot(15)

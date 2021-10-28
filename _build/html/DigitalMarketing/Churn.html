@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Churn Analysis &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Customer Relationship Management" href="CustomerRelationshipManagement.html" />
+    <link rel="prev" title="Choice Modelling" href="ChoiceModelling.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Introduction to Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/PredictingModelling.html">
+     Predicting Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../FocusGroup.html">
+   Focus Group
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
+     Social Networking Communities
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Igraph.html">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Reveredetection.html">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VisualsArts/AdvancedVisualisation.html">
+     Lots of fun with Python visualisations
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/DigitalMarketing/Churn.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FDigitalMarketing/Churn.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/DigitalMarketing/Churn.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bank-use-case">
+   Bank Use Case
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling">
+   Modelling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prediction">
+   Prediction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-improvements-by-lowering-the-threshold">
+     Model Improvements by Lowering the Threshold
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="churn-analysis">
+<h1>Churn Analysis<a class="headerlink" href="#churn-analysis" title="Permalink to this headline">¶</a></h1>
+<p>A big topic in digital marketing can be the focus on  customers you can also keep. This is the subject of churn analysis.</p>
+<p>Customer churn (most commonly called ‘churn’) is defined in the article as customers that stop doing business with a company or a service. So, for instance, which costumer will move to a different mobile provider?</p>
+<p>This churn analysis is key to customer relationship management (CRM).</p>
+<p>Churn analysis is based on data that contains information on previous customers who churned. We want to compare the current costumers with these to find out whether they might churn, too? Sounds familiar? It’s basically a typical case for a decision classification - just like the wine tasting or the Titanic data.</p>
+<p>This notebook will demonstrate to you that we can use the same kind of modelling techniques we used for wines, the titanic, etc. with digital marketing data. Churn analysis is a typical use case of algorithmic decision-making.</p>
+<div class="section" id="bank-use-case">
+<h2>Bank Use Case<a class="headerlink" href="#bank-use-case" title="Permalink to this headline">¶</a></h2>
+<p>A typical example of churn analysis is to find costumers who defaulted on a loan in a bank. Let’s load the churn data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">churnData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;churnData.csv&quot;</span><span class="p">)</span>
+<span class="n">churnData</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>limitBal</th>
+      <th>sex</th>
+      <th>education</th>
+      <th>marriage</th>
+      <th>age</th>
+      <th>pay1</th>
+      <th>pay2</th>
+      <th>pay3</th>
+      <th>pay4</th>
+      <th>...</th>
+      <th>billAmt4</th>
+      <th>billAmt5</th>
+      <th>billAmt6</th>
+      <th>payAmt1</th>
+      <th>payAmt2</th>
+      <th>payAmt3</th>
+      <th>payAmt4</th>
+      <th>payAmt5</th>
+      <th>payAmt6</th>
+      <th>PaymentDefault</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>...</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>1.800000e+04</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+      <td>18000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>9000.500000</td>
+      <td>162902.426667</td>
+      <td>1.587556</td>
+      <td>1.835500</td>
+      <td>1.559500</td>
+      <td>35.475556</td>
+      <td>0.027833</td>
+      <td>-0.101667</td>
+      <td>-0.129389</td>
+      <td>-0.197389</td>
+      <td>...</td>
+      <td>41074.180056</td>
+      <td>39397.784333</td>
+      <td>38009.251611</td>
+      <td>5532.254278</td>
+      <td>5.731058e+03</td>
+      <td>4629.137611</td>
+      <td>4757.224389</td>
+      <td>4763.706833</td>
+      <td>5134.710611</td>
+      <td>0.230556</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5196.296758</td>
+      <td>129503.322618</td>
+      <td>0.492288</td>
+      <td>0.767843</td>
+      <td>0.523585</td>
+      <td>9.294161</td>
+      <td>1.120523</td>
+      <td>1.205068</td>
+      <td>1.214110</td>
+      <td>1.167596</td>
+      <td>...</td>
+      <td>61496.859401</td>
+      <td>59296.708143</td>
+      <td>58766.741569</td>
+      <td>15470.010126</td>
+      <td>2.187441e+04</td>
+      <td>15538.875970</td>
+      <td>15417.365689</td>
+      <td>15469.890364</td>
+      <td>17745.237186</td>
+      <td>0.421200</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>10000.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>21.000000</td>
+      <td>-2.000000</td>
+      <td>-2.000000</td>
+      <td>-2.000000</td>
+      <td>-2.000000</td>
+      <td>...</td>
+      <td>-170000.000000</td>
+      <td>-37594.000000</td>
+      <td>-339603.000000</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>4500.750000</td>
+      <td>50000.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>28.000000</td>
+      <td>-1.000000</td>
+      <td>-1.000000</td>
+      <td>-1.000000</td>
+      <td>-1.000000</td>
+      <td>...</td>
+      <td>2244.750000</td>
+      <td>1683.750000</td>
+      <td>1150.000000</td>
+      <td>949.000000</td>
+      <td>6.960000e+02</td>
+      <td>307.000000</td>
+      <td>228.000000</td>
+      <td>209.750000</td>
+      <td>2.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>9000.500000</td>
+      <td>130000.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>34.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>18702.500000</td>
+      <td>18045.500000</td>
+      <td>16780.000000</td>
+      <td>2087.000000</td>
+      <td>2.000000e+03</td>
+      <td>1500.000000</td>
+      <td>1486.000000</td>
+      <td>1500.000000</td>
+      <td>1400.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>13500.250000</td>
+      <td>230000.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>41.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>50540.250000</td>
+      <td>49355.250000</td>
+      <td>48442.250000</td>
+      <td>5000.000000</td>
+      <td>5.000000e+03</td>
+      <td>4000.000000</td>
+      <td>4000.000000</td>
+      <td>4000.000000</td>
+      <td>4000.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>18000.000000</td>
+      <td>1000000.000000</td>
+      <td>2.000000</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>75.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>...</td>
+      <td>891586.000000</td>
+      <td>927171.000000</td>
+      <td>961664.000000</td>
+      <td>505000.000000</td>
+      <td>1.684259e+06</td>
+      <td>896040.000000</td>
+      <td>497000.000000</td>
+      <td>417990.000000</td>
+      <td>528666.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 25 columns</p>
+</div></div></div>
+</div>
+<p>There is a lot of information in this dataset! We are mainly interested in PaymentDefault. PaymentDefault = 1 if the costumer defaulted on the payment and 0 otherwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">churnData</span><span class="p">[</span><span class="s1">&#39;PaymentDefault&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Churn_3_1.png" src="../_images/Churn_3_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="modelling">
+<h2>Modelling<a class="headerlink" href="#modelling" title="Permalink to this headline">¶</a></h2>
+<p>Let’s build a logistic regression model next to find out what in the data helps us predict the default on a loan. It’s just another model to predict a target that is categorical.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p>To predict whether an email is spam (1) or (0)</p></li>
+<li><p>Whether the tumor is malignant (1) or not (0)</p></li>
+</ul>
+<p>In our case, we use the model to understand which features contribute most to a potential default.</p>
+<p>glm stands for Generalized Linear Models with family=binomial indicating a logistic model: <a class="reference external" href="https://www.statmethods.net/advstats/glm.html">https://www.statmethods.net/advstats/glm.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">churnData</span><span class="p">[[</span><span class="s1">&#39;limitBal&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;pay1&#39;</span><span class="p">,</span> <span class="s1">&#39;pay2&#39;</span><span class="p">,</span> <span class="s1">&#39;pay3&#39;</span><span class="p">,</span> <span class="s1">&#39;pay4&#39;</span><span class="p">,</span> <span class="s1">&#39;pay5&#39;</span><span class="p">,</span> <span class="s1">&#39;pay6&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt1&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;billAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt3&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt4&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt5&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt6&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt1&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;payAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt3&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt4&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt5&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt6&#39;</span><span class="p">]]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">churnData</span><span class="p">[</span><span class="s1">&#39;PaymentDefault&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLM</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> 
+
+<span class="n">print_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">print_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:         PaymentDefault   No. Observations:                18000
+Model:                            GLM   Df Residuals:                    17976
+Model Family:                Gaussian   Df Model:                           23
+Link Function:               identity   Scale:                         0.15630
+Method:                          IRLS   Log-Likelihood:                -8825.3
+Date:                Thu, 28 Oct 2021   Deviance:                       2809.7
+Time:                        22:42:10   Pearson chi2:                 2.81e+03
+No. Iterations:                     3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.3394      0.023     14.481      0.000       0.293       0.385
+limitBal   -5.618e-08   2.87e-08     -1.958      0.050   -1.12e-07    6.09e-11
+sex           -0.0113      0.006     -1.862      0.063      -0.023       0.001
+education     -0.0184      0.004     -4.478      0.000      -0.026      -0.010
+marriage      -0.0281      0.006     -4.502      0.000      -0.040      -0.016
+age            0.0009      0.000      2.519      0.012       0.000       0.002
+pay1           0.0983      0.004     27.554      0.000       0.091       0.105
+pay2           0.0131      0.004      3.029      0.002       0.005       0.022
+pay3           0.0125      0.005      2.681      0.007       0.003       0.022
+pay4          -0.0024      0.005     -0.441      0.659      -0.013       0.008
+pay5           0.0192      0.006      3.450      0.001       0.008       0.030
+pay6          -0.0028      0.004     -0.634      0.526      -0.012       0.006
+billAmt1   -8.349e-07   1.58e-07     -5.289      0.000   -1.14e-06   -5.25e-07
+billAmt2    3.145e-07   2.19e-07      1.433      0.152   -1.16e-07    7.45e-07
+billAmt3    2.578e-08   1.99e-07      0.130      0.897   -3.64e-07    4.16e-07
+billAmt4   -6.293e-08   2.19e-07     -0.287      0.774   -4.92e-07    3.66e-07
+billAmt5     4.66e-08   2.68e-07      0.174      0.862   -4.79e-07    5.72e-07
+billAmt6    1.268e-07   2.02e-07      0.626      0.531    -2.7e-07    5.23e-07
+payAmt1    -1.178e-06   2.44e-07     -4.827      0.000   -1.66e-06   -6.99e-07
+payAmt2    -2.354e-07   2.08e-07     -1.132      0.258   -6.43e-07    1.72e-07
+payAmt3    -1.176e-07    2.3e-07     -0.510      0.610   -5.69e-07    3.34e-07
+payAmt4    -3.262e-07   2.48e-07     -1.313      0.189   -8.13e-07    1.61e-07
+payAmt5    -2.104e-07   2.54e-07     -0.829      0.407   -7.08e-07    2.87e-07
+payAmt6    -9.337e-08   1.79e-07     -0.522      0.602   -4.44e-07    2.57e-07
+==============================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>You might have noticed that we have not discriminated test and training datasets to build the model, as we are less interested at this moment in the prediction the model can develop, but in the kind of features which are important to predict default. These are the characteristics in customers we want to watch out for.</p>
+<p>According to lm, education is really important to understand default as are sex and the order of payments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># source: https://planspace.org/20150423-forward_selection_with_statsmodels/</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="k">def</span> <span class="nf">forward_selected</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Linear model designed by forward selection.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    data : pandas DataFrame with all possible predictors and response</span>
+
+<span class="sd">    response: string, name of response column in data</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    model: an &quot;optimal&quot; fitted statsmodels linear model</span>
+<span class="sd">           with an intercept</span>
+<span class="sd">           selected by forward selection</span>
+<span class="sd">           evaluated by adjusted R-squared</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">remaining</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">remaining</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_score</span><span class="p">,</span> <span class="n">best_new_score</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+    <span class="k">while</span> <span class="n">remaining</span> <span class="ow">and</span> <span class="n">current_score</span> <span class="o">==</span> <span class="n">best_new_score</span><span class="p">:</span>
+        <span class="n">scores_with_candidates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">remaining</span><span class="p">:</span>
+            <span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> ~ </span><span class="si">{}</span><span class="s2"> + 1&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                                           <span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">selected</span> <span class="o">+</span> <span class="p">[</span><span class="n">candidate</span><span class="p">]))</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">rsquared_adj</span>
+            <span class="n">scores_with_candidates</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">score</span><span class="p">,</span> <span class="n">candidate</span><span class="p">))</span>
+        <span class="n">scores_with_candidates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">best_new_score</span><span class="p">,</span> <span class="n">best_candidate</span> <span class="o">=</span> <span class="n">scores_with_candidates</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">current_score</span> <span class="o">&lt;</span> <span class="n">best_new_score</span><span class="p">:</span>
+            <span class="n">remaining</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">best_candidate</span><span class="p">)</span>
+            <span class="n">selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_candidate</span><span class="p">)</span>
+            <span class="n">current_score</span> <span class="o">=</span> <span class="n">best_new_score</span>
+    <span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> ~ </span><span class="si">{}</span><span class="s2"> + 1&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="p">,</span>
+                                   <span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">selected</span><span class="p">))</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">forward_selected</span><span class="p">(</span><span class="n">churnData</span><span class="p">,</span> <span class="s1">&#39;PaymentDefault&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">formula</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PaymentDefault ~ pay1 + billAmt1 + pay3 + payAmt1 + marriage + pay5 + education + pay2 + billAmt2 + age + limitBal + payAmt2 + sex + payAmt4 + ID + 1
+0.11927288475507825
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are left with pay1 + billAmt1 + pay3 + payAmt1 + marriage + pay5 + education + pay2 + billAmt2 + age + limitBal + payAmt2 + sex + payAmt4 as the important features</p>
+</div>
+<div class="section" id="prediction">
+<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+<p>Of course we can also use the model to create the predictions we already know about now. Let’s try again the full data set first.</p>
+<p>Confusionmatrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_aic</span> <span class="o">=</span> <span class="n">X</span><span class="p">[[</span><span class="s1">&#39;limitBal&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;pay1&#39;</span><span class="p">,</span> <span class="s1">&#39;pay2&#39;</span><span class="p">,</span> <span class="s1">&#39;pay3&#39;</span><span class="p">,</span> <span class="s1">&#39;pay5&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt1&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;billAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt1&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;payAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt4&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_aic</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_aic</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLM</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X_aic</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">to_binary</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">thresh</span><span class="p">):</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">thresh</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">binary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">binary</span>
+
+<span class="n">binary</span> <span class="o">=</span> <span class="n">to_binary</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="p">(</span><span class="n">confusion_matrix</span><span class="p">,</span>
+                           <span class="n">accuracy_score</span><span class="p">)</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">binary</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">binary</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CM:&#39;</span><span class="p">,</span> <span class="n">cm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy:&#39;</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CM: [[13605  3519]
+ [  245   631]]
+Accuracy: 0.7908888888888889
+</pre></div>
+</div>
+</div>
+</div>
+<p>The prediction accuracy is not too bad with 0.80.</p>
+<p>Looking at the confusion matrix, it seems that the model mainly has problems to identify cases where the original value was 0 or no payment default. In ~3519 cases, it assumed that there would be a default. This means that customers would be unnecessarily targeted. In the case of bank defaults, this might upset these costumers. So, we should try and reduce this value.</p>
+<div class="section" id="model-improvements-by-lowering-the-threshold">
+<h3>Model Improvements by Lowering the Threshold<a class="headerlink" href="#model-improvements-by-lowering-the-threshold" title="Permalink to this headline">¶</a></h3>
+<p>One way to do this is to introduce a less severe threshold for suspecting defaults on payments. This will avoid customer dissatisfaction. If you check the above formula for prediction we introduced a threshold of 0.5 in the prediction. All values below 0.5 are 0 (= no default) and above 0.5 they are 1 (default).</p>
+<p>We can do this, aspredict actually returns a value between 0 and 1. Take a look at the value of the first prediction and you will see a value of ~0.45 - pretty close to the threshold of 0.5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4487605241323452
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if try out different threshold, can we improve the prediction by being less strict or maybe we should consider even more cases for payment default and lower the threshold?</p>
+<p>We need to make a decision what kind of case we would like to avoid. If you recall our discussion earlier of the confusion matrix, we want to avoid the case where we predicted no default but the default really did happen. We want to reward, however, the case where we predicted no-default and the costumer really do not default.  We can access the confusion matrix results with cm as well as the specific cells in the matrix.</p>
+<p>Check it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[13605  3519]
+ [  245   631]]
+13605
+245
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s time to play with the results using the threshold.</p>
+<p>Let’s say we define a score function: score &lt;- cm[1,1]*250 + cm[1,1]*250 - cm[1,2]*1000 - cm[1,2]*1000. What does this say? It says that we want to reward the right prediction with a factor of 250 but apply a penalty of -1000 for the wrong prediction. We use a much higher value for the wrong prediction as we are concerned about customer dissatisfaction if we target too many people.</p>
+<p>Now, we try a brute-force test using the the a number of threshold between 0.1 and 0.5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+    <span class="n">bin_preds</span> <span class="o">=</span> <span class="n">to_binary</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">bin_preds</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">250</span> <span class="o">+</span> <span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">250</span> <span class="o">-</span> <span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">1000</span> <span class="o">-</span> <span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">1000</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1 -10460000
+0.2 -6327500
+0.3 -460000
+0.4 163750
+0.5 -205000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! That wasn’t easy! Take your time going through the details.</p>
+<p>You could see that the optimal threshold is 0.4. It has the best score.</p>
+<p>Let’s use this threshold and do some real prediction next with a test and training data.</p>
+<p>Following our experience with the wine data, we know that the dataset contains 18,000 entries. Splitting this up into 70-30 training and test data, implies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">churnData</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We copy the optimal formula from the AIC test and run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[[</span><span class="s1">&#39;limitBal&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;pay1&#39;</span><span class="p">,</span> <span class="s1">&#39;pay2&#39;</span><span class="p">,</span> <span class="s1">&#39;pay3&#39;</span><span class="p">,</span> <span class="s1">&#39;pay5&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt1&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;billAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt1&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;payAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt4&#39;</span><span class="p">]]</span>
+<span class="n">Y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;PaymentDefault&#39;</span><span class="p">]</span>
+<span class="n">Y_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s1">&#39;PaymentDefault&#39;</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;limitBal&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;marriage&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;pay1&#39;</span><span class="p">,</span> <span class="s1">&#39;pay2&#39;</span><span class="p">,</span> <span class="s1">&#39;pay3&#39;</span><span class="p">,</span> <span class="s1">&#39;pay5&#39;</span><span class="p">,</span> <span class="s1">&#39;billAmt1&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;billAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt1&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;payAmt2&#39;</span><span class="p">,</span> <span class="s1">&#39;payAmt4&#39;</span><span class="p">]]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLM</span><span class="p">(</span><span class="n">Y_train</span><span class="p">,</span> <span class="n">X_train</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">Y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binary</span> <span class="o">=</span> <span class="n">to_binary</span><span class="p">(</span><span class="n">Y_pred</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">binary</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">binary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3916  856]
+ [ 231  397]] 0.7987037037037037
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using our optimal threshold 0.4, we improved the accuracy slightly to 0.804. But we significantly improved the cases where customers wrongly targeted to 814 cases in total.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./DigitalMarketing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="ChoiceModelling.html" title="previous page">Choice Modelling</a>
+    <a class='right-next' id="next-link" href="CustomerRelationshipManagement.html" title="next page">Customer Relationship Management</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

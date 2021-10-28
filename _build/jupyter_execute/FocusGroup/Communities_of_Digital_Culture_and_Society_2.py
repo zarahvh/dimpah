@@ -44,7 +44,7 @@ Let's watch a quick video first how to deal with dirty data in general.
 
 from IPython.display import Video
 
-Video("videos/Session3.mp4")
+Video("videos/Session2.mp4")
 
 That was a lot of information. Let's go through this one step a time with the teens data.
 
@@ -266,7 +266,7 @@ Let's take a look at how we can access web data in general by scraping web sites
 
 from IPython.display import Video
 
-Video("videos/Session2.mp4")
+Video("videos/Session3.mp4")
 
 Returning to our first example of political communities, we will scrape data on the current composition of the US Senate from Wikipedia. 
 

@@ -36,4 +36,29 @@
   sections:
    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_1
    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_2
+- file: DigitalMarketing
+  sections:
+   - file: DigitalMarketing/Basics
+   - file: DigitalMarketing/ChoiceModelling
+   - file: DigitalMarketing/Churn
+   - file: DigitalMarketing/CustomerRelationshipManagement
+- file: HistoricalCultures
+  sections:
+   - file: HistoricalCultures/AnalysingShakespeare
+   - file: HistoricalCultures/hate-speech-twitter
+   - file: HistoricalCultures/Quanteda
+   - file: HistoricalCultures/TidyText
+- file: SocialSensing
+  sections:
+   - file: SocialSensing/APIs/Nowcasting-GTrends
+   - file: SocialSensing/APIs/TwitterStreamingAPI
+   - file: SocialSensing/APIs/Whatsapp
+   - file: SocialSensing/Graphs/Igraph
+   - file: SocialSensing/Graphs/Reveredetection
+- file: VisualsArts
+  sections:
+   - file: VisualsArts/AdvancedVisualisation
+ 
+
+
    
