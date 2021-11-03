@@ -1,0 +1,1569 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Python 2.1 &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Interactive Data Exploration with Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/PredictingModelling.html">
+     Predicting Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../FocusGroup.html">
+   Focus Group
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
+     Social Networking Communities
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/Churn.html">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Igraph.html">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Reveredetection.html">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Introduction_old/Introduction_2.1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FIntroduction_old/Introduction_2.1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Introduction_old/Introduction_2.1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-python-2-1">
+<h1>Introduction to Python 2.1<a class="headerlink" href="#introduction-to-python-2-1" title="Permalink to this headline">¶</a></h1>
+<p>In this assignment we will explore and visualise real lige datasets using Python and Pandas
+Before we can explore real life datasets, we need to, however, first discuss some more advanced Python constructs.</p>
+<p>Let’s first create a vector by creating an array from 1 to 9 np.array(range(1,10)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will use the mtcars dataset. As the name tells you, it contains observations about cars. You can look at the first few observations/rows by typing in head(df). Contemplate a bit how cars are described here. The data frame is a good example of using features to describe observations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mtcars</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_rdataset</span><span class="p">(</span><span class="s2">&quot;mtcars&quot;</span><span class="p">,</span> <span class="s2">&quot;datasets&quot;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will use the mtcars dataset. As the name tells you, it contains observations about cars. You can look at the first few observations/rows by typing in df.head(). Contemplate a bit how cars are described here. The data frame is a good example of using features to describe observations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cyl</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>drat</th>
+      <th>wt</th>
+      <th>qsec</th>
+      <th>vs</th>
+      <th>am</th>
+      <th>gear</th>
+      <th>carb</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Mazda RX4</th>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.620</td>
+      <td>16.46</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Mazda RX4 Wag</th>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.875</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Datsun 710</th>
+      <td>22.8</td>
+      <td>4</td>
+      <td>108.0</td>
+      <td>93</td>
+      <td>3.85</td>
+      <td>2.320</td>
+      <td>18.61</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Hornet 4 Drive</th>
+      <td>21.4</td>
+      <td>6</td>
+      <td>258.0</td>
+      <td>110</td>
+      <td>3.08</td>
+      <td>3.215</td>
+      <td>19.44</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Hornet Sportabout</th>
+      <td>18.7</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>175</td>
+      <td>3.15</td>
+      <td>3.440</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now select the first 10 rows of mtcars. Assign it to my_df</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, let’s collect the list, the matrix and the data frame in a list with my_list = [llist, my_df]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">vec</span><span class="p">,</span> <span class="n">my_df</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out my_list</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([1, 2, 3, 4, 5, 6, 7, 8, 9]),
+                     mpg  cyl   disp   hp  drat     wt   qsec  vs  am  gear  \
+ Mazda RX4          21.0    6  160.0  110  3.90  2.620  16.46   0   1     4   
+ Mazda RX4 Wag      21.0    6  160.0  110  3.90  2.875  17.02   0   1     4   
+ Datsun 710         22.8    4  108.0   93  3.85  2.320  18.61   1   1     4   
+ Hornet 4 Drive     21.4    6  258.0  110  3.08  3.215  19.44   1   0     3   
+ Hornet Sportabout  18.7    8  360.0  175  3.15  3.440  17.02   0   0     3   
+ Valiant            18.1    6  225.0  105  2.76  3.460  20.22   1   0     3   
+ Duster 360         14.3    8  360.0  245  3.21  3.570  15.84   0   0     3   
+ Merc 240D          24.4    4  146.7   62  3.69  3.190  20.00   1   0     4   
+ Merc 230           22.8    4  140.8   95  3.92  3.150  22.90   1   0     4   
+ Merc 280           19.2    6  167.6  123  3.92  3.440  18.30   1   0     4   
+ 
+                    carb  
+ Mazda RX4             4  
+ Mazda RX4 Wag         4  
+ Datsun 710            1  
+ Hornet 4 Drive        1  
+ Hornet Sportabout     2  
+ Valiant               1  
+ Duster 360            4  
+ Merc 240D             2  
+ Merc 230              2  
+ Merc 280              4  ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You now have a big collector with my_list! If you would like to access any element, you can use the double square brackets. For the first one, try my_list[[0]]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a vector containing months=np.array([‘March’, ‘April’, ‘January’, “’November’, ‘January’, ‘September’, ‘October’, ‘September’, ‘November’, ‘August’, ‘January’, ‘November’, ‘November’, ‘February’, ‘May’, ‘August’, ‘July’, ‘December’, ‘August’, ‘August’, ‘September’, ‘November’, ‘February’, ‘April’]).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">months</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;July&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">months</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;March&#39;, &#39;April&#39;, &#39;January&#39;, &#39;November&#39;, &#39;January&#39;, &#39;September&#39;,
+       &#39;October&#39;, &#39;September&#39;, &#39;November&#39;, &#39;August&#39;, &#39;January&#39;,
+       &#39;November&#39;, &#39;November&#39;, &#39;February&#39;, &#39;May&#39;, &#39;August&#39;, &#39;July&#39;,
+       &#39;December&#39;, &#39;August&#39;, &#39;August&#39;, &#39;September&#39;, &#39;November&#39;,
+       &#39;February&#39;, &#39;April&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python Counter</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">Counter</span><span class="p">(</span><span class="n">months</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;March&#39;: 1,
+         &#39;April&#39;: 2,
+         &#39;January&#39;: 3,
+         &#39;November&#39;: 5,
+         &#39;September&#39;: 3,
+         &#39;October&#39;: 1,
+         &#39;August&#39;: 4,
+         &#39;February&#39;: 2,
+         &#39;May&#39;: 1,
+         &#39;July&#39;: 1,
+         &#39;December&#39;: 1})
+</pre></div>
+</div>
+</div>
+</div>
+<p>loops and control structures</p>
+<p>indenting</p>
+<p>Control structures execute a piece of code based on a condition. You can recognize them in most programming languages by the keyword if. In python they look like the following</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium</span> <span class="o">=</span> <span class="s1">&#39;LinkedIn&#39;</span>
+
+<span class="k">if</span> <span class="n">medium</span> <span class="o">==</span> <span class="s1">&#39;LinkedIn&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Showing LinkedIn information&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Showing LinkedIn information
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, also assign num_views = 14.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_views</span> <span class="o">=</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try to confirm whether we are popular with if num_views &gt; 15 print ‘You are very popular!’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">num_views</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you are very popular!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can combine both expressions also logically. and stands for a logical and, while or stands for the logical or. Try the logical and and type in if (num_views &gt; 15 &amp; medium == ‘LinkedIn’) print(‘You are popular on LinkedIn!’)</p>
+<p>Explain the results!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">num_views</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="ow">and</span> <span class="n">medium</span> <span class="o">==</span> <span class="s1">&#39;LinkedIn&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are popular on LinkedIn!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, you can also tell the computer to do other work if the condition is not fulfilled. You need to use the keyword else</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">num_views</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="ow">and</span> <span class="n">medium</span> <span class="o">==</span> <span class="s1">&#39;LinkedIn&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are popular on LinkedIn!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Try to be more visible!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Try to be more visible!
+</pre></div>
+</div>
+</div>
+</div>
+<p>for loops</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l
+i
+n
+k
+e
+d
+i
+n
+</pre></div>
+</div>
+</div>
+</div>
+<p>For loops can be very useful to perform repeated operations on collections of data, which is something we often want to do. So, for instance, loops could be used to get the square root of each element in a vector or we could use them to calculate the average value of a numeric column in a data frame. However numpy has some easier functions to do so for the entire list or array at once (..)</p>
+<p>apply function similar to the numpy functions?</p>
+<p>Taking the square root of each element by doing to following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">vec</span><span class="p">:</span>
+    <span class="n">sqr</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sqr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+1.4142135623730951
+1.7320508075688772
+2.0
+2.23606797749979
+2.449489742783178
+2.6457513110645907
+2.8284271247461903
+3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can replace it by the following shorter code using numpy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 1.41421356, 1.73205081, 2.        , 2.23606798,
+       2.44948974, 2.64575131, 2.82842712, 3.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s say we want to take the average of our linkdin and facebook views, using the following data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linkedin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+<span class="n">facebook</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">linkedin</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">facebook</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.857142857142858
+11.428571428571429
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also play with numpy’s other functions such as np.char.str_len This counts the number of character for each entry in the days vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">str_len</span><span class="p">(</span><span class="n">days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 7, 9, 8, 6, 8, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>How about np.char.upper(days)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">(</span><span class="n">days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;MONDAY&#39;, &#39;TUESDAY&#39;, &#39;WEDNESDAY&#39;, &#39;THURSDAY&#39;, &#39;FRIDAY&#39;, &#39;SATURDAY&#39;,
+       &#39;SUNDAY&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>For our final apply example, run np.size(days)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Something about built ins in pandas?</p>
+<p>To add 2 to each element in a numpy array we simply type the name of the array + 2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([19,  9,  7, 18, 10, 15, 16])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it with regard to the basics of python. Next, we use our knowledge to analyse a real life social dataset about death penalties and explore how easy it is to plot data with python.</p>
+<p>We will work through a detailed example of data exploration and analyse the question of racism with regard to death penalties in the USA. Deathpenalty covers judgements of defendants in cases of multiple murders in Florida between 1976 and 1987. The cases all have features that (a) describe whether the death penalty was handed out (where 0 refers to no, 1 to yes), (b) the race of the defendant and (c) the race of the victim (black is referred as 0, white is 1). Check out the description at <a class="reference external" href="http://artax.karlin.mff.cuni.cz/r-help/library/catdata/html/deathpenalty.html">http://artax.karlin.mff.cuni.cz/r-help/library/catdata/html/deathpenalty.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;deathpenalty-florida.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By typing in df.head(), we can see the first couple of cases/rows. What types of columns do you see?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>DeathPenalty</th>
+      <th>VictimRace</th>
+      <th>DefendantRace</th>
+      <th>Freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>139</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>16</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>By entering df.tail(), we can see the last couple of cases/rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>DeathPenalty</th>
+      <th>VictimRace</th>
+      <th>DefendantRace</th>
+      <th>Freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>414</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>53</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next, we will try to ask the data a few simple questions. Sometimes the solution will be given. Otherwise, you will have to find it yourself.</p>
+<p>With the function np.mean() you can retrieve the average of each of the columns</p>
+<p>np.mean(df)</p>
+<p>We can also only do it for the deathpenalty frequency column by selecting it from the dataframe. You can thus answer what the average frequency of judgements would be by entering np.mean(df[‘Freq’]). Try it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>84.25
+</pre></div>
+</div>
+</div>
+</div>
+<p>mean is very useful to understand data. When something is deemed average, it falls somewhere between the extreme ends of the scale. An average student might have marks falling in the middle of his or her classmates; an average weight is neither unusually light nor heavy. An average item is typical, and not too unlike the others in the group. You might think of it as an exemplar.</p>
+<p>median is another function like mean that summarizes a whole dataset by delivering a central tendency. Like mean, it identifies a value that falls in the middle of a set of data. median splits the upper 50% of a data from the lower 50%. It thus delivers the value that occurs halfway through an ordered list of values. How do you get the median frequency of judgements?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the lowest number of judgements (min)? Assign the value to min_freq, please.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the highest number of judgements (max)? Assign the value to max_freq, please.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What kind of case combinations had the lowest numbers of judgements? We can obtian these using functions that come with the pandas dataframe, to get the three rows with the smallest value for Freq, type df.nsmallest(1, ‘Freq’). To create a subset, assign it to subset_small</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="n">e279e80020bd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span> 
+<span class="g g-Whitespace">    </span><span class="mi">930</span>             <span class="n">maybe_callable</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">apply_if_callable</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">931</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_axis</span><span class="p">(</span><span class="n">maybe_callable</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span> 
+<span class="g g-Whitespace">    </span><span class="mi">933</span>     <span class="k">def</span> <span class="nf">_is_scalar_access</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_getitem_axis</span><span class="nt">(self, key, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1151</span>                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot index with multidimensional key&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1152</span> 
+<span class="ne">-&gt; </span><span class="mi">1153</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_iterable</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1154</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1155</span>             <span class="c1"># nested tuple slicing</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_getitem_iterable</span><span class="nt">(self, key, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1091</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1092</span>         <span class="c1"># A collection of keys</span>
+<span class="ne">-&gt; </span><span class="mi">1093</span>         <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_listlike_indexer</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1094</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_reindex_with_indexers</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1095</span>             <span class="p">{</span><span class="n">axis</span><span class="p">:</span> <span class="p">[</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">]},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_dups</span><span class="o">=</span><span class="kc">True</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_get_listlike_indexer</span><span class="nt">(self, key, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1312</span>             <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span> 
+<span class="ne">-&gt; </span><span class="mi">1314</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_read_indexer</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1315</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1316</span>         <span class="k">if</span> <span class="n">needs_i8_conversion</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_validate_read_indexer</span><span class="nt">(self, key, indexer, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>             <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="ne">-&gt; </span><span class="mi">1377</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1379</span> 
+
+<span class="ne">KeyError</span>: &#39;[139, 37, 11, 16, 414, 53] not in index&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ok, then. Which case combinations had the highest number of judgements? You just need to change the function to nlargest</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>DeathPenalty</th>
+      <th>VictimRace</th>
+      <th>DefendantRace</th>
+      <th>Freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>414</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>min and max are measures of the diversity or spread of data. Knowing about the spread provides a sense of the data’s highs and lows, and whether most values are like or unlike the mean and median. The span between the minimum and maximum value is known as the range.</p>
+<p>The first and third quartiles, Q1 and Q3, refer to the value below or above which one quarter of the values are found. Along with the median (Q2), the quartiles divide a dataset into four portions, each with the same number of values. Check out np.quantile(df[‘Freq’], [0.25,0.5, 0.75, 1])</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  9.25,  26.5 ,  74.5 , 414.  ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are two more really useful data exploration functions in Python. The first one is describe. Try df.describe() and describe what is returned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>DeathPenalty</th>
+      <th>VictimRace</th>
+      <th>DefendantRace</th>
+      <th>Freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>8.00000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.50000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>84.250000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.44949</td>
+      <td>0.534522</td>
+      <td>0.534522</td>
+      <td>0.534522</td>
+      <td>140.663479</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.75000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>9.250000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.50000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>26.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.25000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>74.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>414.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>summary returns all those value you just tried to find yourself! Oh, well. There is another function data(), which returns the structure of a data frame. It is very useful to find out about columns and features of a dataset. Try <a class="reference external" href="http://df.info">df.info</a>().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column         Non-Null Count  Dtype
+---  ------         --------------  -----
+ 0   Unnamed: 0     8 non-null      int64
+ 1   DeathPenalty   8 non-null      int64
+ 2   VictimRace     8 non-null      int64
+ 3   DefendantRace  8 non-null      int64
+ 4   Freq           8 non-null      int64
+dtypes: int64(5)
+memory usage: 448.0 bytes
+</pre></div>
+</div>
+</div>
+</div>
+<p>hese summary statistics work only with what in statistics is called numerical data, which is basically anything measured in numbers. Alternatively, if data is represented by a set of categories, it is called categorical or nominal. In our dataset, we do not really have exciting categorical data, because of the way the data set is constructed. In Python, we can compare categorical features by counting the values of for example the VictimRace to see how often each race occurs by typing df.value_counts(‘VictimRace’) and you will see that both victim races are equally represented..</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;VictimRace&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VictimRace
+0    4
+1    4
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are only getting warm. Let’s make this all a little bit more complicated. We want to know how many black or white people received the death penalty. Remember that a black person is represented by 0 and a white by 1. A death penalty was handed out if DeathPenalty equals 1, with 0 otherwise. Let’s first create a new data frame black_and_deathpenalty, which contains black defendants who received the death penalty by usling df.loc[].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">black_and_deathpenalty</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DefendantRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DeathPenalty&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, we can get the white defendants who received the death penalty. Get the subset and assign it to white_and_deathpenalty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">white_and_deathpenalty</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DefendantRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DeathPenalty&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Overall, we want to compare the likelihood of white and black defendants to receive the death penalty. In order to achieve this, the next step is to find out about the overall number of black people who received the death penalty. You can get this with the sum function, which we have already met. Use n_black_deathpenalty</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_black_deathpenalty</span> <span class="o">=</span> <span class="n">black_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, find those whites, which were given a death penalty. Assign a new variable n_white_deathpenalty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_white_deathpenalty</span> <span class="o">=</span> <span class="n">white_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is therefore the proportion of black people receiving the death penalty? Remember you can get this by dividing the number of black defendants with the death penalty by the total number of defendants with the death penalty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_black_deathpenalty</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_black_deathpenalty</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.02177068214804064
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s quite a low percentage. Do we then not need to worry then about racial biases in the judgements? What other information do we need to come to such a conclusion? Let’s find out next.</p>
+<p>Proportionally, how many of the death penalties handed out to black people were for killing a white person? The expression black_and_deathpenalty.loc[(black_and_deathpenalty[‘VictimRace’] == 1)][‘Freq’] / n_black_deathpenalty is a bit complicated but gets the right result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">black_and_deathpenalty</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">black_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;VictimRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)][</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_black_deathpenalty</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    0.733333
+Name: Freq, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, how likely is it that a white person killing a black person will receive the death penalty?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">white_and_deathpenalty</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">white_and_deathpenalty</span><span class="p">[</span><span class="s1">&#39;VictimRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)][</span><span class="s1">&#39;Freq&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_white_deathpenalty</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5    0.0
+Name: Freq, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Out of 15 death penalties for black people, 73% for for killing a white person. While none of the 53 death penalties for white people in Florida were given for killing a black person. I hope you can see that there are many powerful functions to explore data directly in Python. Another really good way to explore data is not to ask direct questions but to summarize it with graphs and visualisations. Visualisations and graphs are easy to do with Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/Introduction_2.1_96_1.png" src="../_images/Introduction_2.1_96_1.png" />
+</div>
+</div>
+<p>Now, how about df.boxplot(‘Freq’)? What do you see? Ask the Internet!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;Freq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/Introduction_2.1_98_1.png" src="../_images/Introduction_2.1_98_1.png" />
+</div>
+</div>
+<p>The boxplot displays the centre and spread in a format that allows you to quickly obtain a sense of behaviour of the data. The median is denoted by the dark line while the box around it stands for the spread. The boxplot shows one outlier. Can you identify it in the dataset deathpenalty?</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Introduction_old"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Python 1.2 &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Introduction to Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Introduction to Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Interactive Data Exploration with Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Introduction to Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/PredictingModelling.html">
+     Predicting Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PredictingModelling/Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../FocusGroup.html">
+   Focus Group
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
+     Social Networking Communities
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/Churn.html">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Igraph.html">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Reveredetection.html">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Introduction_old/Introduction_1.2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FIntroduction_old/Introduction_1.2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Introduction_old/Introduction_1.2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-python-1-2">
+<h1>Introduction to Python 1.2<a class="headerlink" href="#introduction-to-python-1-2" title="Permalink to this headline">¶</a></h1>
+<p>The final new concept for today is the matrix. It has little to do with the movie but is simply a two-dimensional array. Up to now we only had one dimension, but why not add one more?</p>
+<p>Let’s try this and move on from your gambling. We will now introduce an example from social analytics brought to us by <a class="reference external" href="http://dataquest.com">dataquest.com</a>, which we will come back to again later in the course. You have a LinkedIn account and a Facebook account and want to find out which one has more views and is more successful. You collected the views per day for a particular week in two arrays. Type in linkedin = [16, 9, 13, 5, 2, 17, 14]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">linkedin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now create facebook = [17, 7, 5, 16, 8, 13, 14]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python doesn’t have a built-in function for matrices. However, we can create a matrix by treating it as a list of a list. Or an numpy array of arrays (using numpy? –&gt; possibility of booleans)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">linkedin</span><span class="p">,</span> 
+         <span class="n">facebook</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out views.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16,  9, 13,  5,  2, 17, 14],
+       [17,  7,  5, 16,  8, 13, 14]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then ask a couple of good questions against the matrix views without having to reference the arrays it is made of. To find out on which days we had 13 views for either LinkedIn or Facebook, we type views == 13. The == is the Boolean equivalence operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">==</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False,  True, False, False, False, False],
+       [False, False, False, False, False,  True, False]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>When are views less than or equal to 14? Try views &lt;= 14.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">&lt;=</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False,  True,  True,  True,  True, False,  True],
+       [False,  True,  True, False,  True,  True,  True]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>How often does facebook equal or exceed linkedin times two? This is actually a quite advanced expression in R already. Try it with sum (facebook &gt;= linkedin * 2). Take a moment to think about the components of this expression. Maybe, you want to take a piece of paper and a pen to write down all the components.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">facebook</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">linkedin</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to arrays, we can access each element of a matrix, but this time we of course need 2 dimensions. views[0][1] will select the first row’s second element. Try it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Overall, the order is row first and then column. Try views[1][4].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most important structure in Python to store and process data are data frames, the most common tool in Python to do so is Pandas. Just like matrixes, data frames also have rows and columns but can hold different types of variables in each of their columns. Think about it! This way we can record any observation in the world. Any observation will have different attributes we associate with it. For instance, flowers can be of different types and colours. With data frames we can record each observation of flowers by recording it in rows and assign to the columns the various features we observe like colour, type, etc. This way the whole world is for us to record in data frames!</p>
+<p>Let’s return to the records of our week and create a data frame to hold all its glorious details.</p>
+<p>In order to get our week together into a single data frame, we first import Pandas as pd, next
+type in df = pd.DataFrame(views). This combines all our vectors into the data frame my_week_df. Each row is a day in your life.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;linkedin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">linkedin</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">facebook</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linkedin</th>
+      <th>facebook</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14</td>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Just like matrixes, we can select rows and columns with the operator [row][column]. Select row 1, column 2 with df.iloc[0][1]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also select entire rows/observations using pandas’ .iloc, type in df.iloc[1] to select the second row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>linkedin    9
+facebook    7
+Name: 1, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do you remember how to select multiple elements in a vector? It is similar for data frames. In order to select row 1 and 2, type in df.iloc[0:2].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linkedin</th>
+      <th>facebook</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Any idea how to select the second column rather than a row? Try it by yourself!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    17
+1     7
+2     5
+3    16
+4     8
+5    13
+6    14
+Name: facebook, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do you know how to select the third and forth row?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linkedin</th>
+      <th>facebook</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also select columns based on their names using df.loc, try selecting facebook</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">18</span><span class="n">a3165c45ca</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span> 
+<span class="g g-Whitespace">    </span><span class="mi">930</span>             <span class="n">maybe_callable</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">apply_if_callable</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">931</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_axis</span><span class="p">(</span><span class="n">maybe_callable</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span> 
+<span class="g g-Whitespace">    </span><span class="mi">933</span>     <span class="k">def</span> <span class="nf">_is_scalar_access</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_getitem_axis</span><span class="nt">(self, key, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1162</span>         <span class="c1"># fall thru to straight lookup</span>
+<span class="g g-Whitespace">   </span><span class="mi">1163</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1164</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_label</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1165</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="k">def</span> <span class="nf">_get_slice_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slice_obj</span><span class="p">:</span> <span class="nb">slice</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_get_label</span><span class="nt">(self, label, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1111</span>     <span class="k">def</span> <span class="nf">_get_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1112</span>         <span class="c1"># GH#5667 this will fail if the label is not present in the axis.</span>
+<span class="ne">-&gt; </span><span class="mi">1113</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1114</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1115</span>     <span class="k">def</span> <span class="nf">_handle_lowerdim_multi_index_axis0</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">xs</span><span class="nt">(self, key, axis, level, drop_level)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3774</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected label or tuple of labels, got </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">3775</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3776</span>             <span class="n">loc</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3777</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3778</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/pandas/core/indexes/range.py</span> in <span class="ni">get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>                 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>                     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="ne">--&gt; </span><span class="mi">388</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> 
+
+<span class="ne">KeyError</span>: &#39;facebook&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s add another column to our dataframe : happy</p>
+<p>First define happy = [False, True, False, True, False, True, False]</p>
+<p>We can then append this list to the dataframe by naming a new column and assign happy to it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">happy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Say we would like to select all days, we were happy. This is easy in python with happy_days_df = df.loc[df[‘happy’]==True]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linkedin</th>
+      <th>facebook</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Take some time and look at the expression happy_days_df = df.loc[df[‘happy’]==True]. What kind of parts can you identify? How are the rows/days selected when you were happy?</p>
+<p>f you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can type small_df = df.loc[df[‘linkedin’] &gt; df[‘facebook’]]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;linkedin&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linkedin</th>
+      <th>facebook</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>5</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>That’s almost it for data frames. I promise they get more interesting once we start working with real datasets. One more thing you often want to do is to sort a data frame according to one or more of its columns. We have another function for that called df.sort_values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>linkedin</th>
+      <th>facebook</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>5</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14</td>
+      <td>14</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>That’s it for the most important concepts around data frames in Python. Next week we first cover a few things we do not really need for the time being but that are good to know nevertheless. You will need them for reading some of the code you find online.</p>
+<p>…</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Introduction_old"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
