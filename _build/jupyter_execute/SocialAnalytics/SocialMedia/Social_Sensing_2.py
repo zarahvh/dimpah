@@ -1,193 +1,244 @@
 #  Social Sensing 2
 
-We have just experienced the power of social networks using python. You have seen how powerful the libraries are and have worked through a complete Twitter analysis. But we have also seen how difficult it is to get the graph visualisations right. The plotted networks can definitely improve. Other plots are fairly boring – like my uninspiring Twitter follower network. In order to dig deeper into the details of social network analysis, let’s use a famous example from the past.
+We have just experienced the power of social networks using Python. You have seen how powerful the libraries are and have worked through a complete Twitter analysis. But we have also seen how difficult it is to get the graph visualisations right. Our last network plots can definitely improve. Let's try and do this in this session. In order to dig deeper into the details of (social) network analysis, let’s use a famous example from the past.
 
 Zachary’s karate club is a social network of friendships of 34 members of a karate club at a US university in the 1970s. It is described in W. W. Zachary, An information flow model for conflict and fission in small groups, Journal of Anthropological Research 33, 452-473 (1977). It is a famous early example of successful social network analysis. According to Wikipedia, ‘during the study a conflict arose between the administrator and instructor, which led to the split of the club into two. Half of the members formed a new club around the instructor members from the other part found a new instructor or gave up karate. Based on collected data Zachary assigned correctly all but one member of the club to the groups they actually joined after the split.’ https://en.wikipedia.org/wiki/Zachary%27s_karate_club.
 
---> igraph python https://igraph.org/python/
+First we load some of the libraries we are always using. Run the cell below.
 
-First download igraph.
+#Keep cell
 
-You have two data frames loaded in the environment. karate_nodes contains the nodes of the network with information about the karate club members. Check it with head(karate_nodes).
-
-import igraph
 import pandas as pd
 import numpy as np
-import csv
 import matplotlib as plt
+
+import sca
+
+Now to the main star of this show, which is the networkx library: https://networkx.org/ Load this commonly used network library with `import networkx as nx`.
+
+import networkx as nx 
+
+You have two data frames  in the environment. 
+
+The first is karate_nodes, which contains the nodes of the network with information about the karate club members. Run the cell below.
+
+#Keep cell
 
 karate_nodes = pd.read_csv("data/karate_nodes.csv")
 karate_nodes.head()
 
-The second data frame karate_edges contains the edges with information whether one member likes another and by how much.
+The second data frame karate_edges contains the edges with information whether one member likes another and by how much. Run the cell below.
+
+#Keep cell
 
 karate_edges = pd.read_csv("data/karate_edges.csv")
-karate_edges[:20]
+karate_edges.head()
 
-Now, let’s create an igraph karate_g with these edges and nodes.
+Now, let’s create a graph with these these edges and nodes. Each graph is just that, a collection of edges and nodes. In our case, we can easily create the graph from the edgelist in karate_edges. The networkx command is:
+```
+G = nx.from_pandas_edgelist(karate_edges, source = "from", target = "to", create_using=nx.DiGraph(), edge_attr = True)
+```
 
-We first need to download iGraph and then type from igraph import*
+The first argument is the data frame, the second the source node, the third is the target node. We also tell from_pandas_edgelist to create a directed graph with create_using=nx.DiGraph() and to keep all the edge attributes with edge_attr = True.
 
-A tutorial can be found at: https://igraph.org/python/doc/tutorial/tutorial.html#layouts-and-plotting
+G = nx.from_pandas_edgelist(karate_edges, source = "from", target = "to", create_using=nx.DiGraph(), edge_attr = True)
 
-from igraph import *
-g = Graph()
+Unfortunately, it is not very easy to add all the attributes of the nodes. https://newbedev.com/networkx-setting-node-attributes-from-dataframe explains how this is done by creating first a dictionary of dictionaries from karate_nodes.
+Type in: `node_attr = karate_nodes.set_index('id').to_dict('index')`. This will first set the index of karate_nodes to the ids of all nodes. to_dict will then add the row values as another dictionary. Check out how this looks for a row by adding `node_attr[2]`.
 
-# Igraph needs tuples, cannot work with a dataframe directly
+node_attr = karate_nodes.set_index('id').to_dict('index')
+node_attr[2]
 
-tuple_edges = [tuple(x) for x in karate_edges.values]
+To set all the node attributes, now run `nx.set_node_attributes(G, node_attr)`.
 
-Gm = igraph.Graph.TupleList(tuple_edges, directed = True, edge_attrs = ['weight'])
+nx.set_node_attributes(G, node_attr)
 
-tuple_nodes = [tuple(x) for x in karate_nodes.values]
-Gm.add_vertices(tuple_nodes)
+With `print(nx.info(G))`, you print out information about the graph. 
 
-print(Gm)
+print(nx.info(G))
 
-graph = Graph.DictList(
-          vertices=karate_nodes.to_dict('records'),
-          edges=karate_edges.to_dict('records'),
-          directed=True,
-          vertex_name_attr='id',
-          edge_foreign_keys=('from', 'to'));
+`G.nodes()` provides a view of nodes.
 
-print(graph)
+G.nodes()
 
-We can look into the nodes of the graph using graph.vs
+`G.edges() provides a view of edges.`
 
-vseq = graph.vs
-for v in vseq:
-    print(v)
+G.edges()
 
-We can see the node together with its attributes, if we want to now only see the age attribute of each node, we access it using ['age']
+Let's check that we added the attributes correctly with `G.nodes.data()`.
 
-for v in vseq:
-    print(v['age'])
+G.nodes.data()
 
-Let's try an plot this graph
+To get the age of node 1, type `G.nodes[1]['age']`.
 
-(We need to install cairo to do so)
+G.nodes[1]['age']
 
-pip3 install cairocffi
+There are a lot of options here and it is good at this moment to check out the documention. To get only edges incident to nodes 1 and 3, type `G.edges([1, 3])`.
 
-import cairocffi
-layout = graph.layout("kamada_kawai")
-plot(graph, layout = layout)
+G.edges([1, 3])  
 
-You can also plot a graph with curved edges (edge_curved=True) and reduced arrow size. (edge_arrow_size=.4)
+We can see the node together with its attributes, if we want to now only see the age attribute of each node, we access it using `nx.get_node_attributes(G, 'age').values()`. We need to add values(), get_node_attributes returns a dictionary with the node's id as the key and the age the value. With values(), we only receive the values().
 
-layout = graph.layout("kamada_kawai")
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4)
+nx.get_node_attributes(G, 'age').values()
 
-Maybe that is a bit much let's change the curve to 0.1. Let’s try a more complicated plot, we could also add some other parameters. Now we can access the ids by using graph.vs['id'] and add them as vertex_label parameter.
+#BTW, if you don't have a nice dataframe then you can still get the attributes from 
+#
 
-layout = graph.layout("kamada_kawai")
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4, vertex_label=graph.vs['id'], vertex_color='orange')
+nx.get_edge_attributes(G, 'weight').values()
 
-We could do the same, but then with the actual names, remember how we accessed the ids? Do the same with the names.
 
-layout = graph.layout("kamada_kawai")
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color='orange')
+It's a dictionary. You would have to cast to a list to get only the ages. Do you know how?
 
- Let’s say we want to colour our network nodes based on gender as well as size them based on age. We will also change the width of the edges based on their weight. We need to apply a series of changes to the attributes pf our igraph. To get the different colors for different genders we need to add these colors to our dataframe karate_nodes.
+Let's try an plot this graph. It's easy in networkx. Just run nx.draw(G).
 
-karate_nodes['color'] = np.where(karate_nodes['gender']== 'F', 'red', 'blue')
-karate_nodes['age'] = pd.to_numeric(karate_nodes['age'])
+nx.draw(G)
 
+There is a great number of options to improve this graphy. You can, for instance, add the labels, use curved edges  and reduce the arrow size. Try: `nx.draw(G, with_labels=True, connectionstyle="arc3,rad=0.4", arrowsize=0.4)`
+
+
+nx.draw(G, with_labels=True, connectionstyle="arc3,rad=0.4", arrowsize=0.4)
+
+The ids are now very exciting as node labels. Let's try and use the first names. 
+
+We could do the same, but then with the actual names, remember how we accessed the ids? Do the same with the names. We can do this with the labels argument for nx.draw. It requires a dictionary mapping node id to the first name. That's easy to get with `node_labels = nx.get_node_attributes(G, 'first_name')`. 
+
+node_labels = nx.get_node_attributes(G, 'first_name')
+
+Now add this to nx.draw: `nx.draw(G, with_labels=True, labels=node_labels, connectionstyle="arc3,rad=0.4", arrowsize=0.4)`.
+
+nx.draw(G, with_labels=True, labels=node_labels, connectionstyle="arc3,rad=0.4", arrowsize=0.4)
+
+Let’s say we want to colour our network nodes based on gender as well as size them based on age. We will also change the width of the edges based on their weight. We need to apply a series of changes to the attributes pf our igraph. To get the different colors for different genders we need to add these colors to our dataframe karate_nodes.
+ 
+The Matlib colour names are listed at: https://matplotlib.org/stable/gallery/color/named_colors.html
+
+np.where is one of the many functions of numpy that we will use a lot. It chooses either x or y (second and third argument) depending on the condition in the first argument. Type in:
+```
+karate_nodes['colour'] = np.where(karate_nodes['gender']== 'F', 'tomato', 'skyblue')
+karate_nodes.head()
+```
+
+karate_nodes['colour'] = np.where(karate_nodes['gender']== 'F', 'tomato', 'skyblue')
 karate_nodes.head()
 
-And then recreate the graph and check the vseq again whether color is now also an attribute
+Now draw the graph again with another attribute node_color=np.array(karate_nodes['colour']). Type in: `nx.draw(G, node_color=np.array(karate_nodes['colour']), with_labels=True, labels=node_labels)`.
 
-graph = Graph.DictList(
-          vertices=karate_nodes.to_dict('records'),
-          edges=karate_edges.to_dict('records'),
-          directed=True,
-          vertex_name_attr='id',
-          edge_foreign_keys=('from', 'to'));
+nx.draw(G, node_color=np.array(karate_nodes['colour']), with_labels=True, labels=node_labels) 
 
-We then plot the graph using the graph.vs of the colors the same as we did with the ids
+We also wanted to change the node size based on age. We could, for example, multiply the age by 10 to get the size that we want. Add `node_size = 10*np.array(karate_nodes['age'])` as an attribute to nx.draw.
 
-layout = graph.layout("kamada_kawai")
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color=graph.vs['color'])
+nx.draw(G, node_color=np.array(karate_nodes['colour']), node_size = 10*np.array(karate_nodes['age']),
+                         with_labels=True, labels=node_labels) 
 
-We also wanted to change the node size based on age. We could, for example, multiply the age by 0.4 to get the size that we want. We can do this more easily by setting vertex_size= [v*0.4 for v in graph.vs['age']].
+The weight of the like-relationship will determine the width of the arrow between two nodes. All we need to do is add another attribute. Type:
+```
+nx.draw(G, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        width= 0.25 * np.array(karate_edges['weight']))
+```
 
-*Could we have done the same for color?
+nx.draw(G, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        width= 0.25 * np.array(karate_edges['weight']))
 
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color=graph.vs['color'], vertex_size= [v*0.4 for v in graph.vs['age']])
+Actually, these graphs have never been great. Too many overlaps ...
 
+You can  plot graphs with different layouts to avoid overlaps. To adjust the graph layout, networkx contains layout generators, which try to place the vertices and edges in a way that is more visually appealing. They position ('pos') the nodes and edges on a plane defined by x- and y-values.
 
-The weight of the like-relationship will determine the width of the arrow between two nodes. But check, this is an edge attribute instead of a vertix attribute, we can access this by using graph.es['weight'], now let's do the same as above but then for the edge.
+There are many layout functions, let's first try a random one. Type:
+```
+pos = nx.random_layout(G)
 
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color=graph.vs['color'], vertex_size= [v*0.4 for v in graph.vs['age']], edge_width = [e/5 for e in graph.es['weight']])
+nx.draw(G, pos, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        width= 0.25 * np.array(karate_edges['weight']))
+```
 
-You can also plot graphs with different layouts.
-To adjust the graph layout, igraph contains layout generators, which try to place the vertices and edges in a way that is more visually appealing. There are many layout functions, let's first try a random one.
+pos = nx.random_layout(G)
 
-layout = graph.layout("random")
-plot(graph, layout = layout, edge_curved=True, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color=graph.vs['color'], vertex_size= [v*0.4 for v in graph.vs['age']], edge_width = [e/5 for e in graph.es['weight']])
+nx.draw(G, pos, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        width= 0.25 * np.array(karate_edges['weight']))
 
-Maybe this one is a bit too curved in the edges which makes it unreadable, let's get rid of that argument
+We can now change the layout parameter and use another function. Fruchterman Reingold (https://en.wikipedia.org/wiki/Force-directed_graph_drawing) is a very popular layout algorithm. It's called spring layout in NetworkX. Change the first line of the last cell into `pos = nx.spring_layout(G)`.
 
-(Not sure, maybe the curved edges are better, what do you think?)
+pos = nx.spring_layout(G)
 
-plot(graph, layout = layout, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color=graph.vs['color'], vertex_size= [v*0.4 for v in graph.vs['age']], edge_width = [e/5 for e in graph.es['weight']])
+nx.draw(G, pos, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        width= 0.25 * np.array(karate_edges['weight']))
 
-We can now change the layout parameter and use another function. Fruchterman Reingold (https://en.wikipedia.org/wiki/Force-directed_graph_drawing) is a very popular layout algorithm. Type in graph.layout("fr")
+This is a bit better. Less overlap. Let's try another layout. Replace the pos line with `pos = nx.kamada_kawai_layout(G)`.
 
-layout = graph.layout("fr")
-plot(graph, layout = layout, edge_arrow_size=.4, vertex_label=graph.vs['first_name'], vertex_color=graph.vs['color'], vertex_size= [v*0.4 for v in graph.vs['age']], edge_width = [e/5 for e in graph.es['weight']])
+Also, the edges are too dark. A good trick is often to set their colours to greyscale. Also add:
+```
+nx.draw(G, pos, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        edge_color="silver",
+        width = 0.25 * np.array(karate_edges['weight']))
+```
 
+pos = nx.kamada_kawai_layout(G)
 
-This is much much better. But remember the original insight from the 1970s paper of the karate club? It described how the larger community of the whole club was effectively the result of several separate communities of members and split thererfore according to trust placed in either the administrator or instructor. Thus the whole karate club community can split up easily. Graph analysis comes with a lot of so-called community detection algorithms that support such investigations
+nx.draw(G, pos, node_color=np.array(karate_nodes['colour']),
+        node_size = 10*np.array(karate_nodes['age']),
+        with_labels=True, labels=node_labels,
+        edge_color="silver",
+        width = 0.25 * np.array(karate_edges['weight']))
 
-(Possible tutorial: https://towardsdatascience.com/detecting-communities-in-a-language-co-occurrence-network-f6d9dfc70bab?)
+Ok. At least everything is readable ... But it is still difficult to see any interesting patterns in the network. Remember, e.g., the original insight from the 1970s paper of the karate club? It described how the larger community of the whole club was effectively the result of several separate communities of members and split thererfore according to trust placed in either the administrator or instructor. Thus the whole karate club community can split up easily. Graph analysis comes with a lot of so-called community detection algorithms that support such investigations. We will use what many consider one of the best algorithms in this domain. Louvain is explained at https://towardsdatascience.com/louvain-algorithm-93fde589f58c. 
 
-com = graph.community_walktrap()
-clp = com.as_clustering()
+Let's first load the library with `from community import community_louvain`. Run the cell below.
 
-Now let's see what's behind clp
+#Keep cell
 
-print(clp)
+#install with pip install python-louvain
+from community import community_louvain
 
-The result is a list with similar information to the one we have already met during the clustering exercises. We can easily plot the communities with plot(clp, mark_groups=True).
+Louvain requires undirected graphs. We create an undirected copy with `g = G.to_undirected()`.
 
-plot(clp, mark_groups=True, vertex_label=graph.vs['first_name'])
+g = G.to_undirected()
 
-This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities walktrap has detected. Let’s investigate this further and visualise the degree by which members are connected to other members. A graph degree basically counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree. First though we need to calculate the degree for each node. That’s very easy using igraph’s degree function. Simply type graph.degree()
+Now let's create the optimal partition of the graph according to Louvain. Run `partition = community_louvain.best_partition(g)`. Print out the items of the dictionary with `partition.items()`.
 
-graph.degree()
+partition = community_louvain.best_partition(g)
+partition.items()
+
+Louvain create four partitions (0 - 3). Let's plot these partitions by colour-coding the nodes. Run:
+```
+pos = nx.spring_layout(g)
+nx.draw(g, pos, node_color=list(partition.values()), with_labels=True, cmap=plt.cm.Set3)
+```
+cmap=plt.cm.Set3 is new and chooses a colormap for Python to assign a colour to each partition. Colormaps are very powerful: 
+https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/
+
+pos = nx.spring_layout(g)
+nx.draw(g, pos, node_color=list(partition.values()), with_labels=True, cmap=plt.cm.Set3)
+
+Nice but we can do even better with the help of stackoverflow (https://stackoverflow.com/questions/43541376/how-to-draw-communities-with-networkx). We have added a function `pos = community_layout(g, partition)` that let's you plot partitions by separating them out clearly. Run the cell below.
+
+#Keep cell
+
+pos = sca.community_layout(g, partition)
+
+nx.draw(g, pos, node_color=list(partition.values()), with_labels= True, cmap=plt.cm.Set3)
+
+This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities Lourain has detected. Let’s investigate this further and visualise the degree by which members are connected to other members. A graph degree basically counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree. First though we need to calculate the degree for each node. That’s very easy using igraph’s degree function. Simply type graph.degree()
+
+degree_list = [50*g.degree[n] for n in g.nodes()]
+degree_list[:5]
 
 Now, let’s reassign the size of the nodes with setting vertex_size= vertex_size=graph.degree()
 
-plot(clp, mark_groups=True, vertex_label=graph.vs['first_name'], vertex_size=graph.degree())
+nx.draw(g, pos, node_color=list(partition.values()), node_size=degree_list, with_labels= True, cmap=plt.cm.Set3)
 
-The new graph clearly shows now where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!
-
-Let’s check what we have learned now.
-
-What is a social network?
-
-1. A movie
-2. All my friends
-3. Something other people know more about than me
-4. A social structure made up of a set of social actors and their interactions
-
-A social structure made up of a set of social actors and their interactions
-
-Double the edge width of the graph (without the communities) based on the value we have set earleier based on weight.
-
-plot(graph, vertex_label=graph.vs['first_name'], edge_width = [e/2.5 for e in graph.es['weight']])
-
-Change the size of the nodes
-
-
-plot(graph, vertex_label=graph.vs['first_name'], edge_width = [e/2.5 for e in graph.es['weight']],vertex_size= 50)
-
-Run another community detection algorithm graph.community_label_propagation()
-
-prop= graph.community_label_propagation()
-
-plot(prop, mark_groups=True)
+The new graph clearly shows  where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!
 
 That’s it for today. You have learned a lot of things about how to create social sensing networks. This is one of the most important social analytics techniques, and you can impress friends and family now with pretty graphs using the structure of social networks. Next time, we will look into content analysis using text mining.
+
