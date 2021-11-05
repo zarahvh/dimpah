@@ -100,22 +100,22 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
+     Interactive Data Exploration with Python 1.1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
+     Interactive Data Exploration with Python 1.2
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
+     Interactive Data Exploration with Python 2.1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
+     Interactive Data Exploration with Python 2.2
     </a>
    </li>
   </ul>
@@ -208,11 +208,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../PredictingModelling/LinearPrediction.html">
      Linear Regression Prediction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../PredictingModelling/PredictingModelling.html">
-     Predicting Modelling
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,12 +344,7 @@
   <a class="reference internal" href="../../VisualsArts.html">
    Visuals Arts
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../VisualsArts/AdvancedVisualisation.html">
-     Lots of fun with Python visualisations
-    </a>
-   </li>
+  <ul class="simple collapse-ul">
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -467,25 +457,37 @@
                 
   <div class="section" id="social-sensing-2">
 <h1>Social Sensing 2<a class="headerlink" href="#social-sensing-2" title="Permalink to this headline">¶</a></h1>
-<p>We have just experienced the power of social networks using python. You have seen how powerful the libraries are and have worked through a complete Twitter analysis. But we have also seen how difficult it is to get the graph visualisations right. The plotted networks can definitely improve. Other plots are fairly boring – like my uninspiring Twitter follower network. In order to dig deeper into the details of social network analysis, let’s use a famous example from the past.</p>
+<p>We have just experienced the power of social networks using Python. You have seen how powerful the libraries are and have worked through a complete Twitter analysis. But we have also seen how difficult it is to get the graph visualisations right. Our last network plots can definitely improve. Let’s try and do this in this session. In order to dig deeper into the details of (social) network analysis, let’s use a famous example from the past.</p>
 <p>Zachary’s karate club is a social network of friendships of 34 members of a karate club at a US university in the 1970s. It is described in W. W. Zachary, An information flow model for conflict and fission in small groups, Journal of Anthropological Research 33, 452-473 (1977). It is a famous early example of successful social network analysis. According to Wikipedia, ‘during the study a conflict arose between the administrator and instructor, which led to the split of the club into two. Half of the members formed a new club around the instructor members from the other part found a new instructor or gave up karate. Based on collected data Zachary assigned correctly all but one member of the club to the groups they actually joined after the split.’ <a class="reference external" href="https://en.wikipedia.org/wiki/Zachary%27s_karate_club">https://en.wikipedia.org/wiki/Zachary’s_karate_club</a>.</p>
-<p>–&gt; igraph python <a class="reference external" href="https://igraph.org/python/">https://igraph.org/python/</a></p>
-<p>First download igraph.</p>
-<p>You have two data frames loaded in the environment. karate_nodes contains the nodes of the network with information about the karate club members. Check it with head(karate_nodes).</p>
+<p>First we load some of the libraries we are always using. Run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">igraph</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">sca</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now to the main star of this show, which is the networkx library: <a class="reference external" href="https://networkx.org/">https://networkx.org/</a> Load this commonly used network library with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">networkx</span> <span class="pre">as</span> <span class="pre">nx</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/karate_nodes.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>You have two data frames  in the environment.</p>
+<p>The first is karate_nodes, which contains the nodes of the network with information about the karate club members. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="n">karate_nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/karate_nodes.csv&quot;</span><span class="p">)</span>
 <span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -561,11 +563,13 @@
 </table>
 </div></div></div>
 </div>
-<p>The second data frame karate_edges contains the edges with information whether one member likes another and by how much.</p>
+<p>The second data frame karate_edges contains the edges with information whether one member likes another and by how much. Run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/karate_edges.csv&quot;</span><span class="p">)</span>
-<span class="n">karate_edges</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="n">karate_edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/karate_edges.csv&quot;</span><span class="p">)</span>
+<span class="n">karate_edges</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -630,355 +634,205 @@
       <td>12</td>
       <td>likes</td>
     </tr>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>7</td>
-      <td>10</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1</td>
-      <td>8</td>
-      <td>10</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>1</td>
-      <td>9</td>
-      <td>16</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1</td>
-      <td>11</td>
-      <td>12</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1</td>
-      <td>12</td>
-      <td>10</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1</td>
-      <td>13</td>
-      <td>9</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1</td>
-      <td>14</td>
-      <td>10</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>1</td>
-      <td>18</td>
-      <td>18</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1</td>
-      <td>20</td>
-      <td>17</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>1</td>
-      <td>22</td>
-      <td>5</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>1</td>
-      <td>32</td>
-      <td>19</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2</td>
-      <td>3</td>
-      <td>6</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>2</td>
-      <td>4</td>
-      <td>18</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2</td>
-      <td>8</td>
-      <td>4</td>
-      <td>likes</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>2</td>
-      <td>14</td>
-      <td>11</td>
-      <td>likes</td>
-    </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Now, let’s create an igraph karate_g with these edges and nodes.</p>
-<p>We first need to download iGraph and then type from igraph import*</p>
-<p>A tutorial can be found at: <a class="reference external" href="https://igraph.org/python/doc/tutorial/tutorial.html#layouts-and-plotting">https://igraph.org/python/doc/tutorial/tutorial.html#layouts-and-plotting</a></p>
+<p>Now, let’s create a graph with these these edges and nodes. Each graph is just that, a collection of edges and nodes. In our case, we can easily create the graph from the edgelist in karate_edges. The networkx command is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;from&quot;</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(),</span> <span class="n">edge_attr</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first argument is the data frame, the second the source node, the third is the target node. We also tell from_pandas_edgelist to create a directed graph with create_using=nx.DiGraph() and to keep all the edge attributes with edge_attr = True.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">igraph</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;from&quot;</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(),</span> <span class="n">edge_attr</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unfortunately, it is not very easy to add all the attributes of the nodes. <a class="reference external" href="https://newbedev.com/networkx-setting-node-attributes-from-dataframe">https://newbedev.com/networkx-setting-node-attributes-from-dataframe</a> explains how this is done by creating first a dictionary of dictionaries from karate_nodes.
+Type in: <code class="docutils literal notranslate"><span class="pre">node_attr</span> <span class="pre">=</span> <span class="pre">karate_nodes.set_index('id').to_dict('index')</span></code>. This will first set the index of karate_nodes to the ids of all nodes. to_dict will then add the row values as another dictionary. Check out how this looks for a row by adding <code class="docutils literal notranslate"><span class="pre">node_attr[2]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_attr</span> <span class="o">=</span> <span class="n">karate_nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">node_attr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;first_name&#39;: &#39;Lovie&#39;, &#39;last_name&#39;: &#39;Stanek&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To set all the node attributes, now run <code class="docutils literal notranslate"><span class="pre">nx.set_node_attributes(G,</span> <span class="pre">node_attr)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_attr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">print(nx.info(G))</span></code>, you print out information about the graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DiGraph with 34 nodes and 78 edges
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">G.nodes()</span></code> provides a view of nodes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NodeView((1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 18, 20, 22, 32, 31, 10, 28, 29, 33, 17, 34, 15, 16, 19, 21, 23, 24, 26, 30, 25, 27))
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">G.edges()</span> <span class="pre">provides</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">of</span> <span class="pre">edges.</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutEdgeView([(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 11), (1, 12), (1, 13), (1, 14), (1, 18), (1, 20), (1, 22), (1, 32), (2, 3), (2, 4), (2, 8), (2, 14), (2, 18), (2, 20), (2, 22), (2, 31), (3, 4), (3, 8), (3, 9), (3, 10), (3, 14), (3, 28), (3, 29), (3, 33), (4, 8), (4, 13), (4, 14), (5, 7), (5, 11), (6, 7), (6, 11), (6, 17), (7, 17), (9, 31), (9, 33), (9, 34), (14, 34), (20, 34), (32, 33), (32, 34), (31, 33), (31, 34), (10, 34), (28, 34), (29, 32), (29, 34), (33, 34), (15, 33), (15, 34), (16, 33), (16, 34), (19, 33), (19, 34), (21, 33), (21, 34), (23, 33), (23, 34), (24, 26), (24, 28), (24, 30), (24, 33), (24, 34), (26, 32), (30, 33), (30, 34), (25, 26), (25, 28), (25, 32), (27, 30), (27, 34)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check that we added the attributes correctly with <code class="docutils literal notranslate"><span class="pre">G.nodes.data()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NodeDataView({1: {&#39;first_name&#39;: &#39;Trang&#39;, &#39;last_name&#39;: &#39;Philips&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 18}, 2: {&#39;first_name&#39;: &#39;Lovie&#39;, &#39;last_name&#39;: &#39;Stanek&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36}, 3: {&#39;first_name&#39;: &#39;Gary&#39;, &#39;last_name&#39;: &#39;James&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 43}, 4: {&#39;first_name&#39;: &#39;Maximo&#39;, &#39;last_name&#39;: &#39;Larimer&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 41}, 5: {&#39;first_name&#39;: &#39;Bruno&#39;, &#39;last_name&#39;: &#39;Drury&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 18}, 6: {&#39;first_name&#39;: &#39;Lillian&#39;, &#39;last_name&#39;: &#39;Sowinski&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 22}, 7: {&#39;first_name&#39;: &#39;Candice&#39;, &#39;last_name&#39;: &#39;Gonsalez&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 17}, 8: {&#39;first_name&#39;: &#39;Kathrin&#39;, &#39;last_name&#39;: &#39;Macaluso&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 40}, 9: {&#39;first_name&#39;: &#39;Ivonne&#39;, &#39;last_name&#39;: &#39;Montes&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 20}, 11: {&#39;first_name&#39;: &#39;Nereida&#39;, &#39;last_name&#39;: &#39;Hair&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 18}, 12: {&#39;first_name&#39;: &#39;Angelo&#39;, &#39;last_name&#39;: &#39;Demar&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 20}, 13: {&#39;first_name&#39;: &#39;Alfredo&#39;, &#39;last_name&#39;: &#39;Fenderson&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 21}, 14: {&#39;first_name&#39;: &#39;Clement&#39;, &#39;last_name&#39;: &#39;Boler&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 25}, 18: {&#39;first_name&#39;: &#39;Hye&#39;, &#39;last_name&#39;: &#39;Acquaviva&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 40}, 20: {&#39;first_name&#39;: &#39;Quintin&#39;, &#39;last_name&#39;: &#39;Levins&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 18}, 22: {&#39;first_name&#39;: &#39;Iluminada&#39;, &#39;last_name&#39;: &#39;Yearsley&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36}, 32: {&#39;first_name&#39;: &#39;Samantha&#39;, &#39;last_name&#39;: &#39;Blasi&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 45}, 31: {&#39;first_name&#39;: &#39;Anika&#39;, &#39;last_name&#39;: &#39;Campanella&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 23}, 10: {&#39;first_name&#39;: &#39;Carline&#39;, &#39;last_name&#39;: &#39;Goodloe&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 44}, 28: {&#39;first_name&#39;: &#39;Karina&#39;, &#39;last_name&#39;: &#39;Taul&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 21}, 29: {&#39;first_name&#39;: &#39;Chanelle&#39;, &#39;last_name&#39;: &#39;Cerulli&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 25}, 33: {&#39;first_name&#39;: &#39;Sook&#39;, &#39;last_name&#39;: &#39;Bettes&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 43}, 17: {&#39;first_name&#39;: &#39;Natosha&#39;, &#39;last_name&#39;: &#39;Deavers&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 28}, 34: {&#39;first_name&#39;: &#39;Alberta&#39;, &#39;last_name&#39;: &#39;Shi&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 23}, 15: {&#39;first_name&#39;: &#39;Sharell&#39;, &#39;last_name&#39;: &#39;Lowrance&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 26}, 16: {&#39;first_name&#39;: &#39;Jill&#39;, &#39;last_name&#39;: &#39;Hunsberger&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 42}, 19: {&#39;first_name&#39;: &#39;Demetria&#39;, &#39;last_name&#39;: &#39;Reising&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 41}, 21: {&#39;first_name&#39;: &#39;Ardith&#39;, &#39;last_name&#39;: &#39;Messenger&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36}, 23: {&#39;first_name&#39;: &#39;Marti&#39;, &#39;last_name&#39;: &#39;Kresge&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 43}, 24: {&#39;first_name&#39;: &#39;Tillie&#39;, &#39;last_name&#39;: &#39;Hauser&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36}, 26: {&#39;first_name&#39;: &#39;Jimmy&#39;, &#39;last_name&#39;: &#39;Stoneman&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 45}, 30: {&#39;first_name&#39;: &#39;Lezlie&#39;, &#39;last_name&#39;: &#39;Abdallah&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 26}, 25: {&#39;first_name&#39;: &#39;Trish&#39;, &#39;last_name&#39;: &#39;Hennen&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 31}, 27: {&#39;first_name&#39;: &#39;Walter&#39;, &#39;last_name&#39;: &#39;Mountain&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 26}})
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the age of node 1, type <code class="docutils literal notranslate"><span class="pre">G.nodes[1]['age']</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a lot of options here and it is good at this moment to check out the documention. To get only edges incident to nodes 1 and 3, type <code class="docutils literal notranslate"><span class="pre">G.edges([1,</span> <span class="pre">3])</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutEdgeDataView([(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 11), (1, 12), (1, 13), (1, 14), (1, 18), (1, 20), (1, 22), (1, 32), (3, 4), (3, 8), (3, 9), (3, 10), (3, 14), (3, 28), (3, 29), (3, 33)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see the node together with its attributes, if we want to now only see the age attribute of each node, we access it using <code class="docutils literal notranslate"><span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'age').values()</span></code>. We need to add values(), get_node_attributes returns a dictionary with the node’s id as the key and the age the value. With values(), we only receive the values().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([18, 36, 43, 41, 18, 22, 17, 40, 20, 18, 20, 21, 25, 40, 18, 36, 45, 23, 44, 21, 25, 43, 28, 23, 26, 42, 41, 36, 43, 36, 45, 26, 31, 26])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Igraph needs tuples, cannot work with a dataframe directly</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#BTW, if you don&#39;t have a nice dataframe then you can still get the attributes from </span>
+<span class="c1">#</span>
 
-<span class="n">tuple_edges</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">karate_edges</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
-
-<span class="n">Gm</span> <span class="o">=</span> <span class="n">igraph</span><span class="o">.</span><span class="n">Graph</span><span class="o">.</span><span class="n">TupleList</span><span class="p">(</span><span class="n">tuple_edges</span><span class="p">,</span> <span class="n">directed</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">edge_attrs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">karate_nodes</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
-<span class="n">Gm</span><span class="o">.</span><span class="n">add_vertices</span><span class="p">(</span><span class="n">tuple_nodes</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Gm</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">get_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IGRAPH DNW- 68 78 --
-+ attr: name (v), weight (e)
-+ edges (vertex names):
-1-&gt;2, 1-&gt;3, 1-&gt;4, 1-&gt;5, 1-&gt;6, 1-&gt;7, 1-&gt;8, 1-&gt;9, 1-&gt;11, 1-&gt;12, 1-&gt;13, 1-&gt;14,
-1-&gt;18, 1-&gt;20, 1-&gt;22, 1-&gt;32, 2-&gt;3, 2-&gt;4, 2-&gt;8, 2-&gt;14, 2-&gt;18, 2-&gt;20, 2-&gt;22,
-2-&gt;31, 3-&gt;4, 3-&gt;8, 3-&gt;9, 3-&gt;10, 3-&gt;14, 3-&gt;28, 3-&gt;29, 3-&gt;33, 4-&gt;8, 4-&gt;13,
-4-&gt;14, 5-&gt;7, 5-&gt;11, 6-&gt;7, 6-&gt;11, 6-&gt;17, 7-&gt;17, 9-&gt;31, 9-&gt;33, 9-&gt;34, 10-&gt;34,
-14-&gt;34, 15-&gt;33, 15-&gt;34, 16-&gt;33, 16-&gt;34, 19-&gt;33, 19-&gt;34, 20-&gt;34, 21-&gt;33,
-21-&gt;34, 23-&gt;33, 23-&gt;34, 24-&gt;26, 24-&gt;28, 24-&gt;30, 24-&gt;33, 24-&gt;34, 25-&gt;26,
-25-&gt;28, 25-&gt;32, 26-&gt;32, 27-&gt;30, 27-&gt;34, 28-&gt;34, 29-&gt;32, 29-&gt;34, 30-&gt;33,
-30-&gt;34, 31-&gt;33, 31-&gt;34, 32-&gt;33, 32-&gt;34, 33-&gt;34
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([9, 5, 2, 3, 12, 10, 10, 16, 12, 10, 9, 10, 18, 17, 5, 19, 6, 18, 4, 11, 18, 2, 19, 15, 15, 10, 3, 15, 15, 14, 10, 8, 14, 16, 9, 16, 5, 9, 10, 7, 10, 10, 19, 10, 2, 18, 18, 17, 6, 15, 19, 4, 1, 14, 12, 16, 3, 17, 16, 10, 8, 8, 12, 11, 13, 17, 14, 4, 12, 17, 4, 19, 15, 7, 13, 15, 9, 16])
 </pre></div>
 </div>
 </div>
 </div>
+<p>It’s a dictionary. You would have to cast to a list to get only the ages. Do you know how?</p>
+<p>Let’s try an plot this graph. It’s easy in networkx. Just run nx.draw(G).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="o">.</span><span class="n">DictList</span><span class="p">(</span>
-          <span class="n">vertices</span><span class="o">=</span><span class="n">karate_nodes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
-          <span class="n">edges</span><span class="o">=</span><span class="n">karate_edges</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
-          <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-          <span class="n">vertex_name_attr</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
-          <span class="n">edge_foreign_keys</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IGRAPH D-W- 34 78 --
-+ attr: age (v), first_name (v), gender (v), id (v), last_name (v), from (e),
-  to (e), type (e), weight (e)
-+ edges:
-0-&gt;1 0-&gt;2 0-&gt;3 0-&gt;4 0-&gt;5 0-&gt;6 0-&gt;7 0-&gt;8 0-&gt;10 0-&gt;11 0-&gt;12 0-&gt;13 0-&gt;17 0-&gt;19
-0-&gt;21 0-&gt;31 1-&gt;2 1-&gt;3 1-&gt;7 1-&gt;13 1-&gt;17 1-&gt;19 1-&gt;21 1-&gt;30 2-&gt;3 2-&gt;7 2-&gt;8 2-&gt;9
-2-&gt;13 2-&gt;27 2-&gt;28 2-&gt;32 3-&gt;7 3-&gt;12 3-&gt;13 4-&gt;6 4-&gt;10 5-&gt;6 5-&gt;10 5-&gt;16 6-&gt;16
-8-&gt;30 8-&gt;32 8-&gt;33 9-&gt;33 13-&gt;33 14-&gt;32 14-&gt;33 15-&gt;32 15-&gt;33 18-&gt;32 18-&gt;33
-19-&gt;33 20-&gt;32 20-&gt;33 22-&gt;32 22-&gt;33 23-&gt;25 23-&gt;27 23-&gt;29 23-&gt;32 23-&gt;33 24-&gt;25
-24-&gt;27 24-&gt;31 25-&gt;31 26-&gt;29 26-&gt;33 27-&gt;33 28-&gt;31 28-&gt;33 29-&gt;32 29-&gt;33 30-&gt;32
-30-&gt;33 31-&gt;32 31-&gt;33 32-&gt;33
-</pre></div>
+<img alt="../../_images/Social_Sensing_2_31_0.png" src="../../_images/Social_Sensing_2_31_0.png" />
 </div>
 </div>
-</div>
-<p>We can look into the nodes of the graph using graph.vs</p>
+<p>There is a great number of options to improve this graphy. You can, for instance, add the labels, use curved edges  and reduce the arrow size. Try: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">with_labels=True,</span> <span class="pre">connectionstyle=&quot;arc3,rad=0.4&quot;,</span> <span class="pre">arrowsize=0.4)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vseq</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">vs</span>
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vseq</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.4&quot;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 0, {&#39;id&#39;: 1, &#39;first_name&#39;: &#39;Trang&#39;, &#39;last_name&#39;: &#39;Philips&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 18})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 1, {&#39;id&#39;: 2, &#39;first_name&#39;: &#39;Lovie&#39;, &#39;last_name&#39;: &#39;Stanek&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 2, {&#39;id&#39;: 3, &#39;first_name&#39;: &#39;Gary&#39;, &#39;last_name&#39;: &#39;James&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 43})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 3, {&#39;id&#39;: 4, &#39;first_name&#39;: &#39;Maximo&#39;, &#39;last_name&#39;: &#39;Larimer&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 41})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 4, {&#39;id&#39;: 5, &#39;first_name&#39;: &#39;Bruno&#39;, &#39;last_name&#39;: &#39;Drury&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 18})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 5, {&#39;id&#39;: 6, &#39;first_name&#39;: &#39;Lillian&#39;, &#39;last_name&#39;: &#39;Sowinski&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 22})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 6, {&#39;id&#39;: 7, &#39;first_name&#39;: &#39;Candice&#39;, &#39;last_name&#39;: &#39;Gonsalez&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 17})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 7, {&#39;id&#39;: 8, &#39;first_name&#39;: &#39;Kathrin&#39;, &#39;last_name&#39;: &#39;Macaluso&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 40})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 8, {&#39;id&#39;: 9, &#39;first_name&#39;: &#39;Ivonne&#39;, &#39;last_name&#39;: &#39;Montes&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 20})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 9, {&#39;id&#39;: 10, &#39;first_name&#39;: &#39;Carline&#39;, &#39;last_name&#39;: &#39;Goodloe&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 44})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 10, {&#39;id&#39;: 11, &#39;first_name&#39;: &#39;Nereida&#39;, &#39;last_name&#39;: &#39;Hair&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 18})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 11, {&#39;id&#39;: 12, &#39;first_name&#39;: &#39;Angelo&#39;, &#39;last_name&#39;: &#39;Demar&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 20})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 12, {&#39;id&#39;: 13, &#39;first_name&#39;: &#39;Alfredo&#39;, &#39;last_name&#39;: &#39;Fenderson&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 21})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 13, {&#39;id&#39;: 14, &#39;first_name&#39;: &#39;Clement&#39;, &#39;last_name&#39;: &#39;Boler&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 25})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 14, {&#39;id&#39;: 15, &#39;first_name&#39;: &#39;Sharell&#39;, &#39;last_name&#39;: &#39;Lowrance&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 26})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 15, {&#39;id&#39;: 16, &#39;first_name&#39;: &#39;Jill&#39;, &#39;last_name&#39;: &#39;Hunsberger&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 42})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 16, {&#39;id&#39;: 17, &#39;first_name&#39;: &#39;Natosha&#39;, &#39;last_name&#39;: &#39;Deavers&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 28})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 17, {&#39;id&#39;: 18, &#39;first_name&#39;: &#39;Hye&#39;, &#39;last_name&#39;: &#39;Acquaviva&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 40})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 18, {&#39;id&#39;: 19, &#39;first_name&#39;: &#39;Demetria&#39;, &#39;last_name&#39;: &#39;Reising&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 41})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 19, {&#39;id&#39;: 20, &#39;first_name&#39;: &#39;Quintin&#39;, &#39;last_name&#39;: &#39;Levins&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 18})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 20, {&#39;id&#39;: 21, &#39;first_name&#39;: &#39;Ardith&#39;, &#39;last_name&#39;: &#39;Messenger&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 21, {&#39;id&#39;: 22, &#39;first_name&#39;: &#39;Iluminada&#39;, &#39;last_name&#39;: &#39;Yearsley&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 22, {&#39;id&#39;: 23, &#39;first_name&#39;: &#39;Marti&#39;, &#39;last_name&#39;: &#39;Kresge&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 43})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 23, {&#39;id&#39;: 24, &#39;first_name&#39;: &#39;Tillie&#39;, &#39;last_name&#39;: &#39;Hauser&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 36})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 24, {&#39;id&#39;: 25, &#39;first_name&#39;: &#39;Trish&#39;, &#39;last_name&#39;: &#39;Hennen&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 31})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 25, {&#39;id&#39;: 26, &#39;first_name&#39;: &#39;Jimmy&#39;, &#39;last_name&#39;: &#39;Stoneman&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 45})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 26, {&#39;id&#39;: 27, &#39;first_name&#39;: &#39;Walter&#39;, &#39;last_name&#39;: &#39;Mountain&#39;, &#39;gender&#39;: &#39;M&#39;, &#39;age&#39;: 26})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 27, {&#39;id&#39;: 28, &#39;first_name&#39;: &#39;Karina&#39;, &#39;last_name&#39;: &#39;Taul&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 21})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 28, {&#39;id&#39;: 29, &#39;first_name&#39;: &#39;Chanelle&#39;, &#39;last_name&#39;: &#39;Cerulli&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 25})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 29, {&#39;id&#39;: 30, &#39;first_name&#39;: &#39;Lezlie&#39;, &#39;last_name&#39;: &#39;Abdallah&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 26})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 30, {&#39;id&#39;: 31, &#39;first_name&#39;: &#39;Anika&#39;, &#39;last_name&#39;: &#39;Campanella&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 23})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 31, {&#39;id&#39;: 32, &#39;first_name&#39;: &#39;Samantha&#39;, &#39;last_name&#39;: &#39;Blasi&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 45})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 32, {&#39;id&#39;: 33, &#39;first_name&#39;: &#39;Sook&#39;, &#39;last_name&#39;: &#39;Bettes&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 43})
-igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34, &#39;first_name&#39;: &#39;Alberta&#39;, &#39;last_name&#39;: &#39;Shi&#39;, &#39;gender&#39;: &#39;F&#39;, &#39;age&#39;: 23})
+<img alt="../../_images/Social_Sensing_2_33_0.png" src="../../_images/Social_Sensing_2_33_0.png" />
+</div>
+</div>
+<p>The ids are now very exciting as node labels. Let’s try and use the first names.</p>
+<p>We could do the same, but then with the actual names, remember how we accessed the ids? Do the same with the names. We can do this with the labels argument for nx.draw. It requires a dictionary mapping node id to the first name. That’s easy to get with <code class="docutils literal notranslate"><span class="pre">node_labels</span> <span class="pre">=</span> <span class="pre">nx.get_node_attributes(G,</span> <span class="pre">'first_name')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">node_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can see the node together with its attributes, if we want to now only see the age attribute of each node, we access it using [‘age’]</p>
+<p>Now add this to nx.draw: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">with_labels=True,</span> <span class="pre">labels=node_labels,</span> <span class="pre">connectionstyle=&quot;arc3,rad=0.4&quot;,</span> <span class="pre">arrowsize=0.4)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vseq</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.4&quot;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-36
-43
-41
-18
-22
-17
-40
-20
-44
-18
-20
-21
-25
-26
-42
-28
-40
-41
-18
-36
-36
-43
-36
-31
-45
-26
-21
-25
-26
-23
-45
-43
-23
-</pre></div>
+<img alt="../../_images/Social_Sensing_2_38_0.png" src="../../_images/Social_Sensing_2_38_0.png" />
 </div>
-</div>
-</div>
-<p>Let’s try an plot this graph</p>
-<p>(We need to install cairo to do so)</p>
-<p>pip3 install cairocffi</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cairocffi</span>
-<span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;kamada_kawai&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_18_0.svg" src="../../_images/Social_Sensing_2_18_0.svg" /></div>
-</div>
-<p>You can also plot a graph with curved edges (edge_curved=True) and reduced arrow size. (edge_arrow_size=.4)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;kamada_kawai&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_20_0.svg" src="../../_images/Social_Sensing_2_20_0.svg" /></div>
-</div>
-<p>Maybe that is a bit much let’s change the curve to 0.1. Let’s try a more complicated plot, we could also add some other parameters. Now we can access the ids by using graph.vs[‘id’] and add them as vertex_label parameter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;kamada_kawai&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_22_0.svg" src="../../_images/Social_Sensing_2_22_0.svg" /></div>
-</div>
-<p>We could do the same, but then with the actual names, remember how we accessed the ids? Do the same with the names.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;kamada_kawai&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_24_0.svg" src="../../_images/Social_Sensing_2_24_0.svg" /></div>
 </div>
 <p>Let’s say we want to colour our network nodes based on gender as well as size them based on age. We will also change the width of the edges based on their weight. We need to apply a series of changes to the attributes pf our igraph. To get the different colors for different genders we need to add these colors to our dataframe karate_nodes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+<p>The Matlib colour names are listed at: <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a></p>
+<p>np.where is one of the many functions of numpy that we will use a lot. It chooses either x or y (second and third argument) depending on the condition in the first argument. Type in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">karate_nodes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1006,7 +860,7 @@ igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34,
       <th>last_name</th>
       <th>gender</th>
       <th>age</th>
-      <th>color</th>
+      <th>colour</th>
     </tr>
   </thead>
   <tbody>
@@ -1017,7 +871,7 @@ igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34,
       <td>Philips</td>
       <td>F</td>
       <td>18</td>
-      <td>red</td>
+      <td>tomato</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1026,7 +880,7 @@ igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34,
       <td>Stanek</td>
       <td>F</td>
       <td>36</td>
-      <td>red</td>
+      <td>tomato</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1035,7 +889,7 @@ igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34,
       <td>James</td>
       <td>M</td>
       <td>43</td>
-      <td>blue</td>
+      <td>skyblue</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1044,7 +898,7 @@ igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34,
       <td>Larimer</td>
       <td>M</td>
       <td>41</td>
-      <td>blue</td>
+      <td>skyblue</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1053,171 +907,211 @@ igraph.Vertex(&lt;igraph.Graph object at 0x119b17040&gt;, 33, {&#39;id&#39;: 34,
       <td>Drury</td>
       <td>M</td>
       <td>18</td>
-      <td>blue</td>
+      <td>skyblue</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>And then recreate the graph and check the vseq again whether color is now also an attribute</p>
+<p>Now draw the graph again with another attribute node_color=np.array(karate_nodes[‘colour’]). Type in: <code class="docutils literal notranslate"><span class="pre">nx.draw(G,</span> <span class="pre">node_color=np.array(karate_nodes['colour']),</span> <span class="pre">with_labels=True,</span> <span class="pre">labels=node_labels)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="o">.</span><span class="n">DictList</span><span class="p">(</span>
-          <span class="n">vertices</span><span class="o">=</span><span class="n">karate_nodes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
-          <span class="n">edges</span><span class="o">=</span><span class="n">karate_edges</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">),</span>
-          <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-          <span class="n">vertex_name_attr</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
-          <span class="n">edge_foreign_keys</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We then plot the graph using the graph.vs of the colors the same as we did with the ids</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;kamada_kawai&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_31_0.svg" src="../../_images/Social_Sensing_2_31_0.svg" /></div>
+<img alt="../../_images/Social_Sensing_2_42_0.png" src="../../_images/Social_Sensing_2_42_0.png" />
 </div>
-<p>We also wanted to change the node size based on age. We could, for example, multiply the age by 0.4 to get the size that we want. We can do this more easily by setting vertex_size= [v*0.4 for v in graph.vs[‘age’]].</p>
-<p>*Could we have done the same for color?</p>
+</div>
+<p>We also wanted to change the node size based on age. We could, for example, multiply the age by 10 to get the size that we want. Add <code class="docutils literal notranslate"><span class="pre">node_size</span> <span class="pre">=</span> <span class="pre">10*np.array(karate_nodes['age'])</span></code> as an attribute to nx.draw.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">vertex_size</span><span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">*</span><span class="mf">0.4</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+                         <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_33_0.svg" src="../../_images/Social_Sensing_2_33_0.svg" /></div>
+<img alt="../../_images/Social_Sensing_2_44_0.png" src="../../_images/Social_Sensing_2_44_0.png" />
 </div>
-<p>The weight of the like-relationship will determine the width of the arrow between two nodes. But check, this is an edge attribute instead of a vertix attribute, we can access this by using <a class="reference external" href="http://graph.es">graph.es</a>[‘weight’], now let’s do the same as above but then for the edge.</p>
+</div>
+<p>The weight of the like-relationship will determine the width of the arrow between two nodes. All we need to do is add another attribute. Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">vertex_size</span><span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">*</span><span class="mf">0.4</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]],</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">/</span><span class="mi">5</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_35_0.svg" src="../../_images/Social_Sensing_2_35_0.svg" /></div>
+<img alt="../../_images/Social_Sensing_2_46_0.png" src="../../_images/Social_Sensing_2_46_0.png" />
 </div>
-<p>You can also plot graphs with different layouts.
-To adjust the graph layout, igraph contains layout generators, which try to place the vertices and edges in a way that is more visually appealing. There are many layout functions, let’s first try a random one.</p>
+</div>
+<p>Actually, these graphs have never been great. Too many overlaps …</p>
+<p>You can  plot graphs with different layouts to avoid overlaps. To adjust the graph layout, networkx contains layout generators, which try to place the vertices and edges in a way that is more visually appealing. They position (‘pos’) the nodes and edges on a plane defined by x- and y-values.</p>
+<p>There are many layout functions, let’s first try a random one. Type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;random&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_curved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">vertex_size</span><span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">*</span><span class="mf">0.4</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]],</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">/</span><span class="mi">5</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_37_0.svg" src="../../_images/Social_Sensing_2_37_0.svg" /></div>
+<img alt="../../_images/Social_Sensing_2_48_0.png" src="../../_images/Social_Sensing_2_48_0.png" />
 </div>
-<p>Maybe this one is a bit too curved in the edges which makes it unreadable, let’s get rid of that argument</p>
-<p>(Not sure, maybe the curved edges are better, what do you think?)</p>
+</div>
+<p>We can now change the layout parameter and use another function. Fruchterman Reingold (<a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">https://en.wikipedia.org/wiki/Force-directed_graph_drawing</a>) is a very popular layout algorithm. It’s called spring layout in NetworkX. Change the first line of the last cell into <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.spring_layout(G)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">vertex_size</span><span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">*</span><span class="mf">0.4</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]],</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">/</span><span class="mi">5</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_39_0.svg" src="../../_images/Social_Sensing_2_39_0.svg" /></div>
+<img alt="../../_images/Social_Sensing_2_50_0.png" src="../../_images/Social_Sensing_2_50_0.png" />
 </div>
-<p>We can now change the layout parameter and use another function. Fruchterman Reingold (<a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">https://en.wikipedia.org/wiki/Force-directed_graph_drawing</a>) is a very popular layout algorithm. Type in graph.layout(“fr”)</p>
+</div>
+<p>This is a bit better. Less overlap. Let’s try another layout. Replace the pos line with <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">nx.kamada_kawai_layout(G)</span></code>.</p>
+<p>Also, the edges are too dark. A good trick is often to set their colours to greyscale. Also add:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;silver&quot;</span><span class="p">,</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">layout</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">,</span> <span class="n">edge_arrow_size</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_color</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">vertex_size</span><span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">*</span><span class="mf">0.4</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]],</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">/</span><span class="mi">5</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">]),</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_nodes</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]),</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span>
+        <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;silver&quot;</span><span class="p">,</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">karate_edges</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_41_0.svg" src="../../_images/Social_Sensing_2_41_0.svg" /></div>
+<img alt="../../_images/Social_Sensing_2_52_0.png" src="../../_images/Social_Sensing_2_52_0.png" />
 </div>
-<p>This is much much better. But remember the original insight from the 1970s paper of the karate club? It described how the larger community of the whole club was effectively the result of several separate communities of members and split thererfore according to trust placed in either the administrator or instructor. Thus the whole karate club community can split up easily. Graph analysis comes with a lot of so-called community detection algorithms that support such investigations</p>
-<p>(Possible tutorial: <a class="reference external" href="https://towardsdatascience.com/detecting-communities-in-a-language-co-occurrence-network-f6d9dfc70bab?)">https://towardsdatascience.com/detecting-communities-in-a-language-co-occurrence-network-f6d9dfc70bab?)</a></p>
+</div>
+<p>Ok. At least everything is readable … But it is still difficult to see any interesting patterns in the network. Remember, e.g., the original insight from the 1970s paper of the karate club? It described how the larger community of the whole club was effectively the result of several separate communities of members and split thererfore according to trust placed in either the administrator or instructor. Thus the whole karate club community can split up easily. Graph analysis comes with a lot of so-called community detection algorithms that support such investigations. We will use what many consider one of the best algorithms in this domain. Louvain is explained at <a class="reference external" href="https://towardsdatascience.com/louvain-algorithm-93fde589f58c">https://towardsdatascience.com/louvain-algorithm-93fde589f58c</a>.</p>
+<p>Let’s first load the library with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">community</span> <span class="pre">import</span> <span class="pre">community_louvain</span></code>. Run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">com</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">community_walktrap</span><span class="p">()</span>
-<span class="n">clp</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">as_clustering</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now let’s see what’s behind clp</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">clp</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="c1">#install with pip install python-louvain</span>
+<span class="kn">from</span> <span class="nn">community</span> <span class="kn">import</span> <span class="n">community_louvain</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clustering with 34 elements and 5 clusters
-[0] 0, 1, 3, 7, 11, 12, 17, 19, 21
-[1] 2, 8, 9, 13, 28, 30, 31
-[2] 4, 5, 6, 10, 16
-[3] 14, 15, 18, 20, 22, 26, 29, 32, 33
-[4] 23, 24, 25, 27
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="n">a4402127ee2a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#install with pip install python-louvain</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">community</span> <span class="kn">import</span> <span class="n">community_louvain</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;community&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>The result is a list with similar information to the one we have already met during the clustering exercises. We can easily plot the communities with plot(clp, mark_groups=True).</p>
+<p>Louvain requires undirected graphs. We create an undirected copy with <code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">G.to_undirected()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">clp</span><span class="p">,</span> <span class="n">mark_groups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s create the optimal partition of the graph according to Louvain. Run <code class="docutils literal notranslate"><span class="pre">partition</span> <span class="pre">=</span> <span class="pre">community_louvain.best_partition(g)</span></code>. Print out the items of the dictionary with <code class="docutils literal notranslate"><span class="pre">partition.items()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partition</span> <span class="o">=</span> <span class="n">community_louvain</span><span class="o">.</span><span class="n">best_partition</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">partition</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_47_0.svg" src="../../_images/Social_Sensing_2_47_0.svg" /></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(1, 0), (2, 1), (3, 1), (4, 1), (5, 0), (6, 0), (7, 0), (8, 1), (9, 2), (11, 0), (12, 0), (13, 1), (14, 1), (18, 1), (20, 0), (22, 1), (32, 3), (31, 1), (10, 2), (28, 3), (29, 2), (33, 2), (17, 0), (34, 2), (15, 2), (16, 2), (19, 2), (21, 2), (23, 2), (24, 3), (26, 3), (30, 2), (25, 3), (27, 2)])
+</pre></div>
 </div>
-<p>This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities walktrap has detected. Let’s investigate this further and visualise the degree by which members are connected to other members. A graph degree basically counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree. First though we need to calculate the degree for each node. That’s very easy using igraph’s degree function. Simply type graph.degree()</p>
+</div>
+</div>
+<p>Louvain create four partitions (0 - 3). Let’s plot these partitions by colour-coding the nodes. Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>cmap=plt.cm.Set3 is new and chooses a colormap for Python to assign a colour to each partition. Colormaps are very powerful:
+<a class="reference external" href="https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/">https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16,
- 9,
- 10,
- 6,
- 3,
- 4,
- 4,
- 4,
- 5,
- 2,
- 3,
- 1,
- 2,
- 5,
- 2,
- 2,
- 2,
- 2,
- 2,
- 3,
- 2,
- 2,
- 2,
- 5,
- 3,
- 3,
- 2,
- 4,
- 3,
- 4,
- 4,
- 6,
- 12,
- 17]
+<img alt="../../_images/Social_Sensing_2_60_0.png" src="../../_images/Social_Sensing_2_60_0.png" />
+</div>
+</div>
+<p>Nice but we can do even better with the help of stackoverflow (<a class="reference external" href="https://stackoverflow.com/questions/43541376/how-to-draw-communities-with-networkx">https://stackoverflow.com/questions/43541376/how-to-draw-communities-with-networkx</a>). We have added a function <code class="docutils literal notranslate"><span class="pre">pos</span> <span class="pre">=</span> <span class="pre">community_layout(g,</span> <span class="pre">partition)</span></code> that let’s you plot partitions by separating them out clearly. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">sca</span><span class="o">.</span><span class="n">community_layout</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">partition</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">with_labels</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Social_Sensing_2_62_0.png" src="../../_images/Social_Sensing_2_62_0.png" />
+</div>
+</div>
+<p>This graph already indicates that some members hold the whole network together by being the main link between the various 4 communities Lourain has detected. Let’s investigate this further and visualise the degree by which members are connected to other members. A graph degree basically counts the number of connections a member has to other members. Let’s overwrite the size of each nodes with the degree. First though we need to calculate the degree for each node. That’s very easy using igraph’s degree function. Simply type graph.degree()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degree_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="o">*</span><span class="n">g</span><span class="o">.</span><span class="n">degree</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+<span class="n">degree_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[800, 450, 500, 300, 150]
 </pre></div>
 </div>
 </div>
@@ -1225,60 +1119,15 @@ To adjust the graph layout, igraph contains layout generators, which try to plac
 <p>Now, let’s reassign the size of the nodes with setting vertex_size= vertex_size=graph.degree()</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">clp</span><span class="p">,</span> <span class="n">mark_groups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">vertex_size</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">node_size</span><span class="o">=</span><span class="n">degree_list</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Set3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_51_0.svg" src="../../_images/Social_Sensing_2_51_0.svg" /></div>
-</div>
-<p>The new graph clearly shows now where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!</p>
-<p>Let’s check what we have learned now.</p>
-<p>What is a social network?</p>
-<ol class="simple">
-<li><p>A movie</p></li>
-<li><p>All my friends</p></li>
-<li><p>Something other people know more about than me</p></li>
-<li><p>A social structure made up of a set of social actors and their interactions</p></li>
-</ol>
-<p>A social structure made up of a set of social actors and their interactions</p>
-<p>Double the edge width of the graph (without the communities) based on the value we have set earleier based on weight.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">/</span><span class="mf">2.5</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
-</pre></div>
+<img alt="../../_images/Social_Sensing_2_66_0.png" src="../../_images/Social_Sensing_2_66_0.png" />
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_54_0.svg" src="../../_images/Social_Sensing_2_54_0.svg" /></div>
-</div>
-<p>Change the size of the nodes</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">vertex_label</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">vs</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">edge_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">/</span><span class="mf">2.5</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">vertex_size</span><span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_56_0.svg" src="../../_images/Social_Sensing_2_56_0.svg" /></div>
-</div>
-<p>Run another community detection algorithm graph.community_label_propagation()</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span><span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">community_label_propagation</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">mark_groups</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Social_Sensing_2_59_0.svg" src="../../_images/Social_Sensing_2_59_0.svg" /></div>
-</div>
+<p>The new graph clearly shows  where the potential breaking points in the network are. Social network analysis is a very powerful tool with a large community already out there. Check it out and happy playing!</p>
 <p>That’s it for today. You have learned a lot of things about how to create social sensing networks. This is one of the most important social analytics techniques, and you can impress friends and family now with pretty graphs using the structure of social networks. Next time, we will look into content analysis using text mining.</p>
 </div>
 

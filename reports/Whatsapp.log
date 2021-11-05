@@ -29,13 +29,13 @@ plt.show()
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mKeyError[0m                                  Traceback (most recent call last)
 [0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexes/base.py[0m in [0;36mget_loc[0;34m(self, key, method, tolerance)[0m
-[1;32m   3079[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 3080[0;31m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_engine[0m[0;34m.[0m[0mget_loc[0m[0;34m([0m[0mcasted_key[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   3081[0m             [0;32mexcept[0m [0mKeyError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3360[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 3361[0;31m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_engine[0m[0;34m.[0m[0mget_loc[0m[0;34m([0m[0mcasted_key[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   3362[0m             [0;32mexcept[0m [0mKeyError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32mpandas/_libs/index.pyx[0m in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/_libs/index.pyx[0m in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
 
-[0;32mpandas/_libs/index.pyx[0m in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
+[0;32m/usr/local/lib/python3.9/site-packages/pandas/_libs/index.pyx[0m in [0;36mpandas._libs.index.IndexEngine.get_loc[0;34m()[0m
 
 [0;32mpandas/_libs/hashtable_class_helper.pxi[0m in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
 
@@ -54,25 +54,25 @@ The above exception was the direct cause of the following exception:
 [1;32m      6[0m [0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.9/site-packages/pandas/plotting/_core.py[0m in [0;36m__call__[0;34m(self, *args, **kwargs)[0m
-[1;32m    939[0m [0;34m[0m[0m
-[1;32m    940[0m                 [0;31m# don't overwrite[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 941[0;31m                 [0mdata[0m [0;34m=[0m [0mdata[0m[0;34m[[0m[0my[0m[0;34m][0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    942[0m [0;34m[0m[0m
-[1;32m    943[0m                 [0;32mif[0m [0misinstance[0m[0;34m([0m[0mdata[0m[0;34m,[0m [0mABCSeries[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    956[0m [0;34m[0m[0m
+[1;32m    957[0m                 [0;31m# don't overwrite[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 958[0;31m                 [0mdata[0m [0;34m=[0m [0mdata[0m[0;34m[[0m[0my[0m[0;34m][0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    959[0m [0;34m[0m[0m
+[1;32m    960[0m                 [0;32mif[0m [0misinstance[0m[0;34m([0m[0mdata[0m[0;34m,[0m [0mABCSeries[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.9/site-packages/pandas/core/frame.py[0m in [0;36m__getitem__[0;34m(self, key)[0m
-[1;32m   3022[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0mcolumns[0m[0;34m.[0m[0mnlevels[0m [0;34m>[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   3023[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_getitem_multilevel[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 3024[0;31m             [0mindexer[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mcolumns[0m[0;34m.[0m[0mget_loc[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   3025[0m             [0;32mif[0m [0mis_integer[0m[0;34m([0m[0mindexer[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   3026[0m                 [0mindexer[0m [0;34m=[0m [0;34m[[0m[0mindexer[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3456[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0mcolumns[0m[0;34m.[0m[0mnlevels[0m [0;34m>[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3457[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_getitem_multilevel[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 3458[0;31m             [0mindexer[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mcolumns[0m[0;34m.[0m[0mget_loc[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   3459[0m             [0;32mif[0m [0mis_integer[0m[0;34m([0m[0mindexer[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3460[0m                 [0mindexer[0m [0;34m=[0m [0;34m[[0m[0mindexer[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.9/site-packages/pandas/core/indexes/base.py[0m in [0;36mget_loc[0;34m(self, key, method, tolerance)[0m
-[1;32m   3080[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_engine[0m[0;34m.[0m[0mget_loc[0m[0;34m([0m[0mcasted_key[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   3081[0m             [0;32mexcept[0m [0mKeyError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 3082[0;31m                 [0;32mraise[0m [0mKeyError[0m[0;34m([0m[0mkey[0m[0;34m)[0m [0;32mfrom[0m [0merr[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   3083[0m [0;34m[0m[0m
-[1;32m   3084[0m         [0;32mif[0m [0mtolerance[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3361[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_engine[0m[0;34m.[0m[0mget_loc[0m[0;34m([0m[0mcasted_key[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   3362[0m             [0;32mexcept[0m [0mKeyError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 3363[0;31m                 [0;32mraise[0m [0mKeyError[0m[0;34m([0m[0mkey[0m[0;34m)[0m [0;32mfrom[0m [0merr[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   3364[0m [0;34m[0m[0m
+[1;32m   3365[0m         [0;32mif[0m [0mis_scalar[0m[0;34m([0m[0mkey[0m[0;34m)[0m [0;32mand[0m [0misna[0m[0;34m([0m[0mkey[0m[0;34m)[0m [0;32mand[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0mhasnans[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mKeyError[0m: 'message_length'
 KeyError: 'message_length'
