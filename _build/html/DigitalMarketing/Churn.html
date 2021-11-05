@@ -100,22 +100,22 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
+     Interactive Data Exploration with Python 1.1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
+     Interactive Data Exploration with Python 1.2
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_2.1.html">
-     Introduction to Python 2.1
+     Interactive Data Exploration with Python 2.1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
+     Interactive Data Exploration with Python 2.2
     </a>
    </li>
   </ul>
@@ -208,11 +208,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../PredictingModelling/LinearPrediction.html">
      Linear Regression Prediction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../PredictingModelling/PredictingModelling.html">
-     Predicting Modelling
     </a>
    </li>
    <li class="toctree-l2">
@@ -349,12 +344,7 @@
   <a class="reference internal" href="../VisualsArts.html">
    Visuals Arts
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../VisualsArts/AdvancedVisualisation.html">
-     Lots of fun with Python visualisations
-    </a>
-   </li>
+  <ul class="simple collapse-ul">
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -809,8 +799,8 @@ Model:                            GLM   Df Residuals:                    17976
 Model Family:                Gaussian   Df Model:                           23
 Link Function:               identity   Scale:                         0.15630
 Method:                          IRLS   Log-Likelihood:                -8825.3
-Date:                Thu, 28 Oct 2021   Deviance:                       2809.7
-Time:                        22:42:10   Pearson chi2:                 2.81e+03
+Date:                Fri, 05 Nov 2021   Deviance:                       2809.7
+Time:                        17:26:42   Pearson chi2:                 2.81e+03
 No. Iterations:                     3                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
@@ -841,6 +831,10 @@ payAmt4    -3.262e-07   2.48e-07     -1.313      0.189   -8.13e-07    1.61e-07
 payAmt5    -2.104e-07   2.54e-07     -0.829      0.407   -7.08e-07    2.87e-07
 payAmt6    -9.337e-08   1.79e-07     -0.522      0.602   -4.44e-07    2.57e-07
 ==============================================================================
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/statsmodels/tsa/tsatools.py:142: FutureWarning: In a future version of pandas all arguments of concat except for the argument &#39;objs&#39; will be keyword-only
+  x = pd.concat(x[::order], 1)
 </pre></div>
 </div>
 </div>
@@ -929,6 +923,12 @@ payAmt6    -9.337e-08   1.79e-07     -0.522      0.602   -4.44e-07    2.57e-07
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_aic</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_aic</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLM</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X_aic</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/statsmodels/tsa/tsatools.py:142: FutureWarning: In a future version of pandas all arguments of concat except for the argument &#39;objs&#39; will be keyword-only
+  x = pd.concat(x[::order], 1)
 </pre></div>
 </div>
 </div>
@@ -1029,7 +1029,9 @@ Accuracy: 0.7908888888888889
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1 -10460000
-0.2 -6327500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2 -6327500
 0.3 -460000
 0.4 163750
 0.5 -205000
@@ -1081,8 +1083,8 @@ Accuracy: 0.7908888888888889
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3916  856]
- [ 231  397]] 0.7987037037037037
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3876  861]
+ [ 235  428]] 0.797037037037037
 </pre></div>
 </div>
 </div>

@@ -98,12 +98,12 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_1.1.html">
-     Introduction to Python 1.1
+     Interactive Data Exploration with Python 1.1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_1.2.html">
-     Introduction to Python 1.2
+     Interactive Data Exploration with Python 1.2
     </a>
    </li>
    <li class="toctree-l2">
@@ -113,7 +113,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Introduction/Introduction_2.2.html">
-     Introduction to Python 2.2
+     Interactive Data Exploration with Python 2.2
     </a>
    </li>
   </ul>
@@ -206,11 +206,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../PredictingModelling/LinearPrediction.html">
      Linear Regression Prediction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../PredictingModelling/PredictingModelling.html">
-     Predicting Modelling
     </a>
    </li>
    <li class="toctree-l2">
@@ -812,7 +807,7 @@ Name: Height, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/Visuals_and_Arts_1_26_1.png" src="../_images/Visuals_and_Arts_1_26_1.png" />
+<img alt="../_images/Visuals_and_Arts_1_26_11.png" src="../_images/Visuals_and_Arts_1_26_11.png" />
 </div>
 </div>
 <p>The seaborn package makes it easier (and prettier) to create a similar chart. This time, a histogram (<a class="reference external" href="https://en.wikipedia.org/wiki/Histogram">https://en.wikipedia.org/wiki/Histogram</a>) will help us see how ‘Height’ follows a normal distribution (<a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">https://en.wikipedia.org/wiki/Normal_distribution</a>), which have been historically designed with these kinds of variables in mind. .</p>
@@ -827,7 +822,7 @@ Name: Height, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Height&#39;, ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/Visuals_and_Arts_1_28_1.png" src="../_images/Visuals_and_Arts_1_28_1.png" />
+<img alt="../_images/Visuals_and_Arts_1_28_11.png" src="../_images/Visuals_and_Arts_1_28_11.png" />
 </div>
 </div>
 <p>That is a normal distribution! Can you create a histogram for ‘Age’? Hint: data defines the data frame and x the column to look at …</p>
@@ -841,7 +836,7 @@ Name: Height, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/Visuals_and_Arts_1_30_1.png" src="../_images/Visuals_and_Arts_1_30_1.png" />
+<img alt="../_images/Visuals_and_Arts_1_30_11.png" src="../_images/Visuals_and_Arts_1_30_11.png" />
 </div>
 </div>
 <p>We often want to compare, however, the relative distribution of 2 or more variables. So, for instance, we are interested in the relationship between  and date of the whalers’ journey. Maybe, this shows that people get taller over time? Or maybe not. Let’s try.</p>
@@ -872,7 +867,7 @@ Name: Height, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Date&#39;, ylabel=&#39;Height&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/Visuals_and_Arts_1_34_1.png" src="../_images/Visuals_and_Arts_1_34_1.png" />
+<img alt="../_images/Visuals_and_Arts_1_34_11.png" src="../_images/Visuals_and_Arts_1_34_11.png" />
 </div>
 </div>
 <p>Our plot of crews shows many data points and significant overlap. Under these conditions, scatterplots become less useful. We have tried to change the alpha parameter to make the points more visible. Another approch is to bin the points into hexagonal cells, which is less complicated than it sounds.</p>
@@ -918,7 +913,7 @@ memory usage: 234.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x12fd042b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x130b9bd30&gt;
 </pre></div>
 </div>
 <img alt="../_images/Visuals_and_Arts_1_40_1.png" src="../_images/Visuals_and_Arts_1_40_1.png" />
@@ -937,7 +932,7 @@ memory usage: 234.5+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Year&#39;, ylabel=&#39;Height&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/Visuals_and_Arts_1_42_1.png" src="../_images/Visuals_and_Arts_1_42_1.png" />
+<img alt="../_images/Visuals_and_Arts_1_42_11.png" src="../_images/Visuals_and_Arts_1_42_11.png" />
 </div>
 </div>
 <p>We still do not have a clear idea od the relationship of the whalers’ height and the date of the journey.  we cannot really see the regression line here, so let’s change the colors and make the points more transparent again. Simply take a close look at our next command <code class="docutils literal notranslate"><span class="pre">sns.regplot(data=crews,</span> <span class="pre">x='Year',</span> <span class="pre">y='Height',</span> <span class="pre">scatter_kws={'color':</span> <span class="pre">'blue',</span> <span class="pre">'alpha':0.3},</span> <span class="pre">line_kws={&quot;color&quot;:</span> <span class="pre">&quot;red&quot;})</span></code>. You will see that the two additional arguments ending in <em>kws</em> define a dictionary of attributes for the scatter points and (regression) line.</p>
@@ -1027,7 +1022,7 @@ memory usage: 24.3+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x130aaadc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x13110b610&gt;
 </pre></div>
 </div>
 <img alt="../_images/Visuals_and_Arts_1_52_1.png" src="../_images/Visuals_and_Arts_1_52_1.png" />
@@ -1540,7 +1535,7 @@ memory usage: 24.3+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x131da86a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13236ff10&gt;
 </pre></div>
 </div>
 <img alt="../_images/Visuals_and_Arts_1_88_1.png" src="../_images/Visuals_and_Arts_1_88_1.png" />

@@ -1,0 +1,1593 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predicting and Modelling using Deep Learning &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.1.html">
+     Interactive Data Exploration with Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_1.2.html">
+     Interactive Data Exploration with Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.1.html">
+     Interactive Data Exploration with Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Introduction/Introduction_2.2.html">
+     Interactive Data Exploration with Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../FocusGroup.html">
+   Focus Group
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
+     Social Data from the Web
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
+     Social Networking Communities
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/Churn.html">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DigitalMarketing/CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Igraph.html">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../SocialSensing/Graphs/Reveredetection.html">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/PredictingModelling/Predicting_Modelling_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FPredictingModelling/Predicting_Modelling_2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/PredictingModelling/Predicting_Modelling_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Predicting and Modelling using Deep Learning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-boundaries">
+   Decision Boundaries
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="predicting-and-modelling-using-deep-learning">
+<h1>Predicting and Modelling using Deep Learning<a class="headerlink" href="#predicting-and-modelling-using-deep-learning" title="Permalink to this headline">¶</a></h1>
+<p>Deep learning is what moves people in AI at the moment. It is responsible for many breakthroughs. There is an excellent TED talk on deep learning: <a class="reference external" href="https://www.youtube.com/watch?v=xx310zM3tLs">https://www.youtube.com/watch?v=xx310zM3tLs</a> Google, Facebook, Bing and all the others currently invest millions into new services based on deep learning. Facebook, for instance, has released DeepText (<a class="reference external" href="http://www.wired.co.uk/article/inside-deeptext-facebook-deep-learning-algorithm">http://www.wired.co.uk/article/inside-deeptext-facebook-deep-learning-algorithm</a>) to understand the textual content of millions of posts.</p>
+<p>Deep learning is neural networks on steriods with many more neurons, hidden layers, connections, etc. These complex network structure could only recently be built. Even more recent are framework such as Keras in Python (<a class="reference external" href="https://keras.io/">https://keras.io/</a>) that makes building deep learning models easier.</p>
+<p>First run the cell below to load again some our favourite libraries as well as the data from the first session.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">sca</span>
+
+<span class="n">wines_normalized_df</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;data/wines_normalized_df.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One of the constraints is that we need all data to be numerical including the target column ‘quality’. We can use our old friend np.where() to do this easily. Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bad&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">wines_normalized_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>0 stands therefore for bad wine and 1 for good wine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bad&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">wines_normalized_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
+      <td>0.418605</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The next cell loads the necessary libraries from Keras. There are quite a lot of options, which we can ignore for the time being. Please, just run the cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep cell</span>
+<span class="kn">import</span> <span class="nn">keras</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like before, we get the x and y values and split the dataset into a train and test set. There is an even more powerful option with scikit’s train_test_split function. First import it with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.model_selection</span> <span class="pre">import</span> <span class="pre">train_test_split</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To perfrom the split, we need again X and y for  input and target. It’s the same procedure as before. So, please run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">wines_normalized_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">wines_normalized_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">wines_normalized_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">wines_normalized_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we create the test and train data with train_test_split(). Run <code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">X_test,</span> <span class="pre">y_train,</span> <span class="pre">y_test</span> <span class="pre">=</span> <span class="pre">train_test_split(X,</span> <span class="pre">y,</span> <span class="pre">test_size=0.25)</span></code> to create the split. The function takes the input X and output Y as well as the size of the test data - in this case 25%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have to do one more data preparation step. Our output variable needs to be one-hot encoded. Let’s run the function first and then discuss the result to understand what’s going on. Type in <code class="docutils literal notranslate"><span class="pre">y_train_cat</span> <span class="pre">=</span> <span class="pre">to_categorical(y_train)</span></code>. Also print out y_train.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train_cat</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_train_cat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1.],
+       [0., 1.],
+       [1., 0.],
+       ...,
+       [0., 1.],
+       [0., 1.],
+       [0., 1.]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, this created a binary representation of the output. So, if it was bad wine, the output would be 1,0 and for good wine it would be 0,1. Why do we need to do this? Otherwise, Keras would interpret the quality column as the numbers 0 and 1. A one hot encoding is a representation of categorical variables as binary vectors. Check out <a class="reference external" href="https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/">https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/</a>.</p>
+<p>Can you now create y_test_cat in the same way but for y_test?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_test_cat</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are ready to model, as the data is prepared. This is not so very different from what we know from before.</p>
+<p>Keras makes it easier for us to create very complex models. Check out the description at <a class="reference external" href="https://www.kdnuggets.com/2018/06/keras-4-step-workflow.html">https://www.kdnuggets.com/2018/06/keras-4-step-workflow.html</a>. Modern AI seems often to be all about creating every more complext neural network models. Keras is one of the libraries at the heart of this research.</p>
+<p>We will choose to make it fairly easy and create a sequence of neural network layers with Keras Sequential: <a class="reference external" href="https://keras.io/guides/sequential_model/">https://keras.io/guides/sequential_model/</a>. Start with <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">Sequential()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Following <a class="reference external" href="https://www.kdnuggets.com/2018/06/basic-keras-neural-network-sequential-model.html">https://www.kdnuggets.com/2018/06/basic-keras-neural-network-sequential-model.html</a>, we need to first define the input layer, which takes all our 11 numerical features. In Keras, this done with the add() function. We want the function to create a fully connected network with Dense() with 50 nodes in the first layer.</p>
+<p>You might remember that we said that these neurons need to fire at each other when activated. activation provides the function to tell the layer when to fire its neurons. ‘relu’ has become the default option. If you are interested, check <a class="reference external" href="https://towardsdatascience.com/7-popular-activation-functions-you-should-know-in-deep-learning-and-how-to-use-them-with-keras-and-27b4d838dfe6">https://towardsdatascience.com/7-popular-activation-functions-you-should-know-in-deep-learning-and-how-to-use-them-with-keras-and-27b4d838dfe6</a>.</p>
+<p>Finally, we also need to provide the input shape, which are the number of features we send to the model. In our case these are 11, but we can also get the directly with X_train.shape[1].</p>
+<p>So, run <code class="docutils literal notranslate"><span class="pre">model.add(Dense(50,</span> <span class="pre">activation='relu',</span> <span class="pre">input_dim=X_train.shape[1]))</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next cell, we add two more fully connected layers, one with 25 nodes and one with 5 - because we can. The choice of neural network architectures is hotly debated and part of intense research. Keras makes it easy to add more layers with add(). Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our final output layer is slighlty different. First the number of ouptut nodes is given by the 2 quality categories we have. We get this with y_train_cat.shape[1]. The activation is very differnt. Softmax is a mathematical function that converts numbers into probabilities (<a class="reference external" href="https://machinelearningmastery.com/softmax-activation-function-with-python/">https://machinelearningmastery.com/softmax-activation-function-with-python/</a>). In our case, these are the probabilities for each case - predicting either good or bad wine. Type in <code class="docutils literal notranslate"><span class="pre">model.add(Dense(y_train_cat.shape[1],</span> <span class="pre">activation='softmax'))</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">y_train_cat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>All we have to do now is to compile the model with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> 
+              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> 
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The metrics should be accuracy, which we know already. The optimizer is used to change the weights of the model during its learning phase. adam has become a bit of a standard default option here. loss determines how the machine should calculate the difference between what it has already achieved and how far it is still away from its prediction target. The optimizer tries to minimize this loss. categorical_crossentropy is a standard loss function for classifications - in our case between good and bad wine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> 
+              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> 
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">model.summary()</span></code>, we can print out the model structure we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 50)                600       
+_________________________________________________________________
+dense_1 (Dense)              (None, 25)                1275      
+_________________________________________________________________
+dense_2 (Dense)              (None, 5)                 130       
+_________________________________________________________________
+dense_3 (Dense)              (None, 2)                 12        
+=================================================================
+Total params: 2,017
+Trainable params: 2,017
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, fit the model like before with <code class="docutils literal notranslate"><span class="pre">model.fit(X_train,</span> <span class="pre">y_train_cat,</span> <span class="pre">epochs=10)</span></code>. An epoch means the training cycle of a neural network. A forward pass and a backward pass together are counted as one pass. Each time we try to update and improve all the weights in the model based on the feedback from trying to match the current model output with the expected output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_cat</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1/153 [..............................] - ETA: 1:16 - loss: 0.6930 - accuracy: 0.3125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 46/153 [========&gt;.....................] - ETA: 0s - loss: 0.6827 - accuracy: 0.6046  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 88/153 [================&gt;.............] - ETA: 0s - loss: 0.6612 - accuracy: 0.6236
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+133/153 [=========================&gt;....] - ETA: 0s - loss: 0.6455 - accuracy: 0.6283
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 1s 1ms/step - loss: 0.6390 - accuracy: 0.6275
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.6087 - accuracy: 0.5312
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 48/153 [========&gt;.....................] - ETA: 0s - loss: 0.5841 - accuracy: 0.6328
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 93/153 [=================&gt;............] - ETA: 0s - loss: 0.5749 - accuracy: 0.6394
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+138/153 [==========================&gt;...] - ETA: 0s - loss: 0.5726 - accuracy: 0.6461
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5694 - accuracy: 0.6544
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.5891 - accuracy: 0.7188
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 47/153 [========&gt;.....................] - ETA: 0s - loss: 0.5608 - accuracy: 0.7154
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 93/153 [=================&gt;............] - ETA: 0s - loss: 0.5555 - accuracy: 0.7157
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+138/153 [==========================&gt;...] - ETA: 0s - loss: 0.5525 - accuracy: 0.7188
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5516 - accuracy: 0.7213
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.6489 - accuracy: 0.5938
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 42/153 [=======&gt;......................] - ETA: 0s - loss: 0.5513 - accuracy: 0.7188
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 79/153 [==============&gt;...............] - ETA: 0s - loss: 0.5423 - accuracy: 0.7275
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+125/153 [=======================&gt;......] - ETA: 0s - loss: 0.5424 - accuracy: 0.7243
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5416 - accuracy: 0.7282
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.4602 - accuracy: 0.8125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 46/153 [========&gt;.....................] - ETA: 0s - loss: 0.5299 - accuracy: 0.7405
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 91/153 [================&gt;.............] - ETA: 0s - loss: 0.5321 - accuracy: 0.7356
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+138/153 [==========================&gt;...] - ETA: 0s - loss: 0.5360 - accuracy: 0.7301
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5343 - accuracy: 0.7319
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.3868 - accuracy: 0.8125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 47/153 [========&gt;.....................] - ETA: 0s - loss: 0.5215 - accuracy: 0.7507
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 93/153 [=================&gt;............] - ETA: 0s - loss: 0.5332 - accuracy: 0.7335
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+137/153 [=========================&gt;....] - ETA: 0s - loss: 0.5342 - accuracy: 0.7324
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5314 - accuracy: 0.7334
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.5984 - accuracy: 0.6562
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 46/153 [========&gt;.....................] - ETA: 0s - loss: 0.5264 - accuracy: 0.7371
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 92/153 [=================&gt;............] - ETA: 0s - loss: 0.5227 - accuracy: 0.7422
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+137/153 [=========================&gt;....] - ETA: 0s - loss: 0.5263 - accuracy: 0.7384
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5264 - accuracy: 0.7393
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.5681 - accuracy: 0.6875
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 47/153 [========&gt;.....................] - ETA: 0s - loss: 0.5096 - accuracy: 0.7580
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 92/153 [=================&gt;............] - ETA: 0s - loss: 0.5258 - accuracy: 0.7452
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+139/153 [==========================&gt;...] - ETA: 0s - loss: 0.5222 - accuracy: 0.7455
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5231 - accuracy: 0.7436
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.5092 - accuracy: 0.6562
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 47/153 [========&gt;.....................] - ETA: 0s - loss: 0.5116 - accuracy: 0.7520
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 92/153 [=================&gt;............] - ETA: 0s - loss: 0.5163 - accuracy: 0.7480
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+135/153 [=========================&gt;....] - ETA: 0s - loss: 0.5173 - accuracy: 0.7451
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5225 - accuracy: 0.7408
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/10
+
+  1/153 [..............................] - ETA: 0s - loss: 0.5377 - accuracy: 0.7500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 45/153 [=======&gt;......................] - ETA: 0s - loss: 0.5206 - accuracy: 0.7389
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 92/153 [=================&gt;............] - ETA: 0s - loss: 0.5290 - accuracy: 0.7371
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+138/153 [==========================&gt;...] - ETA: 0s - loss: 0.5203 - accuracy: 0.7464
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+153/153 [==============================] - 0s 1ms/step - loss: 0.5178 - accuracy: 0.7484
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x15ade0400&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As before, we run predict() to get model’s predictions of the wines’ qualities. Run <code class="docutils literal notranslate"><span class="pre">y_pred_train</span> <span class="pre">=</span> <span class="pre">model.predict(X_train)</span></code>. This time we will do this for both training and test data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you do the same for y_pred_test?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We do this for both data set, as we want to avoid not just a model that underfits the data and is therefore bad at predicting new data, which we test with y_pred_train. We also want avoid a model that overfits the data by being great at the training data but not good with the new test data. For a detailed explanation, check <a class="reference external" href="https://en.wikipedia.org/wiki/Overfitting">https://en.wikipedia.org/wiki/Overfitting</a>.</p>
+<p>To evaluate, we need the accuracy next. Let’s start with the one from y_pred_train and take a look at it first. Run <code class="docutils literal notranslate"> <span class="pre">y_pred_train</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_train</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.20431781, 0.79568225],
+       [0.10152812, 0.8984719 ],
+       [0.05130439, 0.94869566],
+       ...,
+       [0.1598804 , 0.84011966],
+       [0.12249572, 0.87750435],
+       [0.04955889, 0.95044106]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should see an array of two columns, one for each wine entry. My first row, e.g., shows [0.13016923, 0.8698308 ]. Yours might well look differently. We can translate this into: The probabillity of the first row being a bad wine (=0) is 0.13. It is a good wine (=1) with 0.87.</p>
+<p>We can use np.argmax() to ask the machine to return the best prediction for each row - the one with the highest probablity. Run <code class="docutils literal notranslate"><span class="pre">y_pred_train</span> <span class="pre">=</span> <span class="pre">np.argmax(y_pred_train,</span> <span class="pre">axis=1)</span></code> to choose the index of the maximum value for each row, which we say is the best prediction. Why is the index the right answer?</p>
+<p>Also print out y_pred_train.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_pred_train</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_pred_train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, ..., 1, 1, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Success! We have predicted the training data wines. Can you repeat the same for the test data and create y_pred_test?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_pred_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_pred_test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, ..., 1, 1, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>SciKit has a function to calculate the accuracy score. First import <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.metrics</span> <span class="pre">import</span> <span class="pre">accuracy_score</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">accuracy_score(y_train,</span> <span class="pre">y_pred_train)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7471264367816092
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you do the same for y_test? Of course, you can …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7556923076923077
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hopefully, these two are not too far apart for you. The model does neither underfit not overfit. It is, however, not  better than the earlier one despite added complexity. The data is obviously not good and big enough.</p>
+<p>That’s it. You are now part of the deep learning elite. You could go back and change the model by adding layers or nodes, changing the optimizer, etc. There are a number of options, which you can all experiment with.</p>
+<p>We would like to move on to decision boundaries.</p>
+</div>
+<div class="section" id="decision-boundaries">
+<h1>Decision Boundaries<a class="headerlink" href="#decision-boundaries" title="Permalink to this headline">¶</a></h1>
+<p>As a final experiment, let’s try and generate decision boundaries in the feature space, which decide in our case about the wines and whether they are good or bad. This is not so easy because we need to reduce the dimensions. So, most of the following code is given.</p>
+<p>We need to map our 11 features into 2 features, because we cannot visualise an 11-dimensional space that humans could read. A standard strategy for reducing the dimensions is to apply Principal Component Analysis (PCA) (<a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">https://en.wikipedia.org/wiki/Principal_component_analysis</a>). It is a fairly complicated method. If you are interested, check out <a class="reference external" href="https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python">https://www.datacamp.com/community/tutorials/principal-component-analysis-in-python</a>. Here, it is enough to know that for each wine observation it will find its position in a lower-dimensional feature space.</p>
+<p>Run the cell below.</p>
+<p>Tip: PCA is an important machine learning method, and you might want to try and see whether you can get the top 3 principal components, too. Just to play and learn …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="n">pca_no</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="n">pca_no</span><span class="p">)</span>
+<span class="n">principalComponents</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">principal_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">principalComponents</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pca_1&#39;</span><span class="p">,</span> <span class="s1">&#39;pca_2&#39;</span><span class="p">])</span>
+<span class="n">principal_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wines_normalized_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span>
+<span class="n">principal_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pca_1</th>
+      <th>pca_2</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.381828</td>
+      <td>-0.022863</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.094222</td>
+      <td>0.031821</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.037175</td>
+      <td>0.040346</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.183011</td>
+      <td>-0.099750</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.183011</td>
+      <td>-0.099750</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You should see a data frame principal_df. The first two columns are the two prinicipal components and the final the quality. We only use the first 2 principal components, because we would like to create a 2-dimensional feature space readable to humans.</p>
+<p>Next, we will visualise the decision boundaries. Our strategy will be to calculate the wine quality prediction for each point in the 2-dimensional PCA feature space. Because we only have two input dimensions, we cannot use the same model as before. This means we have to run all the steps again. It will be a very good exercise to see whether you understand all the steps.</p>
+<p>Run the next cell to create X and y again. We do not have to split the data into test and training, as we want to map all of it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">principal_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">principal_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">principal_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following cell contains our model. The only difference is that input_dim = pca_no (2) because we only keep two features - both principal components.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="n">pca_no</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+
+<span class="c1"># Compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> 
+              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> 
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_4 (Dense)              (None, 50)                150       
+_________________________________________________________________
+dense_5 (Dense)              (None, 25)                1275      
+_________________________________________________________________
+dense_6 (Dense)              (None, 5)                 130       
+_________________________________________________________________
+dense_7 (Dense)              (None, 2)                 12        
+=================================================================
+Total params: 1,567
+Trainable params: 1,567
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fit the model …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1/204 [..............................] - ETA: 1:11 - loss: 0.6976 - accuracy: 0.5625
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 45/204 [=====&gt;........................] - ETA: 0s - loss: 0.6518 - accuracy: 0.6458  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 91/204 [============&gt;.................] - ETA: 0s - loss: 0.6156 - accuracy: 0.6655
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+138/204 [===================&gt;..........] - ETA: 0s - loss: 0.5978 - accuracy: 0.6744
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+184/204 [==========================&gt;...] - ETA: 0s - loss: 0.5871 - accuracy: 0.6821
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 1s 1ms/step - loss: 0.5862 - accuracy: 0.6823
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 2/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.6215 - accuracy: 0.6250
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 47/204 [=====&gt;........................] - ETA: 0s - loss: 0.5645 - accuracy: 0.6961
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 94/204 [============&gt;.................] - ETA: 0s - loss: 0.5600 - accuracy: 0.6908
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+140/204 [===================&gt;..........] - ETA: 0s - loss: 0.5577 - accuracy: 0.6938
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+187/204 [==========================&gt;...] - ETA: 0s - loss: 0.5558 - accuracy: 0.6945
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5578 - accuracy: 0.6914
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5497 - accuracy: 0.7500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 49/204 [======&gt;.......................] - ETA: 0s - loss: 0.5539 - accuracy: 0.6990
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 97/204 [=============&gt;................] - ETA: 0s - loss: 0.5614 - accuracy: 0.6933
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+145/204 [====================&gt;.........] - ETA: 0s - loss: 0.5580 - accuracy: 0.6957
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+193/204 [===========================&gt;..] - ETA: 0s - loss: 0.5556 - accuracy: 0.6977
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5570 - accuracy: 0.6985
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5415 - accuracy: 0.7188
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 49/204 [======&gt;.......................] - ETA: 0s - loss: 0.5600 - accuracy: 0.7060
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 97/204 [=============&gt;................] - ETA: 0s - loss: 0.5503 - accuracy: 0.7104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+145/204 [====================&gt;.........] - ETA: 0s - loss: 0.5543 - accuracy: 0.7030
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+193/204 [===========================&gt;..] - ETA: 0s - loss: 0.5561 - accuracy: 0.7006
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5566 - accuracy: 0.6988
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 5/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5354 - accuracy: 0.7188
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 50/204 [======&gt;.......................] - ETA: 0s - loss: 0.5451 - accuracy: 0.7125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 95/204 [============&gt;.................] - ETA: 0s - loss: 0.5451 - accuracy: 0.7128
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+143/204 [====================&gt;.........] - ETA: 0s - loss: 0.5493 - accuracy: 0.7063
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+190/204 [==========================&gt;...] - ETA: 0s - loss: 0.5537 - accuracy: 0.7035
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5549 - accuracy: 0.7019
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 6/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5364 - accuracy: 0.8438
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 48/204 [======&gt;.......................] - ETA: 0s - loss: 0.5610 - accuracy: 0.6973
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 95/204 [============&gt;.................] - ETA: 0s - loss: 0.5634 - accuracy: 0.6914
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+142/204 [===================&gt;..........] - ETA: 0s - loss: 0.5547 - accuracy: 0.6987
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+187/204 [==========================&gt;...] - ETA: 0s - loss: 0.5529 - accuracy: 0.7024
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5557 - accuracy: 0.7006
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5646 - accuracy: 0.7812
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 48/204 [======&gt;.......................] - ETA: 0s - loss: 0.5580 - accuracy: 0.6960
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 95/204 [============&gt;.................] - ETA: 0s - loss: 0.5561 - accuracy: 0.6967
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+138/204 [===================&gt;..........] - ETA: 0s - loss: 0.5506 - accuracy: 0.7013
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+183/204 [=========================&gt;....] - ETA: 0s - loss: 0.5531 - accuracy: 0.7025
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5554 - accuracy: 0.7016
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.4899 - accuracy: 0.8125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 48/204 [======&gt;.......................] - ETA: 0s - loss: 0.5528 - accuracy: 0.7044
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 96/204 [=============&gt;................] - ETA: 0s - loss: 0.5535 - accuracy: 0.7012
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+143/204 [====================&gt;.........] - ETA: 0s - loss: 0.5505 - accuracy: 0.7035
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+191/204 [===========================&gt;..] - ETA: 0s - loss: 0.5530 - accuracy: 0.7022
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5532 - accuracy: 0.7023
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5547 - accuracy: 0.7188
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 49/204 [======&gt;.......................] - ETA: 0s - loss: 0.5519 - accuracy: 0.7041
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 96/204 [=============&gt;................] - ETA: 0s - loss: 0.5465 - accuracy: 0.7018
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+144/204 [====================&gt;.........] - ETA: 0s - loss: 0.5531 - accuracy: 0.6944
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+189/204 [==========================&gt;...] - ETA: 0s - loss: 0.5523 - accuracy: 0.6966
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5533 - accuracy: 0.6986
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 10/10
+
+  1/204 [..............................] - ETA: 0s - loss: 0.5112 - accuracy: 0.7812
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 49/204 [======&gt;.......................] - ETA: 0s - loss: 0.5579 - accuracy: 0.6983
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 97/204 [=============&gt;................] - ETA: 0s - loss: 0.5529 - accuracy: 0.6972
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+145/204 [====================&gt;.........] - ETA: 0s - loss: 0.5566 - accuracy: 0.6933
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+192/204 [===========================&gt;..] - ETA: 0s - loss: 0.5534 - accuracy: 0.6973
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+204/204 [==============================] - 0s 1ms/step - loss: 0.5546 - accuracy: 0.6969
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x15ba93970&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We create the actual predictions with argmax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, ..., 1, 0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have added a function plot_decision_boundary to the sca libary. Run it with <code class="docutils literal notranslate"><span class="pre">sca.plot_decision_boundary(X,</span> <span class="pre">y,</span> <span class="pre">model)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sca</span><span class="o">.</span><span class="n">plot_decision_boundary</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 576x576 with 1 Axes&gt;,
+ &lt;AxesSubplot:title={&#39;center&#39;:&#39;Decision Boundary from Deep Learning&#39;}, xlabel=&#39;PCA 1&#39;, ylabel=&#39;PCA 2&#39;&gt;)
+</pre></div>
+</div>
+<img alt="../_images/Predicting_Modelling_2_59_1.png" src="../_images/Predicting_Modelling_2_59_1.png" />
+</div>
+</div>
+<p>This might have taken a while because it creates predictions for all points in the space!</p>
+<p>The predictions are not great - also because we mapped them into two dimensions -, but we can clearly see that the boundary is a complex function.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./PredictingModelling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
