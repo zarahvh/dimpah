@@ -1,0 +1,4126 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Data from the Web &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PredictingModelling" href="../../PredictingModelling.html" />
+    <link rel="prev" title="Detecting Political Communities of Practice" href="Communities_of_Digital_Culture_and_Society_1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.1.html">
+     Interactive Data Exploration with Python 1.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_1.2.html">
+     Interactive Data Exploration with Python 1.2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.1.html">
+     Interactive Data Exploration with Python 2.1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Introduction/Introduction_2.2.html">
+     Interactive Data Exploration with Python 2.2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_1.html">
+     Social Sensing 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/SocialMedia/Social_Sensing_2.html">
+     Social Sensing 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_1.html">
+     Analysing Historical Cultures 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/Text/Text_2.html">
+     Analysing Historical Cultures 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_1.html">
+     Visuals and Arts 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialAnalytics/VisualsArts/Visuals_and_Arts_2.html">
+     Visuals and Arts 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass1/Machine_Bias.html">
+     Machine Bias
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ass2/Civility_in_Communication.html">
+     Civility in Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data_Exploration.html">
+     Exploratory Data Analysis with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="US_Congress_Sponsors.html">
+     Collaboration Networks in the US Congress
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Communities_of_Digital_Culture_and_Society_1.html">
+     Detecting Political Communities of Practice
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Social Data from the Web
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/LinearPrediction.html">
+     Linear Regression Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/Predicting_Modelling_1.html">
+     Predicting Modelling 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/Predicting_Modelling_2.html">
+     Predicting and Modelling using Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/Predicting_Modelling_2.html#decision-boundaries">
+     Decision Boundaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../PredictingModelling/Titanic.html">
+     Predicting the survival of Titanic passengers
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/Basics.html">
+     Digital marketing and Python - The basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/ChoiceModelling.html">
+     Choice Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/Churn.html">
+     Churn Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../DigitalMarketing/CustomerRelationshipManagement.html">
+     Customer Relationship Management
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/AnalysingShakespeare.html">
+     Analysing Shakespeare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/hate-speech-twitter.html">
+     Hate Speech Detector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/Quanteda.html">
+     Document Term Matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/Quanteda.html#wordcloud">
+     Wordcloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/TidyText.html">
+     TidyText
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../HistoricalCultures/CreateCorpusVisualisations.html">
+     Create corpus and Visualise
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialSensing/APIs/Nowcasting-GTrends.html">
+     Nowcasting with Google Trends
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialSensing/APIs/TwitterStreamingAPI.html">
+     Twitter Streaming API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialSensing/APIs/Whatsapp.html">
+     Whatsapp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialSensing/Graphs/Igraph.html">
+     R graphs and Gephi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../SocialSensing/Graphs/Reveredetection.html">
+     Eighteenth Century beta of PRISM
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FAI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-networking-communities">
+   Social Networking Communities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clustering">
+     Clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-scraping">
+   Web Scraping
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="social-data-from-the-web">
+<h1>Social Data from the Web<a class="headerlink" href="#social-data-from-the-web" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="social-networking-communities">
+<h2>Social Networking Communities<a class="headerlink" href="#social-networking-communities" title="Permalink to this headline">¶</a></h2>
+<p>We have just discussed how clustering can be an effective tool to understand political behaviour. As an unsupervised learning technique it provides a new machine reading on party affiliations. Another popular application of clustering is detecting communities in social relationships.  Next we go through an example and dataset in Brett Lantz’s excellent book on Machine Learning (Lantz, B. (2013). Packt Publishing Ltd.). The dataset is discussed on pp. 279. It covers the relationships in a Social Networking Service (SNS). While this is a fairly early SNS dataset, it is freely available and offers similar kind of insights you can gain from my recent examples.</p>
+<p>This section also introduces you to the intersection of digital marketing techniques and sociological studies of online networks.</p>
+<p>Lantz explains that the dataset was compiled for sociological research on teenage identities at Notre Dame University. It represents a random sample of 30,000 US high school students who had profiles on a well-known SNS in 2006. At the time the data was collected, the SNS was a popular web destination for U.S. teenagers. Therefore, it is reasonable to assume that the profiles represent a fairly wide cross section of American adolescents in 2006. The data was sampled evenly across four high school graduation years (2006 through 2009) representing the senior, junior, second-year and freshman classes at the time of data collection. Then, the full texts of the SNS profiles were downloaded. Each teen’s gender, age and number of SNS friends was recorded.</p>
+<p>A text-mining tool was used to divide the remaining SNS page content into words. From the top 500 words appearing across all pages, 36 words were chosen to represent five categories of interests, namely extracurricular activities, fashion, religion, romance and antisocial behaviour. The 36 words include terms such as football, sexy, kissed, bible, shopping, death, drugs, etc. The final dataset indicates, for each person, how many times each word appeared in the person’s SNS profile.</p>
+<p>First we load the relevant packages and the dataset. Run the cell below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+
+<span class="n">teens</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/snsdata.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out the first couple of rows from the teens dataset. You know how …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>gradyear</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>friends</th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>...</th>
+      <th>blonde</th>
+      <th>mall</th>
+      <th>shopping</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+      <th>drugs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>19.0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>18.0</td>
+      <td>69</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>The teens dataset is now loaded into your environment. Take a close look and make sure you understand how it is produced.</p>
+<p>We can use the info() method to output some general information about the dataframe. Run <code class="docutils literal notranslate"><span class="pre">teens.info()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 30000 entries, 0 to 29999
+Data columns (total 41 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Unnamed: 0    30000 non-null  int64  
+ 1   gradyear      30000 non-null  int64  
+ 2   gender        27276 non-null  object 
+ 3   age           24914 non-null  float64
+ 4   friends       30000 non-null  int64  
+ 5   basketball    30000 non-null  int64  
+ 6   football      30000 non-null  int64  
+ 7   soccer        30000 non-null  int64  
+ 8   softball      30000 non-null  int64  
+ 9   volleyball    30000 non-null  int64  
+ 10  swimming      30000 non-null  int64  
+ 11  cheerleading  30000 non-null  int64  
+ 12  baseball      30000 non-null  int64  
+ 13  tennis        30000 non-null  int64  
+ 14  sports        30000 non-null  int64  
+ 15  cute          30000 non-null  int64  
+ 16  sex           30000 non-null  int64  
+ 17  sexy          30000 non-null  int64  
+ 18  hot           30000 non-null  int64  
+ 19  kissed        30000 non-null  int64  
+ 20  dance         30000 non-null  int64  
+ 21  band          30000 non-null  int64  
+ 22  marching      30000 non-null  int64  
+ 23  music         30000 non-null  int64  
+ 24  rock          30000 non-null  int64  
+ 25  god           30000 non-null  int64  
+ 26  church        30000 non-null  int64  
+ 27  jesus         30000 non-null  int64  
+ 28  bible         30000 non-null  int64  
+ 29  hair          30000 non-null  int64  
+ 30  dress         30000 non-null  int64  
+ 31  blonde        30000 non-null  int64  
+ 32  mall          30000 non-null  int64  
+ 33  shopping      30000 non-null  int64  
+ 34  clothes       30000 non-null  int64  
+ 35  hollister     30000 non-null  int64  
+ 36  abercrombie   30000 non-null  int64  
+ 37  die           30000 non-null  int64  
+ 38  death         30000 non-null  int64  
+ 39  drunk         30000 non-null  int64  
+ 40  drugs         30000 non-null  int64  
+dtypes: float64(1), int64(39), object(1)
+memory usage: 9.4+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Part of this lesson is centered on the issue of looking into real-life data on digital society. We have mentioned earlier that a common problem is that observations/records are missing in such data, which is indicated by the NaN value in Python - as you might remember.</p>
+<p>In the info printout, you can also see that the non-null count is lower for those columns that contain NaN values. Gender is one of them.</p>
+<p>Let’s watch a quick video first how to deal with dirty data in general.</p>
+<video width="90%" height="90%" controls src="img-videos/Session2.mp4" /><p>That was a lot of information. Let’s go through this one step a time with the teens data.</p>
+<p>Print out the absolute non-null value counts for gender as well as the relative ones with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F    22054
+M     5222
+Name: gender, dtype: int64
+F    0.80855
+M    0.19145
+Name: gender, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>With dropna set to False in value_counts, we can also see NaN index values. Try that …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F      22054
+M       5222
+NaN     2724
+Name: gender, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>But missing values are not our only problem. At least as common are misreported observations in real-life data. As an example, let’s look at the at the age distribution of the teens’ age. You can do this in several ways but you should always print out maximum and minimum values. Run: <code class="docutils literal notranslate"><span class="pre">teens['age'].describe()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    24914.000000
+mean        17.985791
+std          7.865982
+min          3.000000
+25%         16.000000
+50%         17.000000
+75%         18.000000
+max        107.000000
+Name: age, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are quite a few strange records here. Teens can have a minimum age of less than 4 and a maximum age of over 100! These cannot be considered teenagers.</p>
+<p>As a rule of thumb, let’s assume teenagers are between 13 and 19 years old. Let’s mark all other teens’ age entries as invalid. We say that invalid entries should have a NaN value. Set this, please, by typing in <code class="docutils literal notranslate"><span class="pre">teens.loc[(teens['age']</span> <span class="pre">&lt;</span> <span class="pre">13)</span> <span class="pre">|</span> <span class="pre">(teens['age']</span> <span class="pre">&gt;=</span> <span class="pre">20),</span> <span class="pre">'age']</span> <span class="pre">=</span> <span class="pre">np.nan</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">),</span> <span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next step in our data cleaning process is to replace NaN values. Of course, we could simply remove all rows/observations, for which we have null entries. We did this effectively in the senate example. But then there was only one row that contained null values. In the SNS example, we would lose too many rows with such a brute-force approach. So, let’s try and fill the null values with estimated values.</p>
+<p>Let’s start with the gender and replace null values by creating new columns for male and females.</p>
+<p>To this end, we first create a new column to record all the female teenagers. Create a new column ‘female’ that is set to 1 if the teenager is female and 0 otherwise. Run <code class="docutils literal notranslate"><span class="pre">teens.loc[(teens['gender']</span> <span class="pre">==</span> <span class="pre">'F')</span> <span class="pre">&amp;</span> <span class="pre">(teens['gender'].notna()),</span> <span class="pre">'female']</span> <span class="pre">=</span> <span class="pre">1</span></code> to set the female column to 1 for females. notna() selects all rows that are not NaN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()),</span> <span class="s1">&#39;female&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you set the female column to 0 for males? You just need to change one letter …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()),</span> <span class="s1">&#39;female&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we will create another column for the null values in gender we want to call no_gender. Set this to 1 if there is no gender recorded and otherwise to 0.</p>
+<p>This process is called dummy-coding btw. This is typical to community analysis. A dummy variable is a numerical variable used in the analysis to represent subgroups – in our case males, females and others. In research design, a dummy variable is often used to distinguish different groups to address them differently. By creating a separate column per gender entry, we can compute clusters for separate gender communities.</p>
+<p>Check out dummy-coding on the web. Can you find easier ways to do this in Pandas?</p>
+<p>Run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">(),</span> <span class="s1">&#39;no_gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s1">&#39;no_gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">(),</span> <span class="s1">&#39;no_gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s1">&#39;no_gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After this, we have the original column, a new column called female, which contains information about whether the teen is female or not (male) and a new column with information about whether the gender value is missing. Using this column we could, for instance, check with clustering whether certain communities have a tendency not to record their gender values. How?</p>
+<p>Check out the changes with teens.head(). You have to scroll all the way to the right to find the new columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>gradyear</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>friends</th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>...</th>
+      <th>shopping</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+      <th>drugs</th>
+      <th>female</th>
+      <th>no_gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>19.0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>18.0</td>
+      <td>69</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>NaN</td>
+      <td>142</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>18.0</td>
+      <td>17</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>52</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>21</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>18.0</td>
+      <td>87</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>18.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>135</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>26</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>17.0</td>
+      <td>27</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>18.0</td>
+      <td>123</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>20 rows × 43 columns</p>
+</div></div></div>
+</div>
+<p>It’s very easy now to calculate the number of teenagers where we do not have gender entries for. How? Remember sum()?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;no_gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2724.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Did you find that there are 2724.</p>
+<p>The age column is next.</p>
+<p>Can you find the average age and take care that null values are discounted? Tip: run Pandas’ mean and set skipna = True: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mean.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">skipna</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.223233030090974
+</pre></div>
+</div>
+</div>
+</div>
+<p>What would happen if you set skipna to False?</p>
+<p>A good strategy to overwrite missing age values would be to use the average age value and assign it to all of the missing ones. This process is called mean-imputation and is employed frequently. Pandas has some real strengths here. Check out <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html</a>.</p>
+<p>Pandas makes you life very easy with its fillna function. Run the following cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25    17.000000
+0.50    17.223233
+0.75    18.000000
+Name: age, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s further improve this with some good old-fashioned human intelligence.</p>
+<p>We feel confident that we can do better than just the mean, because we know the graduation year, too. This is the year our teens are supposed to graduate. It seems a reasonable assumption that those teenagers with an earlier graduation year should be older than those for whom graduation is further away.</p>
+<p>We can easily find this out by running the mean function for each graduation year group separately. Type in <code class="docutils literal notranslate"><span class="pre">teens[['gradyear',</span> <span class="pre">'age']].groupby(['gradyear']).mean()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[[</span><span class="s1">&#39;gradyear&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;gradyear&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>gradyear</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2006</th>
+      <td>18.599801</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>17.685516</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>16.762584</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>15.823470</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s take a moment and look at groupby() as it is essential knowledge to deal with Pandas: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html</a>. It is at the heart of the split-apply-combine paradigm that will keep us busy for the rest of this session: <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/groupby.html">https://pandas.pydata.org/docs/user_guide/groupby.html</a>. Take a close read and you will see that we will cover all its elements throughout the session today. Groupby allows you to to ‘split’ data into distinct groups. This is often done with the intention to then ‘apply’ functions afterwards like in our case mean(). This works amazingly well but requires lots of practice in my exeperience. So, let’s move on.</p>
+<p>According to our last output, our suspicion has proven right. There is a significant difference in the average ages depending on the graduation year. Let’s use this knowledge and update missing values in the age group depending on the graduation year. To this end, you actually have to do a lot of Pandas labour, which demonstrates that 80% of the work of a data scientist lies in working with data. But I am sure you know this by now.</p>
+<p>You can, e.g., proceed with the following strategy:
+Create first a temporary dataset with the results from the above group_by call. Then merge this new dataset with teens and replace the null values of teens.age with the ones from the temporary dataset.</p>
+<p>Create the temporary dataset first with <code class="docutils literal notranslate"><span class="pre">ave_age</span> <span class="pre">=</span> <span class="pre">teens[['gradyear',</span> <span class="pre">'age']].groupby(['gradyear'],</span> <span class="pre">as_index=False).mean()</span></code>. Also print out ave_age. It should be a data frame of three rows.</p>
+<p>Wondering about as_index=False? Check out <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/groupby.html">https://pandas.pydata.org/docs/user_guide/groupby.html</a>. We simply do not want to create a new index from the groupby argument gradyear.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ave_age</span> <span class="o">=</span> <span class="n">teens</span><span class="p">[[</span><span class="s1">&#39;gradyear&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;gradyear&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">ave_age</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gradyear</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2006</td>
+      <td>18.599801</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2007</td>
+      <td>17.685516</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2008</td>
+      <td>16.762584</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2009</td>
+      <td>15.823470</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Update the teens age columns but make sure that in the end you have not added additional columns. First you need to merge teens and ave_age on gradyear. Run <code class="docutils literal notranslate"><span class="pre">teens</span> <span class="pre">=</span> <span class="pre">pd.merge(teens,</span> <span class="pre">ave_age,</span> <span class="pre">on=['gradyear'])</span></code>. Also print out the first few columns of teens.</p>
+<p>Merge is another powerful command to learn about. It’s part of the Merge, join, concatenate and compare group of command - some of which we have already met: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html</a>. If you happen to know database languages, you will know everything about it. Merge() combines two data frames on common columns - in our case gradyear.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teens</span><span class="p">,</span> <span class="n">ave_age</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gradyear&#39;</span><span class="p">])</span>
+<span class="n">teens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>gradyear</th>
+      <th>gender</th>
+      <th>age_x</th>
+      <th>friends</th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>...</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+      <th>drugs</th>
+      <th>female</th>
+      <th>no_gender</th>
+      <th>age_y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>19.0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>18.599801</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>18.599801</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>18.0</td>
+      <td>69</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>18.599801</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>18.599801</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>18.599801</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 44 columns</p>
+</div></div></div>
+</div>
+<p>With some scrolling, you should now see two age columns. age_x is the original one from teens, while age_y is the estimated value based on the gradyear. Now, we want to replace the age_x (the original value) with age_y if age_x is NaN. Run <code class="docutils literal notranslate"><span class="pre">teens.loc[(teens['age_x'].isna()),</span> <span class="pre">'age_x']</span> <span class="pre">=</span> <span class="pre">teens['age_y']</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age_x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()),</span> <span class="s1">&#39;age_x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age_y&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we only need to so some cleaning up. Give age_x its old name age back and drop age_y, which we don’t need anymore. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">teens</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;age_x&#39;</span><span class="p">:</span> <span class="s1">&#39;age&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">teens</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;age_y&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">teens.info()</span></code> to see that the age column does not contain NaNs anymore.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 30000 entries, 0 to 29999
+Data columns (total 43 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   Unnamed: 0    30000 non-null  int64  
+ 1   gradyear      30000 non-null  int64  
+ 2   gender        27276 non-null  object 
+ 3   age           30000 non-null  float64
+ 4   friends       30000 non-null  int64  
+ 5   basketball    30000 non-null  int64  
+ 6   football      30000 non-null  int64  
+ 7   soccer        30000 non-null  int64  
+ 8   softball      30000 non-null  int64  
+ 9   volleyball    30000 non-null  int64  
+ 10  swimming      30000 non-null  int64  
+ 11  cheerleading  30000 non-null  int64  
+ 12  baseball      30000 non-null  int64  
+ 13  tennis        30000 non-null  int64  
+ 14  sports        30000 non-null  int64  
+ 15  cute          30000 non-null  int64  
+ 16  sex           30000 non-null  int64  
+ 17  sexy          30000 non-null  int64  
+ 18  hot           30000 non-null  int64  
+ 19  kissed        30000 non-null  int64  
+ 20  dance         30000 non-null  int64  
+ 21  band          30000 non-null  int64  
+ 22  marching      30000 non-null  int64  
+ 23  music         30000 non-null  int64  
+ 24  rock          30000 non-null  int64  
+ 25  god           30000 non-null  int64  
+ 26  church        30000 non-null  int64  
+ 27  jesus         30000 non-null  int64  
+ 28  bible         30000 non-null  int64  
+ 29  hair          30000 non-null  int64  
+ 30  dress         30000 non-null  int64  
+ 31  blonde        30000 non-null  int64  
+ 32  mall          30000 non-null  int64  
+ 33  shopping      30000 non-null  int64  
+ 34  clothes       30000 non-null  int64  
+ 35  hollister     30000 non-null  int64  
+ 36  abercrombie   30000 non-null  int64  
+ 37  die           30000 non-null  int64  
+ 38  death         30000 non-null  int64  
+ 39  drunk         30000 non-null  int64  
+ 40  drugs         30000 non-null  int64  
+ 41  female        27276 non-null  float64
+ 42  no_gender     30000 non-null  float64
+dtypes: float64(3), int64(39), object(1)
+memory usage: 11.1+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check out new ave_age with <code class="docutils literal notranslate"><span class="pre">teens['age'].mean()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.21784283910326
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is all quite advanced stuff but as long as you remember the kind of steps we have taken you should be able to impute one column’s missing values by using another column as a reference. In our case, we use our knowledge that age is dependent on gradyear to find the missing values. Please, take some time to review the steps.</p>
+<p>Let’s take a look at the resulting age column with <code class="docutils literal notranslate"><span class="pre">teens['age'].describe()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    30000.000000
+mean        17.217843
+std          1.153788
+min         13.000000
+25%         16.000000
+50%         17.000000
+75%         18.000000
+max         19.000000
+Name: age, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>This looks much better. We have now learned how to delete missing values completely or impute them using a background knowledge.</p>
+<p>After we have dealt with the missing records, I think we are ready to cluster again. We will use our trusted k-means without actually referring to either age nor gender. Sorry! But it was good that you learned how to deal with missing values and we will use them later.</p>
+<p>Just like in the US Senate example, we need to first understand, what we are trying to cluster. In the Senate example, we clustered voting behaviour. Now, it will be interests, which we can get from the columns 5 to 40 of the teens data frame. This time we select them by number as there is no clever way of selecting them by expression as for the Senate data.</p>
+<p>Please create the interests dataframe by selecting columns 5 to 40 from teens with <code class="docutils literal notranslate"><span class="pre">interests</span> <span class="pre">=</span> <span class="pre">teens.iloc[:,5:40]</span></code>. Also, print out the first few rows of interests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interests</span> <span class="o">=</span> <span class="n">teens</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:</span><span class="mi">40</span><span class="p">]</span>
+<span class="n">interests</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>swimming</th>
+      <th>cheerleading</th>
+      <th>baseball</th>
+      <th>tennis</th>
+      <th>sports</th>
+      <th>...</th>
+      <th>dress</th>
+      <th>blonde</th>
+      <th>mall</th>
+      <th>shopping</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div></div>
+</div>
+<p>We did not mention this before, because it was not necessary but k-means is very sensitive to input of varying size, length, etc. It was not necessary to focus on this in the previous example, because all the voting behaviour was in the range of 0 to 1. Now, we have interests of very different ranges. The interests are simply based on how many times a keyword appears in teenagers’ social networking contributions.</p>
+<p>Since k-means is based on calculating distances between data points and their centroids, it will be strongly influenced by the magnitudes of the variables we cluster. Think about if for a moment! Just imagine one column having values running from 1 to 10 and another from 1 to 1000. How could we compare distances between them?</p>
+<p>We therefore need to scale the value so that they all fall into the same range. To this end, Python has the scale function in scipy.stats, which centres values around their mean. Using the apply function, we can tell Python to scale all interests values. apply is an alternative way to loop over values in a column and apply a function: <a class="reference external" href="https://www.datacamp.com/community/tutorials/pandas-apply">https://www.datacamp.com/community/tutorials/pandas-apply</a>.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">scipy.stats</span> <span class="pre">import</span> <span class="pre">zscore</span></code> to import zscore, which is very popular in data analysis for standardisation: <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/z-score/">https://www.statisticshowto.com/probability-and-statistics/z-score/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">zscore</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Apply zscore and assign the results to a new dataframe interests_z with <code class="docutils literal notranslate"><span class="pre">interests_z</span> <span class="pre">=</span> <span class="pre">interests.apply(zscore)</span></code>. Finally, print out the first few columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interests_z</span> <span class="o">=</span> <span class="n">interests</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">zscore</span><span class="p">)</span>
+<span class="n">interests_z</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>swimming</th>
+      <th>cheerleading</th>
+      <th>baseball</th>
+      <th>tennis</th>
+      <th>sports</th>
+      <th>...</th>
+      <th>dress</th>
+      <th>blonde</th>
+      <th>mall</th>
+      <th>shopping</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.332217</td>
+      <td>-0.357697</td>
+      <td>-0.242874</td>
+      <td>-0.217928</td>
+      <td>-0.22367</td>
+      <td>-0.259971</td>
+      <td>-0.207327</td>
+      <td>-0.201131</td>
+      <td>-0.168939</td>
+      <td>-0.297123</td>
+      <td>...</td>
+      <td>-0.246906</td>
+      <td>-0.050937</td>
+      <td>-0.369915</td>
+      <td>-0.487314</td>
+      <td>-0.314198</td>
+      <td>-0.201476</td>
+      <td>-0.183032</td>
+      <td>-0.294793</td>
+      <td>-0.261530</td>
+      <td>-0.220403</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.332217</td>
+      <td>1.060049</td>
+      <td>-0.242874</td>
+      <td>-0.217928</td>
+      <td>-0.22367</td>
+      <td>-0.259971</td>
+      <td>-0.207327</td>
+      <td>-0.201131</td>
+      <td>-0.168939</td>
+      <td>-0.297123</td>
+      <td>...</td>
+      <td>8.653277</td>
+      <td>-0.050937</td>
+      <td>1.067392</td>
+      <td>-0.487314</td>
+      <td>-0.314198</td>
+      <td>-0.201476</td>
+      <td>-0.183032</td>
+      <td>-0.294793</td>
+      <td>-0.261530</td>
+      <td>-0.220403</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.332217</td>
+      <td>1.060049</td>
+      <td>-0.242874</td>
+      <td>-0.217928</td>
+      <td>-0.22367</td>
+      <td>-0.259971</td>
+      <td>-0.207327</td>
+      <td>-0.201131</td>
+      <td>-0.168939</td>
+      <td>-0.297123</td>
+      <td>...</td>
+      <td>-0.246906</td>
+      <td>-0.050937</td>
+      <td>-0.369915</td>
+      <td>-0.487314</td>
+      <td>-0.314198</td>
+      <td>-0.201476</td>
+      <td>-0.183032</td>
+      <td>-0.294793</td>
+      <td>2.027908</td>
+      <td>-0.220403</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.332217</td>
+      <td>-0.357697</td>
+      <td>-0.242874</td>
+      <td>-0.217928</td>
+      <td>-0.22367</td>
+      <td>-0.259971</td>
+      <td>-0.207327</td>
+      <td>-0.201131</td>
+      <td>-0.168939</td>
+      <td>-0.297123</td>
+      <td>...</td>
+      <td>-0.246906</td>
+      <td>-0.050937</td>
+      <td>-0.369915</td>
+      <td>-0.487314</td>
+      <td>-0.314198</td>
+      <td>-0.201476</td>
+      <td>-0.183032</td>
+      <td>-0.294793</td>
+      <td>-0.261530</td>
+      <td>-0.220403</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.332217</td>
+      <td>-0.357697</td>
+      <td>-0.242874</td>
+      <td>-0.217928</td>
+      <td>-0.22367</td>
+      <td>-0.259971</td>
+      <td>-0.207327</td>
+      <td>-0.201131</td>
+      <td>-0.168939</td>
+      <td>-0.297123</td>
+      <td>...</td>
+      <td>-0.246906</td>
+      <td>-0.050937</td>
+      <td>-0.369915</td>
+      <td>2.273673</td>
+      <td>-0.314198</td>
+      <td>-0.201476</td>
+      <td>-0.183032</td>
+      <td>-0.294793</td>
+      <td>-0.261530</td>
+      <td>2.285122</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div></div>
+</div>
+<p>It’s clearly normalized around the means of the various columns - by the distance of the standard deviation.</p>
+<div class="section" id="clustering">
+<h3>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h3>
+<p>Now we cluster again and start by importing KMeans. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We decide 5 clusters is enough and assign k = 5. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we are ready to cluster. Create and fit teen_clusters the way you know. It is just a copy and paste job from before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teen_clusters</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span>  <span class="o">=</span> <span class="n">k</span><span class="p">)</span> 
+<span class="n">teen_clusters</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">interests_z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s investigate the size of the clusters with .labels_ and np.bincount.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">teen_clusters</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  908, 21578,  6038,   606,   870])
+</pre></div>
+</div>
+</div>
+</div>
+<p>I have noticed very different results depending on the kmeans results. I suggest to rerun kmeans a couple of times until you see a distribution that looks ok. You want to especially avoid clusters of only one 1 item. This would be the time to determine the optimal k with the elbow method, but we don’t want to to that right now and move on.</p>
+<p>We can also look at the centroids/centres with teen_clusters.cluster_centers_. You learned earlier how to pretty-print this in a data frame. Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">interests_centroids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">teen_clusters</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">interests_z</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">interests_centroids</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interests_centroids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">teen_clusters</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">interests_z</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">interests_centroids</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>swimming</th>
+      <th>cheerleading</th>
+      <th>baseball</th>
+      <th>tennis</th>
+      <th>sports</th>
+      <th>...</th>
+      <th>dress</th>
+      <th>blonde</th>
+      <th>mall</th>
+      <th>shopping</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.452003</td>
+      <td>0.437052</td>
+      <td>0.171378</td>
+      <td>0.216827</td>
+      <td>0.132577</td>
+      <td>0.261951</td>
+      <td>0.184531</td>
+      <td>0.347718</td>
+      <td>0.135710</td>
+      <td>0.869490</td>
+      <td>...</td>
+      <td>0.591162</td>
+      <td>0.406651</td>
+      <td>0.568767</td>
+      <td>0.315440</td>
+      <td>1.377519</td>
+      <td>0.201864</td>
+      <td>0.297601</td>
+      <td>1.735006</td>
+      <td>0.994131</td>
+      <td>1.810507</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.166097</td>
+      <td>-0.163449</td>
+      <td>-0.091878</td>
+      <td>-0.115698</td>
+      <td>-0.117088</td>
+      <td>-0.107607</td>
+      <td>-0.115617</td>
+      <td>-0.109210</td>
+      <td>-0.052060</td>
+      <td>-0.131091</td>
+      <td>...</td>
+      <td>-0.142675</td>
+      <td>-0.028822</td>
+      <td>-0.186639</td>
+      <td>-0.231326</td>
+      <td>-0.187437</td>
+      <td>-0.156447</td>
+      <td>-0.148225</td>
+      <td>-0.091945</td>
+      <td>-0.082360</td>
+      <td>-0.082716</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.512799</td>
+      <td>0.479934</td>
+      <td>0.297921</td>
+      <td>0.373113</td>
+      <td>0.377934</td>
+      <td>0.306472</td>
+      <td>0.340454</td>
+      <td>0.346194</td>
+      <td>0.142671</td>
+      <td>0.333670</td>
+      <td>...</td>
+      <td>0.390665</td>
+      <td>0.034219</td>
+      <td>0.500711</td>
+      <td>0.669656</td>
+      <td>0.379033</td>
+      <td>-0.051412</td>
+      <td>-0.074543</td>
+      <td>0.058950</td>
+      <td>0.123205</td>
+      <td>0.024586</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.098441</td>
+      <td>0.058736</td>
+      <td>-0.100744</td>
+      <td>-0.026073</td>
+      <td>-0.063793</td>
+      <td>0.024111</td>
+      <td>-0.104658</td>
+      <td>-0.122057</td>
+      <td>0.038548</td>
+      <td>-0.097453</td>
+      <td>...</td>
+      <td>0.083546</td>
+      <td>-0.012705</td>
+      <td>-0.071069</td>
+      <td>-0.029428</td>
+      <td>0.007014</td>
+      <td>-0.168166</td>
+      <td>-0.141711</td>
+      <td>0.009078</td>
+      <td>0.052040</td>
+      <td>-0.083963</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.160581</td>
+      <td>0.228956</td>
+      <td>0.104255</td>
+      <td>0.074209</td>
+      <td>0.189449</td>
+      <td>0.253621</td>
+      <td>0.387137</td>
+      <td>0.030201</td>
+      <td>0.133452</td>
+      <td>0.098159</td>
+      <td>...</td>
+      <td>0.154625</td>
+      <td>0.062095</td>
+      <td>0.613071</td>
+      <td>0.785279</td>
+      <td>0.578334</td>
+      <td>4.143999</td>
+      <td>3.982107</td>
+      <td>0.054909</td>
+      <td>0.114780</td>
+      <td>0.050309</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div></div>
+</div>
+<p>A simple way to detect clusters is to find thr maximum values in the columns. Try it by using the idxmax() function from Pandas: <code class="docutils literal notranslate"><span class="pre">interests_centroids.idxmax()</span></code>. Check out its documentation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interests_centroids</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>basketball      2
+football        2
+soccer          2
+softball        2
+volleyball      2
+swimming        2
+cheerleading    4
+baseball        0
+tennis          2
+sports          0
+cute            0
+sex             0
+sexy            0
+hot             4
+kissed          0
+dance           0
+band            3
+marching        3
+music           0
+rock            0
+god             0
+church          2
+jesus           2
+bible           2
+hair            0
+dress           0
+blonde          0
+mall            4
+shopping        4
+clothes         0
+hollister       4
+abercrombie     4
+die             0
+death           0
+drunk           0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hopefully, your results look similar to the table from Lantz (2013) on p. 288:</p>
+<p><img alt="title" src="../../_images/teen-clusters.jpg" /></p>
+<p>Do the names of the clusters make sense to you? Do you remember all those teenage movies you watched?</p>
+<p>Next, let’s continue with another type of analysis. Let’s first assign each teen to a cluster, as we did before in the voting example for the senators. Please, add a column called ‘cluster’ to the teen data frame with <code class="docutils literal notranslate"><span class="pre">teens['cluster']</span> <span class="pre">=</span> <span class="pre">np.array(teen_clusters.labels_)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">teen_clusters</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look at the teen data frame with head(). All the way to the right, you can find the cluster assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>gradyear</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>friends</th>
+      <th>basketball</th>
+      <th>football</th>
+      <th>soccer</th>
+      <th>softball</th>
+      <th>volleyball</th>
+      <th>...</th>
+      <th>clothes</th>
+      <th>hollister</th>
+      <th>abercrombie</th>
+      <th>die</th>
+      <th>death</th>
+      <th>drunk</th>
+      <th>drugs</th>
+      <th>female</th>
+      <th>no_gender</th>
+      <th>cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>19.0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2006</td>
+      <td>M</td>
+      <td>18.0</td>
+      <td>69</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2006</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 44 columns</p>
+</div></div></div>
+</div>
+<p>Let’s print out the first 5 teens and only the columns ‘cluster’, ‘gender’, ‘age’ and ‘friends’. I hope you remember how this works. How do we select the first 5 rows? How do we select the columns? Tip: loc is the function you are looking for.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;friends&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>friends</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>M</td>
+      <td>19.0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>M</td>
+      <td>18.0</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>F</td>
+      <td>19.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>NaN</td>
+      <td>19.0</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Since we have learned earlier how to group by particular interests, let’s aggregate the teens’ features using the clusters.</p>
+<p>Print out the average ages per cluster. Do you remember how this works? Tip: Replace gradyear with cluster and you are ready to go.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;cluster&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>17.085106</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>17.275426</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>17.068400</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>17.377248</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>16.854309</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The clusters do not differ in terms of ages very much. There is no immediate relation between age and interest clusters. Now, let’s look at the female contribution to each cluster. How? Which column to you have to use instead of age?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[[</span><span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;cluster&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster</th>
+      <th>female</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.870740</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.777967</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.893493</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.772329</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.906600</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Overall, 74 per cent of the SNS’s users are female. That’s why they contribute so much to each cluster. Can you see the cluster that has the most female users? Do you know why? Look back to the earlier analysis of the interests linked to the clusters …</p>
+<p>You can check for the average number of friends per cluster now. Just define the target of the aggregation per cluster as friends instead of female or age in the expressions above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teens</span><span class="p">[[</span><span class="s1">&#39;friends&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;cluster&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster</th>
+      <th>friends</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>31.900881</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>27.640050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>37.149222</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>32.457096</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>41.408046</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here, the differences are stronger. We suspect that the number of friends played a key role in assigning the clusters. That’s the nature of a social network, I guess.</p>
+<p>We have now completed our exercises on clustering and understanding political and social communities. For today, we have just one more important question to answer. How do we get access to the kind of data we worked on today? The teens dataset stemmed from a research project in sociology published online, while the US Senate voting behaviour was downloaded from US government websites.</p>
+</div>
+</div>
+<div class="section" id="web-scraping">
+<h2>Web Scraping<a class="headerlink" href="#web-scraping" title="Permalink to this headline">¶</a></h2>
+<p>The web has become a unique source of data for social analysis. Munzert et al. (2014) in their book on ‘Automated data collection (…). A practical guide to web scraping and text mining’ (John Wiley &amp; Sons) emphasize in the Introduction that ‘the rapid growth of the World Wide Web over the past two decades tremendously changed the way we share, collect, and publish data. Firms, public institutions, and private users provide every imaginable type of information and new channels of communication generate vast amounts of data on human behavior. What was once a fundamental problem for the social sciences — the scarcity and inaccessibility of observations — is quickly turning into an abundance of data. This turn of events does not come without problems. (…), traditional techniques for collecting and analyzing data may no longer suffice to overcome the tangled masses of data.’ (p. XV).</p>
+<p>In short, we can find lots of data on the web. A big problem with web data is, however, that it is often inconsistent and heterogeneous. To get access to it, one often has to visit multiple web sites and assemble their data together. Finally, the data is generally published without reuse in mind, which implies that the data can be of low quality. That said, the web is so vast that it still provides an often overwhelming source of exciting data.</p>
+<p>Let’s take a look at how we can access web data in general by scraping web sites.</p>
+<video width="90%" height="90%" controls src="img-videos/Session3.mp4" /><p>Returning to our first example of political communities, we will scrape data on the current composition of the US Senate from Wikipedia.</p>
+<p>This can be a complex task and requires additional libraries. But in this case, we can rely on Pandas directly with its read_html function that does all the hard work for you. Check it at <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html</a>.</p>
+<p>All the content on the web is presented to us in a language called HyperText Markup Language (HTML; <a class="reference external" href="https://en.wikipedia.org/wiki/HTML">https://en.wikipedia.org/wiki/HTML</a>). HTML is of course a way of presenting content on the web in a universal way. It also contains so-called hyperlinks that let you jump from web content to web content.</p>
+<p>If you are interested in the further details of HTML, why not take some time now to visit the excellent <a class="reference external" href="http://www.w3schools.com/html/">http://www.w3schools.com/html/</a>, which contains a lot of practical exercises to learn everything about HTML and other web technologies.</p>
+<p>Each document on the web is identified by a URL. We set the url to the wikipedia page of current US senators and run the below cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/Current_members_of_the_United_States_Senate&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the read_html function of Pandas, we can read in the web content behind the URL. However, if you check the documentation you need to provide Pandas with further details.</p>
+<p>Unfortunately, web content in HTML format is not very structured and often simply chaotic. We would like to download only the table of the page of current US Senators and need to find a so-called ‘match’ for read_html to choose that table from the HTML document.</p>
+<p>Fortunately, for us there are many existing strategies to determine exactly the HTML element we would like to select. I looked for specific names in the table that are not repeated in the rest of the wiki page. Run: <code class="docutils literal notranslate"><span class="pre">senator_wiki</span> <span class="pre">=</span> <span class="pre">pd.read_html('https://en.wikipedia.org/wiki/List_of_current_United_States_senators',</span> <span class="pre">match</span> <span class="pre">=</span> <span class="pre">'Richard</span> <span class="pre">Shelby')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senator_wiki</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/List_of_current_United_States_senators&#39;</span><span class="p">,</span> <span class="n">match</span> <span class="o">=</span> <span class="s1">&#39;Richard Shelby&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If it all worked as it should run the cell below to create our senators dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">senators</span> <span class="o">=</span> <span class="n">senator_wiki</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Portrait</th>
+      <th>Senator</th>
+      <th>Party</th>
+      <th>Party.1</th>
+      <th>Born</th>
+      <th>Occupation(s)</th>
+      <th>Previous electiveoffice(s)</th>
+      <th>Education</th>
+      <th>Assumed office</th>
+      <th>Term up</th>
+      <th>Residence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alabama</td>
+      <td>NaN</td>
+      <td>Richard Shelby</td>
+      <td>NaN</td>
+      <td>Republican[2]</td>
+      <td>(age 87)</td>
+      <td>Lawyer</td>
+      <td>U.S. HouseAlabama Senate</td>
+      <td>University of Alabama (BA, LLB) Birmingham Sch...</td>
+      <td>January 3, 1987</td>
+      <td>2022</td>
+      <td>Tuscaloosa[3]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alabama</td>
+      <td>NaN</td>
+      <td>Tommy Tuberville</td>
+      <td>NaN</td>
+      <td>Republican</td>
+      <td>(age 67)</td>
+      <td>College football coachPartner, investment mana...</td>
+      <td>None</td>
+      <td>Southern Arkansas University (BS)</td>
+      <td>January 3, 2021</td>
+      <td>2026</td>
+      <td>Auburn</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alaska</td>
+      <td>NaN</td>
+      <td>Lisa Murkowski</td>
+      <td>NaN</td>
+      <td>Republican</td>
+      <td>(age 64)</td>
+      <td>Lawyer</td>
+      <td>Alaska House of Representatives</td>
+      <td>Georgetown University (AB) Willamette Universi...</td>
+      <td>December 20, 2002[d]</td>
+      <td>2022</td>
+      <td>Girdwood[4]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Alaska</td>
+      <td>NaN</td>
+      <td>Dan Sullivan</td>
+      <td>NaN</td>
+      <td>Republican</td>
+      <td>(age 56)</td>
+      <td>U.S. Marine Corps officerLawyerAssistant Secre...</td>
+      <td>Alaska Attorney General</td>
+      <td>Harvard University (AB) Georgetown University ...</td>
+      <td>January 3, 2015</td>
+      <td>2026</td>
+      <td>Anchorage[5]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Arizona</td>
+      <td>NaN</td>
+      <td>Kyrsten Sinema</td>
+      <td>NaN</td>
+      <td>Democratic</td>
+      <td>(age 45)</td>
+      <td>Social workerPolitical activistLawyerCollege l...</td>
+      <td>U.S. HouseArizona SenateArizona House of Repre...</td>
+      <td>Brigham Young University (BA) Arizona State Un...</td>
+      <td>January 3, 2019</td>
+      <td>2024</td>
+      <td>Phoenix[6]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Fortunately, the data is already of fairly good quality, but we still need to clean the data a bit.</p>
+<p>Let’s do some basic cleaning, where we ignore the strange textual errors and focus on the various columns that require direct attention. Please:</p>
+<p>(1) Create a ‘Party’ column from whatever name read_html has given that column. In my case, it was called Party.1</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Party&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Party.1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(2) Make sure that the ‘Term up’ is of type int.</p>
+<p>Transfrom the column ‘Term up’ into an integer column with <code class="docutils literal notranslate"><span class="pre">senators['Term</span> <span class="pre">up']</span> <span class="pre">=</span> <span class="pre">senators['Term</span> <span class="pre">up'].astype(int)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Term up&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Term up&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(3) Clean the column ‘Born’ to only contain the numerical age and rename it to ‘Age’.</p>
+<p>As you can see the column Born contains the age of the senator, which we would like to extract from the string. As far as we can see these are the two digits in an otherwise string of letters. So, in (age 87) it is 87. To extract the 87, we can use regular expressions with Pandas. Take a look at <a class="reference external" href="https://www.dataquest.io/blog/regular-expressions-data-scientists/">https://www.dataquest.io/blog/regular-expressions-data-scientists/</a>. We need the str.extract function <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.extract.html">https://pandas.pydata.org/docs/reference/api/pandas.Series.str.extract.html</a>, which is very powerful. Run <code class="docutils literal notranslate"><span class="pre">senators['Age']</span> <span class="pre">=</span> <span class="pre">senators['Born'].str.extract(r'.*(\d\d)')</span></code>.</p>
+<p>The expression with extract says to read (r) all characters in the string (.*) and look for two digits (\d\d) to return these. Regular expressions require some practice and trial and error in my experience.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Born&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.*(\d\d)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(4) Create a ‘Years in Office’ column that uses the information in ‘Assumed office’ to calculate how long the senator has served. Make sure that this column is of type int.</p>
+<p>We first need to know which year we are currently in. We will use this to calculate the years left in office. We can use the datetime library and its now() function. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">year_</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+<span class="n">year_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021
+</pre></div>
+</div>
+</div>
+</div>
+<p>The years in the office of a senator can be calculated by subtracting fro year_ the year when the office was assumed. We can use our regular expression knowledge and simply look for the strings which are four consecutive numbers (\d\d\d\d) and return those. Type in <code class="docutils literal notranslate"><span class="pre">senators['Years</span> <span class="pre">in</span> <span class="pre">Office']</span> <span class="pre">=</span> <span class="pre">year_</span> <span class="pre">-</span> <span class="pre">senators['Assumed</span> <span class="pre">office'].str.extract(r'.*,.*(\d\d\d\d).*').astype(int)</span></code>. Observe that we use astype(int) to make the extracted string into an int.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Years in Office&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">year_</span> <span class="o">-</span> <span class="n">senators</span><span class="p">[</span><span class="s1">&#39;Assumed office&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.*,.*(\d\d\d\d).*&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, let’s delete all unnecessary columns that you now changed such as ‘Born’ and ‘Party.1’. Run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">senators</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Party.1&#39;</span><span class="p">,</span> <span class="s1">&#39;Born&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">senators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-46-94aa654683dd&gt;:2: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument &#39;labels&#39; will be keyword-only
+  senators.drop([&#39;Party.1&#39;, &#39;Born&#39;], 1, inplace = True)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Portrait</th>
+      <th>Senator</th>
+      <th>Party</th>
+      <th>Occupation(s)</th>
+      <th>Previous electiveoffice(s)</th>
+      <th>Education</th>
+      <th>Assumed office</th>
+      <th>Term up</th>
+      <th>Residence</th>
+      <th>Age</th>
+      <th>Years in Office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alabama</td>
+      <td>NaN</td>
+      <td>Richard Shelby</td>
+      <td>Republican[2]</td>
+      <td>Lawyer</td>
+      <td>U.S. HouseAlabama Senate</td>
+      <td>University of Alabama (BA, LLB) Birmingham Sch...</td>
+      <td>January 3, 1987</td>
+      <td>2022</td>
+      <td>Tuscaloosa[3]</td>
+      <td>87</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alabama</td>
+      <td>NaN</td>
+      <td>Tommy Tuberville</td>
+      <td>Republican</td>
+      <td>College football coachPartner, investment mana...</td>
+      <td>None</td>
+      <td>Southern Arkansas University (BS)</td>
+      <td>January 3, 2021</td>
+      <td>2026</td>
+      <td>Auburn</td>
+      <td>67</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alaska</td>
+      <td>NaN</td>
+      <td>Lisa Murkowski</td>
+      <td>Republican</td>
+      <td>Lawyer</td>
+      <td>Alaska House of Representatives</td>
+      <td>Georgetown University (AB) Willamette Universi...</td>
+      <td>December 20, 2002[d]</td>
+      <td>2022</td>
+      <td>Girdwood[4]</td>
+      <td>64</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Alaska</td>
+      <td>NaN</td>
+      <td>Dan Sullivan</td>
+      <td>Republican</td>
+      <td>U.S. Marine Corps officerLawyerAssistant Secre...</td>
+      <td>Alaska Attorney General</td>
+      <td>Harvard University (AB) Georgetown University ...</td>
+      <td>January 3, 2015</td>
+      <td>2026</td>
+      <td>Anchorage[5]</td>
+      <td>56</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Arizona</td>
+      <td>NaN</td>
+      <td>Kyrsten Sinema</td>
+      <td>Democratic</td>
+      <td>Social workerPolitical activistLawyerCollege l...</td>
+      <td>U.S. HouseArizona SenateArizona House of Repre...</td>
+      <td>Brigham Young University (BA) Arizona State Un...</td>
+      <td>January 3, 2019</td>
+      <td>2024</td>
+      <td>Phoenix[6]</td>
+      <td>45</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Just like before, we now would like to ask questions against the dataset and explore it.</p>
+<p>In particular, we would like to understand the pressure on parties during the next election for the US Senate. At the time of writing, these were the 2022 elections for Congress. We could now reuse some of the strategies for exploring data in Pandas we have learned about earlier.</p>
+<p>Let’s look into the questions when their seats are up again for the senators. Create a new dataframe with copy() from senators that only contains the ‘Senator’, ‘State’, ‘Party’, ‘Occupation(s)’, ‘Years in Office’ and ‘Term up’ columns. Call it senators_seatup.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">senators_seatup</span> <span class="pre">=</span> <span class="pre">senators[['Senator',</span> <span class="pre">'State',</span> <span class="pre">'Party',</span> <span class="pre">'Occupation(s)',</span> <span class="pre">'Years</span> <span class="pre">in</span> <span class="pre">Office',</span> <span class="pre">'Term</span> <span class="pre">up']].copy()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup</span> <span class="o">=</span> <span class="n">senators</span><span class="p">[[</span><span class="s1">&#39;Senator&#39;</span><span class="p">,</span> <span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;Party&#39;</span><span class="p">,</span> <span class="s1">&#39;Occupation(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;Years in Office&#39;</span><span class="p">,</span> <span class="s1">&#39;Term up&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>       
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take a look at the first couple of rows of the data, and you will only find those columns you selected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Senator</th>
+      <th>State</th>
+      <th>Party</th>
+      <th>Occupation(s)</th>
+      <th>Years in Office</th>
+      <th>Term up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Richard Shelby</td>
+      <td>Alabama</td>
+      <td>Republican[2]</td>
+      <td>Lawyer</td>
+      <td>34</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tommy Tuberville</td>
+      <td>Alabama</td>
+      <td>Republican</td>
+      <td>College football coachPartner, investment mana...</td>
+      <td>0</td>
+      <td>2026</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lisa Murkowski</td>
+      <td>Alaska</td>
+      <td>Republican</td>
+      <td>Lawyer</td>
+      <td>19</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Dan Sullivan</td>
+      <td>Alaska</td>
+      <td>Republican</td>
+      <td>U.S. Marine Corps officerLawyerAssistant Secre...</td>
+      <td>6</td>
+      <td>2026</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kyrsten Sinema</td>
+      <td>Arizona</td>
+      <td>Democratic</td>
+      <td>Social workerPolitical activistLawyerCollege l...</td>
+      <td>2</td>
+      <td>2024</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What are the types? Do you need to change them?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Senator            object
+State              object
+Party              object
+Occupation(s)      object
+Years in Office     int64
+Term up             int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>In my case, they were ok. They are only strings and ints - all in the right place.</p>
+<p>Next, we would like to determine the next time an election is held. This information is in the ‘Term up’ column and there logically the smallest value. Assign that value to a variable next_election and pring it out by running</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">next_election</span> <span class="o">=</span> <span class="n">senators_seatup</span><span class="p">[</span><span class="s1">&#39;Term up&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">next_election</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">next_election</span> <span class="o">=</span> <span class="n">senators_seatup</span><span class="p">[</span><span class="s1">&#39;Term up&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">next_election</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we select the rows/observations that are relevant for the next election and filter the senators_seatup rows with next_election. Assign the results to senators_seatup_next. Do you remember how to do this? If not check <a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html">https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html</a> for a quick reference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup_next</span> <span class="o">=</span> <span class="n">senators_seatup</span><span class="p">[</span><span class="n">senators_seatup</span><span class="p">[</span><span class="s1">&#39;Term up&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">next_election</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Display all the senators whose seats are up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup_next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Senator</th>
+      <th>State</th>
+      <th>Party</th>
+      <th>Occupation(s)</th>
+      <th>Years in Office</th>
+      <th>Term up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Richard Shelby</td>
+      <td>Alabama</td>
+      <td>Republican[2]</td>
+      <td>Lawyer</td>
+      <td>34</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lisa Murkowski</td>
+      <td>Alaska</td>
+      <td>Republican</td>
+      <td>Lawyer</td>
+      <td>19</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Mark Kelly</td>
+      <td>Arizona</td>
+      <td>Democratic</td>
+      <td>U.S. Navy officerNASA AstronautFounder, Americ...</td>
+      <td>1</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>John Boozman</td>
+      <td>Arkansas</td>
+      <td>Republican</td>
+      <td>Optometrist</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Alex Padilla</td>
+      <td>California</td>
+      <td>Democratic</td>
+      <td>Engineer</td>
+      <td>0</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Michael Bennet</td>
+      <td>Colorado</td>
+      <td>Democratic</td>
+      <td>LawyerInvestment company executiveDenver Publi...</td>
+      <td>12</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Richard Blumenthal</td>
+      <td>Connecticut</td>
+      <td>Democratic</td>
+      <td>Marine Corps Reserve SergeantSenate stafferLaw...</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Marco Rubio</td>
+      <td>Florida</td>
+      <td>Republican</td>
+      <td>Lawyer</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Raphael Warnock</td>
+      <td>Georgia</td>
+      <td>Democratic</td>
+      <td>Pastor</td>
+      <td>0</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Brian Schatz</td>
+      <td>Hawaii</td>
+      <td>Democratic</td>
+      <td>TeacherNonprofit organization executive</td>
+      <td>9</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Mike Crapo</td>
+      <td>Idaho</td>
+      <td>Republican</td>
+      <td>Lawyer</td>
+      <td>22</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Tammy Duckworth</td>
+      <td>Illinois</td>
+      <td>Democratic</td>
+      <td>Army National Guard OfficerCoordinator, Center...</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Todd Young</td>
+      <td>Indiana</td>
+      <td>Republican</td>
+      <td>Marine Corps OfficerProfessorConsultantLawyer</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Chuck Grassley</td>
+      <td>Iowa</td>
+      <td>Republican</td>
+      <td>FarmerCollege professor</td>
+      <td>40</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Jerry Moran</td>
+      <td>Kansas</td>
+      <td>Republican</td>
+      <td>BankerLawyer</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Rand Paul</td>
+      <td>Kentucky</td>
+      <td>Republican</td>
+      <td>Physician specializing in Ophthalmology</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>John Kennedy</td>
+      <td>Louisiana</td>
+      <td>Republican</td>
+      <td>Magazine editorLawyerProfessorStaff of Louisia...</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Chris Van Hollen</td>
+      <td>Maryland</td>
+      <td>Democratic</td>
+      <td>U.S. Senate staff memberMaryland Governor's le...</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Roy Blunt</td>
+      <td>Missouri</td>
+      <td>Republican</td>
+      <td>University president</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Catherine Cortez Masto</td>
+      <td>Nevada</td>
+      <td>Democratic</td>
+      <td>Lawyer</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Maggie Hassan</td>
+      <td>New Hampshire</td>
+      <td>Democratic</td>
+      <td>Lawyer</td>
+      <td>4</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Chuck Schumer</td>
+      <td>New York</td>
+      <td>Democratic</td>
+      <td>Lawyer</td>
+      <td>22</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>Richard Burr</td>
+      <td>North Carolina</td>
+      <td>Republican</td>
+      <td>Sales managerNonprofit organization executive</td>
+      <td>16</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>John Hoeven</td>
+      <td>North Dakota</td>
+      <td>Republican</td>
+      <td>Banker</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>Rob Portman</td>
+      <td>Ohio</td>
+      <td>Republican</td>
+      <td>LawyerU.S. Trade RepresentativeDirector of the...</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>James Lankford</td>
+      <td>Oklahoma</td>
+      <td>Republican</td>
+      <td>TeacherNonprofit program director</td>
+      <td>6</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Ron Wyden</td>
+      <td>Oregon</td>
+      <td>Democratic</td>
+      <td>TeacherNonprofit organization executive</td>
+      <td>25</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Pat Toomey</td>
+      <td>Pennsylvania</td>
+      <td>Republican</td>
+      <td>Currency traderRestaurant owner</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Tim Scott</td>
+      <td>South Carolina</td>
+      <td>Republican</td>
+      <td>Insurance agentFinancial adviser</td>
+      <td>8</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>John Thune</td>
+      <td>South Dakota</td>
+      <td>Republican</td>
+      <td>Nonprofit organization executiveState Railroad...</td>
+      <td>16</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Mike Lee</td>
+      <td>Utah</td>
+      <td>Republican</td>
+      <td>LawyerGovernor's general counselAssistant Unit...</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Patrick Leahy</td>
+      <td>Vermont</td>
+      <td>Democratic</td>
+      <td>Lawyer</td>
+      <td>46</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Patty Murray</td>
+      <td>Washington</td>
+      <td>Democratic</td>
+      <td>TeacherLobbyist</td>
+      <td>28</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Ron Johnson</td>
+      <td>Wisconsin</td>
+      <td>Republican</td>
+      <td>AccountantCorporate executive</td>
+      <td>10</td>
+      <td>2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So far so good. Let’s next group observations together to gain composite insights. Let’s look at the senators per US state. Use senators_seatup_next and the columns ‘State’ and ‘Term up’ to display the number of terms that are up in the next election. Run <code class="docutils literal notranslate"><span class="pre">senators_seatup_next[['State',</span> <span class="pre">'Term</span> <span class="pre">up']].groupby(['State'],</span> <span class="pre">as_index=False).count()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup_next</span><span class="p">[[</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;Term up&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;State&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Term up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alabama</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alaska</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Arizona</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arkansas</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>California</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Colorado</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Connecticut</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Florida</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Georgia</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Hawaii</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Idaho</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Illinois</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Indiana</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Iowa</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Kansas</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Kentucky</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Louisiana</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Maryland</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Missouri</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Nevada</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>New Hampshire</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>New York</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>North Carolina</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>North Dakota</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Ohio</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Oklahoma</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Oregon</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Pennsylvania</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>South Carolina</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>South Dakota</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Utah</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Vermont</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Washington</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Wisconsin</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>At least in 2021, there were quite a few senators up for re-election. How does it look for you?</p>
+<p>Finally, we wanted to look into the election challenges per party. Select ‘Party’ and ‘Term up’ and group by party to display the results with count(), please. You can do it …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup_next</span><span class="p">[[</span><span class="s1">&#39;Party&#39;</span><span class="p">,</span> <span class="s1">&#39;Term up&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Party&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Party</th>
+      <th>Term up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Democratic</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Republican</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Republican[2]</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Republicans had far more seats to lose in 2021. You might see different results depending on the election you look at. Let’s try and find out a little bit more about the senators up for re-election.  What is their median time in office if you group them by party?</p>
+<p>The agg function is the last very powerful Pandas tool we introduce: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.agg.html</a>. Used together with groupby on party we can apply easily several functions like median and count in our case: <code class="docutils literal notranslate"><span class="pre">senators_seatup_next[['Party',</span> <span class="pre">'Years</span> <span class="pre">in</span> <span class="pre">Office']].groupby(['Party']).agg(['median',</span> <span class="pre">'count'])</span></code>. You should read this expression as a pipleine, where you first select two columns from senators_seatup_next, then group by one of the columns and aggregate the values with two functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senators_seatup_next</span><span class="p">[[</span><span class="s1">&#39;Party&#39;</span><span class="p">,</span> <span class="s1">&#39;Years in Office&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Party&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Years in Office</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>median</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>Party</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Democratic</th>
+      <td>6.5</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>Republican</th>
+      <td>10.0</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>Republican[2]</th>
+      <td>34.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In 2021, the Democrats had much younger senators who had also served much shorter, which might indicate that they had much less time to secure the seat for their party. Your results will of course depend on the year you are looking at but can you find similar patterns?</p>
+<p>That’s it for today’s analysis of social communities with the additional bonus of learning a little bit about how to harvest data from the web, which is already advanced stuff. Thank you …</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./AI_for_society/ass3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Communities_of_Digital_Culture_and_Society_1.html" title="previous page">Detecting Political Communities of Practice</a>
+    <a class='right-next' id="next-link" href="../../PredictingModelling.html" title="next page">PredictingModelling</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
