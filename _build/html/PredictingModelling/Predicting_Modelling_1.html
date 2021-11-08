@@ -54,6 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Predicting and Modelling using Deep Learning" href="Predicting_Modelling_2.html" />
+    <link rel="prev" title="Linear Regression Prediction" href="LinearPrediction.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -90,7 +92,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../Introduction.html">
    Introduction to Python
@@ -185,12 +187,12 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_1.html">
+    <a class="reference internal" href="../AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_1.html">
      Detecting Political Communities of Practice
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../AI_for_society/ass3/Analysing_Communities_2.html">
+    <a class="reference internal" href="../AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2.html">
      Social Data from the Web
     </a>
    </li>
@@ -198,43 +200,34 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../PredictingModelling.html">
    PredictingModelling
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="LinearPrediction.html">
      Linear Regression Prediction
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Predicting Modelling 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Predicting_Modelling_2.html">
+     Predicting and Modelling using Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Predicting_Modelling_2.html#decision-boundaries">
+     Decision Boundaries
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Titanic.html">
      Predicting the survival of Titanic passengers
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../FocusGroup.html">
-   Focus Group
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_1.html">
-     Detecting Political Communities of Practice
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html">
-     Social Data from the Web
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../FocusGroup/Communities_of_Digital_Culture_and_Society_2.html#social-networking-communities">
-     Social Networking Communities
     </a>
    </li>
   </ul>
@@ -298,6 +291,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../HistoricalCultures/TidyText.html">
      TidyText
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../HistoricalCultures/CreateCorpusVisualisations.html">
+     Create corpus and Visualise
     </a>
    </li>
   </ul>
@@ -1362,7 +1360,7 @@ Name: quality, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 1624 entries, 0 to 6495
+Int64Index: 1624 entries, 1 to 6490
 Data columns (total 12 columns):
  #   Column                Non-Null Count  Dtype  
 ---  ------                --------------  -----  
@@ -1450,10 +1448,6 @@ memory usage: 164.9+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/sklearn/neural_network/_multilayer_perceptron.py:614: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn&#39;t converged yet.
-  warnings.warn(
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLPClassifier(hidden_layer_sizes=(20, 10), max_iter=300)
 </pre></div>
 </div>
@@ -1473,32 +1467,32 @@ memory usage: 164.9+ KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Weights between input and first hidden layer:
-[[ 3.15914102e-001  6.27310599e-001  9.55514459e-002 -7.03734652e-001
-  -2.29057455e-002  2.48032413e-003  1.96476263e-001 -2.77679019e-003
-  -4.24140770e-001 -7.73217575e-124  3.07337392e-001 -4.75301509e-001
-   1.52330906e-001  2.36834433e-001 -4.05328318e-001 -8.33122602e-001
-  -8.66220522e-002  1.10290161e-002 -7.93881705e-001  4.86561621e-001]
- [-5.83626108e-001  7.34469566e-001  2.86272092e-001  1.66447911e-001
-   7.53931984e-001  4.99782934e-001 -1.18890846e+000  5.58046923e-001
-  -2.89011067e-001 -8.98704300e-127  6.08696710e-001 -7.54053735e-001
-  -8.88652436e-002  5.94620542e-001 -2.77746274e-001  4.53992711e-001
-  -4.16388675e-001  5.01886717e-001  2.83650331e-001  6.12545454e-001]
- [-2.49994312e-001 -2.97866638e-001 -4.83342065e-002 -4.39805326e-001
-  -4.27413605e-003  4.19780983e-001 -1.53447518e-001  1.61738953e-001
-   2.67697651e-002  1.11470779e-126  1.98955068e-001  1.77821247e-001
-  -2.68737754e-001  1.40168284e-001  6.84735364e-002 -4.23185101e-001
-   2.69787527e-001  6.58223857e-001  3.35434483e-001 -8.31207348e-002]]
+[[-7.76617187e-002 -2.23554093e-001  2.72955575e-001  2.24355034e-001
+   2.14426272e-001  1.04620080e-001 -6.30796136e-082 -4.60561421e-001
+  -2.21508364e-001 -3.85228076e-001 -9.66755190e-002 -1.59824360e-001
+  -3.29528507e-001  4.62861239e-104 -1.25556049e-001 -3.26610668e-126
+   3.04383043e-001 -6.43151016e-002  1.03550921e-001  8.03742953e-091]
+ [ 4.45474559e-001 -1.73783056e-001 -3.97232937e-001  4.53817777e-001
+   4.58085650e-001  3.47946600e-001 -7.30120985e-096  3.36130247e-001
+   2.68111186e-001 -8.95899176e-001  4.92893575e-002  3.00530562e-001
+   8.36535624e-001  2.86506303e-062 -1.72632758e-001 -1.45596991e-124
+   2.02624705e-001  1.71282233e-001 -5.75016563e-001  3.01781427e-080]
+ [ 4.39341317e-002  4.72995698e-002  1.06240809e-001 -1.86178451e-001
+  -1.14888436e-001 -1.83684881e-001 -1.97373236e-082  4.50663355e-002
+  -3.22122965e-001  1.77217219e-001 -1.39052885e-001  5.31826606e-001
+   3.55659191e-001  8.02832872e-079  8.75501941e-002 -3.05477744e-110
+  -1.79582020e-002 -1.54420657e-001  3.20666850e-001  5.38572313e-123]]
 
 Weights between first hidden and second hidden layer:
-[[ 1.53364241e-001 -3.31642934e-001  1.85413785e-001 -4.76576967e-093
-   2.22806493e-094 -4.45507302e-001  6.77177436e-001  1.58540727e-001
-  -1.94362391e-001 -2.63725428e-001]
- [-6.30546411e-001 -1.15026526e+000 -1.24095245e+000 -5.47937959e-113
-  -1.62727857e-106 -3.95604595e-001  8.31867590e-001 -1.39879800e+000
-  -1.12726790e+000  6.93287107e-002]
- [ 1.37212770e+000  2.03653032e+000  1.81208412e+000 -2.82997000e-171
-   2.67629188e-129  1.54094479e-015 -1.21996703e+000  1.38391266e+000
-   2.15862536e+000  1.71051125e-001]]
+[[ 4.96475992e-001  5.03378624e-001  5.20798077e-091  4.83970695e-001
+  -4.23128430e-001 -4.61327435e-081 -1.69542796e-002 -5.71492260e-001
+   3.11007879e-001 -7.29710582e-106]
+ [ 1.26730355e+000  1.06909786e+000  3.78642261e-132  1.89282477e+000
+  -1.44453576e+000  1.62461975e-061 -1.11440041e+000 -1.84014722e+000
+  -1.80119355e-001  3.27372029e-105]
+ [ 2.09114815e+000  1.43389014e+000 -4.63429935e-069  1.89996400e+000
+  -1.89401496e+000 -4.66507983e-073 -2.02646483e+000 -2.09582068e+000
+  -5.43790456e-001 -2.48953885e-111]]
 </pre></div>
 </div>
 </div>
@@ -2211,6 +2205,8 @@ This will be a horizontal plot as we set x to the numerical variable and y to th
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="LinearPrediction.html" title="previous page">Linear Regression Prediction</a>
+    <a class='right-next' id="next-link" href="Predicting_Modelling_2.html" title="next page">Predicting and Modelling using Deep Learning</a>
 
         </div>
         

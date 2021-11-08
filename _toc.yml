@@ -25,17 +25,18 @@
    - file: AI_for_society/ass2/Civility_in_Communication
    - file: AI_for_society/ass3/Data_Exploration
    - file: AI_for_society/ass3/US_Congress_Sponsors
-   - file: AI_for_society/ass3/Analysing_Communities_1
-   - file: AI_for_society/ass3/Analysing_Communities_2
+   - file: AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_1
+   - file: AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2
 - file: PredictingModelling
   sections:
    - file: PredictingModelling/LinearPrediction
-   - file: PredictingModelling/PredictingModelling
+   - file: PredictingModelling/Predicting_Modelling_1
+   - file: PredictingModelling/Predicting_Modelling_2
    - file: PredictingModelling/Titanic
-- file: FocusGroup
-  sections:
-   - file: FocusGroup/Communities_of_Digital_Culture_and_Society_1
-   - file: FocusGroup/Communities_of_Digital_Culture_and_Society_2
+# - file: FocusGroup
+#   sections:
+#    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_1
+#    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_2
 - file: DigitalMarketing
   sections:
    - file: DigitalMarketing/Basics
@@ -48,6 +49,7 @@
    - file: HistoricalCultures/hate-speech-twitter
    - file: HistoricalCultures/Quanteda
    - file: HistoricalCultures/TidyText
+   - file: HistoricalCultures/CreateCorpusVisualisations.ipynb
 - file: SocialSensing
   sections:
    - file: SocialSensing/APIs/Nowcasting-GTrends
@@ -57,7 +59,9 @@
    - file: SocialSensing/Graphs/Reveredetection
 - file: VisualsArts
   sections:
-   - file: VisualsArts/AdvancedVisualisation
+   - file: VisualsArts/Advanced/Visuals_and_Arts_1
+   - file: VisualsArts/Advanced/Visuals_and_Arts_1
+   
  
 
 
