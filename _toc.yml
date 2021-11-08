@@ -59,8 +59,7 @@
    - file: SocialSensing/Graphs/Reveredetection
 - file: VisualsArts
   sections:
-   - file: VisualsArts/Advanced/Visuals_and_Arts_1
-   - file: VisualsArts/Advanced/Visuals_and_Arts_1
+   - file: VisualsArts/AdvancedVisualisation
    
  
 

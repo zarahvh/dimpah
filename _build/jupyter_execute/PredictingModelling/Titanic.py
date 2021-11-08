@@ -73,7 +73,7 @@ So, we will automatically build something like this:
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-img = mpimg.imread('decision-tree.png')
+img = mpimg.imread('images/decision-tree.png')
 imgplot = plt.imshow(img)
 plt.show()
 

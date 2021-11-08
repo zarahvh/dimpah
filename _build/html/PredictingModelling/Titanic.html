@@ -340,7 +340,12 @@
   <a class="reference internal" href="../VisualsArts.html">
    Visuals Arts
   </a>
-  <ul class="simple collapse-ul">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VisualsArts/AdvancedVisualisation.html">
+     Lots of fun with Python visualisations
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -1034,39 +1039,14 @@ Females: Counter({1: 233, 0: 81})
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;decision-tree.png&#39;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/decision-tree.png&#39;</span><span class="p">)</span>
 <span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">5638</span><span class="n">d44e667e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;decision-tree.png&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/matplotlib/image.py</span> in <span class="ni">imread</span><span class="nt">(fname, format)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1499</span>                     <span class="n">response</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="g g-Whitespace">   </span><span class="mi">1500</span>                 <span class="k">return</span> <span class="n">imread</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">ext</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1501</span>     <span class="k">with</span> <span class="n">img_open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1502</span>         <span class="k">return</span> <span class="p">(</span><span class="n">_pil_png_to_float_array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1503</span>                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngImageFile</span><span class="p">)</span> <span class="k">else</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/PIL/ImageFile.py</span> in <span class="ni">__init__</span><span class="nt">(self, fp, filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="k">if</span> <span class="n">isPath</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>             <span class="c1"># filename</span>
-<span class="ne">--&gt; </span><span class="mi">109</span>             <span class="bp">self</span><span class="o">.</span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">fp</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_exclusive_fp</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;decision-tree.png&#39;
-</pre></div>
-</div>
+<img alt="../_images/Titanic_15_0.png" src="../_images/Titanic_15_0.png" />
 </div>
 </div>
 <p>You need to load the scikit library to make decision trees.</p>
@@ -1125,7 +1105,7 @@ Females: Counter({1: 233, 0: 81})
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Titanic_22_01.png" src="../_images/Titanic_22_01.png" />
+<img alt="../_images/Titanic_22_0.png" src="../_images/Titanic_22_0.png" />
 </div>
 </div>
 </div>
@@ -1174,7 +1154,7 @@ Females: Counter({1: 233, 0: 81})
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({0: 254, 1: 77})
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({0: 184, 1: 147})
 </pre></div>
 </div>
 </div>
