@@ -2,12 +2,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 import networkx as nx
-import nltk
 from collections import Counter
-from nltk.corpus import stopwords
+
+import nltk
 from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
 from wordcloud import WordCloud
-import tweepy
+
 
 from matplotlib.figure import Figure
 from pandas.plotting import register_matplotlib_converters
@@ -23,6 +24,45 @@ try:
     nltk.data.find('corpora/stopwords')
 except:
     nltk.download('stopwords')
+
+# Social Sensing 1
+
+
+def make_wordcloud_tweets(tweet_text):
+    strings = ''.join(tweet_text)
+    corpus = word_tokenize(strings)
+    corpus = [word.replace(" ", "") for word in corpus]
+    corpus = [word.lower() for word in corpus if word.isalpha()]
+    stopwords_ = list(stopwords.words('english'))
+    corpus = [word for word in corpus if word not in stopwords_]
+    wordcloud = WordCloud(width = 800, height = 800, 
+                background_color ='white',  
+                min_font_size = 10).generate(str(corpus)) 
+  
+    # plot the WordCloud image
+    f, ax = plt.subplots(figsize = (8, 8), facecolor = None)
+    ax.imshow(wordcloud) 
+    plt.axis("off") 
+    
+    return ax
+
+
+def create_twitter_network(sn_list):
+    G = nx.Graph()
+    twitter_network_df = pd.DataFrame(sn_list, columns=['source', 'target'])
+    G = nx.from_pandas_edgelist(twitter_network_df)
+    d = dict(G.degree)
+    
+    f, ax = plt.subplots(figsize = (20, 20))
+    pos = nx.spring_layout(G)
+    
+    nx.draw(G, pos, edge_color='lightgrey', node_color = 'tomato',
+            node_size=[v * 100 for v in d.values()], with_labels=True)
+    return ax
+
+
+
+# Social Sensing 2  
 
 #https://stackoverflow.com/questions/43541376/how-to-draw-communities-with-networkx
 def community_layout(g, partition):
@@ -121,100 +161,3 @@ def plot_twitter_activity(tweets):
     counts = Counter(dates)
     plt.bar(counts.keys(), counts.values())
     return fig
-
-
-def plot_wordcloud(words):
-    strings = ''.join(words)
-    corpus = word_tokenize(strings)
-    corpus = [word.replace(" ", "") for word in corpus]
-    corpus = [word.lower() for word in corpus if word.isalpha()]
-
-    stop_words = list(stopwords.words('english'))
-    corpus = [word for word in corpus if word not in stop_words]
-    wordcloud = WordCloud(width = 800, height = 800, 
-                    background_color ='white',  
-                    min_font_size = 10).generate(str(corpus)) 
-
-    plt.figure(figsize = (8, 8), facecolor = None) 
-    plt.imshow(wordcloud) 
-    plt.axis("off") 
-    plt.tight_layout(pad = 0) 
-
-    plt.show() 
-
-
-# +
-# Get list of al the follower ids (https://towardsdatascience.com/how-to-download-and-visualize-your-twitter-network-f009dbbf107b)
-    
-def get_follower_list(user, twit_key):
-    if twit_key != '':
-        user_id = user.id
-        user = [user_id]
-        follower_list = []
-        for user in user:
-            followers = []
-            try:
-                for page in tweepy.Cursor(api.followers_ids, user_id=user).pages():
-                    followers.extend(page)
-            except tweepy.TweepError:
-                print("error")
-                continue
-            follower_list.append(followers)
-    else:
-        df = pd.read_csv('followers_tobias.csv')
-        follower_list = df['followers'].to_list()
-    return follower_list
-
-
-# -
-
-def get_follower_count(followers,n):
-    fol_count = []
-    for follower in followers[:n]:
-        try:
-            user = api.get_user(follower)
-            count = user.followers_count
-            fol_count.append(count)
-        except tweepy.TweepError:
-            fol_count.append(0)
-            print("error")
-            continue
-    return fol_count
-
-
-def get_friends_count(user, followers):
-
-    friends_count = []
-    for follower in followers:
-        try:
-            user = api.get_user(follower)
-            count = user.friends_count
-            friends_count.append(count)
-        except tweepy.TweepError:
-            friends_count.append(0)
-            print("error")
-            continue
-    
-    return friends_count
-
-
-# +
-def get_friends_of20(user):
-    n = 1
-    for user in user:
-        friends = []
-        screen_name_friends = []
-        try:
-            if n != 20:
-                for friend in tweepy.Cursor(api.friends_ids, user_id=user).items():
-                    n+=1
-                    friends.append(friend)
-                    user = api.get_user(friend)
-                    name = user.screen_name
-                    screen_name_friends.append(name)
-        except tweepy.TweepError:
-            friends.append('error')
-            print("error")
-            continue
-
-

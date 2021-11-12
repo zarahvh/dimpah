@@ -2,15 +2,17 @@
 
 There are a lot of social, cultural and other datasets out there on the web. We have already learned how to extract data from web sites directly. 
 
-Many data items can also be accessed via a so-called API (Application Programming Interface). You can think of an API as a window through which you have access to remotely stored data rather than web pages. Often access to these APIs is limited by some kind of registration key you have to use to open that window. 
+Many data items can also be accessed via a so-called API (Application Programming Interface). You can think of an API as a window through which you have access to remotely stored data rather than web pages. Often access to these APIs is limited by some kind of registration key you have to use to open that window. We will start with a few open APIs before we try Twitter and its complicated access.
 
-First, we will use data from https://www.data.gov/, which is 'the home of the U.S. Government’s open data'.
+Run the cell below to load some of our typical libraries.
 
+#Keep cell
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 import sca
-from ipynb.fs.full.keys import *
+
+In the first part, we will use data from https://www.data.gov/, which is 'the home of the U.S. Government’s open data'.
 
 To call an API in Python and access data from a website we need the requests package first.  Please, import it with `import requests`.
 
@@ -20,11 +22,15 @@ You can think of the API calls we are doing as a direct way of accessing the dat
 
 What do you see? You should see details about an address in the United States '1600 Amphitheatre Parkway, Mountain View, CA'. What you see is the JSON format, which is a way of transmitting data rather than websites. According to https://en.wikipedia.org/wiki/JSON, JSON describes'data objects consisting of attribute–value pairs'. For instance, you should see something like "address":"1600 Amphitheatre Parkway, Mountain View, CA", which defines the address. It looks a bit like a Python dictionary. 
 
-Next we need to open a session with request. Type in `S = requests.Session()`.
+Python provides easy access to JSON files. Run `import json`.
+
+import json
+
+To get to the JSON file, we need to open a session with request. Type in `S = requests.Session()`.
 
 S = requests.Session()
 
-Then, we define the URL we have to address with our call, which is everything before the ? in the URL above. So, type in `URL = 'https://developer.nrel.gov/api/utility_rates/v3.json'`.
+Then, we define the URL we have to address with our call, which is everything before the ? in the URL you typed into the brower. So, type in `URL = 'https://developer.nrel.gov/api/utility_rates/v3.json'`.
 
 URL = 'https://developer.nrel.gov/api/utility_rates/v3.json'
 
@@ -45,9 +51,9 @@ PARAMS = {
     "api_key": 'DEMO_KEY'
 }
 
-Do you know who ‘lives’ at this address? 
+Do you know who ‘lives’ at this address? It's Google's headquarters.
 
-Next we run the actual request, which is called a get-request, because we want to retrieve data. We can also 'put' data with a put request, if we have the right access. For the call `R = S.get(url=URL, params=PARAMS, verify=False)`, we need the URL and PARAMS as parameters. We also say verify=False, as we are just experimenting and don't need verification. Please, ignore any warning you might get.
+Next we run the actual request, which is called a get-request, because we want to retrieve data. We can also 'put' data with a put request, if we have the right access. For our next call `R = S.get(url=URL, params=PARAMS, verify=False)`, we need the URL and PARAMS as parameters. We also say verify=False, as we are just experimenting and don't need verification. Please, ignore any warning you might get.
 
 R = S.get(url=URL, params=PARAMS, verify=False)
 
@@ -66,23 +72,23 @@ Unfortunately, the result is a rather complex structure still. It is a dictionar
 
 DATA['outputs']['utility_name']
 
-This way, we got the utitility name. Try now to get the residential electricity rate at the address, look for outputs and then residential. Tip: you need to replace 'utility_name' with 'residential'.
+This way, we got the utitility name. Try now to get the residential electricity rate at the address. Look for outputs and then residential. Tip: you need to replace 'utility_name' with 'residential'.
 
 DATA['outputs']['residential']
 
 There are many useful APIs out there. Check out https://www.programmableweb.com/. Unfortunately, many are not as easy to access as data.gov. 
 
-Let's check next the geo-locations for our address. You have of course already guessed that it is the location of the Googleplex, Google’s HQ. 
+Let's check next the geo-locations for our address.
 
-We will now repeat the same steps as above but with the wikipedia API. It really is always just the repetition of the same steps. 
+We will now repeat the same steps as above but with the wikipedia API. API work is always just the repetition of the same or very similar steps. 
 
-Type in `URL = 'https://en.wikipedia.org/w/api.php'` to go to the Wikipedia API service
+Type in `URL = 'https://en.wikipedia.org/w/api.php'` to go to the Wikipedia API service.
 
 URL = 'https://en.wikipedia.org/w/api.php'
 
 We are interested in the latitude and longitude of the Googleplex. 
 
-To this end we need to give the API the following paramenter, which define the type of action, the format, the title of Wikipedia page and what it should return, the coordinates.
+To this end, we need to give the API the following paramenters. They define the type of action, the format, the title of Wikipedia page and what it should return, which are the coordinates.
 
 Run:
 ```
@@ -101,7 +107,7 @@ PARAMS = {
     "prop": "coordinates"
 }
 
-The cell is given to you, as it just exectures the requests and decodes the returned data.
+The next cell is given to you, as it just exectures the requests and decodes the returned data. Run it.
 
 #Keep cell
 
@@ -110,7 +116,7 @@ DATA = R.json()
 pages = DATA['query']['pages']
 pages
 
-The longitude and latitude are hidden in there somewhere. Print out the latitude with `pages['773423']['coordinates'][0]['lat']`. The first number might differ ...
+The longitude and latitude are hidden in there somewhere. Print out the latitude with `pages['773423']['coordinates'][0]['lat']`. The first number might differ but you can find it as the first element of our output.
 
 pages['773423']['coordinates'][0]['lat']
 
@@ -118,257 +124,315 @@ You could now use https://www.latlong.net/Show-Latitude-Longitude.html to map th
 
 We have just worked through simple API requests that got us locations. More interesting will be to access social media applications like Twitter and Facebook. We can also get their data through APIs. Twitter is especially popular. 
 
-In python there is a library that makes accessing Twitter data simple. Download and import tweepy.
+In Python, there is a library that makes accessing Twitter data simple. Tweepy (https://docs.tweepy.org/en/stable/) hides from us all the complicated questions of authentication and parsing JSON responses. Load it with `import tweepy`.
 
 import tweepy
 
-if twit_key != '':
-    consumer_key = twit_key
-    consumer_secret = twit_secr
-    access_token = twit_token
+Because we are dealing for Twitter with more personal information and there is a large company behind the data, going through the authentication with Twitter is not easy. Here is the technical documentation: https://docs.tweepy.org/en/stable/auth_tutorial.html. There are many useful online instructions like https://towardsdatascience.com/how-to-access-twitters-api-using-tweepy-5a13a206683b. If you are linked to a university, there is also a special research access mode: https://consent.yahoo.com/v2/collectConsent?sessionId=3_cc-session_79541b62-34e2-4451-8830-2f49ef2ef090. 
 
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    api = tweepy.API(auth, wait_on_rate_limit=True)
-else:
-    print('No api key available, skip next cell')
 
-We are connected to Twitter and can run queries. Let’s get Barack Obama's timeline and his first tweet first
+But you might quickly want to forget about the technical details and are probably happy as long as you can connect? Once you have read through some tutorials, just run the cell below to get started with today's Twitter work.
 
-if twit_key != '':
-    tweets = api.user_timeline(screen_name = 'BarackObama', count=100)
-    first_tweet = tweets[0]
+#Keep cell
 
-Let's check the first tweet of the dataset by typing first_tweet.text
+consumer_key = 'YOUR-CONSUMER-KEY'
+consumer_secret = 'YOUR-CONSUMER-SECRET'
+access_token = 'YOUR-ACCESS-TOKEN'
 
-if twit_key != '':
-    print(first_tweet.text)
-else:
-    obama_tweets = pd.read_csv('obama_tweets.csv')
-    first_tweet = obama_tweets.text[0]
-    print(first_tweet)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+api = tweepy.API(auth, wait_on_rate_limit=True)
+api
 
-To see all the attributes of a tweet, simply type tweets[0], but for now we only want to check the date using first_tweet.created_at
+Most of the details of the authentication are linked to the keys, tokens, etc. you received when registering your account. Hopefully, you are connected afterwards to the API and it shows something like <tweepy.api.API at 0x7f8b990465f8>. 
 
-if twit_key != '':
-    print(first_tweet.created_at)
-else:
-    print(obama_tweets.iloc[0]['created_at'])
+One important detail I would like to quickly discuss is the rate limit of Twitter. Twitter limits the amount of API calls you can do at any moment in time, which is often an issue if you retrieve a lot of followers from big accounts. Rate limits are one of the biggest issues in Twitter analysis once the data gets a bit bigger. Check out the details at https://dev.twitter.com/rest/public/rate-limiting. You will find plenty of people online who complain, as you quickly reach your rate limit. So, be careful with the access to the API. wait_on_rate_limit=True in tweepy.API tells all your api calls to automatically wait for your rate limit to refresh.
 
-Could we find a way to plot Obama his twitter activity?
+But you might not have Twitter API access yet? Then, continue with some historical data and run the next cell. You need to first click on it and make it into a 'code' cell from the drop-down menu above. Then, continue with cells 23-45 and cell 45 for the further analysis.
 
-TB: I would provide the following as a helper function and add it to sca.py where we should collect all the helper functions.
+#Keep cell
 
-Then, just say please run 
+follower_df =  pd.read_csv('data/followers-tb.csv')
+with open("data/all_sn_list.json", 'r') as f:
+    all_sn_list = json.load(f)
 
-sca.plot_twitter_activity(tweets)
+If you are already connected to Twitter on the other hand, you can run your own queries. Let’s get Barack Obama's timeline and his first tweet first. This is easy with `tweets = api.user_timeline(screen_name = 'BarackObama', count=100)`. As you can see Tweepy hides all the complexities of API calls into functions like user_timeline(). You preceed all these functions with Tweepy's 'api.'. In this case, you ask for the screen_name of Barack Obama and you want to retrieve 100 tweets. 
 
-Let’s move on from Obama. In order to access my own Twitter favourites, please type in api.favorites('tobias_blanke')
+tweets = api.user_timeline(screen_name = 'BarackObama', count=100)
 
-if twit_key != '':
-    favorites = api.favorites('tobias_blanke')
-    favorite = favorites[0] 
-    print(favorite.text)
-else:
-    print('not possible without key')
+Did I say that Tweepy hides all the complicated JSON details. Well, this is not entirely true, as of course it does not know what you would like to retrieve. 
 
-So far, so good. Of course, these requests were quite simple. So, let’s try something more complicated. We start with first a look at the retweet structures and then a typical content analysis in Twitter. Tweets are little pieces of texts with lots of metadata attached to them (https://en.wikipedia.org/wiki/Twitter). So, it is not surprising that many people try and run text analysis on the content of tweets. Let’s start with that.
+Let's check the first tweet of the dataset by typing `tweets[0]`. As you can see tweets is a list. We will be working with a lot of lists today.
 
-The first step is to search Twitter for something of interest by running api.search(q=‘#uva’, count = 10). This search will look for the most recent tweets (count=10) with the hashtag uva.
-
-if twit_key != '':
-    uva_tweets = api.search(q='#uva', count =10)
-else:
-    uva_tweets = pd.read_csv('uva_tweets.csv')
+tweets[0]
 
 As we can see each tweet has an id and a lot of other metadata attached to it such as retweets, locations, etc. Did you know that you produce so much information with each tweet?
 
-There are a lot of things we can do with tweets and their metadata. Have a look at the documentation of the package or the many examples online. A quick example would be to return retweets. The first step is to find them. Looking at the metadata of each tweet in kcl_tweets, there are two relevant fields with retweet_count and retweeted. With retweet_count, we can check whether a tweet has been retweeted (retweet_count > 0), while retweeted tells us whether a tweet was a retweet itself. We want to find only those tweets that have not been retweets (retweeted == False) but are not a retweet. So, please select those kcl_tweets that have been retweeted. 
+Tweepy maskes it easy to access the details. To get the text of tweet, e.g., type in `tweets[0].text`.
 
-retweeted_uva_tweets = []
-if twit_key != '':
-    for uva_tweet in uva_tweets:
-        if uva_tweet.retweeted == False and uva_tweet.retweet_count > 0:
-            retweeted_uva_tweets.append(uva_tweet.text)
-else:
-    for index, row in uva_tweets.iterrows():
-            if uva_tweets.iloc[index]['retweeted'] == False and uva_tweets.iloc[index]['retweet_count'] > 0:
-                retweeted_uva_tweets.append(uva_tweets.iloc[index]['text'])
-print(retweeted_uva_tweets)
+tweets[0].text
 
-As promised, we would like to run some simple content analysis with the text in the tweets. We will produce a simple word cloud. But before we can do this we need to first create a corpus from the tweets, the same as we did with the speeches in the Text assignment.
-Let's first extract the text from the uva_tweets.
+With the dot notation tweets[0].text, you can access all the attributes. For instance, each tweet has an id. Run `tweets[0].id`.
 
-tweet_text = []
-if twit_key != '':
-    for t in uva_tweets:
-        text = t.text
-        tweet_text.append(text)
-else:
-    for index, row in uva_tweets.iterrows():
-        text = uva_tweets.iloc[index]['text']
-        tweet_text.append(text)
+tweets[0].id
 
- sca.plot_wordcloud(tweet_text)
+Let's do some quick timeline analysis next. Can you access the attribute 'created_at'?
 
-Hmmm https shows up there pretty big, let's check if everything went alright. 
-Print the tweets that we just added to the corpus.
+tweets[0].created_at
 
-tweet = tweet_text[0]
-print(tweet)
+This returns a datetime object, which as the year, month, day, minutes and seconds. Dates are complicated to represent in any programming language, but Python has some powerful tools at hand. We will come back to this several times. Here, we move on.
 
-As we can see there is a link to the tweet in each text, we should have removed that first. We can use regular expressions for this.
+With the timeline, we can plot Obama's Twitter activity? We have provided a helper function. Type in  `sca.plot_twitter_activity(tweets)`.
 
+sca.plot_twitter_activity(tweets)
+
+Nice. Timelines are a very popular analysis with only one piece of the rich metadata of Twitter. They show patterns of Twitter activities for individuals. Or you could test whether a certain topic/hashtag generates more excitement at specific times, etc. 
+
+Let’s move on from Obama. In order to access my own Twitter favourites, please type in `api.favorites('tobias_blanke')`.
+
+favorites = api.favorites('tobias_blanke')
+
+Let's check the text of the first tweet I marked as favourite. Do you know how?
+
+favorites[0].text
+
+So far, so good. Of course, these requests were quite simple. So, let’s try something more complicated. We start with  a look at retweet structures and then a typical content analysis in Twitter. Tweets are little pieces of texts with lots of metadata attached to them (https://en.wikipedia.org/wiki/Twitter). So, it is not surprising that many people try and run text analysis on the content of tweets. Let’s start with that.
+
+The first step is to search Twitter for something of interest by running `tweets = api.search(q=‘#uva’, count = 10)`. This search will look for the most recent tweets (count=10) with the hashtag uva.
+
+tweets = api.search(q='#uva', count = 10)
+
+Again, we get a list of tweets back. But now we want to do something more complicated with the results than just access one tweet. In Python, we have loops for that - as you might remember. Let's take a look at a foor-loop example that simply prints out a number of integers. You might remember range(), which will give us a list of integers? 
+
+Run:
+```
+for x in range(10):
+    x = x * 2
+    print(x)
+```
+
+for x in range(10):
+    x = x * 2
+    print(x)
+
+Of course, you noticed that we also multiplied x by 2 before we printed it. In a for-loop you can do any kind of complex calculations. However, for-loops also often become complicated quickly.
+
+Python provides list comprehensions to make the processing of lists much easier. Check out: https://docs.python.org/3/tutorial/datastructures.html. A very good tutorial can be found at https://www.programiz.com/python-programming/list-comprehension.
+
+The general structure of a list comprehensionis [expression for item in list]. To replace a for-loop to create a list of 10 numbers with a list comprehension, simply run this one line: `[x for x in range(10)]`.
+
+[x for x in range(10)]
+
+You can also apply a function to x by adding it at the beginning. Run `[x*2 for x in range(10)]`  to multiply x by 2.
+
+[x*2 for x in range(10)]
+
+Finally, you can filter the numbers by adding an if-statement. `[x*2 for x in range(10) if x % 2 == 0]` will keep only even numbers. % is the modulo operator. Try it.
+
+[x*2 for x in range(10) if x % 2 == 0]
+
+You will get used to list comprehensions with practice ...
+
+Let's use our new knowledge to print out all the texts in tweets. Run `[tweet.text for tweet in tweets]`.
+
+[tweet.text for tweet in tweets]
+
+Before our excursion into list comprehensions, we promised to look into retweets , which are either directly indicated in the tweet metadata tweet.retweeted=True or are done the old fashioned way with RT @ in the text. So, let's use our new knowledge about how to filter list comprehensions and add an if-statement to set retweeted_tweets. 
+
+We need to combine the two conditions with an or statement. Type in `retweeted_tweets = [tweet for tweet in tweets if ((tweet.retweeted) or ('RT @' in tweet.text))]`.
+
+retweeted_tweets = [tweet for tweet in tweets if ((tweet.retweeted) or ('RT @' in tweet.text))]
+
+Next print out all the texts of retweeted_tweets with a list comprehension. You can do it!
+
+[tweet.text for tweet in retweeted_tweets]
+
+Retweets can be used as a proxy for tweet importance. However, be careful, as people retweet for all kinds of reasons.
+
+As promised, we would also like to run a simple content analysis with the text in the tweets. We will produce a simple word cloud. Let's first extract the text from the tweets with `tweet_text = [tweet.text for tweet in tweets]`. You should be used to it by now?
+
+tweet_text = [tweet.text for tweet in tweets]
+
+We have created a very pretty make_wordcloud function to create a word cloud from the texts of tweets. Run `sca.make_wordcloud_tweets(tweet_text)`. Later you will learn how to create word clouds yourself but for now this is enough.
+
+sca.make_wordcloud_tweets(tweet_text)
+
+Hmmm, https shows up there pretty big, let's check if everything was ok. Print tweet_text.
+
+tweet_text
+
+As we can see there is a link to the tweet in each text, we should have removed that first. We can use regular expressions for this. They are complicated but powerful and implemented in the Python library re. Load it with `import re`.
 
 import re
-tweet = re.sub(r'http\S+', '', tweet)
-print(tweet)
 
-cleaned_tweets = []
-for tweet in tweet_text:
-    tweet = re.sub(r'http\S+', '', tweet) 
-    cleaned_tweets.append(tweet)
+https://www.w3schools.com/python/python_regex.asp is a simple but effective tutorial of regular expressions in Python. 
 
-cleaned_tweets   
+Regular expressions require some practice, and it is best to learn from examples. Try `re.sub(r'http\S+', '', tweet_text[0])` to remove all https from the first tweet. re.sub (for substitute) takes two arguments. The first one is the regular expression pattern to match and the second one is the substitutions. We want to remove the https, so we substitute with an empty string ''. You need to read the regular expression pattern as 'find http and then any non-whitespace characters (\S+) until you reach a whitespace', This will remove the whole URL as in http://wwe.example.com.
 
-plot_wordcloud(cleaned_tweets)
+re.sub(r'http\S+', '', tweet_text[0])
 
-Very popular with Twitter is also the analysis of followers. I don’t have so many. In fact, I am not really using Twitter much. But let’s still try. You can get my Twitter information by entering me = api.get_user(screen_name = 'tobias_blanke')
+Next we want to use our re.sub(r'http\S+', '', ...) to remove all https in all tweets. Of course, we can do it with a list comprehension, because we can use a function directly on the expression. Assign `cleaned_tweet_text = [re.sub(r'http\S+', '', tweet) for tweet in tweet_text]`.
 
-if twit_key != '':
-    me = api.get_user(screen_name = 'tobias_blanke')
-    print(me.description)
-else:
-    print('not possible without key')
+cleaned_tweet_text = [re.sub(r'http\S+', '', tweet) for tweet in tweet_text]    
 
-It’s me! My followers are a little bit more interesting. We can retrieve by going throug api.followers('tobias_blanke')
+Can you run our wordcloud function again to print out cleaned_tweet_text? 
 
-# get first 20 followers
+sca.make_wordcloud_tweets(cleaned_tweet_text)
 
-if twit_key != '':
-    for follower in api.followers('tobias_blanke'): 
-        print(follower.screen_name)
-else:
-    print('not possible without key')
+Very popular with Twitter is also the analysis of followers. I don’t have very many. In fact, I am not really using Twitter much. But let’s still try. You can get my Twitter information by entering `me = api.get_user(screen_name = 'tobias_blanke')`.
 
-I haven’t explained it yet, but Twitter limits the amount of API calls you can do at any moment in time, which is often an issue if you retrieve a lot of followers from accounts like Donalds Trump’s. Rate limits are often one of the biggest issues in Twitter analysis once the data gets a bit bigger. Check it out at https://dev.twitter.com/rest/public/rate-limiting. You will find plenty of people online who complain.
+me = api.get_user(screen_name = 'tobias_blanke')
 
-Which is also something that can happen while trying to access the information that we try to extract in this assignment, just in case that happens you can find a csv file with the same info in data.
+Print out my description with `me.description`.
 
-Let's first get the ids of all the followers
+me.description
 
-follower_list = sca.get_follower_list(me, twit_key=twit_key)
+It’s me! 
 
-A key measure of my own importance on Twitter is the importance of the people who follow me. Does this make sense? Of course it does, as with important followers you can influence a lot of people. Let’s plot this measure and get an overview of the friends and followers of those who follow me. 
-To do so we first want to create a dataframe that contains all my followers and their follower and friend count.
+My followers are a little bit more interesting. We can retrieve them by using api.followers('tobias_blanke'). Run `[follower.screen_name for follower in api.followers('tobias_blanke')]` to retrieve the screen names of 20 of my followers.
 
-# Create dataframe
-# if no key is used it is already a dataframe
+[follower.screen_name for follower in api.followers('tobias_blanke')]
 
-import pandas as pd
+There are only 20 because we need to paginate through all pages of the lists of my followers to get them all - like in an address book where we move from one page to the next. We do this with tweepy.Cursor(): https://docs.tweepy.org/en/stable/pagination.html. While this might sound complicated, it actually makes our life much easier. Check out this a bit outdated tutorial, that makes this point very well: https://docs.tweepy.org/en/v3.5.0/cursor_tutorial.html
 
-if twit_key != '':
-    df = pd.DataFrame(columns=['user','follower'])
-    df['follower'] = follower_list[0]
-    df['user'] = tb_id
-else:
-    df = pd.read_csv('followers_tobias.csv')
+We tell Cursor() to retrieve followers from the api of my screen name. Using the items() function, we retrieve the items on each page. Run `[follower for follower in tweepy.Cursor(api.followers, screen_name="tobias_blanke").items(1)]`. We only want to take a look at the first item (1).
 
+http://sparida.blogspot.com/2019/12/twitter-data-collection-tutorial-using.html is a great tutorial how to set up a larger data collection from Twitter using the Google cloud services. This is probably for later though ...
 
-if twit_key != '':
-    followers = follower_list[0]
-    fol_count = sca.get_follower_count(followers, 200)
-    df200 = df.head(200)
-    df200['follower_count'] = fol_count
-else:
-    df200 = pd.read_csv('200_followers')
+[follower for follower in tweepy.Cursor(api.followers, screen_name="tobias_blanke").items(1)]
 
-df200
+A key measure of my own importance on Twitter is the importance of the people who follow me. Does this make sense? Of course it does, as with important followers you can influence a lot of people. Let’s get an overview of the friends and followers of those who follow me. To do so we first want to create a data frame that contains all my followers and their follower and friend count.
 
-if twit_key != '':
-    followers = follower_list[0][:200]
-    friends_count = sca.get_friends_count(user, followers)
-    df200['friends_count'] = friends_count
+To analyse all the followers of an account, we simply need to collect the relevant metadata from each follower. First, however, we limit ourselves to 20 followers for demonstration purposes and to save on our rate limits. Run the next cell.
 
-df200.plot.scatter(x='friends_count', y='follower_count',)
+#Keep cell
+n = 20
 
-Ok, there are not too many strong performers in my followers’ list. In order to confirm this, let’s check the counts for all my followers with a plot. 
+Next, we run: 
+```
+follower_list = [(follower.id, follower.screen_name, follower.followers_count, follower.friends_count) 
+     for follower in tweepy.Cursor(api.followers, screen_name='tobias_blanke').items(n)]
+```
+This will access 20 followers (n=20). For each follower, we are interested in their id, screen name, the count of their followers and their friends (those who they follow). We can collect all this metadata by creating a tuple operator: (). Tuples are very easy to transform into data frames, which we want to do later. They are explained here: https://www.w3schools.com/python/python_tuples.asp.
 
-counts = df200['follower_count'].to_list()
-plt.hist(counts)
+follower_list = [(follower.id, follower.screen_name, follower.followers_count, follower.friends_count) 
+     for follower in tweepy.Cursor(api.followers, screen_name='tobias_blanke').items(n)]
 
-So, most of my followers do not have too many followers themselves apart from one outlier. My influence is really limited. Let’s quickly move on then.
+Let's print out the first two items with `follower_list[:2]`.
 
-Social network analysis is really important both in social and cultural analytics. It uses graphs to explain and analyse social relations. We have already started talking about social networks. We looked into my followers and those friends that I am following. Then, we investigated the friends of these friends and the followers of these followers. To build these kinds of relationships and map them onto graphs to visualise and analyse them is really what social networks are all about.
+follower_list[:2]
 
-We would like to build a graph of my friends and followers. We already have the followers, let's now reterive their screen names.
+A list of tuples can be loaded directly into a data frame. We create and print out a new data frame called follower_df with the column names 'ID', 'Screen_name', 'Followers_count' and 'Friends_count': 
+```
+follower_df = pd.DataFrame(follower_list, columns=['ID', 'Screen_name', 'Followers_count', 'Friends_count'])
+follower_df
+```
 
-Because graph visualisation can quickly get confusing if there are too many items to represent, we would like to limit the number of friends and followers to 20.
+follower_df = pd.DataFrame(follower_list, columns=['ID', 'Screen_name', 'Followers_count', 'Friends_count'])
+follower_df
 
-if twit_key != '':
-    sca.get_follower_count(followers,20)
+20 of my followers with some of their metadata!
 
-if twit_key != '':  
-    df20 = df200.head(20)
-    df20['screen_name_follower'] = screen_names
-    df20['screen_name_user'] = api.get_user(tb_id).screen_name
-else:
-    df20 = pd.read_csv('20_followers')
+At this point we want to add two columns at the beginning of followers_df. We can add a column to a data frame at a particular location with insert(). Run `follower_df.insert(0, 'Me_sn', me.screen_name)` to add my screen name at the beginning of the data frame (position 0).
 
-# Check the friends of user/source
-get_friends_of20(me.id)
+follower_df.insert(0, 'Me_sn', me.screen_name)
 
-if twit_key != '': 
-    df_friends = pd.DataFrame(columns=['user','follower'])
-    df_friends['user'] = friends
-    df_friends['follower'] = tb_id
-else:
-    df_friends = pd.read_csv('df_friends.csv')
+Also insert Me_ID at the beginning of the data frame by running insert() again. Tip: You just need to replave Me-sn with Me_ID.
 
+follower_df.insert(0, 'Me_ID', me.id)
 
-if twit_key != '': 
-    df_friends['screen_name_follower'] = api.get_user(tb_id).screen_name
-    df_friends['screen_name_user'] = screen_name_friends
-    df_friends['follower_count'] = len(followers)
-    df_friends['friends_count'] = len(friends)
+Print out the first few rows of follower_df.
 
-if twit_key != '': 
-    graphdata = pd.concat([df20,df_friends])
-else:
-    graphdata pd.read_csv('graphdata.csv')
+follower_df.head()
 
-nodes = pd.DataFrame(columns=['userid', 'user_name'])
-nodes['userid'] = graphdata.user.unique()
-nodes['user_name'] = graphdata.screen_name_user.unique()
+We can scatter plot the chosen followers to see how many friends and followers they have. Do you remember how? It's easy in Pandas with `follower_df.plot.scatter(x='Friends_count', y='Followers_count')`. x and y name the respective axes.
 
-relations = pd.DataFrame(columns=['user', 'follower'])
-relations['user'] = graphdata['user']
-relations['follower'] = graphdata['follower']
+follower_df.plot.scatter(x='Friends_count', y='Followers_count')
 
-nodes
+Most of my followers do not have too many followers themselves. My influence is really limited. But this might also be because we only chose 20 for this session. 
 
-import networkx as nx
+Let's run some basic statistics on the data to show you what else you could do. Type in `follower_df.loc[:,['Followers_count', 'Friends_count']].median()` to access the median value of both counts for followers and friends 
 
-G = nx.from_pandas_edgelist(relations,source='follower', target='user', create_using=nx.DiGraph())
+follower_df.loc[:,['Followers_count', 'Friends_count']].median()
 
-node_attr = nodes.set_index('userid').to_dict('index')
-nx.set_node_attributes(G, node_attr)
-node_labels = nx.get_node_attributes(G, 'user_name')
+Generally, my followers follow many more people than they are followed. For big Twitter influencers the opposite is often the case. They follow fewer people but are followed by millions.
 
-nx.draw(G, with_labels=True, labels=node_labels)
+We can use Pandas describe() to get a quick statistical summary with `follower_df.loc[:,['Followers_count', 'Friends_count']].describe()`.
 
-#And a function to plot the graph
+follower_df.loc[:,['Followers_count', 'Friends_count']].describe()
 
-# import igraph
-# from igraph import *
-# graph = Graph(directed=True)
+Take a close look at the table and try and formulate a few insights. For instance, at the time of writing, the maximum followers were 2182 and the minimum 2. 25% of those who follow me had less than 29 followers but about 340 friends. 
 
-# graph = Graph.DictList(
-#           vertices=nodes.to_dict('records'),
-#           edges=relations.to_dict('records'),
-#           directed=True,
-#           vertex_name_attr='userid',
-#           edge_foreign_keys=('follower', 'user'));
+What does it mean, for instance, that the mean and median are very different, where median is of course the 50% quantile? The Khan Academy is a good source for such statistical knowledge: https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/a/mean-median-and-mode-review.
 
-# print(graph)
+Interesting could also be whether the counts of friends and followers are correlated. To calculate the Pearson correlation (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient), we can run `follower_df.corr(follower_df.loc[:,['Followers_count', 'Friends_count']])`
 
-# plot(graph, vertex_label=graph.vs['user_name'])
+follower_df.loc[:,['Followers_count', 'Friends_count']].corr()
+
+You should get back a table that shows all four possible correlations between the variables. 
+
+The table hopefully also shows that Followers_count and Friends_count are correlated. I got a value of around 0.7. The value is positive, which means that the counts are positively correlated: the more followers the more friends and vice versa. For bigger influencers, this is not necessarily the case, but for standard Twitter users that connect to their communities, this might make sense. Definitely something to check with a larger population of Twitter users?
+
+Finally, we would like to plot both counts. Histograms will be useful here. Run `follower_df['Followers_count'].plot.hist()`.
+
+follower_df['Followers_count'].plot.hist()
+
+While this plot could be much nicer, we can easily see the pattern that most of my followers do not have a lot of followers themselves. There are a couple of outliers, too.
+
+Can you plot a histogram for Friends_count?
+
+follower_df['Friends_count'].plot.hist()
+
+The plot should look similar to the followers? 
+
+Social network analysis is really important both in social and cultural analytics. It uses graphs to explain and analyse social relations. We have already started talking about social networks. In an earlier session, we talked about teens and their networks. Here, we looked into my followers and those friends that I am following. Then, we investigated the friends of these friends and the followers of these followers. To build these kinds of relationships and map them onto graphs to visualise and analyse them is really what social networks are all about. 
+
+We would like to next build a network graph to represent social networks. This is a bit more complicated. So, let's do this step by step. 
+
+We want to add the screen names of my followers to the graph. So, let's create a list of them with `screen_name_list = list(follower_df['Screen_name'])`.
+
+screen_name_list = list(follower_df['Screen_name'])
+
+We already have my followers of course. Let's put them into a list, which we want to later expand with the followers of my followers. Run `all_sn_list = list(zip(follower_df['Me_sn'], follower_df['Screen_name']))` to create a list of tuples where my screen name is the first entry and the screen name of my followers is the second. zip() is a function to create a tuple form two variables: https://www.w3schools.com/python/ref_func_zip.asp.
+
+all_sn_list = list(zip(follower_df['Me_sn'], follower_df['Screen_name']))
+
+Print out `all_sn_list[:5]` for the first five entries.
+
+all_sn_list[:5]
+
+This worked. Now, let's get the followers of my followers by iterating over their screen names and running tweepy.Cursor(api.followers, screen_name = ...) on them. We want to limit ourselves to 5 followers each to save on the rates. So let's set `n_followers = 5` first.
+
+n_followers = 5
+
+For each `sn in screen_name_list` we want to retieve `s_ = [(sn, follower_.screen_name) for follower_ in tweepy.Cursor(api.followers, screen_name=sn).items(n_followers)]` and then add the result to the my existing followers. As the result is a list we need to use extend() which adds lists to lists, while you already met append(), which adds a single element. So, we add `all_sn_list.extend(s_)`. Try extend() at https://www.w3schools.com/python/ref_list_extend.asp. 
+
+We could now run this in a simple for-loop and would quickly meet a problem that for some followers we cannot retrieve their list of followers. They might not provide access, for instance. So, all our efforts would be interrupted at that point, which is pretty annoying as we are dealing with expensive Twitter API calls. This is why, we will add another standard feature of Python and catch any exception Twitter returns called tweepy.TweepError.
+
+This is done with the try and except construct: https://www.w3schools.com/python/python_try_except.asp. The try block tests a block of code for errors. The except block handels them. Whenever you run a larger project for scraping or API access, this construct is highly recommended to not lose all yur work 2/3 through the access call.
+
+The code below tells Python to catch any tweepy.TweepError() and skip it by continuing with the next iteration of the loop (with continue). Before that, it prints out the screen name to be skipped and sleeps for 60 seconds to give the Twitter API time to recover. It uses time.sleep() for that.
+
+#Keep cell
+
+import time
+for sn in screen_name_list:
+    try:
+        s_ = [(sn, follower_.screen_name) for follower_ in 
+              tweepy.Cursor(api.followers, screen_name=sn).items(n_followers)]
+        all_sn_list.extend(s_)
+    except tweepy.TweepError:
+        print('Skipping {}.'.format(sn))
+        time.sleep(60)
+        continue
+
+That should have taken a little while. But you got it all now. Check the result with `all_sn_list[-1]`. -1 prints out the last element of a list.
+
+all_sn_list[-1]
+
+On to the visualisation! Run our very own `sca.create_twitter_network(all_sn_list)` to create a Twiter network graph of my followers. In the next lesson, we will learn how to make these networks ourselves.
+
+sca.create_twitter_network(all_sn_list)
+
+To be honest, this network does not look very exciting. It points straight from me to my followers and their followers. It would be more interesting to also add the other direction with the friend relations and overlay their network. Together friends and followers should offer more interesting patterns/ connections. All you have to do is to collect the friends from my followers, too. You can easily reuse the existing code and just have to replace the API calls. We leave this for you to do yourself ...
+
+The next session will introduce many more exciting ways to create, visualise and analyse social networks.

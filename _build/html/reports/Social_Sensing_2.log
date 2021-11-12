@@ -24,12 +24,12 @@ from community import community_louvain
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;31mImportError[0m                               Traceback (most recent call last)
 [0;32m<ipython-input-27-a4402127ee2a>[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0;34m[0m[0m
 [1;32m      3[0m [0;31m#install with pip install python-louvain[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 4[0;31m [0;32mfrom[0m [0mcommunity[0m [0;32mimport[0m [0mcommunity_louvain[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mModuleNotFoundError[0m: No module named 'community'
-ModuleNotFoundError: No module named 'community'
+[0;31mImportError[0m: cannot import name 'community_louvain' from 'community' (/usr/local/lib/python3.9/site-packages/community/__init__.py)
+ImportError: cannot import name 'community_louvain' from 'community' (/usr/local/lib/python3.9/site-packages/community/__init__.py)
 
