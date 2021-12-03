@@ -3,63 +3,89 @@
 
 - file: intro
 
-  
-  
-- file: Introduction
+- file: Introduction to Data Analysis with Python 1
   sections:
-   - file: Introduction/Introduction_1.1
-   - file: Introduction/Introduction_1.2
-   - file: Introduction/Introduction_2.1
-   - file: Introduction/Introduction_2.2
-- file: social_analytics
+   - file: Notebooks/Introduction/Introduction_1.1
+   - file: Notebooks/Introduction/Introduction_1.2
+- file: Introduction to Data Analysis with Python 2
   sections:
-   - file: SocialAnalytics/SocialMedia/Social_Sensing_1
-   - file: SocialAnalytics/SocialMedia/Social_Sensing_2
-   - file: SocialAnalytics/Text/Text_1
-   - file: SocialAnalytics/Text/Text_2
-   - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_1
-   - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_2     
-- file: AI_for_society
+   - file: Notebooks/Introduction/Introduction_2.1
+   - file: Notebooks/Introduction/Introduction_2.2
+- file: Communities of Digital Cultures and Society
   sections:
-   - file: AI_for_society/ass1/Machine_Bias
-   - file: AI_for_society/ass2/Civility_in_Communication
-   - file: AI_for_society/ass3/Data_Exploration
-   - file: AI_for_society/ass3/US_Congress_Sponsors
-   - file: AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_1
-   - file: AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2
-- file: PredictingModelling
+   - file: Notebooks/ass3/Communities_of_Digital_Culture_and_Society_1
+   - file: Notebooks/ass3/Communities_of_Digital_Culture_and_Society_2
+- file: Social Sensing
   sections:
-   - file: PredictingModelling/LinearPrediction
-   - file: PredictingModelling/Predicting_Modelling_1
-   - file: PredictingModelling/Predicting_Modelling_2
-   - file: PredictingModelling/Titanic
-# - file: FocusGroup
+   - file: Notebooks/SocialMedia/Social_Sensing_1
+   - file: Notebooks/SocialMedia/Social_Sensing_2
+- file: Historical Cultures
+  sections:
+   - file: Notebooks/Text/Text_1
+   - file: Notebooks/Text/Text_2
+- file: Visual and Arts
+  sections:
+   - file: Notebooks/VisualsArts/Visuals_and_Arts_1
+   - file: Notebooks/VisualsArts/Visuals_and_Arts_2 
+- file: Predicting and Modelling
+  sections:
+   - file: Notebooks/PredictingModelling/Predicting_Modelling_1
+   - file: Notebooks/PredictingModelling/Predicting_Modelling_2
+# - file: Introduction
 #   sections:
-#    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_1
-#    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_2
-- file: DigitalMarketing
-  sections:
-   - file: DigitalMarketing/Basics
-   - file: DigitalMarketing/ChoiceModelling
-   - file: DigitalMarketing/Churn
-   - file: DigitalMarketing/CustomerRelationshipManagement
-- file: HistoricalCultures
-  sections:
-   - file: HistoricalCultures/AnalysingShakespeare
-   - file: HistoricalCultures/hate-speech-twitter
-   - file: HistoricalCultures/Quanteda
-   - file: HistoricalCultures/TidyText
-   - file: HistoricalCultures/CreateCorpusVisualisations.ipynb
-- file: SocialSensing
-  sections:
-   - file: SocialSensing/APIs/Nowcasting-GTrends
-   - file: SocialSensing/APIs/TwitterStreamingAPI
-   - file: SocialSensing/APIs/Whatsapp
-   - file: SocialSensing/Graphs/Igraph
-   - file: SocialSensing/Graphs/Reveredetection
-- file: VisualsArts
-  sections:
-   - file: VisualsArts/AdvancedVisualisation
+#    - file: Introduction/Introduction_1.1
+#    - file: Introduction/Introduction_1.2
+#    - file: Introduction/Introduction_2.1
+#    - file: Introduction/Introduction_2.2
+# - file: social_analytics
+#   sections:
+#    - file: SocialAnalytics/SocialMedia/Social_Sensing_1
+#    - file: SocialAnalytics/SocialMedia/Social_Sensing_2
+#    - file: SocialAnalytics/Text/Text_1
+#    - file: SocialAnalytics/Text/Text_2
+#    - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_1
+#    - file: SocialAnalytics/VisualsArts/Visuals_and_Arts_2     
+# - file: AI_for_society
+#   sections:
+#    - file: AI_for_society/ass1/Machine_Bias
+#    - file: AI_for_society/ass2/Civility_in_Communication
+#    - file: AI_for_society/ass3/Data_Exploration
+#    - file: AI_for_society/ass3/US_Congress_Sponsors
+#    - file: AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_1
+#    - file: AI_for_society/ass3/Communities_of_Digital_Culture_and_Society_2
+# - file: PredictingModelling
+#   sections:
+#    - file: PredictingModelling/LinearPrediction
+#    - file: PredictingModelling/Predicting_Modelling_1
+#    - file: PredictingModelling/Predicting_Modelling_2
+#    - file: PredictingModelling/Titanic
+# # - file: FocusGroup
+# #   sections:
+# #    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_1
+# #    - file: FocusGroup/Communities_of_Digital_Culture_and_Society_2
+# - file: DigitalMarketing
+#   sections:
+#    - file: DigitalMarketing/Basics
+#    - file: DigitalMarketing/ChoiceModelling
+#    - file: DigitalMarketing/Churn
+#    - file: DigitalMarketing/CustomerRelationshipManagement
+# - file: HistoricalCultures
+#   sections:
+#    - file: HistoricalCultures/AnalysingShakespeare
+#    - file: HistoricalCultures/hate-speech-twitter
+#    - file: HistoricalCultures/Quanteda
+#    - file: HistoricalCultures/TidyText
+#    - file: HistoricalCultures/CreateCorpusVisualisations.ipynb
+# - file: SocialSensing
+#   sections:
+#    - file: SocialSensing/APIs/Nowcasting-GTrends
+#    - file: SocialSensing/APIs/TwitterStreamingAPI
+#    - file: SocialSensing/APIs/Whatsapp
+#    - file: SocialSensing/Graphs/Igraph
+#    - file: SocialSensing/Graphs/Reveredetection
+# - file: VisualsArts
+#   sections:
+#    - file: VisualsArts/AdvancedVisualisation
    
  
 
