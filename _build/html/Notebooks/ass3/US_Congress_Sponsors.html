@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collaboration Networks in the US Congress &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/ass3/US_Congress_Sponsors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FNotebooks/ass3/US_Congress_Sponsors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Notebooks/ass3/US_Congress_Sponsors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kmeans">
+   Kmeans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apriori">
+   Apriori
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network">
+   Network
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="collaboration-networks-in-the-us-congress">
+<h1>Collaboration Networks in the US Congress<a class="headerlink" href="#collaboration-networks-in-the-us-congress" title="Permalink to this headline">¶</a></h1>
+<p>In this project, we will work through a real world example looking at collaboration networks in the US Congress. It is an advanced example, but I nevertheless wanted to show you how you can work through a real dataset. It is typical in the sense in terms of the data challenges you face with social data as well as the kind of new questions you can ask.</p>
+<p>Legislatures are inherently difficult to investigate. Political scientists have been interested in collaborations among parliamentarians as explanatory factors in legislative behavior for decades. But up to now they have lacked the data to do this on a larger scale. Recently, legislatures around the world have begun to to publish all their workings on the web. Especially advanced is the US Congress. Take a look at  <a class="reference external" href="https://www.congress.gov/">https://www.congress.gov/</a>.</p>
+<p>In this exercise, we will first download a sample of bills and then investigate sponsors and cosponsors of these bills. If you do not know much about the workings of the US congress, take a look at <a class="reference external" href="https://en.wikipedia.org/wiki/Sponsor_(legislative)">https://en.wikipedia.org/wiki/Sponsor_(legislative)</a></p>
+<p>First we load a couple of libraries that we need. Some you will recognise. Hopefully, all the libraries should have been installed for you beforehand if you use a framework like Anaconda (<a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a>). But if at any moment in time Python does not recognise the library, you can simply install it by following the instructions at <a class="reference external" href="https://www.codecademy.com/articles/install-python">https://www.codecademy.com/articles/install-python</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we define the congress number we are interested in. Because we started with it, I define it next as the 114th congress but you can change it of course. Just make sure that the congress actually exists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">congress_no</span> <span class="o">=</span> <span class="mi">114</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our aim is to download a random sample of bill information for this congress. The first challenge is to find out how many legilsations they were in this congress.</p>
+<p>We have defined a URL_all for you where you can find the information with some web parsing. How?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">URL_all</span> <span class="o">=</span> <span class="s1">&#39;https://www.congress.gov/search?searchResultViewType=expanded&amp;pageSort=documentNumber%3Adesc&amp;q=%7B</span><span class="si">%22s</span><span class="s1">ource</span><span class="si">%22%</span><span class="s1">3A</span><span class="si">%22le</span><span class="s1">gislation</span><span class="si">%22%</span><span class="s1">2C</span><span class="si">%22c</span><span class="s1">ongress</span><span class="si">%22%</span><span class="s1">3A&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">congress_no</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%7D&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now do the web parsing to find the number of legislations and assign the result to max_legislation. Finally, print it out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How many legislations?</span>
+<span class="c1"># Use beautiful soup, lecture video 2 (4 min)</span>
+<span class="c1"># page = requests.get(url)</span>
+<span class="c1"># soup = beautifulsoup(page.text, &#39;html.parser&#39;)</span>
+<span class="c1"># use re.findall (regular expressions)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a sample of bills you would like to download. max_n is that number.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">max_n</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create random_bills as a random list of integers with max_n bill numbers you can download.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># random.sample max_legislation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Download the random_bill texts into a list called pages that is defined for you. Make sure that the bill page exists in case you happen to have selected a bill number that does not (status_code = 200). After accessing each bill, I recommend to put Python to sleep for a little bit in order for the congress web server to have a chance to recover. Once you have run this, do not repeat this too often to not overload the server.</p>
+<p>The information you are looking for is in the ‘all-info’ pages for a bill. So, e.g., <a class="reference external" href="https://www.congress.gov/bill/114th-congress/house-bill/5245/all-info">https://www.congress.gov/bill/114th-congress/house-bill/5245/all-info</a>. Here, you can find later on the sponsor and co-sponsor information.</p>
+<p>Tip: You want to use the requests library to download the all-info pages.
+Second tip: This is the moment a progress bar in your for loop is very handy. Check out <a class="reference external" href="https://github.com/tqdm/tqdm">https://github.com/tqdm/tqdm</a>.</p>
+<p>We haven’t spoken about this yet, but the most commonly used library in Python to parse websites is BeautifulSoup. Check out <a class="reference external" href="https://realpython.com/python-web-scraping-practical-introduction/">https://realpython.com/python-web-scraping-practical-introduction/</a>.</p>
+<p>BeaurifulSoup generally takes in a page from requests and applies an HTML parser. We have already loaded its class from the bs4 library above.</p>
+<p>Next define a function extract_data_website that takes in the result of BeautifulSoup parsing of a website called soup, a bill number and for that bill returns a dataframe with the bill number, its sponsors and its co-sponsors.</p>
+<p>Next run extract_data_website agains all pages in the pages list and build up a main dataframe called sponsors_bill_df.</p>
+<p>Print out the first couple of rows of sponsors_bill_df.</p>
+<p>Create two lists of all sponsors and cosponsors as well as a list of all bills. These lists should be called all_sponsors_cosponsors_list and all_bills_list and should be sorted alphabetically.</p>
+<p>A dataframe is nice but for a numerical analysis like clustering we often need a matrix. Run the next cell to create an empty sponsors_cosponsors_matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">sponsors_cosponsors_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">all_bills_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">all_sponsors_cosponsors_list</span><span class="p">)</span>
+<span class="n">sponsors_cosponsors_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">f1eda6ae44d0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Run the code below</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sponsors_cosponsors_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">all_bills_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">all_sponsors_cosponsors_list</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sponsors_cosponsors_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_bills_list&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now fill this matrix. The matrix should contain ‘Sponsor’ for the sponsor of a bill and ‘Cosponsor’ for the cosponsors. Otherwise, all cells should have NaN values.</p>
+<p>Print out the first couple of rows of this very sparse matrix.</p>
+<p>As this matrix describes a community of sponsors and cosponsors we will try our clustering approach next. We try k-means on clusters of sponsors and cosponsors.</p>
+<div class="section" id="kmeans">
+<h2>Kmeans<a class="headerlink" href="#kmeans" title="Permalink to this headline">¶</a></h2>
+<p>First we load the library and define k = 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>                      
+</pre></div>
+</div>
+</div>
+</div>
+<p>We need to do some data preparation next. Define a matrix kmeans_matrix that is 1 where sponsors_cosponsors_matrix contains a sponsor or cosponsor and otherwise 0.</p>
+<p>Run the following cell for the k-means clustering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">kmeans_clusters</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span>  <span class="o">=</span> <span class="n">k</span><span class="p">)</span> 
+<span class="n">kmeans_clusters</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">kmeans_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out the cluster centres for all members.</p>
+<p>Something intereting might be hidden in all this but overall the matrix does not have enough entries to deliver any meaningful conclusions from clustering.</p>
+</div>
+<div class="section" id="apriori">
+<h2>Apriori<a class="headerlink" href="#apriori" title="Permalink to this headline">¶</a></h2>
+<p>This is why we would like to try another approach. We will try to learn rules that represent the data. We imagine that it should be possible this way to determine rules like if senator x proposes a bill, congresswoman y will be involved, too, as she is associated with him.</p>
+<p>Association rules are often used for ‘market basket analysis’, which are typical example for analysing very sparse datasets. The result of a market basket analysis is a set of association rules that specify patterns of relationships among items. A typical rule might be expressed in the form:</p>
+<ul class="simple">
+<li><p>{peanut butter, jelly} -&gt; {bread}.</p></li>
+</ul>
+<p>So, if a costumer buys peanut butter and jelly, she will also get bread. We will try to learn something similar by associating US congress members who sponsor bills together. If congresswoman X sponsors a bill, so will senator Y.</p>
+<p>Perhaps the most-widely used approach for efficiently analysing large data for rules is known as Apriori. This algorithm was introduced in 1994 by R. Agrawal and R. Srikant, and has become somewhat synonymous with association rule learning since then. Check out: Fast algorithms for mining association rule, in Proceedings of the 20th International Conference on Very Large Databases, pp. 487-499, by R. Agrawal, and R.Srikant, (1994).</p>
+<p>However, I found that the apriori algorithm (<a class="reference external" href="https://pbpython.com/market-basket-analysis.html">https://pbpython.com/market-basket-analysis.html</a>) is extremely slow in Python. So, rather than Apriori we will use a faster version (<a class="reference external" href="http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/">http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/</a>) that implements Han, Jiawei, Jian Pei, Yiwen Yin, and Runying Mao. “Mining frequent patterns without candidate generation. “A frequent-pattern tree approach.” Data mining and knowledge discovery 8, no. 1 (2004): 53-87. It concentrates on frequent itemsets.</p>
+<p>“FP-Growth is an algorithm for extracting frequent itemsets with applications in association rule learning that emerged as a popular alternative to the established Apriori algorighm. In general, the algorithm has been designed to operate on databases containing transactions, such as purchases by customers of a store. An itemset is considered as ‘frequent’ if it meets a user-specified support threshold. For instance, if the support threshold is set to 0.5 (50%), a frequent itemset is defined as a set of items that occur together in at least 50% of all transactions in the database.”</p>
+<p>We follow the examples given at <a class="reference external" href="http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/">http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/</a> including the TransactionEncoder. But we could have actually reduced the steps, as we have already have sponsors_cosponsors_matrix, as we will later see.</p>
+<p>Load the Python version of FP-Growth by running the cell below. You might have to install mlxtend first, a library of data science tools. See <a class="reference external" href="http://rasbt.github.io/mlxtend/installation/">http://rasbt.github.io/mlxtend/installation/</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="kn">from</span> <span class="nn">mlxtend.preprocessing</span> <span class="kn">import</span> <span class="n">TransactionEncoder</span>
+<span class="kn">from</span> <span class="nn">mlxtend.frequent_patterns</span> <span class="kn">import</span> <span class="n">fpgrowth</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The fpgrowth library we are going to use requires our dataset to be in the form of a list of lists, where the whole dataset is a big list and each transaction in the dataset is an inner list within the outer big list. Currently, we have data in the form of a pandas dataframe.</p>
+<p>Convert sponsors_bill_df into such a list of list called records. The inner list contains for each bill the list of sponsors and cosponsors. The outer list is simply all the bills.</p>
+<p>Follow <a class="reference external" href="http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/">http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/</a>, to transfrom records into the right format for fpgrowth via the TransactionEncoder.</p>
+<p>Do you see what we could have done directly with sponsors_cosponsors_matrix in order to arrive at the same output? All the association mining/clustering algorithms have similar inputs.</p>
+<p>Let us finally return the records with at least 20% support. 20% is not much of course, but we also limited ourselves to only a small subset of bills.</p>
+<p>Tip: Make sure to set use_colnames=True to get a readable output.</p>
+<p>If you want you can download more bills and play with the support.</p>
+<p>Or you could now start to look up the sponsors/co-sponsors on wikipedia and find out whether there are, e.g., bi-partisan bills?</p>
+</div>
+<div class="section" id="network">
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<p>We have learned a lot today about how to analyse communties with algorithms. While k-means was less convincing because there was too little data, the association rules migth show a few interesting results at least?</p>
+<p>Most people would look at another way of working through this data with so-called social network analysis. Check out <a class="reference external" href="https://en.wikipedia.org/wiki/Social_network_analysis">https://en.wikipedia.org/wiki/Social_network_analysis</a>.</p>
+<p>In Python we need the networkx libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the command below you create a social network graph G from sponsors_bill_df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">sponsors_bill_df</span><span class="p">,</span> <span class="s2">&quot;Sponsor&quot;</span><span class="p">,</span> <span class="s2">&quot;Cosponsor&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Bill&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, try and visualise the network G. Check the documentation if you need to.</p>
+<p>There are a lot of online tutorials how to use networkx. The hard part will be plot all the nodes and edges in the graph so that they make sense together.</p>
+<p>If you want, you can make the network as informative and complicated as you want … Let’s move on for now to a more hands-on analysis.</p>
+<p>After all this association mining with mixed results, you might decide to go another way and look at the US Congress bios for further review. Maybe, you want to know more about the biographical background of members of congress or mine their Twitter feeds. We can access the propublica congress API for that. It is explained at <a class="reference external" href="https://www.propublica.org/datastore/api/propublica-congress-api">https://www.propublica.org/datastore/api/propublica-congress-api</a>.</p>
+<p>First define the correct url.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">propublica_url</span> <span class="o">=</span> <span class="s1">&#39;https://api.propublica.org/congress/v1/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">congress_no</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/senate/members.json&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now request an API key from <a class="reference external" href="https://www.propublica.org/datastore/api/propublica-congress-api">https://www.propublica.org/datastore/api/propublica-congress-api</a> and use it to set ‘X-API-Key’ in a ‘headers’ dictionary for requests.</p>
+<p>Fetch the data and print out the first results in number of characters. I used 3000 characters, but feel free to print out as many as you want.</p>
+<p>It is a bit difficult to read but you hopefully recognise this as a JSON response, which is very typical for API calls.</p>
+<p>You can read the results into a dictionary with the json package that we imported earlier.</p>
+<p>Load this dictionary into a a dataframe called members_df and print out the first couple of rows. It’s very easy to do with the right pandas function.</p>
+<p>Print out the column names of members_df.</p>
+<p>With members_df and the column names, create two functions:</p>
+<p>The first function ‘get_representative_bio’ takes in a congress number and returns a dataframe of people in the house of representatives that shows the following information for them: [‘first_name’, ‘last_name’, ‘date_of_birth’, ‘gender’, ‘party’, ‘state’, ‘next_election’, ‘missed_votes_pct’, ‘votes_with_party_pct’].</p>
+<p>The second function ‘get_senator_bio’ does the same but for the senate.</p>
+<p>Print out the first results for get_senator_bio(114)</p>
+<p>I hope you see how rich the information is datasets linked to the US Congress.</p>
+<p>Association mining and clustering are very powerful techniques to find yet unknown relations. We tried them to detect patterns of maybe unexpected behaviour in the US Congress. In another example, we used them to detect how powerful the big Internet companies are in the mobile ecosystems: <a class="reference external" href="https://journals.sagepub.com/doi/full/10.1177/2056305120971632">https://journals.sagepub.com/doi/full/10.1177/2056305120971632</a></p>
+<p>“Our research seeks to understand how platforms have been able to technically integrate themselves into the fabric of the mobile ecosystem, transforming the economic dynamics that allow these largely enclosed entities to compete. We therefore want to consider platforms as service assemblages to account for the material ways in which they have decomposed and recomposed themselves for developers, enabling them to shift the economic dynamics of competition and monopolization in their favor. This article will argue that this shift in the formation of platform monopolies is being brought about by the decentralization of these services, leading to an overall technical integration of the largest digital platform such as Facebook and Google into the source code of almost all apps.”</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/ass3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

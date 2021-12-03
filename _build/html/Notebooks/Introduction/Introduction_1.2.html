@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Data Exploration with Python 1.2 &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/Introduction/Introduction_1.2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FNotebooks/Introduction/Introduction_1.2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Notebooks/Introduction/Introduction_1.2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="interactive-data-exploration-with-python-1-2">
+<h1>Interactive Data Exploration with Python 1.2<a class="headerlink" href="#interactive-data-exploration-with-python-1-2" title="Permalink to this headline">¶</a></h1>
+<p>The next new concept is the numpy array. You often use this construct in data analysis. We want to use the numpy array to filter elements in our lists and even bring them together into two dimensions. Up to now we only had one dimension, but why not add one more?</p>
+<p>Numpy has been a long-standing toolkit for data analysis. According to <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>, it is ‘the fundamental package for scientific computing with Python’. It features heavily in what is still a standard introduction in our field: <a class="reference external" href="https://wesmckinney.com/pages/book.html">https://wesmckinney.com/pages/book.html</a>. It is a really good book to further work on the topics that are discussed in these introductions.</p>
+<p>First, we have to import the library numpy. You always do that in Python with import. In this case, type in <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s move on from our gambling and look at social media.</p>
+<p>We will now introduce an example from social analytics brought to us by <a class="reference external" href="http://dataquest.com">dataquest.com</a>, which we will come back to again later in the course. You have a LinkedIn account and a Facebook account and want to find out, which one has more views and is more successful. You collected the views per day for a particular week.</p>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">linkedin</span> <span class="pre">=</span> <span class="pre">numpy.array([16,</span> <span class="pre">9,</span> <span class="pre">13,</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">17,</span> <span class="pre">14])</span></code> to record the views for LinkedIn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linkedin</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is how you create a numpy array directly. If you are reminded of standard Python lists, you are right. For now, numpy arrays and lists are basically the same for us.</p>
+<p>Now, please create the list <code class="docutils literal notranslate"><span class="pre">facebook_list</span> <span class="pre">=</span> <span class="pre">[17,</span> <span class="pre">7,</span> <span class="pre">5,</span> <span class="pre">16,</span> <span class="pre">8,</span> <span class="pre">13,</span> <span class="pre">14]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can transform lists easily into arrays with <code class="docutils literal notranslate"><span class="pre">facebook</span> <span class="pre">=</span> <span class="pre">numpy.array(facebook_list)</span></code>. Try it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">facebook_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out facebook to see that it is numpy array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facebook</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([17,  7,  5, 16,  8, 13, 14])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Matrices are another important concept in data analysis. They are two-dimensional arrays. For instance, black and white images are such matrices. They contain a pixel value at the horizontal and vertical dimension.</p>
+<p>We can create a matrix called views by simply combing linkedin and facebook. Type in <code class="docutils literal notranslate"><span class="pre">views</span> <span class="pre">=</span> <span class="pre">numpy.array([linkedin,</span> <span class="pre">facebook])</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">linkedin</span><span class="p">,</span> <span class="n">facebook</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out views.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16,  9, 13,  5,  2, 17, 14],
+       [17,  7,  5, 16,  8, 13, 14]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then ask a couple of good questions against the matrix views without having to reference the arrays it is made of.</p>
+<p>To find out on which days we had 13 views for either LinkedIn or Facebook, we type <code class="docutils literal notranslate"><span class="pre">views</span> <span class="pre">==</span> <span class="pre">13</span></code>. The == is the Boolean equivalence operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">==</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False,  True, False, False, False, False],
+       [False, False, False, False, False,  True, False]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>When are views less than or equal to 14? Try <code class="docutils literal notranslate"><span class="pre">views</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span> <span class="o">&lt;=</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False,  True,  True,  True,  True, False,  True],
+       [False,  True,  True, False,  True,  True,  True]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>How often does facebook equal or exceed linkedin views times two? This is actually a quite advanced expression already. Try it with <code class="docutils literal notranslate"><span class="pre">sum(facebook</span> <span class="pre">&gt;=</span> <span class="pre">(linkedin</span> <span class="pre">*</span> <span class="pre">2))</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">facebook</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">linkedin</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take a moment to think about the components of this expression. Maybe, you want to take a piece of paper and a pen to write down all the components. Hint: Boolean variables can also be thought of a 0 for False and 1 for True.</p>
+<p>Similar to arrays, we can access each element of a matrix, but this time we of course need 2 dimensions. <code class="docutils literal notranslate"><span class="pre">views[0][1]</span></code> will select the first row’s second element. Try it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>The order is of indexs is row first and then column. Try <code class="docutils literal notranslate"><span class="pre">views[1][4]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most important structure in Python to store and process data are ‘data frames’. The library to do so is Pandas that is a key part of our work. It is another library just like numpy. With <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, we tell Python to use the acronym pd for accessing pandas operations. This way we avoid having to type in pandas all the time.</p>
+<p>Try <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like matrixes, data frames also have rows and columns but can hold different types of variables in each of their columns.</p>
+<p>Think about it for a moment. The power! This way, we can record any observation in the world. Any observation will have different attributes we associate with it. For instance, flowers can be of different types and colours. With data frames we can record each observation of flowers by recording it in rows and assign to the columns the various features we observe like colour, type, etc. This way the whole world is for us to record in data frames!</p>
+<p>Let’s return to our social media records of our week and create a data frame to hold all its glorious details.</p>
+<p>First, some cleaning up. We want to reorder the social media views, because at the moment the columns are the days of the week and the rows are LinkedIn and Facebook. However, we want the social media companies to be the columns and the rows to be the days.</p>
+<p>If you remember your school days, you can do change the axes in a matrix by transposing it - in Python with numpy.transpose. Simply run <code class="docutils literal notranslate"><span class="pre">views_t</span> <span class="pre">=</span> <span class="pre">numpy.transpose(views)</span></code>. Print out views_t.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">views_t</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">views</span><span class="p">)</span>
+<span class="n">views_t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[16, 17],
+       [ 9,  7],
+       [13,  5],
+       [ 5, 16],
+       [ 2,  8],
+       [17, 13],
+       [14, 14]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to get our week together into a single data frame, we create <code class="docutils literal notranslate"><span class="pre">my_week_df</span> <span class="pre">=</span> <span class="pre">pd.DataFrame(views_t,</span> <span class="pre">columns</span> <span class="pre">=</span> <span class="pre">['Facebook',</span> <span class="pre">'LinkedIn'])</span></code>. To create my_week_df, first the DataFrame function from Pandas (pd) is called with the transposed views. It is given the columns attribute with a list of names for the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">views_t</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;linkedin&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out my_week_df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14</td>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Just like matrixes, we can select rows and columns. For that, we need the operator iloc[row][column]. We need to use the Pandas iloc function here but otherwise it is the same principle as for lists and arrays.</p>
+<p>Select row 1, column 2 with <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[0][1]</span></code>. Please note, that this function uses [] brackets instead of (). I guess they wanted to give it the numpy feel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do you remember how to select multiple elements in a list?</p>
+<p>It is similar for data frames. In order to select row 1 and 2, type in <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[0:2][:]</span></code>. This means that the first colon operator selects everything between its first index and the second index – 1. The second colon operator uses : to select all columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">][:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You can also leave out the [:]. Run <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[1]</span></code> to select the second row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>facebook    9
+linkedin    7
+Name: 1, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Any idea how to select the second column rather than a row? Take a look at <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html</a>, and you will know it is <code class="docutils literal notranslate"><span class="pre">my_week_df.iloc[:,</span> <span class="pre">1]</span></code>. Try it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    17
+1     7
+2     5
+3    16
+4     8
+5    13
+6    14
+Name: linkedin, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do you know how to select the third and forth row?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You can also select the facebook column directly with <code class="docutils literal notranslate"><span class="pre">my_week_df['facebook']</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    16
+1     9
+2    13
+3     5
+4     2
+5    17
+6    14
+Name: facebook, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you use two [[ ]], you get back a new dataframe. Try <code class="docutils literal notranslate"><span class="pre">my_week_df[['facebook']]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="p">[[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s add another column to our dataframe, which we call ‘happy’ for our happy days in the week.</p>
+<p>First define a list <code class="docutils literal notranslate"><span class="pre">happy</span> <span class="pre">=</span> <span class="pre">[False,</span> <span class="pre">True,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">False]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then append this list to the dataframe by naming a new column and assign happy to it. Run <code class="docutils literal notranslate"><span class="pre">my_week_df['happy']</span> <span class="pre">=</span> <span class="pre">happy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">happy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out my_week_df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_week_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>5</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14</td>
+      <td>14</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Say, we would like to select all days, we were happy. We first define a selector series for the happy days with <code class="docutils literal notranslate"><span class="pre">happy_days</span> <span class="pre">=</span> <span class="pre">df['happy']</span> <span class="pre">==</span> <span class="pre">True</span></code>. Remember the numpy arrays? This is very similar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days</span> <span class="o">=</span> <span class="n">my_week_df</span> <span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out happy_days.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1     True
+2    False
+3     True
+4    False
+5     True
+6    False
+Name: happy, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is a ‘Series’ of Booleans. Series is yet another term for lists and arrays. Pandas calls single columns things like that. I know …</p>
+<p>Now, we use the Boolean selector to create <code class="docutils literal notranslate"><span class="pre">happy_days_df</span> <span class="pre">=</span> <span class="pre">df.loc[happy_days]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days_df</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">happy_days</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks complicated but it is actually just a combination of statements we already know. Take some time and look at the expression happy_days_df. What kind of parts can you identify? How are the rows/days selected when you were happy?</p>
+<p>Print out happy_days_df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_days_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If you would like to select all the days/rows when you had more views on LinkedIn than Facebook, you can proceed in a similar way. First define the selector with <code class="docutils literal notranslate"><span class="pre">small</span> <span class="pre">=</span> <span class="pre">my_week_df['linkedin']</span> <span class="pre">&gt;</span> <span class="pre">my_week_df['facebook']</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;linkedin&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">my_week_df</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, create a new data frame with <code class="docutils literal notranslate"><span class="pre">small_df</span> <span class="pre">=</span> <span class="pre">my_week_df.loc[small]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_df</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">small</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out small_df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>That’s almost it for data frames.</p>
+<p>I promise they get more interesting once we start working with real data. One more thing you often want to do is to sort a data frame according to one of its columns. We have another Pandas function for that called sort_values. Run <code class="docutils literal notranslate"><span class="pre">sorted_df</span> <span class="pre">=</span> <span class="pre">my_week_df.sort_values(by=['facebook'])</span></code> to sort my_week_df by the values in the facebook column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_df</span> <span class="o">=</span> <span class="n">my_week_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;facebook&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out sorted_df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facebook</th>
+      <th>linkedin</th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>8</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>16</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>5</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>14</td>
+      <td>14</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>17</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17</td>
+      <td>13</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>That’s it for the most important concepts around data frames in Python.</p>
+<p>Next, we move on to some real-life datasets.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/Introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

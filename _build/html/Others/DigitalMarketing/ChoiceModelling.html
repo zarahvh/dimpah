@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choice Modelling &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Others/DigitalMarketing/ChoiceModelling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FOthers/DigitalMarketing/ChoiceModelling.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Others/DigitalMarketing/ChoiceModelling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-case-chocolates">
+   Use Case: Chocolates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#converting-from-wide-to-long-data">
+     Converting from wide  to long data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conjoint-analysis">
+     Conjoint Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling">
+   Modelling
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="choice-modelling">
+<h1>Choice Modelling<a class="headerlink" href="#choice-modelling" title="Permalink to this headline">¶</a></h1>
+<p>We make choices every day, and often these choices are made among a finite number of potential alternatives. For example, do we take the car or ride a bike to get to work? Will we have dinner at home or eat out, and if we eat out, where do we go? Scientists, marketing analysts, or political consultants, to name a few, wish to find out why people choose what they choose. We can model these choices as we can model other things.</p>
+<p>Choice modelling is about following the decision process of individuals and understanding the kinds of decisions they make: <a class="reference external" href="https://en.wikipedia.org/wiki/Choice_modelling/">https://en.wikipedia.org/wiki/Choice_modelling/</a> and <a class="reference external" href="https://www.r-bloggers.com/choice-modeling-with-features-defined-by-consumers-and-not-researchers/">https://www.r-bloggers.com/choice-modeling-with-features-defined-by-consumers-and-not-researchers/</a>.</p>
+<p>Choice modelling is often closely linked to surveys. For instance, research into chocolate preferences.</p>
+<div class="section" id="use-case-chocolates">
+<h2>Use Case: Chocolates<a class="headerlink" href="#use-case-chocolates" title="Permalink to this headline">¶</a></h2>
+<p>In this survey, a respondent chooses between three chocolate bars with different brand, price and type.</p>
+<p>The data shows one choice in each row.
+The data is in wide format, and each row represents one choice.
+In wide format, categorical data is always grouped. It is easier to read and interpret as compared to long format, which we will introduce later. Wide format is often the output if you use tools like surveymonkey, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">chocolate_wide</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;chocolate_choice_wide.csv&quot;</span><span class="p">)</span>
+<span class="n">chocolate_wide</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Price1</th>
+      <th>Price2</th>
+      <th>Price3</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>350.000000</td>
+      <td>350.000000</td>
+      <td>350.000000</td>
+      <td>350.000000</td>
+      <td>350.000000</td>
+      <td>350.000000</td>
+      <td>350.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2409.071429</td>
+      <td>13.000000</td>
+      <td>2.143714</td>
+      <td>2.255429</td>
+      <td>2.233143</td>
+      <td>1.925714</td>
+      <td>4712.762857</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.824488</td>
+      <td>7.221426</td>
+      <td>1.086042</td>
+      <td>1.041028</td>
+      <td>1.045273</td>
+      <td>0.818953</td>
+      <td>2951.380156</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2401.000000</td>
+      <td>1.000000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>1.000000</td>
+      <td>1021.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2405.000000</td>
+      <td>7.000000</td>
+      <td>1.100000</td>
+      <td>1.300000</td>
+      <td>1.300000</td>
+      <td>1.000000</td>
+      <td>2750.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2409.500000</td>
+      <td>13.000000</td>
+      <td>2.200000</td>
+      <td>2.400000</td>
+      <td>2.200000</td>
+      <td>2.000000</td>
+      <td>3878.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2413.000000</td>
+      <td>19.000000</td>
+      <td>3.100000</td>
+      <td>3.200000</td>
+      <td>3.100000</td>
+      <td>3.000000</td>
+      <td>5766.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2417.000000</td>
+      <td>25.000000</td>
+      <td>4.000000</td>
+      <td>4.000000</td>
+      <td>4.000000</td>
+      <td>3.000000</td>
+      <td>24462.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Check out some details. How many choices are part of the chocolate_wide data frame?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chocolate_wide</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Brand1</th>
+      <th>Brand2</th>
+      <th>Brand3</th>
+      <th>Price1</th>
+      <th>Price2</th>
+      <th>Price3</th>
+      <th>Type1</th>
+      <th>Type2</th>
+      <th>Type3</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>Dove</td>
+      <td>Godiva</td>
+      <td>Dove</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>3.6</td>
+      <td>Milk</td>
+      <td>Dark</td>
+      <td>White</td>
+      <td>1</td>
+      <td>5210</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>Godiva</td>
+      <td>Hershey's</td>
+      <td>2.7</td>
+      <td>3.9</td>
+      <td>0.7</td>
+      <td>Milk w/ Nuts</td>
+      <td>Dark</td>
+      <td>Milk w/ Nuts</td>
+      <td>2</td>
+      <td>7480</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2401</td>
+      <td>3</td>
+      <td>Hershey's</td>
+      <td>Godiva</td>
+      <td>Hershey's</td>
+      <td>1.7</td>
+      <td>3.7</td>
+      <td>3.0</td>
+      <td>Dark w/ Nuts</td>
+      <td>Dark</td>
+      <td>Dark</td>
+      <td>2</td>
+      <td>7704</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2401</td>
+      <td>4</td>
+      <td>Lindt</td>
+      <td>Lindt</td>
+      <td>Ghirardelli</td>
+      <td>1.0</td>
+      <td>3.6</td>
+      <td>0.5</td>
+      <td>Milk</td>
+      <td>Milk w/ Nuts</td>
+      <td>Dark w/ Nuts</td>
+      <td>1</td>
+      <td>5774</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2401</td>
+      <td>5</td>
+      <td>Hershey's</td>
+      <td>Godiva</td>
+      <td>Hershey's</td>
+      <td>0.8</td>
+      <td>1.5</td>
+      <td>3.3</td>
+      <td>Milk w/ Nuts</td>
+      <td>Dark</td>
+      <td>White</td>
+      <td>2</td>
+      <td>5238</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You can also select individuals with subset. In this case, we are looking at subject 2408 in trial 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subject</span> <span class="o">=</span> <span class="n">chocolate_wide</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">chocolate_wide</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2408</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">chocolate_wide</span><span class="p">[</span><span class="s1">&#39;Trial&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">subject</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Brand1</th>
+      <th>Brand2</th>
+      <th>Brand3</th>
+      <th>Price1</th>
+      <th>Price2</th>
+      <th>Price3</th>
+      <th>Type1</th>
+      <th>Type2</th>
+      <th>Type3</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>127</th>
+      <td>2408</td>
+      <td>3</td>
+      <td>Dove</td>
+      <td>Hershey's</td>
+      <td>Lindt</td>
+      <td>2.6</td>
+      <td>1.5</td>
+      <td>3.4</td>
+      <td>Milk w/ Nuts</td>
+      <td>Milk</td>
+      <td>White</td>
+      <td>2</td>
+      <td>6391</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="converting-from-wide-to-long-data">
+<h3>Converting from wide  to long data<a class="headerlink" href="#converting-from-wide-to-long-data" title="Permalink to this headline">¶</a></h3>
+<p>Our algorithms need the long data. In the long vertical format, every row represents an observation belonging to a particular category. You can use pandas wide_to_long()</p>
+<p>With reshape directions indicate the direction of the data transformation (in this case long), while stubnames indicates the columns you would like to summarize. Here, it is Brand, Price and Type. i gives the  columns names that you want to keep. j, finally, is the variable in long format that differentiates multiple records from the same group or individual.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chocolate_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">chocolate_wide</span><span class="p">,</span> <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Brand&#39;</span><span class="p">,</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span><span class="s1">&#39;Type&#39;</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">,</span> <span class="s1">&#39;Trial&#39;</span><span class="p">,</span> <span class="s1">&#39;Selection&#39;</span><span class="p">,</span> <span class="s1">&#39;Response_Time&#39;</span><span class="p">],</span> <span class="n">j</span><span class="o">=</span><span class="s1">&#39;Alt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">chocolate_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+      <th>Alt</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5210</td>
+      <td>1</td>
+      <td>Dove</td>
+      <td>0.6</td>
+      <td>Milk</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5210</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>0.7</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5210</td>
+      <td>3</td>
+      <td>Dove</td>
+      <td>3.6</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>2</td>
+      <td>7480</td>
+      <td>1</td>
+      <td>Godiva</td>
+      <td>2.7</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>2</td>
+      <td>7480</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.9</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>3</td>
+      <td>7130</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.2</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>3</td>
+      <td>7130</td>
+      <td>3</td>
+      <td>Ghirardelli</td>
+      <td>1.4</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>3</td>
+      <td>7315</td>
+      <td>1</td>
+      <td>Lindt</td>
+      <td>1.1</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>3</td>
+      <td>7315</td>
+      <td>2</td>
+      <td>Ghirardelli</td>
+      <td>0.8</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>3</td>
+      <td>7315</td>
+      <td>3</td>
+      <td>Lindt</td>
+      <td>2.0</td>
+      <td>Milk</td>
+    </tr>
+  </tbody>
+</table>
+<p>1050 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>For survey data, we often want the individual/subject to come first, then the trial/experiment and finally the choice. Let’s order the data so that this will be the case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chocolate_df</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[[</span><span class="s2">&quot;Subject&quot;</span><span class="p">,</span> <span class="s2">&quot;Trial&quot;</span><span class="p">,</span> <span class="s2">&quot;Selection&quot;</span><span class="p">,</span> <span class="s2">&quot;Response_Time&quot;</span><span class="p">,</span> <span class="s2">&quot;Alt&quot;</span><span class="p">,</span> <span class="s2">&quot;Brand&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">,</span> <span class="s2">&quot;Type&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chocolate_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+      <th>Alt</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5210</td>
+      <td>1</td>
+      <td>Dove</td>
+      <td>0.6</td>
+      <td>Milk</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5210</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>0.7</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5210</td>
+      <td>3</td>
+      <td>Dove</td>
+      <td>3.6</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>2</td>
+      <td>7480</td>
+      <td>1</td>
+      <td>Godiva</td>
+      <td>2.7</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>2</td>
+      <td>7480</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.9</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>3</td>
+      <td>7130</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.2</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>3</td>
+      <td>7130</td>
+      <td>3</td>
+      <td>Ghirardelli</td>
+      <td>1.4</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>3</td>
+      <td>7315</td>
+      <td>1</td>
+      <td>Lindt</td>
+      <td>1.1</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>3</td>
+      <td>7315</td>
+      <td>2</td>
+      <td>Ghirardelli</td>
+      <td>0.8</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>3</td>
+      <td>7315</td>
+      <td>3</td>
+      <td>Lindt</td>
+      <td>2.0</td>
+      <td>Milk</td>
+    </tr>
+  </tbody>
+</table>
+<p>1050 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>The variable Alt labels the chocolate alternatives, and the  variable Selection indicates the chosen alternative. Let’s transform Selection into a logical variable that indicates whether a certain alternative was chosen. Do you know how?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chocolate_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Alt&#39;</span><span class="p">],</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> 
+<span class="n">chocolate_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Alt&#39;</span><span class="p">],</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chocolate_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+      <th>Alt</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>True</td>
+      <td>5210</td>
+      <td>1</td>
+      <td>Dove</td>
+      <td>0.6</td>
+      <td>Milk</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>False</td>
+      <td>5210</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>0.7</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>False</td>
+      <td>5210</td>
+      <td>3</td>
+      <td>Dove</td>
+      <td>3.6</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>False</td>
+      <td>7480</td>
+      <td>1</td>
+      <td>Godiva</td>
+      <td>2.7</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>True</td>
+      <td>7480</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.9</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>False</td>
+      <td>7130</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.2</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>True</td>
+      <td>7130</td>
+      <td>3</td>
+      <td>Ghirardelli</td>
+      <td>1.4</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>False</td>
+      <td>7315</td>
+      <td>1</td>
+      <td>Lindt</td>
+      <td>1.1</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>False</td>
+      <td>7315</td>
+      <td>2</td>
+      <td>Ghirardelli</td>
+      <td>0.8</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>True</td>
+      <td>7315</td>
+      <td>3</td>
+      <td>Lindt</td>
+      <td>2.0</td>
+      <td>Milk</td>
+    </tr>
+  </tbody>
+</table>
+<p>1050 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>A few visualisations at the end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TRUE</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">true_type</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">FALSE</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">false_type</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">true_type</span><span class="p">,</span> <span class="n">false_type</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;White&#39;</span><span class="p">,</span> <span class="s1">&#39;Dark w/ Nuts&#39;</span><span class="p">,</span> <span class="s1">&#39;Milk w/ Nuts&#39;</span><span class="p">,</span> <span class="s1">&#39;Dark&#39;</span><span class="p">,</span> <span class="s1">&#39;Milk&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/ChoiceModelling_15_1.png" src="../../_images/ChoiceModelling_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.graphics.mosaicplot</span> <span class="kn">import</span> <span class="n">mosaic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brands</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Brand&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">selections</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;brand&#39;</span><span class="p">:</span> <span class="n">brands</span><span class="p">,</span> <span class="s1">&#39;selection&#39;</span><span class="p">:</span> <span class="n">selections</span><span class="p">})</span>
+<span class="n">mosaic</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;selection&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 3 Axes&gt;,
+ {(&#39;Dove&#39;, &#39;True&#39;): (0.0, 0.0, 0.19981325863678803, 0.307386592976682),
+  (&#39;Dove&#39;, &#39;False&#39;): (0.0,
+   0.3107088521128947,
+   0.19981325863678803,
+   0.6892911478871053),
+  (&#39;Godiva&#39;, &#39;True&#39;): (0.20471521942110177,
+   0.0,
+   0.21942110177404295,
+   0.4198770057255955),
+  (&#39;Godiva&#39;, &#39;False&#39;): (0.20471521942110177,
+   0.42319926486180814,
+   0.21942110177404295,
+   0.5768007351381917),
+  (&quot;Hershey&#39;s&quot;, &#39;True&#39;): (0.4290382819794585,
+   0.0,
+   0.19327731092436973,
+   0.2166690741008233),
+  (&quot;Hershey&#39;s&quot;, &#39;False&#39;): (0.4290382819794585,
+   0.21999133323703593,
+   0.19327731092436973,
+   0.780008666762964),
+  (&#39;Lindt&#39;, &#39;True&#39;): (0.6272175536881419,
+   0.0,
+   0.1942110177404295,
+   0.29708663429593657),
+  (&#39;Lindt&#39;, &#39;False&#39;): (0.6272175536881419,
+   0.3004088934321492,
+   0.1942110177404295,
+   0.6995911065678506),
+  (&#39;Ghirardelli&#39;, &#39;True&#39;): (0.8263305322128851,
+   0.0,
+   0.17366946778711487,
+   0.4179616332654592),
+  (&#39;Ghirardelli&#39;, &#39;False&#39;): (0.8263305322128851,
+   0.42128389240167186,
+   0.17366946778711487,
+   0.578716107598328)})
+</pre></div>
+</div>
+<img alt="../../_images/ChoiceModelling_17_1.png" src="../../_images/ChoiceModelling_17_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="conjoint-analysis">
+<h3>Conjoint Analysis<a class="headerlink" href="#conjoint-analysis" title="Permalink to this headline">¶</a></h3>
+<p>We have just done the beginning of a conjoint analysis. Conjoint analysis is a set of market research techniques that measures the value the market places on each feature of your product and predicts the value of any combination of features. Conjoint analysis is, at its essence, all about features and trade-offs. With conjoint analysis, you ask questions that force respondents to make trade-offs among features</p>
+<ul class="simple">
+<li><p>Determine the value they place on each feature based on the trade-offs they make</p></li>
+<li><p>Simulate how the market reacts to various feature trade-offs you are considering</p></li>
+</ul>
+<p><a class="reference external" href="https://www.pragmaticmarketing.com/resources/articles/conjoint-analysis-101">https://www.pragmaticmarketing.com/resources/articles/conjoint-analysis-101</a>
+<a class="reference external" href="https://www.coursera.org/lecture/uva-darden-bcg-pricing-strategy-customer-value/conjoint-analysis-steps-1-3-pRWBU">https://www.coursera.org/lecture/uva-darden-bcg-pricing-strategy-customer-value/conjoint-analysis-steps-1-3-pRWBU</a></p>
+</div>
+</div>
+<div class="section" id="modelling">
+<h2>Modelling<a class="headerlink" href="#modelling" title="Permalink to this headline">¶</a></h2>
+<p>Statsmodels</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[[</span><span class="s1">&#39;Brand&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Price&#39;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Selection&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> 
+
+<span class="n">print_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">print_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
+         Current function value: 0.578947
+         Iterations 6
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:              Selection   No. Observations:                 1050
+Model:                          Logit   Df Residuals:                     1040
+Method:                           MLE   Df Model:                            9
+Date:                Fri, 03 Dec 2021   Pseudo R-squ.:                 0.09044
+Time:                        13:32:17   Log-Likelihood:                -607.89
+converged:                       True   LL-Null:                       -668.34
+Covariance Type:            nonrobust   LLR p-value:                 8.781e-22
+=====================================================================================
+                        coef    std err          z      P&gt;|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const                 0.2430      0.248      0.979      0.327      -0.243       0.729
+Price                -0.2980      0.067     -4.469      0.000      -0.429      -0.167
+Brand_Ghirardelli     0.5709      0.221      2.581      0.010       0.137       1.005
+Brand_Godiva          0.6002      0.209      2.872      0.004       0.191       1.010
+Brand_Hershey&#39;s      -0.4337      0.233     -1.863      0.062      -0.890       0.023
+Brand_Lindt          -0.0785      0.222     -0.354      0.724      -0.514       0.357
+Type_Dark w/ Nuts    -0.4333      0.204     -2.127      0.033      -0.833      -0.034
+Type_Milk             0.0704      0.204      0.345      0.730      -0.330       0.470
+Type_Milk w/ Nuts    -0.4859      0.206     -2.361      0.018      -0.889      -0.083
+Type_White           -1.8068      0.255     -7.078      0.000      -2.307      -1.306
+=====================================================================================
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/statsmodels/tsa/tsatools.py:142: FutureWarning: In a future version of pandas all arguments of concat except for the argument &#39;objs&#39; will be keyword-only
+  x = pd.concat(x[::order], 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The coef indicates the significance of the features. White Chocolate is, e.g, -1.7, which means people really don’t like it.</p>
+<p>The ratio of coefficients usually provides economically meaningful information. E.g., an interesting attribute is the Willingness to pay (WTP) or the maximum price at or below which a consumer will definitely buy one unit of a product (<a class="reference external" href="https://en.wikipedia.org/wiki/Willingness_to_pay">https://en.wikipedia.org/wiki/Willingness_to_pay</a>).</p>
+<p>We can calculate the wtp by dividing the coefficient vector by the negative of the price coefficient</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coefs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">params</span>
+<span class="n">coefs</span><span class="o">/-</span><span class="p">(</span><span class="n">coefs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>const                0.815551
+Price               -1.000000
+Brand_Ghirardelli    1.916126
+Brand_Godiva         2.014521
+Brand_Hershey&#39;s     -1.455449
+Brand_Lindt         -0.263483
+Type_Dark w/ Nuts   -1.454214
+Type_Milk            0.236231
+Type_Milk w/ Nuts   -1.630954
+Type_White          -6.063961
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>A nice trick to get a better overview of prices is to factorize them and then model for price levels. Let’s change the Price variable to a factor in the chocolate data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># chocolate_df[&#39;Price&#39;].factorize</span>
+<span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+<span class="n">ch_df</span> <span class="o">=</span> <span class="n">chocolate_df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">chocolate_df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">])]</span>
+<span class="n">ch_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Trial</th>
+      <th>Selection</th>
+      <th>Response_Time</th>
+      <th>Alt</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>True</td>
+      <td>5210</td>
+      <td>1</td>
+      <td>Dove</td>
+      <td>0.6</td>
+      <td>Milk</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>False</td>
+      <td>5210</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>0.7</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2401</td>
+      <td>1</td>
+      <td>False</td>
+      <td>5210</td>
+      <td>3</td>
+      <td>Dove</td>
+      <td>3.6</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>False</td>
+      <td>7480</td>
+      <td>1</td>
+      <td>Godiva</td>
+      <td>2.7</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2401</td>
+      <td>2</td>
+      <td>True</td>
+      <td>7480</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.9</td>
+      <td>Dark</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>False</td>
+      <td>7130</td>
+      <td>2</td>
+      <td>Godiva</td>
+      <td>3.2</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>2417</td>
+      <td>24</td>
+      <td>True</td>
+      <td>7130</td>
+      <td>3</td>
+      <td>Ghirardelli</td>
+      <td>1.4</td>
+      <td>Milk w/ Nuts</td>
+    </tr>
+    <tr>
+      <th>1047</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>False</td>
+      <td>7315</td>
+      <td>1</td>
+      <td>Lindt</td>
+      <td>1.1</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>False</td>
+      <td>7315</td>
+      <td>2</td>
+      <td>Ghirardelli</td>
+      <td>0.8</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>2417</td>
+      <td>25</td>
+      <td>True</td>
+      <td>7315</td>
+      <td>3</td>
+      <td>Lindt</td>
+      <td>2.0</td>
+      <td>Milk</td>
+    </tr>
+  </tbody>
+</table>
+<p>1050 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># X = ch_df[[&#39;Brand&#39;, &#39;Type&#39;, &#39;Price&#39;]]</span>
+<span class="c1"># X = pd.get_dummies(data=X, drop_first=True)</span>
+<span class="c1"># Y = ch_df[&#39;Selection&#39;]</span>
+<span class="c1"># # X = sm.add_constant(X)</span>
+
+<span class="c1"># model = sm.Logit(Y, X).fit()</span>
+<span class="c1"># predictions = model.predict(X) </span>
+
+<span class="c1"># print_model = model.summary()</span>
+<span class="c1"># print(print_model)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what does the factorizing do?</span>
+<span class="c1"># Why does logistic regression not work?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Others/DigitalMarketing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

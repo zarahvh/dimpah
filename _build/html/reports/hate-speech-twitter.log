@@ -17,30 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import tweepy
-import requests
-from ipynb.fs.full.keys import *
+hate_voc = hate_dict['word'].values.tolist()
+hate_voc = [word.lower() for word in hate_voc if word.isalpha()]
 
-consumer_key = twit_key
-consumer_secret = twit_secr
-access_token = twit_token
-
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True, compression=True)
-
-search_term = 'Trump'
-tweets = api.search(q=search_term)
+hate_speech = dtm[dtm.index.isin(hate_voc)]
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-3-d14992c8e9de>[0m in [0;36m<module>[0;34m[0m
-[1;32m      8[0m [0;34m[0m[0m
-[1;32m      9[0m [0mauth[0m [0;34m=[0m [0mtweepy[0m[0;34m.[0m[0mOAuthHandler[0m[0;34m([0m[0mconsumer_key[0m[0;34m,[0m [0mconsumer_secret[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 10[0;31m [0mapi[0m [0;34m=[0m [0mtweepy[0m[0;34m.[0m[0mAPI[0m[0;34m([0m[0mauth[0m[0;34m,[0m [0mwait_on_rate_limit[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0mwait_on_rate_limit_notify[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0mcompression[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     11[0m [0;34m[0m[0m
-[1;32m     12[0m [0msearch_term[0m [0;34m=[0m [0;34m'Trump'[0m[0;34m[0m[0;34m[0m[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-11-38680619626f>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mhate_voc[0m [0;34m=[0m [0mhate_dict[0m[0;34m[[0m[0;34m'word'[0m[0;34m][0m[0;34m.[0m[0mvalues[0m[0;34m.[0m[0mtolist[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mhate_voc[0m [0;34m=[0m [0;34m[[0m[0mword[0m[0;34m.[0m[0mlower[0m[0;34m([0m[0;34m)[0m [0;32mfor[0m [0mword[0m [0;32min[0m [0mhate_voc[0m [0;32mif[0m [0mword[0m[0;34m.[0m[0misalpha[0m[0;34m([0m[0;34m)[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0mhate_speech[0m [0;34m=[0m [0mdtm[0m[0;34m[[0m[0mdtm[0m[0;34m.[0m[0mindex[0m[0;34m.[0m[0misin[0m[0;34m([0m[0mhate_voc[0m[0;34m)[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mTypeError[0m: __init__() got an unexpected keyword argument 'wait_on_rate_limit_notify'
-TypeError: __init__() got an unexpected keyword argument 'wait_on_rate_limit_notify'
+[0;31mNameError[0m: name 'hate_dict' is not defined
+NameError: name 'hate_dict' is not defined
 
