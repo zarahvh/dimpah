@@ -1,0 +1,2468 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predicting Modelling &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/Others/Old_assignments/PredictingModelling_old/PredictingModelling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FOthers/Old_assignments/PredictingModelling_old/PredictingModelling.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Others/Old_assignments/PredictingModelling_old/PredictingModelling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-1-the-data-science-process">
+   Background 1: The Data Science Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#social-and-cultural-analytics-and-its-data">
+     Social and cultural analytics and its data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predicting-taste">
+   Predicting Taste
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identify-the-problem-machine-tasting-wines">
+   Identify the problem: Machine-tasting  Wines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collect-data">
+     Collect Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-data">
+     Prepare Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-the-training-data">
+     Define the Training Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-and-predicting">
+   Modelling and Predicting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background-2-neural-networks">
+     Background 2: Neural Networks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Modelling and Predicting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predicting">
+     Predicting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-model">
+   Evaluate Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpret-the-results">
+     Interpret the Results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predicting-and-modelling-using-deep-learning">
+   Predicting and Modelling using Deep Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-boundaries">
+   Decision Boundaries
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="predicting-modelling">
+<h1>Predicting Modelling<a class="headerlink" href="#predicting-modelling" title="Permalink to this headline">¶</a></h1>
+<p>Today, we will learn that machine learning is much less scary than science fiction will want to us to believe. This is not because we have benevolent machines, which only want our best, but simply because these machines are quite far away from living their own life without our input, as Skynet manages in ‘Terminator’ or the Machine in ‘Person of Interest’. For the time being, machines still learn best when provided with human input. Furthermore, machines learn in most applications not because they want to start to understand the meaning of life and find out that humans are obstacles to true life, but because they learn to complete a particular task. Machines learn to be part of the workbenches of digital productions.</p>
+<p>It is maybe less a link to artificial intelligence in science fiction than the fact that machines learn from our examples and need to be fed with large amounts of data to learn that makes machine learning an ethically difficult endeavour. Machine learning demands ever more data. Most aspects of our lives are recorded in vast data stores that are easily accessible to machines. Governments, businesses and individuals are recording and reporting all manners of information from the monumental to the mundane. As long as the activities can be transformed into digital formats, you can be certain that somebody will record it.</p>
+<p>In such a world, machines learn by consuming data and humans continuously add new digital methods of machine learning that can exploit this data. These can be some of the statistical methods we have already met or more advanced ones, we will meet today. The digital methods we learn about today have in common that they aim to predict new observations from old observations. They are all empirical and predictive using models.</p>
+<p>Machine learning algorithms are all around you. They have tried to predict the outcomes of elections and referenda, can identify spam messages, predict crime and natural disasters, target donors and voters as well as finally have learned how to drive cars. Recently, they got it wrong quite often: <a class="reference external" href="http://www.kdnuggets.com/2016/11/trump-shows-limits-prediction.html">http://www.kdnuggets.com/2016/11/trump-shows-limits-prediction.html</a></p>
+<p>Many stories are told about the uses and abuses of machine learning. You can find some in the readings. Given how much machine learning is now part of our everyday life, it is maybe surprising that there are not even more stories.</p>
+<p>We also still lack an ethics of machine learning, which is developing so fast that it is difficult for laws and norms to stay up to date. There is, for instance, an on-going debate how biased machine learning algorithms are with regard to race and gender. Machine learning also has made it possible to identify people based on the region they live, the products they buy, etc.</p>
+<p>As a machine learning practitioner, you are often required to exclude revealing data that is ethically problematic, but this is not an easy task, as sometimes the connections are not obvious and might only be revealed after you have trained the machine to learn.</p>
+<div class="section" id="background-1-the-data-science-process">
+<h2>Background 1: The Data Science Process<a class="headerlink" href="#background-1-the-data-science-process" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="social-and-cultural-analytics-and-its-data">
+<h3>Social and cultural analytics and its data<a class="headerlink" href="#social-and-cultural-analytics-and-its-data" title="Permalink to this headline">¶</a></h3>
+<p>Just like humans, machines use data to generalize. They abstract the data and develop its underlying principles, because humans tell them how. In the words of machine learning, machines form a model, which assigns meaning and represents knowledge. The model summarizes the data and makes explicit patterns among data.</p>
+<p>There are many different types of models. We have already seen some and others you will know from school. Models can be (statistical) equations, figures like graphs or trees, rules or clusters. Machines don’t choose the type of models, we choose them for them when analysing the task at hand and the available data.</p>
+<p>The computer learns to fit the model to the data in a process called training. However, computational modelling does not end here. We also need to test the model in a separate testing process. The model thus does not include anything else but what can be found in the data already. It can nevertheless be interesting, as the model might surface connections that we did not recognize before. Newton discovered gravity this way by fitting a series of equations (a model) to observations of falling apples – if the myth is to be believed. Gravity was always there but it was observed for the first time in a model.</p>
+<p>Modelling is far from perfect. It generally involves some kind of bias or systematic error. Newton’s laws of gravity are not as universal as he thought they would be.</p>
+<p>Errors like this do not have to be a bad thing, because they can lead the computer to be able to learn a better model, correcting previous mistakes. But generally, bias is to be avoided. Your reading includes the example where a machine learning algorithms learned to discriminate wolves and huskies from a series of online pictures. It achieved excellent performance until somebody found out that the decision was often based on whether snow can be found in the pictures’ background.</p>
+<p>All learning has weaknesses and is biased in a particular way. Researchers are still looking for the universal model that is better than the rest of them but will probably never find it. Therefore, it is really important to understand how a model can overcome bias. This is the purpose of testing it on new data.</p>
+<p>Unfortunately, especially in our domain of social and cultural analytics, models often fall short of desirable performance. Humans are difficult for computers and the data they produce and can be judged by is very noisy. This means that social and cultural data includes many errors because observations have not been measured correctly or maybe they are simply impossible to measure. How do you quantify, for instance, love? It seems impossible, but online match making agencies still make a business out of predicting love.</p>
+<p>Humans are also inconsistent and report data wrongly. Finally, especially in history we simply do not have data for all time periods or if we have data, it will include many missing values or will be badly captured according to diverse and sometimes contradictory standards. Often, the records have simply been lost.</p>
+<p>A final complication with data in social and cultural analytics that has only recently emerged is the limited access we have to the data. Because it is so valuable, it is kept behind the walls of company servers and is not shared.</p>
+<p>So, machine learning is not artificial intelligence yet but a laborious collaboration between humans and machines that involves trying models and fighting with (bad) data. Otherwise, machine learning is a process that consists of a series of repeatable steps, which we will learn about today. In today’s reading Schutt and O’Neil (2013), have given us an excellent overview of the art of data science.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;process.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_4_0.png" src="../../../_images/PredictingModelling_4_0.png" />
+</div>
+</div>
+<p>According to the Figure, we first need to collect (raw) data in a form that we can process it. The next step explores the data and cleans it. People in data science like to emphasize that this is about 80% of the whole work. Then, we need a question we would like to answer with the data. This question will of course be at the beginning of our work but will likely also change after the initial exploration. Based on the question and the exploration, we start with the model and train it using a subset of the data. After training, we need to evaluate the model’s performance by running a series of test predictions against test data. The result of the evaluation will then be used to improve the model’s performance iteratively until we are satisfied that the model performs as best as possible, and decisions can be confidently made.</p>
+<p>Before we experience the art of machine learning and prediction, let’s quickly remind ourselves of what data is in the eye of the machine. Data generally describes a series of observations, which in R are generally captured in the rows of a data frame. Each observation is defined by its features (characteristics), which are the columns of a data frame. If a feature represents a characteristic measured in numbers, it is unsurprisingly called numeric. For instance, the years of the State of the Union Speeches were numerical. Alternatively, if a feature measures an attribute that is represented by a set of categories, the feature is called categorical or nominal. For instance, the colour codes red, green and blue are categorical. A special case of categorical variables is called ordinal, which designates a nominal variable with categories falling in an ordered list. Moview reviews on Netflix are, for instance, ordinal, because they only cover numbers from 1 to 5.</p>
+<p>You might also remember that we distinguished earlier supervised learning from unsupervised learning. We learned that clustering algorithms are an example of unsupervised learning where a machine discovers patterns/clusters in the data by itself. Today, we mainly work on the much larger group of supervised learning algorithms, where an algorithm is given a set of training data and then learns a combination of features that predicts certain behaviour such as whether an earthquake will take place soon or a crime will be committed. What we are trying to predict is also called a target variable.</p>
+</div>
+</div>
+<div class="section" id="predicting-taste">
+<h2>Predicting Taste<a class="headerlink" href="#predicting-taste" title="Permalink to this headline">¶</a></h2>
+<p>Today, we will predict something that seems to define a human as inherently subjective. We will predict taste and in particular we will try to predict whether wine tastes good or bad. In the language of machine learning, this is a classification task. Our classification will predict whether any wine will fall into either one of two classes: good or bad wine.</p>
+<p>We will thus solve an ancient problem of philosophy, which interogates the subjectivity of taste or the aesthetic judgement (<a class="reference external" href="http://plato.stanford.edu/entries/aesthetic-judgment/">http://plato.stanford.edu/entries/aesthetic-judgment/</a>). For the German philosopher Kant, taste judgments are universal and subjective at the same time. A key part of his Critique of Judgement, Kant demands more from taste than we are generally willing to attribute to it: ‘Many things may for [a person] possess charm and agreeableness — no one cares about that; but when he puts a thing on a pedestal and calls it beautiful, he demands the same delight from others. He judges not merely for himself, but for all men, and then speaks of beauty as if it were a property of things. (…). He blames them if they judge differently, and denies them taste, which he still requires of them as something they ought to have; (…).’ (<a class="reference external" href="http://oll.libertyfund.org/titles/kant-the-critique-of-judgement">http://oll.libertyfund.org/titles/kant-the-critique-of-judgement</a>, §7).</p>
+<p>Today, we will use the machine to find out how something can be subjective and universal at the same time.</p>
+<p>To illustrate how machines classify, let’s first go through a simplified dataset that helps us understand taste. Because we like it sweet and crunchy, we create a training dataset by tasting 1,000 foods and record for each of them how crunchy and how sweet they were. Both crunchy and sweet are ordinal features with a range from 1 to 10. Next, we would like to map this data into a so-called feature-space with 2-axes: one for crunchiness and one for sweetness.</p>
+<p>This example is taken from the excellent Lantz (2013) (Machine learning with R. Packt Publishing Ltd.), which could be a good reference for you to continue working through machine learning using R. Be warned, however, it is fairly advanced. But you will get there!</p>
+<p>Lantz produced a nice visualisation of such a feature space with a few example foods:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lantz-1.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_6_0.png" src="../../../_images/PredictingModelling_6_0.png" />
+</div>
+</div>
+<p>Lantz notices that in this feature space ‘similar types of food tend to be grouped closely together. (…), vegetables tend to be crunchy but not sweet, fruits tend to be sweet and either crunchy or not crunchy, while proteins tend to be neither crunchy nor sweet.’ (p. 68). Similarity is thus based on the distance of the items in the feature space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lantz-2.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_8_0.png" src="../../../_images/PredictingModelling_8_0.png" />
+</div>
+</div>
+<p>Next, we taste for the first time a tomato and add it to the feature space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lantz-3.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_10_0.png" src="../../../_images/PredictingModelling_10_0.png" />
+</div>
+</div>
+<p>Based on this mapping how would we classify the tomato? Is it a vegetable or a fruit? The figure is not very conclusive because we cannot really determine which group the tomato is closer to in the feature space.</p>
+<p>You have just learned how a machine would learn and think about the tomato as well as which decisions it would have to make to understand tomatoes. Machines learn similarities in feature spaces using distances.</p>
+</div>
+<div class="section" id="identify-the-problem-machine-tasting-wines">
+<h2>Identify the problem: Machine-tasting  Wines<a class="headerlink" href="#identify-the-problem-machine-tasting-wines" title="Permalink to this headline">¶</a></h2>
+<p>Let’s go next through our example of tasting wines next and explore the individual steps of machine learning more closely. The data comes from <a class="reference external" href="http://archive.ics.uci.edu/ml/">http://archive.ics.uci.edu/ml/</a>. Check it out. It’s a famous repository for machine learning datasets. The wine data (<a class="reference external" href="http://archive.ics.uci.edu/ml/datasets/Wine+Quality">http://archive.ics.uci.edu/ml/datasets/Wine+Quality</a>) consists of 2 CSV files, one for white wines and another for red ones.</p>
+<p>The two datasets are related to red and white variants of the Portuguese Vinho Verde wine, and were first used in Cortez et al (2009) (Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4): 547-553).</p>
+<p>I first thought of this example, when I learned that somebody else had already ‘outsmarted’ the best wine experts with machine learning: <a class="reference external" href="https://www.datanami.com/2015/02/20/outsmarting-wine-snobs-with-machine-learning/">https://www.datanami.com/2015/02/20/outsmarting-wine-snobs-with-machine-learning/</a>. Today we try and reproduce his approach.</p>
+<p>The first step for us is to download the data so that we can work with it. We have done this before but in the previous tutorials, I have mostly loaded the data for you. So, it’s best to repeat the steps again in detail.
+Perhaps the most common data format of freely available data are Comma-Separated Values (CSV) files, which, as the name suggests, uses the comma as a delimiter. CSV files can be imported to and exported from many common data repositories. To load CSV into python, we use pandas read_csv() function. You use it by specifying a path to the file you want to import, e.g. /path/to/mydata.csv, when calling the pd.read_csv() function after importing pandas again. Here we use it to load the data directly from the web.</p>
+<div class="section" id="collect-data">
+<h3>Collect Data<a class="headerlink" href="#collect-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">red</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+     <span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+     <span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This creates two data frames, one for each type of wine. read_csv() directly accesses the data frames from the web, as you can see, because it uses an http address. Please, note that I generally would advise you to download the data first, as you can never be certain whether you will always have a working Internet connection.
+As we would like to follow the work by Cortez et al. as closely as possible, we next add another feature/column to capture the colour of the wine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">red</span><span class="p">:</span>
+    <span class="n">red</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">white</span><span class="p">:</span>
+    <span class="n">white</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we create single data frame for all the wines and declare that colour is factor. pd.concat is a function to bind two data frames row by row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">red</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4899</span><span class="p">,</span> <span class="mi">6498</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">white</span><span class="p">,</span> <span class="n">red</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+      <th>color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.0</td>
+      <td>0.270</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.00100</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.3</td>
+      <td>0.300</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.99400</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.1</td>
+      <td>0.280</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.99510</td>
+      <td>3.26</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.2</td>
+      <td>0.230</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.99560</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.2</td>
+      <td>0.230</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.99560</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>6.2</td>
+      <td>0.600</td>
+      <td>0.08</td>
+      <td>2.0</td>
+      <td>0.090</td>
+      <td>32.0</td>
+      <td>44.0</td>
+      <td>0.99490</td>
+      <td>3.45</td>
+      <td>0.58</td>
+      <td>10.5</td>
+      <td>5</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>5.9</td>
+      <td>0.550</td>
+      <td>0.10</td>
+      <td>2.2</td>
+      <td>0.062</td>
+      <td>39.0</td>
+      <td>51.0</td>
+      <td>0.99512</td>
+      <td>3.52</td>
+      <td>0.76</td>
+      <td>11.2</td>
+      <td>6</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>6.3</td>
+      <td>0.510</td>
+      <td>0.13</td>
+      <td>2.3</td>
+      <td>0.076</td>
+      <td>29.0</td>
+      <td>40.0</td>
+      <td>0.99574</td>
+      <td>3.42</td>
+      <td>0.75</td>
+      <td>11.0</td>
+      <td>6</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>5.9</td>
+      <td>0.645</td>
+      <td>0.12</td>
+      <td>2.0</td>
+      <td>0.075</td>
+      <td>32.0</td>
+      <td>44.0</td>
+      <td>0.99547</td>
+      <td>3.57</td>
+      <td>0.71</td>
+      <td>10.2</td>
+      <td>5</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>6.0</td>
+      <td>0.310</td>
+      <td>0.47</td>
+      <td>3.6</td>
+      <td>0.067</td>
+      <td>18.0</td>
+      <td>42.0</td>
+      <td>0.99549</td>
+      <td>3.39</td>
+      <td>0.66</td>
+      <td>11.0</td>
+      <td>6</td>
+      <td>red</td>
+    </tr>
+  </tbody>
+</table>
+<p>6497 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>This completes our first step, the data acquisition/collection. It is fairly easy, as we reuse existing material. The data is also complete, and we do not have to take care of any missing values.</p>
+<p>As described earlier, we want to the machine to learn how to taste good and bad wine. Let’s take a first look at the dataset using .info() and head()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 6497 entries, 0 to 6497
+Data columns (total 13 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   fixed acidity         6497 non-null   float64
+ 1   volatile acidity      6497 non-null   float64
+ 2   citric acid           6497 non-null   float64
+ 3   residual sugar        6497 non-null   float64
+ 4   chlorides             6497 non-null   float64
+ 5   free sulfur dioxide   6497 non-null   float64
+ 6   total sulfur dioxide  6497 non-null   float64
+ 7   density               6497 non-null   float64
+ 8   pH                    6497 non-null   float64
+ 9   sulphates             6497 non-null   float64
+ 10  alcohol               6497 non-null   float64
+ 11  quality               6497 non-null   int64  
+ 12  color                 6497 non-null   object 
+dtypes: float64(11), int64(1), object(1)
+memory usage: 710.6+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+      <th>color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.0</td>
+      <td>0.27</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.0010</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.3</td>
+      <td>0.30</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.9940</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.1</td>
+      <td>0.28</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.9951</td>
+      <td>3.26</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>6</td>
+      <td>white</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>There is a column called quality, which matches our classification task. We will use this column as the classification ‘target’. Quality is an ordinal feature from 1 to 9 with 9 indicating top quality. Now, let’s see how quality values are distributed. We could simply run table to get the frequencies for each quality class, but we decide to plot the classes using plot.hist().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/PredictingModelling_27_1.png" src="../../../_images/PredictingModelling_27_1.png" />
+</div>
+</div>
+<p>In order to make our life a little easier, we now would like to reduce the 9 quality classes to 2 (good or bad). This is also part of the original example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">wines_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">wines_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;bad&#39;</span><span class="p">,</span> <span class="s1">&#39;good&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have overwritten the original quality column with a new quality factor with 2 levels. Let’s see how this is distributed with value_counts()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>good    4113
+bad     2384
+Name: quality, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unfortunately, we now have many more ‘good’ quality wine observations, which might be a problem later when we start training a model. Why do you think this might be the case? But it can’t be helped and we go on analysing.</p>
+<p>It’s time to prepare our data for its machine learning adventures.</p>
+</div>
+<div class="section" id="prepare-data">
+<h3>Prepare Data<a class="headerlink" href="#prepare-data" title="Permalink to this headline">¶</a></h3>
+<p>The next step is very important for many machine learning algorithms based on feature spaces. We need to standardize the features, as the distances in the space are dependent on how the features are measured. In particular, if certain features have much larger values than others, the distance measurements will be strongly dominated by the larger values. This wasn’t a problem for us before with the food data, as both sweetness and crunchiness were measured on a scale from 1 to 10. But suppose we added another measure on a scale from 1 to 1,000,000. This measure would dwarf the contribution of the other scales. The distances in the feature space would get out of scale.</p>
+<p>We only need to normalize numeric data. Looking back at the results from str(wines_df), columns/features 1 to 11 are numeric. Next we, define a function to normalise these so that they are all on a scale between 0 and 1. We use the so-called min-max normalisation. Consider an example, where the residual sugar of wine is say 50, while we want to transform this to the range 0 to 1. So first we find the maximum value of residual sugar which is in our example 100 and the minimum value of residual sugar, say 20, then the new scaled value for will be: (50-20)/(100-20)=0.375. Can you see why this value is guaranteed to be between 0 and 1?</p>
+<p>Let’s define a function that takes care of the normalization for us. You hopefully remember how you can define your functions in Python?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">li</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">li</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">li</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">li</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">li</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.375
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we apply normalize to all the numeric columns wines_df[1:11].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wines_df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+      <th>color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.0</td>
+      <td>0.27</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.0010</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.3</td>
+      <td>0.30</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.9940</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.1</td>
+      <td>0.28</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.9951</td>
+      <td>3.26</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.2</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>8.5</td>
+      <td>0.058</td>
+      <td>47.0</td>
+      <td>186.0</td>
+      <td>0.9956</td>
+      <td>3.19</td>
+      <td>0.40</td>
+      <td>9.9</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>8.1</td>
+      <td>0.28</td>
+      <td>0.40</td>
+      <td>6.9</td>
+      <td>0.050</td>
+      <td>30.0</td>
+      <td>97.0</td>
+      <td>0.9951</td>
+      <td>3.26</td>
+      <td>0.44</td>
+      <td>10.1</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6.2</td>
+      <td>0.32</td>
+      <td>0.16</td>
+      <td>7.0</td>
+      <td>0.045</td>
+      <td>30.0</td>
+      <td>136.0</td>
+      <td>0.9949</td>
+      <td>3.18</td>
+      <td>0.47</td>
+      <td>9.6</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7.0</td>
+      <td>0.27</td>
+      <td>0.36</td>
+      <td>20.7</td>
+      <td>0.045</td>
+      <td>45.0</td>
+      <td>170.0</td>
+      <td>1.0010</td>
+      <td>3.00</td>
+      <td>0.45</td>
+      <td>8.8</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6.3</td>
+      <td>0.30</td>
+      <td>0.34</td>
+      <td>1.6</td>
+      <td>0.049</td>
+      <td>14.0</td>
+      <td>132.0</td>
+      <td>0.9940</td>
+      <td>3.30</td>
+      <td>0.49</td>
+      <td>9.5</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>8.1</td>
+      <td>0.22</td>
+      <td>0.43</td>
+      <td>1.5</td>
+      <td>0.044</td>
+      <td>28.0</td>
+      <td>129.0</td>
+      <td>0.9938</td>
+      <td>3.22</td>
+      <td>0.45</td>
+      <td>11.0</td>
+      <td>good</td>
+      <td>white</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all numeric columns</span>
+<span class="n">newdf</span> <span class="o">=</span> <span class="n">wines_df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
+
+<span class="c1"># create new dataframe for normalized numbers</span>
+<span class="n">ndf</span> <span class="o">=</span> <span class="n">wines_df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># quite a complicated function? </span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">li</span> <span class="o">=</span> <span class="n">newdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">col</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">li</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">li</span><span class="p">)</span>
+        <span class="n">ndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py:1732: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self._setitem_single_block(indexer, value, name)
+/usr/local/lib/python3.9/site-packages/pandas/core/indexing.py:723: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value, self.name)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ndf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
+      <td>0.418605</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, let’s add the quality column to the new normalized data frame. This time it only contains good and bad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ndf</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wines_df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-35-e6cf7d2f4def&gt;:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  ndf[&#39;quality&#39;] = wines_df[&#39;quality&#39;].values
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are now satisfied with the data, done our cleaning and all preparations. We can start the modelling process in order to predict how a wine will taste. First, we need to check how many wine quality observations we have in total.</p>
+</div>
+<div class="section" id="define-the-training-data">
+<h3>Define the Training Data<a class="headerlink" href="#define-the-training-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ndf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
+      <td>0.418605</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>0.198347</td>
+      <td>0.346667</td>
+      <td>0.048193</td>
+      <td>0.021472</td>
+      <td>0.134551</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.150183</td>
+      <td>0.565891</td>
+      <td>0.202247</td>
+      <td>0.362319</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>0.173554</td>
+      <td>0.313333</td>
+      <td>0.060241</td>
+      <td>0.024540</td>
+      <td>0.088040</td>
+      <td>0.131944</td>
+      <td>0.103687</td>
+      <td>0.154425</td>
+      <td>0.620155</td>
+      <td>0.303371</td>
+      <td>0.463768</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>0.206612</td>
+      <td>0.286667</td>
+      <td>0.078313</td>
+      <td>0.026074</td>
+      <td>0.111296</td>
+      <td>0.097222</td>
+      <td>0.078341</td>
+      <td>0.166377</td>
+      <td>0.542636</td>
+      <td>0.297753</td>
+      <td>0.434783</td>
+      <td>good</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>0.173554</td>
+      <td>0.376667</td>
+      <td>0.072289</td>
+      <td>0.021472</td>
+      <td>0.109635</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.161172</td>
+      <td>0.658915</td>
+      <td>0.275281</td>
+      <td>0.318841</td>
+      <td>bad</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>0.181818</td>
+      <td>0.153333</td>
+      <td>0.283133</td>
+      <td>0.046012</td>
+      <td>0.096346</td>
+      <td>0.059028</td>
+      <td>0.082949</td>
+      <td>0.161558</td>
+      <td>0.519380</td>
+      <td>0.247191</td>
+      <td>0.434783</td>
+      <td>good</td>
+    </tr>
+  </tbody>
+</table>
+<p>6497 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>We have 6497 wine quality observations with 2384 labelled bad and 4113 labelled good.
+Because we aim to predict new things, our next step should be to find out about things we do not already know and how the model would be able to predict unknown data. If we had access to more wine data, we could apply our model to unknown wine observations and see how well the predictions compare to new wines. But we cannot know about data we do not have. So, we simulate such a scenario by dividing our data into a training dataset that will be used to build the model and a test dataset (as described above). We will use the test dataset to simulate the prediction and find out how well our model behaves.</p>
+<p>We will use 75% of our data for the training and 25% for testing. First we randomly mix the data with  to ensure that all qualities are evenly distributed in both training and test data. Then, we use the first 4549 records (~75%) for the training dataset and then rest for the test data. Remember that data is extracted from data frames using the [row, column] syntax. A blank value for the row or column value indicates that all rows or columns should be included.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shuf</span> <span class="o">=</span> <span class="n">ndf</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">train_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.75</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shuf</span><span class="p">))</span>
+<span class="n">test_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shuf</span><span class="p">))</span>
+
+<span class="n">train_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[:</span><span class="n">train_n</span><span class="p">]</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">shuf</span><span class="p">[</span><span class="n">train_n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are ready to model and because things are looking good with go directly to one the most advanced machine learning technique that uses the human brain as an inspiration.</p>
+</div>
+</div>
+<div class="section" id="modelling-and-predicting">
+<h2>Modelling and Predicting<a class="headerlink" href="#modelling-and-predicting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="background-2-neural-networks">
+<h3>Background 2: Neural Networks<a class="headerlink" href="#background-2-neural-networks" title="Permalink to this headline">¶</a></h3>
+<p>With the training data, we are ready to start learning a model for tasting wine. To classify our test instance, we will work with the best that current machine learning has to offer. We employ the help of neural networks, machines assembled in similar ways as the hundreds, thousands or millions of brain cells. These machines are supposed to learn and behave in a similar way to human brains. Kant would be proud of us – maybe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;neural-networks-1.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_50_0.png" src="../../../_images/PredictingModelling_50_0.png" />
+</div>
+</div>
+<p>Each neuron is made up of a cell body with a number of connections coming off it. These are numerous dendrites (carrying information toward the cell body) and a single axon (carrying information away). But computers are not alive. They are mechanical boxes and made not of the complex chains of brain cells, which are densely interconnected in complex and parallel ways - each one connected to perhaps 10,000 other brain cells. Computers are designed to store lots of data and rearrange that – as we have done many times and need instructions for that. To the day, we do not fully understand how brains learn. They can spontaneously put information together in astounding new ways and forge new connections. No computer currently comes close to that.</p>
+<p>The basic idea behind a neural network is to simulate those densely interconnected brain cells inside a computer so you can get it to learn things, recognize patterns and make decisions. Neural networks learn to improve their own analysis of the data. But neural networks remain mathematical equations and mean nothing to the computers themselves – unlike our own brain activities. They are still just highly interconnected numbers in boxes who constantly change.</p>
+<p>A typical neural network has anything from a few dozen to hundreds, thousands, or even millions of artificial neurons called units arranged in a series of layers, each of which connects to the layers on either side. Some of them are input units. In our case, these will be defined by the data for each feature in each observation. Each feature forms one input unit. Neural networks also have an output layer that responds to the information that is learned. In our case, these are the quality judgments we make with regard to the wines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;neural-networks-2.png&#39;</span><span class="p">)</span>
+<span class="n">imgplot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_54_0.png" src="../../../_images/PredictingModelling_54_0.png" />
+</div>
+</div>
+<p>In-between the input units and output units are one or more layers of hidden units, which, together, form the majority of the artificial brain. The connections between one unit and another are represented by a number called a weight, which can be either positive (if one unit excites another) or negative (if one unit suppresses or inhibits another). The higher the weight, the more influence one unit has on another. Inputs are fed in from the left, activate the hidden units in the middle and feed out outputs from the right.</p>
+<p>But information flows backwards from the output units, too. For a neural network to learn, there has to be an element of feedback involved – just like we humans learn. With feedback, we compare what we tried to achieve with what we actually achieved and adjust our behaviour accordingly. Neural networks learn things in exactly the same way with a feedback process called backpropagation. Because we know from the training data the output we tried to achieve, we can compare it with the calculated values and modify the connections in the network to improve the outcome, working from the output units through the hidden units to the input units. Over time, this backpropagation causes the network to learn until a stable state is achieved. In our case, the network will lean how we taste wine.</p>
+<p>Neural Networks have become synonymous with the recent success of artificial intelligence. So much so that the Guardian declared that 2016 was the year of AI because of advancements in Neural Networks (<a class="reference external" href="https://www.theguardian.com/technology/2016/dec/28/2016-the-year-ai-came-of-age">https://www.theguardian.com/technology/2016/dec/28/2016-the-year-ai-came-of-age</a>).</p>
+</div>
+<div class="section" id="id1">
+<h3>Modelling and Predicting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Fortunately for us, we do not have to implement Neural Networks by ourselves but can rely on many existing algorithms in Python.</p>
+<p>One of the most common libraries in python used for machine learning is scikit-learn: <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a></p>
+<p>To instill scikit learn, type pip3 install scikit-learn into your terminal.</p>
+<p>For now we will use scikit’s MLPclassifier, a Multi-layer Perceptron classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="nn">sk</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We first divide our train and test set into predictor and target variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">Y_train</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">Y_test</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And then build the classifier</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">,</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py:63: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return f(*args, **kwargs)
+/usr/local/lib/python3.9/site-packages/sklearn/neural_network/_multilayer_perceptron.py:614: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (300) reached and the optimization hasn&#39;t converged yet.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MLPClassifier(hidden_layer_sizes=(150, 100, 50), max_iter=300, random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="predicting">
+<h3>Predicting<a class="headerlink" href="#predicting" title="Permalink to this headline">¶</a></h3>
+<p>Next, we can start predicting unknown behaviour, which - as said - we simulate with the test dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check out the details of our predictions and compare predictions with test data using scikit’s confusion matrix function which prints the true positives, false negatives, false positives an true negatives consequently.</p>
+</div>
+</div>
+<div class="section" id="evaluate-model">
+<h2>Evaluate Model<a class="headerlink" href="#evaluate-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+
+<span class="c1"># tp, fn, fp, tn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[390 142]
+ [227 865]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let’s look at the accuracy of our prediction.</p>
+<p>Accuracy is defined as the number of times our predictions have been correct compared to the overall number of predictions. So, we take all cases where the predictions where right in the above table (bad-bad and good good) and compare these with the overall number of observations in the test data or len(test_set). Please replace in the calculation below the numbers you have got.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">432</span> <span class="o">+</span> <span class="mi">835</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_set</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7801724137931034
+</pre></div>
+</div>
+</div>
+</div>
+<p>~75% of our predictions are correct. Please, note that the exact number can be either a bit higher or lower depending on the random test and training datasets.</p>
+<p>Not bad – especially considering that most wine experts would probably not be able to agree to such a degree. However, we would of course like to improve on our predictions. So, let’s investigate this further.</p>
+<p>From the table, we can see that the machine is much better at predicting good quality wine rather than bad one. This should not be surprising, since we already know that we do not have enough training data for bad wine. Let’s plot our results next.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x101a8a160&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/PredictingModelling_72_1.png" src="../../../_images/PredictingModelling_72_1.png" />
+</div>
+</div>
+<div class="section" id="interpret-the-results">
+<h3>Interpret the Results<a class="headerlink" href="#interpret-the-results" title="Permalink to this headline">¶</a></h3>
+<p>In order to further interpret the model, a good approach is to understand which features have influenced the models behaviour and which features are redundant because the results they support are supported by other features. This way we get closer to the secret why people like certain wines. Let’s find out first which features influence the quality decisions most.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">permutation_importance</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">,</span>
+                          <span class="n">n_repeats</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+          <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+     <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_std</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ndf</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:}</span><span class="s2"> &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alcohol 0.092
+density 0.071
+total sulfur dioxide 0.071
+volatile acidity 0.068
+residual sugar 0.056
+free sulfur dioxide 0.044
+pH 0.036
+sulphates 0.034
+fixed acidity 0.032
+citric acid 0.025
+chlorides 0.015
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imps</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">importances_mean</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">imps</span><span class="p">,</span> <span class="n">ndf</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="mi">11</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;importance&#39;</span><span class="p">])</span>
+<span class="n">features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fixed acidity</th>
+      <td>0.031917</td>
+    </tr>
+    <tr>
+      <th>volatile acidity</th>
+      <td>0.068247</td>
+    </tr>
+    <tr>
+      <th>citric acid</th>
+      <td>0.025041</td>
+    </tr>
+    <tr>
+      <th>residual sugar</th>
+      <td>0.056301</td>
+    </tr>
+    <tr>
+      <th>chlorides</th>
+      <td>0.015333</td>
+    </tr>
+    <tr>
+      <th>free sulfur dioxide</th>
+      <td>0.044376</td>
+    </tr>
+    <tr>
+      <th>total sulfur dioxide</th>
+      <td>0.070874</td>
+    </tr>
+    <tr>
+      <th>density</th>
+      <td>0.070874</td>
+    </tr>
+    <tr>
+      <th>pH</th>
+      <td>0.035530</td>
+    </tr>
+    <tr>
+      <th>sulphates</th>
+      <td>0.033908</td>
+    </tr>
+    <tr>
+      <th>alcohol</th>
+      <td>0.092118</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;importance&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/PredictingModelling_77_1.png" src="../../../_images/PredictingModelling_77_1.png" />
+</div>
+</div>
+<p>No wine feature really dominates human taste, but density is the most important one – followed by residual sugar and total sulfur dioxide.</p>
+<p>In order to check for redundant features that we do not need for the prediction, we can use correlation for numerical features. Remember that a correlation indicates the extent to which two or more features fluctuate together. A positive correlation indicates the extent to which those variables increase or decrease in parallel. The higher the correlation between variables therefore the easier it will be to use just one of them, as the others do not influence the overall outcome.</p>
+<p>We will plot a heatmap of the correlations using seaborn,</p>
+<p>The correlation coefficient has values between -1 to 1</p>
+<p>— A value closer to 0 implies weaker correlation (exact 0 implying no correlation)</p>
+<p>— A value closer to 1 implies stronger positive correlation</p>
+<p>— A value closer to -1 implies stronger negative correlation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">cor</span> <span class="o">=</span> <span class="n">train_set</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cor</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_80_0.png" src="../../../_images/PredictingModelling_80_0.png" />
+</div>
+</div>
+<p>corr() delivers the correlations between all features in train_set and sns.heatmap plots them. In the plot, you can clearly see that the two sulfur.dioxide measures are correlated. A negative correlation indicates the extent to which one variable increases as the other decreases. According to the plot density and alcohol drive taste opinions apart.</p>
+<p>The next step would be to try and improve the model performance. We could, for instance, make the network more complex or change the normalisation. The possibilities are literally endless. This kind of work is what keeps an analyst really occupied. In our case this might be difficult though as we do not have enough data on bad wines. We could try and get more data and organise another tasting competition, but going to Portugal is expensive. We rather look at a recent innovation of the neural network called ‘deep learning’ next. Deep learning is essentially a way to learn much more complex neural network architectures, more layers of hidden neurons and more complex connections.</p>
+<p>There is an excellent TED talk on deep learning: <a class="reference external" href="https://www.youtube.com/watch?v=xx310zM3tLs">https://www.youtube.com/watch?v=xx310zM3tLs</a> Google, Facebook, Bing and all the others currently invest millions into new services based on deep learning. Facebook, for instance, has released DeepText (<a class="reference external" href="http://www.wired.co.uk/article/inside-deeptext-facebook-deep-learning-algorithm">http://www.wired.co.uk/article/inside-deeptext-facebook-deep-learning-algorithm</a>) to understand the textual content of millions of posts.</p>
+</div>
+</div>
+<div class="section" id="predicting-and-modelling-using-deep-learning">
+<h2>Predicting and Modelling using Deep Learning<a class="headerlink" href="#predicting-and-modelling-using-deep-learning" title="Permalink to this headline">¶</a></h2>
+<p>To create deep learning models in Python we will use Keras, a deep learning API in extension to scikit-learn</p>
+<p>Before we do this, we have to change the class (quality) to binary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nndf</span> <span class="o">=</span> <span class="n">ndf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">nndf</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nndf</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bad&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">nndf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.264463</td>
+      <td>0.126667</td>
+      <td>0.216867</td>
+      <td>0.308282</td>
+      <td>0.059801</td>
+      <td>0.152778</td>
+      <td>0.377880</td>
+      <td>0.267785</td>
+      <td>0.217054</td>
+      <td>0.129213</td>
+      <td>0.115942</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.206612</td>
+      <td>0.146667</td>
+      <td>0.204819</td>
+      <td>0.015337</td>
+      <td>0.066445</td>
+      <td>0.045139</td>
+      <td>0.290323</td>
+      <td>0.132832</td>
+      <td>0.449612</td>
+      <td>0.151685</td>
+      <td>0.217391</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.355372</td>
+      <td>0.133333</td>
+      <td>0.240964</td>
+      <td>0.096626</td>
+      <td>0.068106</td>
+      <td>0.100694</td>
+      <td>0.209677</td>
+      <td>0.154039</td>
+      <td>0.418605</td>
+      <td>0.123596</td>
+      <td>0.304348</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.280992</td>
+      <td>0.100000</td>
+      <td>0.192771</td>
+      <td>0.121166</td>
+      <td>0.081395</td>
+      <td>0.159722</td>
+      <td>0.414747</td>
+      <td>0.163678</td>
+      <td>0.364341</td>
+      <td>0.101124</td>
+      <td>0.275362</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>0.198347</td>
+      <td>0.346667</td>
+      <td>0.048193</td>
+      <td>0.021472</td>
+      <td>0.134551</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.150183</td>
+      <td>0.565891</td>
+      <td>0.202247</td>
+      <td>0.362319</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>0.173554</td>
+      <td>0.313333</td>
+      <td>0.060241</td>
+      <td>0.024540</td>
+      <td>0.088040</td>
+      <td>0.131944</td>
+      <td>0.103687</td>
+      <td>0.154425</td>
+      <td>0.620155</td>
+      <td>0.303371</td>
+      <td>0.463768</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>0.206612</td>
+      <td>0.286667</td>
+      <td>0.078313</td>
+      <td>0.026074</td>
+      <td>0.111296</td>
+      <td>0.097222</td>
+      <td>0.078341</td>
+      <td>0.166377</td>
+      <td>0.542636</td>
+      <td>0.297753</td>
+      <td>0.434783</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>0.173554</td>
+      <td>0.376667</td>
+      <td>0.072289</td>
+      <td>0.021472</td>
+      <td>0.109635</td>
+      <td>0.107639</td>
+      <td>0.087558</td>
+      <td>0.161172</td>
+      <td>0.658915</td>
+      <td>0.275281</td>
+      <td>0.318841</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>0.181818</td>
+      <td>0.153333</td>
+      <td>0.283133</td>
+      <td>0.046012</td>
+      <td>0.096346</td>
+      <td>0.059028</td>
+      <td>0.082949</td>
+      <td>0.161558</td>
+      <td>0.519380</td>
+      <td>0.247191</td>
+      <td>0.434783</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>6497 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>We import the necessary modules from scikit and keras</p>
+<p>I you haven’t downloaded keras yet, download it by typing pip3 install keras in your terminak</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="c1"># Keras specific</span>
+<span class="kn">import</span> <span class="nn">keras</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like before, we get the x and y values and split the dataset into a train and test set, this time using scikit’s train_test_split function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">nndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">nndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4872, 11)
+(1625, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">11</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+
+<span class="c1"># Compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> 
+              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> 
+            <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/20
+153/153 [==============================] - 16s 2ms/step - loss: 0.5911 - accuracy: 0.6733
+Epoch 2/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5278 - accuracy: 0.7259
+Epoch 3/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5217 - accuracy: 0.7429
+Epoch 4/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5158 - accuracy: 0.7405
+Epoch 5/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.5060 - accuracy: 0.7562
+Epoch 6/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4940 - accuracy: 0.7608
+Epoch 7/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4963 - accuracy: 0.7620
+Epoch 8/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4927 - accuracy: 0.7690
+Epoch 9/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4966 - accuracy: 0.7566
+Epoch 10/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4919 - accuracy: 0.7645
+Epoch 11/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4745 - accuracy: 0.7737
+Epoch 12/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4852 - accuracy: 0.7626
+Epoch 13/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4730 - accuracy: 0.7702
+Epoch 14/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4959 - accuracy: 0.7577
+Epoch 15/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4710 - accuracy: 0.7798
+Epoch 16/20
+153/153 [==============================] - 0s 3ms/step - loss: 0.4802 - accuracy: 0.7722
+Epoch 17/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4806 - accuracy: 0.7670
+Epoch 18/20
+153/153 [==============================] - 0s 3ms/step - loss: 0.4808 - accuracy: 0.7678
+Epoch 19/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4631 - accuracy: 0.7788
+Epoch 20/20
+153/153 [==============================] - 0s 2ms/step - loss: 0.4904 - accuracy: 0.7545
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x14f100c70&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred_train</span><span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy on training data: </span><span class="si">{}</span><span class="s1">% </span><span class="se">\n</span><span class="s1"> Error on training data: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>   
+
+<span class="n">pred_test</span><span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">scores2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy on test data: </span><span class="si">{}</span><span class="s1">% </span><span class="se">\n</span><span class="s1"> Error on test data: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scores2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">scores2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy on training data: 0.7736042737960815% 
+ Error on training data: 0.22639572620391846
+Accuracy on test data: 0.7470769286155701% 
+ Error on test data: 0.25292307138442993
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decision-boundaries">
+<h2>Decision Boundaries<a class="headerlink" href="#decision-boundaries" title="Permalink to this headline">¶</a></h2>
+<p>As a final experiment, let’s try and generate those decision boundaries you read about in your readings, which decide in our case about the wines and whether they are good or bad.</p>
+<p>We would like to create a feature space to visualise this decision. To this end, we first need to map our 11 features into 2 features, because we cannot visualise an 11-dimensional space that humans could read. A standard strategy for reducing the dimensions of a problem like this is to apply Principal Component Analysis (PCA) (<a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">https://en.wikipedia.org/wiki/Principal_component_analysis</a>). It is a fairly complicated method. If you are interested, we can discuss it in class and there are also good explanations in your readings. Here, it is enough to know that for each wine observation it will find its position in a lower-dimensional feature space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">nnndf</span> <span class="o">=</span> <span class="n">nndf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># scale data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">nnndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">nnndf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">principalComponents</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">principalDf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">principalComponents</span>
+             <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;principal component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;principal component 2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">principalDf</span><span class="p">,</span> <span class="n">nnndf</span><span class="p">[[</span><span class="s1">&#39;quality&#39;</span><span class="p">]]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>principal component 1</th>
+      <th>principal component 2</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.778618</td>
+      <td>3.042330</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.129793</td>
+      <td>-0.491683</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.194738</td>
+      <td>0.378754</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.807306</td>
+      <td>0.589593</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.807306</td>
+      <td>0.589593</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>-2.043117</td>
+      <td>-0.895009</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>-2.274810</td>
+      <td>-0.423711</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>-2.479566</td>
+      <td>-0.392779</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>-1.258701</td>
+      <td>-0.383373</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6497</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>6498 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">target</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span><span class="n">colors</span><span class="p">):</span>
+    <span class="n">indicesToKeep</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indicesToKeep</span><span class="p">,</span> <span class="s1">&#39;principal component 1&#39;</span><span class="p">]</span>
+               <span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indicesToKeep</span><span class="p">,</span> <span class="s1">&#39;principal component 2&#39;</span><span class="p">]</span>
+               <span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">color</span>
+               <span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+    
+<span class="n">qualities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;good&#39;</span><span class="p">,</span> <span class="s1">&#39;bad&#39;</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">qualities</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/PredictingModelling_96_0.png" src="../../../_images/PredictingModelling_96_0.png" />
+</div>
+</div>
+<p>Next we will visualise the decision boundaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
+
+<span class="c1"># How to plot the decision boundaries?</span>
+<span class="c1"># this is from https://stackoverflow.com/questions/43778380/how-to-draw-decision-boundary-in-svm-sklearn-data-in-python</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span><span class="n">C</span><span class="o">=</span><span class="mf">100.0</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">principalComponents</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># generate grid for plotting</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">principalComponents</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">principalComponents</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+
+<span class="c1"># create decision boundary plot</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">principalComponents</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/site-packages/sklearn/utils/validation.py:63: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return f(*args, **kwargs)
+</pre></div>
+</div>
+<img alt="../../../_images/PredictingModelling_98_1.png" src="../../../_images/PredictingModelling_98_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Others/Old_assignments/PredictingModelling_old"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

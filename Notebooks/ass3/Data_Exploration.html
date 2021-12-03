@@ -1,0 +1,1116 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exploratory Data Analysis with Python &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Notebooks/ass3/Data_Exploration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FNotebooks/ass3/Data_Exploration.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Notebooks/ass3/Data_Exploration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notebooks">
+   Notebooks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-execution">
+     Code Execution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-sharing">
+     Notebook Sharing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-project">
+   Example project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-exploration">
+   Data exploration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies-comparison-of-yes-votes">
+   Case Studies: Comparison of Yes Votes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisation">
+     Visualisation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exploratory-data-analysis-with-python">
+<h1>Exploratory Data Analysis with Python<a class="headerlink" href="#exploratory-data-analysis-with-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This project trains you on the essentials of exploratory data analysis (EDA) with Python. There are many excellent resources and books. For a recent introducion, check out Suresh Kumar Mukhiya, Usman Ahmed, Hands-On Exploratory Data Analysis with Python, Pack Publishing, 2020.</p>
+<p>Notebooks are particularly suited for EDA. Let’s repeat quickly why.</p>
+</div>
+<div class="section" id="notebooks">
+<h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
+<p>Notebooks are interactive environments to work and share your code for a project and reuse the recipes. They combine plain text with rich text elements such as graphics, calculations, etc. and executable code.</p>
+<p>You are  working with a sort of text editor in which you indicate your code chunks and your pure text components. The document is self contained and fully reproducible which makes it very easy to share.</p>
+<p>What’s great about working with these notebooks is the fact that you can follow up on the execution of your code chunks, thanks to visual feeedbacks on the completion of code when you’re executing large chunks or multiple chunks at once.</p>
+<div class="section" id="code-execution">
+<h3>Code Execution<a class="headerlink" href="#code-execution" title="Permalink to this headline">¶</a></h3>
+<p>Notebooks have options to run a code chunk or run the next chunk, run all code chunks below and above. In addition to these options, you can also choose to restart the Python kernel and run all chunks or to restart and to clear the output.</p>
+<p>You have the option to run a single cell, to run several cells or to run all cells. You can also choose to clear the current or all outputs. The code environment is shared between code cells.</p>
+</div>
+<div class="section" id="notebook-sharing">
+<h3>Notebook Sharing<a class="headerlink" href="#notebook-sharing" title="Permalink to this headline">¶</a></h3>
+<p>You can easily create an HTML file from the notebook that you can share with other people that do not have the same environment set up.</p>
+</div>
+</div>
+<div class="section" id="example-project">
+<h2>Example project<a class="headerlink" href="#example-project" title="Permalink to this headline">¶</a></h2>
+<p>EDA is sometimes treated as a step towards a deeper predictive analyis, but it really is a very powerful kind of analysis in its own right - especially if the dataset is not very large or very complex.</p>
+<p>In the example project, we continues our debate today on analysing votes in parliaments with Python. We will use the dataset by Erik Voeten in ‘Data and Analyses of Voting in the UN General Assembly’, Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013)
+<a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2111149">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2111149</a>.</p>
+<p>We will analyse the voting behaviour of countries in the UN.</p>
+<p>Let’s start by loading the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">votes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/Votes.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check out the dataset with head().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rcid</th>
+      <th>session</th>
+      <th>vote</th>
+      <th>ccode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>1</td>
+      <td>9</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>1</td>
+      <td>9</td>
+      <td>692</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+      <td>9</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1</td>
+      <td>9</td>
+      <td>437</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Each row in the data is a country-vote pair. RCID is the row call for each vote. The session columns stands for the session, while ‘vote’ is the country’s vote:</p>
+<ul class="simple">
+<li><p>1 = Yes</p></li>
+<li><p>2 = Abstain</p></li>
+<li><p>3 = No</p></li>
+<li><p>8 = Not present</p></li>
+<li><p>9 = Not a member</p></li>
+</ul>
+<p>Let’s remove those observations we are not interested in, which are the votes 8 and 9: ‘Not present’ and ‘Not a member’.</p>
+<p>Only keep those votes that are in 1, 2 or 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes</span> <span class="o">=</span> <span class="n">votes</span><span class="p">[</span><span class="n">votes</span><span class="o">.</span><span class="n">vote</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])]</span>
+<span class="n">votes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rcid</th>
+      <th>session</th>
+      <th>vote</th>
+      <th>ccode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>212</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7</td>
+      <td>1</td>
+      <td>3</td>
+      <td>900</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>651</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The session columns start from 1946, when the UN was founded but now is simply the number of session. To make this clearer we add 1945 to the column values and create a new column year. Create a new column ‘year’ to do so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1945</span> <span class="o">+</span> <span class="n">votes</span><span class="o">.</span><span class="n">session</span>
+
+<span class="n">votes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rcid</th>
+      <th>session</th>
+      <th>vote</th>
+      <th>ccode</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>150</td>
+      <td>1946</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>212</td>
+      <td>1946</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>135</td>
+      <td>1946</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>7</td>
+      <td>1</td>
+      <td>3</td>
+      <td>900</td>
+      <td>1946</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>651</td>
+      <td>1946</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The country codes in the ccode column are what is called Correlates of War codes (ccode). But it would be better to have recognizable country names. You can use the countrycode package to translate.</p>
+<p>I have created a spreadsheet with the relevant informatio. Well, somebody else has and I just copied it. Run the next cell to create a mapping table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">ccode_url</span> <span class="o">=</span> <span class="s1">&#39;https://docs.google.com/spreadsheets/d/1DCA8DaKzUx4i-k6-QJTIW1DlvunvqJ2JKaIBa8DkJI4/export?gid=0&amp;format=csv&#39;</span>
+   
+<span class="n">ccode_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ccode_url</span><span class="p">)</span> 
+
+<span class="n">ccode_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stateabb</th>
+      <th>ccode</th>
+      <th>statenme</th>
+      <th>styear</th>
+      <th>stmonth</th>
+      <th>stday</th>
+      <th>endyear</th>
+      <th>endmonth</th>
+      <th>endday</th>
+      <th>version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>USA</td>
+      <td>2</td>
+      <td>United States of America</td>
+      <td>1816</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2011</td>
+      <td>12</td>
+      <td>31</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CAN</td>
+      <td>20</td>
+      <td>Canada</td>
+      <td>1920</td>
+      <td>1</td>
+      <td>10</td>
+      <td>2011</td>
+      <td>12</td>
+      <td>31</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BHM</td>
+      <td>31</td>
+      <td>Bahamas</td>
+      <td>1973</td>
+      <td>7</td>
+      <td>10</td>
+      <td>2011</td>
+      <td>12</td>
+      <td>31</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CUB</td>
+      <td>40</td>
+      <td>Cuba</td>
+      <td>1902</td>
+      <td>5</td>
+      <td>20</td>
+      <td>1906</td>
+      <td>9</td>
+      <td>25</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CUB</td>
+      <td>40</td>
+      <td>Cuba</td>
+      <td>1909</td>
+      <td>1</td>
+      <td>23</td>
+      <td>2011</td>
+      <td>12</td>
+      <td>31</td>
+      <td>2011</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Please use the information in ccode_df to create a column ‘country’ in votes with the country name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes</span> <span class="o">=</span> <span class="n">votes</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ccode_df</span><span class="p">[[</span><span class="s1">&#39;ccode&#39;</span><span class="p">,</span><span class="s1">&#39;statenme&#39;</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ccode&#39;</span><span class="p">])</span>
+<span class="n">votes</span> <span class="o">=</span> <span class="n">votes</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;statenme&quot;</span><span class="p">:</span> <span class="s2">&quot;country&quot;</span><span class="p">})</span>
+
+<span class="n">votes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rcid</th>
+      <th>session</th>
+      <th>vote</th>
+      <th>ccode</th>
+      <th>year</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>150</td>
+      <td>1946</td>
+      <td>Paraguay</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>150</td>
+      <td>1946</td>
+      <td>Paraguay</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>124</td>
+      <td>3</td>
+      <td>3</td>
+      <td>150</td>
+      <td>1948</td>
+      <td>Paraguay</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>124</td>
+      <td>3</td>
+      <td>3</td>
+      <td>150</td>
+      <td>1948</td>
+      <td>Paraguay</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>160</td>
+      <td>3</td>
+      <td>3</td>
+      <td>150</td>
+      <td>1948</td>
+      <td>Paraguay</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>15941</th>
+      <td>5253</td>
+      <td>68</td>
+      <td>2</td>
+      <td>626</td>
+      <td>2013</td>
+      <td>South Sudan</td>
+    </tr>
+    <tr>
+      <th>15942</th>
+      <td>5279</td>
+      <td>68</td>
+      <td>1</td>
+      <td>626</td>
+      <td>2013</td>
+      <td>South Sudan</td>
+    </tr>
+    <tr>
+      <th>15943</th>
+      <td>5292</td>
+      <td>68</td>
+      <td>1</td>
+      <td>626</td>
+      <td>2013</td>
+      <td>South Sudan</td>
+    </tr>
+    <tr>
+      <th>15944</th>
+      <td>5295</td>
+      <td>68</td>
+      <td>1</td>
+      <td>626</td>
+      <td>2013</td>
+      <td>South Sudan</td>
+    </tr>
+    <tr>
+      <th>15945</th>
+      <td>5399</td>
+      <td>70</td>
+      <td>2</td>
+      <td>626</td>
+      <td>2015</td>
+      <td>South Sudan</td>
+    </tr>
+  </tbody>
+</table>
+<p>15946 rows × 6 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="data-exploration">
+<h2>Data exploration<a class="headerlink" href="#data-exploration" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s make this a little more interesting. We want to count the total number of yes and no votes per year as well as the proportional number of yes and no votes.</p>
+<p>Create a new dataframe by_year that contains the year, the vote column, the total number of votes per year and ‘prop’, a column containing the proportion of yes and no votes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  col 1 = year</span>
+<span class="c1">#  col 2 = which vote (1,2 or 3)</span>
+<span class="c1"># col 3 = total votes (for all)</span>
+<span class="c1">#  col 4 = percentage of those votes = &#39;vote&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s plot the data. Simply plot the number of yes votes per year.</p>
+<p>Do you see a pattern?</p>
+</div>
+<div class="section" id="case-studies-comparison-of-yes-votes">
+<h2>Case Studies: Comparison of Yes Votes<a class="headerlink" href="#case-studies-comparison-of-yes-votes" title="Permalink to this headline">¶</a></h2>
+<p>Finally, let’s try a larger case study and investigate the proportion of yes votes for a few countries. This is already a complete small recipe.</p>
+<p>We first define the country list containing the ones we are interested in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the code below</span>
+
+<span class="n">countries_of_interest</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Australia&quot;</span><span class="p">,</span> <span class="s2">&quot;Brazil&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To change the countries you are interested in, just change the list above.</p>
+<p>Now, we group not just by year but also by country. We would like to create the same output of yes and no votes, proportions and total again.</p>
+<p>Call the resulting dataframe by_year_country.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">by_year_country</span> <span class="o">=</span> <span class="n">votes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;vote&#39;</span><span class="p">])[</span><span class="s1">&#39;ccode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">by_year_country</span> <span class="o">=</span> <span class="n">by_year_country</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">votes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">])[</span><span class="s1">&#39;ccode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">by_year_country</span><span class="p">[</span><span class="s1">&#39;prop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_year_country</span><span class="o">.</span><span class="n">ccode_x</span> <span class="o">/</span> <span class="n">by_year_country</span><span class="o">.</span><span class="n">ccode_y</span>
+<span class="n">by_year_country</span> <span class="o">=</span> <span class="n">by_year_country</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ccode_y&quot;</span><span class="p">:</span> <span class="s2">&quot;total&quot;</span><span class="p">})</span>
+<span class="n">by_year_country</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;ccode_x&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">by_year_country</span>
+
+<span class="c1"># col 1 = year</span>
+<span class="c1"># col 2 = which country</span>
+<span class="c1"># col 3 = what did they vote</span>
+<span class="c1"># col 4 = How many votes</span>
+<span class="c1"># col 5 = what is the proportion of their vote for that &#39;vote&#39;, not the total</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>country</th>
+      <th>vote</th>
+      <th>total</th>
+      <th>prop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1946</td>
+      <td>Australia</td>
+      <td>3</td>
+      <td>43</td>
+      <td>0.046512</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1946</td>
+      <td>Belarus</td>
+      <td>3</td>
+      <td>43</td>
+      <td>0.023256</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1946</td>
+      <td>Brazil</td>
+      <td>1</td>
+      <td>43</td>
+      <td>0.046512</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1946</td>
+      <td>Brazil</td>
+      <td>3</td>
+      <td>43</td>
+      <td>0.023256</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1946</td>
+      <td>Costa Rica</td>
+      <td>3</td>
+      <td>43</td>
+      <td>0.023256</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8507</th>
+      <td>2015</td>
+      <td>Vietnam</td>
+      <td>2</td>
+      <td>278</td>
+      <td>0.003597</td>
+    </tr>
+    <tr>
+      <th>8508</th>
+      <td>2015</td>
+      <td>Yemen</td>
+      <td>1</td>
+      <td>278</td>
+      <td>0.003597</td>
+    </tr>
+    <tr>
+      <th>8509</th>
+      <td>2015</td>
+      <td>Yugoslavia</td>
+      <td>1</td>
+      <td>278</td>
+      <td>0.007194</td>
+    </tr>
+    <tr>
+      <th>8510</th>
+      <td>2015</td>
+      <td>Yugoslavia</td>
+      <td>2</td>
+      <td>278</td>
+      <td>0.007194</td>
+    </tr>
+    <tr>
+      <th>8511</th>
+      <td>2015</td>
+      <td>Zimbabwe</td>
+      <td>1</td>
+      <td>278</td>
+      <td>0.003597</td>
+    </tr>
+  </tbody>
+</table>
+<p>8512 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>filtered_countries will be those that have voted yes at least once and are part of the countries we are interested in.</p>
+<p>Create the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if vote = 1 and country is part of the interest countries</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="visualisation">
+<h3>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h3>
+<p>Create a graph with the proportinal yes vote per country of interest per year.</p>
+<p>Please, use the seaborn package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  sns scatterplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it. Always remember how easy it is to change notebooks to suit your need.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Notebooks/ass3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -340,7 +340,12 @@
   <a class="reference internal" href="../../VisualsArts.html">
    Visuals Arts
   </a>
-  <ul class="simple collapse-ul">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../VisualsArts/AdvancedVisualisation.html">
+     Lots of fun with Python visualisations
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -454,19 +459,20 @@
   <div class="section" id="social-sensing-1">
 <h1>Social Sensing 1<a class="headerlink" href="#social-sensing-1" title="Permalink to this headline">¶</a></h1>
 <p>There are a lot of social, cultural and other datasets out there on the web. We have already learned how to extract data from web sites directly.</p>
-<p>Many data items can also be accessed via a so-called API (Application Programming Interface). You can think of an API as a window through which you have access to remotely stored data rather than web pages. Often access to these APIs is limited by some kind of registration key you have to use to open that window.</p>
-<p>First, we will use data from <a class="reference external" href="https://www.data.gov/">https://www.data.gov/</a>, which is ‘the home of the U.S. Government’s open data’.</p>
+<p>Many data items can also be accessed via a so-called API (Application Programming Interface). You can think of an API as a window through which you have access to remotely stored data rather than web pages. Often access to these APIs is limited by some kind of registration key you have to use to open that window. We will start with a few open APIs before we try Twitter and its complicated access.</p>
+<p>Run the cell below to load some of our typical libraries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
 <span class="kn">import</span> <span class="nn">sca</span>
-<span class="kn">from</span> <span class="nn">ipynb.fs.full.keys</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>In the first part, we will use data from <a class="reference external" href="https://www.data.gov/">https://www.data.gov/</a>, which is ‘the home of the U.S. Government’s open data’.</p>
 <p>To call an API in Python and access data from a website we need the requests package first.  Please, import it with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">requests</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +483,15 @@
 </div>
 <p>You can think of the API calls we are doing as a direct way of accessing the data behind the web pages you see in your browser. As a taste go to a browser window, and paste the following URL: <a class="reference external" href="https://developer.nrel.gov/api/utility_rates/v3.json?api_key=DEMO_KEY&amp;address=1600+Amphitheatre+Parkway%2C+Mountain+View%2C+CA">https://developer.nrel.gov/api/utility_rates/v3.json?api_key=DEMO_KEY&amp;address=1600+Amphitheatre+Parkway,+Mountain+View,+CA</a></p>
 <p>What do you see? You should see details about an address in the United States ‘1600 Amphitheatre Parkway, Mountain View, CA’. What you see is the JSON format, which is a way of transmitting data rather than websites. According to <a class="reference external" href="https://en.wikipedia.org/wiki/JSON">https://en.wikipedia.org/wiki/JSON</a>, JSON describes’data objects consisting of attribute–value pairs’. For instance, you should see something like “address”:”1600 Amphitheatre Parkway, Mountain View, CA”, which defines the address. It looks a bit like a Python dictionary.</p>
-<p>Next we need to open a session with request. Type in <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">=</span> <span class="pre">requests.Session()</span></code>.</p>
+<p>Python provides easy access to JSON files. Run <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">json</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get to the JSON file, we need to open a session with request. Type in <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">=</span> <span class="pre">requests.Session()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
@@ -485,7 +499,7 @@
 </div>
 </div>
 </div>
-<p>Then, we define the URL we have to address with our call, which is everything before the ? in the URL above. So, type in <code class="docutils literal notranslate"><span class="pre">URL</span> <span class="pre">=</span> <span class="pre">'https://developer.nrel.gov/api/utility_rates/v3.json'</span></code>.</p>
+<p>Then, we define the URL we have to address with our call, which is everything before the ? in the URL you typed into the brower. So, type in <code class="docutils literal notranslate"><span class="pre">URL</span> <span class="pre">=</span> <span class="pre">'https://developer.nrel.gov/api/utility_rates/v3.json'</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;https://developer.nrel.gov/api/utility_rates/v3.json&#39;</span>
@@ -512,8 +526,8 @@
 </div>
 </div>
 </div>
-<p>Do you know who ‘lives’ at this address?</p>
-<p>Next we run the actual request, which is called a get-request, because we want to retrieve data. We can also ‘put’ data with a put request, if we have the right access. For the call <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">S.get(url=URL,</span> <span class="pre">params=PARAMS,</span> <span class="pre">verify=False)</span></code>, we need the URL and PARAMS as parameters. We also say verify=False, as we are just experimenting and don’t need verification. Please, ignore any warning you might get.</p>
+<p>Do you know who ‘lives’ at this address? It’s Google’s headquarters.</p>
+<p>Next we run the actual request, which is called a get-request, because we want to retrieve data. We can also ‘put’ data with a put request, if we have the right access. For our next call <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">S.get(url=URL,</span> <span class="pre">params=PARAMS,</span> <span class="pre">verify=False)</span></code>, we need the URL and PARAMS as parameters. We also say verify=False, as we are just experimenting and don’t need verification. Please, ignore any warning you might get.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">URL</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">PARAMS</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -570,7 +584,7 @@
 </div>
 </div>
 </div>
-<p>This way, we got the utitility name. Try now to get the residential electricity rate at the address, look for outputs and then residential. Tip: you need to replace ‘utility_name’ with ‘residential’.</p>
+<p>This way, we got the utitility name. Try now to get the residential electricity rate at the address. Look for outputs and then residential. Tip: you need to replace ‘utility_name’ with ‘residential’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DATA</span><span class="p">[</span><span class="s1">&#39;outputs&#39;</span><span class="p">][</span><span class="s1">&#39;residential&#39;</span><span class="p">]</span>
@@ -584,9 +598,9 @@
 </div>
 </div>
 <p>There are many useful APIs out there. Check out <a class="reference external" href="https://www.programmableweb.com/">https://www.programmableweb.com/</a>. Unfortunately, many are not as easy to access as <a class="reference external" href="http://data.gov">data.gov</a>.</p>
-<p>Let’s check next the geo-locations for our address. You have of course already guessed that it is the location of the Googleplex, Google’s HQ.</p>
-<p>We will now repeat the same steps as above but with the wikipedia API. It really is always just the repetition of the same steps.</p>
-<p>Type in <code class="docutils literal notranslate"><span class="pre">URL</span> <span class="pre">=</span> <span class="pre">'https://en.wikipedia.org/w/api.php'</span></code> to go to the Wikipedia API service</p>
+<p>Let’s check next the geo-locations for our address.</p>
+<p>We will now repeat the same steps as above but with the wikipedia API. API work is always just the repetition of the same or very similar steps.</p>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">URL</span> <span class="pre">=</span> <span class="pre">'https://en.wikipedia.org/w/api.php'</span></code> to go to the Wikipedia API service.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/w/api.php&#39;</span>
@@ -595,7 +609,7 @@
 </div>
 </div>
 <p>We are interested in the latitude and longitude of the Googleplex.</p>
-<p>To this end we need to give the API the following paramenter, which define the type of action, the format, the title of Wikipedia page and what it should return, the coordinates.</p>
+<p>To this end, we need to give the API the following paramenters. They define the type of action, the format, the title of Wikipedia page and what it should return, which are the coordinates.</p>
 <p>Run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PARAMS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
@@ -617,7 +631,7 @@
 </div>
 </div>
 </div>
-<p>The cell is given to you, as it just exectures the requests and decodes the returned data.</p>
+<p>The next cell is given to you, as it just exectures the requests and decodes the returned data. Run it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
@@ -645,7 +659,7 @@
 </div>
 </div>
 </div>
-<p>The longitude and latitude are hidden in there somewhere. Print out the latitude with <code class="docutils literal notranslate"><span class="pre">pages['773423']['coordinates'][0]['lat']</span></code>. The first number might differ …</p>
+<p>The longitude and latitude are hidden in there somewhere. Print out the latitude with <code class="docutils literal notranslate"><span class="pre">pages['773423']['coordinates'][0]['lat']</span></code>. The first number might differ but you can find it as the first element of our output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pages</span><span class="p">[</span><span class="s1">&#39;773423&#39;</span><span class="p">][</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
@@ -660,7 +674,7 @@
 </div>
 <p>You could now use <a class="reference external" href="https://www.latlong.net/Show-Latitude-Longitude.html">https://www.latlong.net/Show-Latitude-Longitude.html</a> to map these longitude and latitude and would find the Googleplex.</p>
 <p>We have just worked through simple API requests that got us locations. More interesting will be to access social media applications like Twitter and Facebook. We can also get their data through APIs. Twitter is especially popular.</p>
-<p>In python there is a library that makes accessing Twitter data simple. Download and import tweepy.</p>
+<p>In Python, there is a library that makes accessing Twitter data simple. Tweepy (<a class="reference external" href="https://docs.tweepy.org/en/stable/">https://docs.tweepy.org/en/stable/</a>) hides from us all the complicated questions of authentication and parsing JSON responses. Load it with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">tweepy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tweepy</span>
@@ -668,68 +682,138 @@
 </div>
 </div>
 </div>
+<p>Because we are dealing for Twitter with more personal information and there is a large company behind the data, going through the authentication with Twitter is not easy. Here is the technical documentation: <a class="reference external" href="https://docs.tweepy.org/en/stable/auth_tutorial.html">https://docs.tweepy.org/en/stable/auth_tutorial.html</a>. There are many useful online instructions like <a class="reference external" href="https://towardsdatascience.com/how-to-access-twitters-api-using-tweepy-5a13a206683b">https://towardsdatascience.com/how-to-access-twitters-api-using-tweepy-5a13a206683b</a>. If you are linked to a university, there is also a special research access mode: <a class="reference external" href="https://consent.yahoo.com/v2/collectConsent?sessionId=3_cc-session_79541b62-34e2-4451-8830-2f49ef2ef090">https://consent.yahoo.com/v2/collectConsent?sessionId=3_cc-session_79541b62-34e2-4451-8830-2f49ef2ef090</a>.</p>
+<p>But you might quickly want to forget about the technical details and are probably happy as long as you can connect? Once you have read through some tutorials, just run the cell below to get started with today’s Twitter work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">consumer_key</span> <span class="o">=</span> <span class="n">twit_key</span>
-    <span class="n">consumer_secret</span> <span class="o">=</span> <span class="n">twit_secr</span>
-    <span class="n">access_token</span> <span class="o">=</span> <span class="n">twit_token</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
 
-    <span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
-    <span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No api key available, skip next cell&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We are connected to Twitter and can run queries. Let’s get Barack Obama’s timeline and his first tweet first</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">user_timeline</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="s1">&#39;BarackObama&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">first_tweet</span> <span class="o">=</span> <span class="n">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s check the first tweet of the dataset by typing first_tweet.text</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">first_tweet</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">obama_tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;obama_tweets.csv&#39;</span><span class="p">)</span>
-    <span class="n">first_tweet</span> <span class="o">=</span> <span class="n">obama_tweets</span><span class="o">.</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">first_tweet</span><span class="p">)</span>
+<span class="n">consumer_key</span> <span class="o">=</span> <span class="s1">&#39;YOUR-CONSUMER-KEY&#39;</span>
+<span class="n">consumer_secret</span> <span class="o">=</span> <span class="s1">&#39;YOUR-CONSUMER-SECRET&#39;</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;YOUR-ACCESS-TOKEN&#39;</span>
+
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">api</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Five years ago, the Paris Agreement went into effect. Paris provided an important framework in the fight against cl… https://t.co/ZEcygnSMdl
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tweepy.api.API at 0x13529b490&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>To see all the attributes of a tweet, simply type tweets[0], but for now we only want to check the date using first_tweet.created_at</p>
+<p>Most of the details of the authentication are linked to the keys, tokens, etc. you received when registering your account. Hopefully, you are connected afterwards to the API and it shows something like &lt;tweepy.api.API at 0x7f8b990465f8&gt;.</p>
+<p>One important detail I would like to quickly discuss is the rate limit of Twitter. Twitter limits the amount of API calls you can do at any moment in time, which is often an issue if you retrieve a lot of followers from big accounts. Rate limits are one of the biggest issues in Twitter analysis once the data gets a bit bigger. Check out the details at <a class="reference external" href="https://dev.twitter.com/rest/public/rate-limiting">https://dev.twitter.com/rest/public/rate-limiting</a>. You will find plenty of people online who complain, as you quickly reach your rate limit. So, be careful with the access to the API. wait_on_rate_limit=True in tweepy.API tells all your api calls to automatically wait for your rate limit to refresh.</p>
+<p>But you might not have Twitter API access yet? Then, continue with some historical data and run the next cell. You need to first click on it and make it into a ‘code’ cell from the drop-down menu above. Then, continue with cells 23-45 and cell 45 for the further analysis.</p>
+<p>#Keep cell</p>
+<p>follower_df =  pd.read_csv(‘data/followers-tb.csv’)
+with open(“data/all_sn_list.json”, ‘r’) as f:
+all_sn_list = json.load(f)</p>
+<p>If you are already connected to Twitter on the other hand, you can run your own queries. Let’s get Barack Obama’s timeline and his first tweet first. This is easy with <code class="docutils literal notranslate"><span class="pre">tweets</span> <span class="pre">=</span> <span class="pre">api.user_timeline(screen_name</span> <span class="pre">=</span> <span class="pre">'BarackObama',</span> <span class="pre">count=100)</span></code>. As you can see Tweepy hides all the complexities of API calls into functions like user_timeline(). You preceed all these functions with Tweepy’s ‘api.’. In this case, you ask for the screen_name of Barack Obama and you want to retrieve 100 tweets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">first_tweet</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">obama_tweets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;created_at&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">user_timeline</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="s1">&#39;BarackObama&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-11-04 20:01:48+00:00
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Unauthorized</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">33</span><span class="n">b4d5d86a1f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">user_timeline</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="s1">&#39;BarackObama&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/tweepy/api.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">33</span>             <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="n">wrapper</span><span class="o">.</span><span class="n">pagination_mode</span> <span class="o">=</span> <span class="n">mode</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/tweepy/api.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;payload_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">payload_list</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>             <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;payload_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">payload_type</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>             <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="n">wrapper</span><span class="o">.</span><span class="n">payload_list</span> <span class="o">=</span> <span class="n">payload_list</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">wrapper</span><span class="o">.</span><span class="n">payload_type</span> <span class="o">=</span> <span class="n">payload_type</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/tweepy/api.py</span> in <span class="ni">user_timeline</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">twitter</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">twitter</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">tweets</span><span class="o">/</span><span class="n">timelines</span><span class="o">/</span><span class="n">api</span><span class="o">-</span><span class="n">reference</span><span class="o">/</span><span class="n">get</span><span class="o">-</span><span class="n">statuses</span><span class="o">-</span><span class="n">user_timeline</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">571</span><span class="s2">         return self.request(</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span><span class="s2">             &#39;GET&#39;, &#39;statuses/user_timeline&#39;, endpoint_parameters=(</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span><span class="s2">                 &#39;user_id&#39;, &#39;screen_name&#39;, &#39;since_id&#39;, &#39;count&#39;, &#39;max_id&#39;,</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/tweepy/api.py</span> in <span class="ni">request</span><span class="nt">(self, method, endpoint, endpoint_parameters, params, headers, json_payload, parser, payload_list, payload_type, post_data, files, require_auth, return_cursors, upload_api, use_cache, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span><span class="s2">                 raise BadRequest(resp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span><span class="s2">             if resp.status_code == 401:</span>
+<span class="ne">--&gt; </span><span class="mi">257</span><span class="s2">                 raise Unauthorized(resp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span><span class="s2">             if resp.status_code == 403:</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span><span class="s2">                 raise Forbidden(resp)</span>
+
+<span class="ne">Unauthorized</span>: 401 Unauthorized
+<span class="mi">32</span><span class="s2"> - Could not authenticate you.</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Could we find a way to plot Obama his twitter activity?</p>
-<p>TB: I would provide the following as a helper function and add it to <a class="reference external" href="http://sca.py">sca.py</a> where we should collect all the helper functions.</p>
-<p>Then, just say please run</p>
+<p>Did I say that Tweepy hides all the complicated JSON details. Well, this is not entirely true, as of course it does not know what you would like to retrieve.</p>
+<p>Let’s check the first tweet of the dataset by typing <code class="docutils literal notranslate"><span class="pre">tweets[0]</span></code>. As you can see tweets is a list. We will be working with a lot of lists today.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status(_api=&lt;tweepy.api.API object at 0x7fc9961feba8&gt;, _json={&#39;created_at&#39;: &#39;Mon Nov 08 14:16:09 +0000 2021&#39;, &#39;id&#39;: 1457713555361476611, &#39;id_str&#39;: &#39;1457713555361476611&#39;, &#39;text&#39;: &#39;We’ve done some important work since the Paris Agreement was signed six year ago, but we’re still nowhere near wher… https://t.co/g48NxPhal0&#39;, &#39;truncated&#39;: True, &#39;entities&#39;: {&#39;hashtags&#39;: [], &#39;symbols&#39;: [], &#39;user_mentions&#39;: [], &#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/g48NxPhal0&#39;, &#39;expanded_url&#39;: &#39;https://twitter.com/i/web/status/1457713555361476611&#39;, &#39;display_url&#39;: &#39;twitter.com/i/web/status/1…&#39;, &#39;indices&#39;: [117, 140]}]}, &#39;source&#39;: &#39;&lt;a href=&quot;http://twitter.com/download/iphone&quot; rel=&quot;nofollow&quot;&gt;Twitter for iPhone&lt;/a&gt;&#39;, &#39;in_reply_to_status_id&#39;: None, &#39;in_reply_to_status_id_str&#39;: None, &#39;in_reply_to_user_id&#39;: None, &#39;in_reply_to_user_id_str&#39;: None, &#39;in_reply_to_screen_name&#39;: None, &#39;user&#39;: {&#39;id&#39;: 813286, &#39;id_str&#39;: &#39;813286&#39;, &#39;name&#39;: &#39;Barack Obama&#39;, &#39;screen_name&#39;: &#39;BarackObama&#39;, &#39;location&#39;: &#39;Washington, DC&#39;, &#39;description&#39;: &#39;Dad, husband, President, citizen.&#39;, &#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;entities&#39;: {&#39;url&#39;: {&#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;expanded_url&#39;: &#39;http://obamabook.com&#39;, &#39;display_url&#39;: &#39;obamabook.com&#39;, &#39;indices&#39;: [0, 23]}]}, &#39;description&#39;: {&#39;urls&#39;: []}}, &#39;protected&#39;: False, &#39;followers_count&#39;: 130126680, &#39;friends_count&#39;: 588295, &#39;listed_count&#39;: 222477, &#39;created_at&#39;: &#39;Mon Mar 05 22:08:25 +0000 2007&#39;, &#39;favourites_count&#39;: 0, &#39;utc_offset&#39;: None, &#39;time_zone&#39;: None, &#39;geo_enabled&#39;: False, &#39;verified&#39;: True, &#39;statuses_count&#39;: 16296, &#39;lang&#39;: None, &#39;contributors_enabled&#39;: False, &#39;is_translator&#39;: False, &#39;is_translation_enabled&#39;: True, &#39;profile_background_color&#39;: &#39;77B0DC&#39;, &#39;profile_background_image_url&#39;: &#39;http://abs.twimg.com/images/themes/theme1/bg.png&#39;, &#39;profile_background_image_url_https&#39;: &#39;https://abs.twimg.com/images/themes/theme1/bg.png&#39;, &#39;profile_background_tile&#39;: False, &#39;profile_image_url&#39;: &#39;http://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, &#39;profile_image_url_https&#39;: &#39;https://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, &#39;profile_banner_url&#39;: &#39;https://pbs.twimg.com/profile_banners/813286/1633800288&#39;, &#39;profile_link_color&#39;: &#39;2574AD&#39;, &#39;profile_sidebar_border_color&#39;: &#39;FFFFFF&#39;, &#39;profile_sidebar_fill_color&#39;: &#39;C2E0F6&#39;, &#39;profile_text_color&#39;: &#39;333333&#39;, &#39;profile_use_background_image&#39;: True, &#39;has_extended_profile&#39;: True, &#39;default_profile&#39;: False, &#39;default_profile_image&#39;: False, &#39;following&#39;: None, &#39;follow_request_sent&#39;: None, &#39;notifications&#39;: None, &#39;translator_type&#39;: &#39;regular&#39;, &#39;withheld_in_countries&#39;: []}, &#39;geo&#39;: None, &#39;coordinates&#39;: None, &#39;place&#39;: None, &#39;contributors&#39;: None, &#39;is_quote_status&#39;: False, &#39;retweet_count&#39;: 2609, &#39;favorite_count&#39;: 14231, &#39;favorited&#39;: False, &#39;retweeted&#39;: False, &#39;possibly_sensitive&#39;: False, &#39;lang&#39;: &#39;en&#39;}, created_at=datetime.datetime(2021, 11, 8, 14, 16, 9), id=1457713555361476611, id_str=&#39;1457713555361476611&#39;, text=&#39;We’ve done some important work since the Paris Agreement was signed six year ago, but we’re still nowhere near wher… https://t.co/g48NxPhal0&#39;, truncated=True, entities={&#39;hashtags&#39;: [], &#39;symbols&#39;: [], &#39;user_mentions&#39;: [], &#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/g48NxPhal0&#39;, &#39;expanded_url&#39;: &#39;https://twitter.com/i/web/status/1457713555361476611&#39;, &#39;display_url&#39;: &#39;twitter.com/i/web/status/1…&#39;, &#39;indices&#39;: [117, 140]}]}, source=&#39;Twitter for iPhone&#39;, source_url=&#39;http://twitter.com/download/iphone&#39;, in_reply_to_status_id=None, in_reply_to_status_id_str=None, in_reply_to_user_id=None, in_reply_to_user_id_str=None, in_reply_to_screen_name=None, author=User(_api=&lt;tweepy.api.API object at 0x7fc9961feba8&gt;, _json={&#39;id&#39;: 813286, &#39;id_str&#39;: &#39;813286&#39;, &#39;name&#39;: &#39;Barack Obama&#39;, &#39;screen_name&#39;: &#39;BarackObama&#39;, &#39;location&#39;: &#39;Washington, DC&#39;, &#39;description&#39;: &#39;Dad, husband, President, citizen.&#39;, &#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;entities&#39;: {&#39;url&#39;: {&#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;expanded_url&#39;: &#39;http://obamabook.com&#39;, &#39;display_url&#39;: &#39;obamabook.com&#39;, &#39;indices&#39;: [0, 23]}]}, &#39;description&#39;: {&#39;urls&#39;: []}}, &#39;protected&#39;: False, &#39;followers_count&#39;: 130126680, &#39;friends_count&#39;: 588295, &#39;listed_count&#39;: 222477, &#39;created_at&#39;: &#39;Mon Mar 05 22:08:25 +0000 2007&#39;, &#39;favourites_count&#39;: 0, &#39;utc_offset&#39;: None, &#39;time_zone&#39;: None, &#39;geo_enabled&#39;: False, &#39;verified&#39;: True, &#39;statuses_count&#39;: 16296, &#39;lang&#39;: None, &#39;contributors_enabled&#39;: False, &#39;is_translator&#39;: False, &#39;is_translation_enabled&#39;: True, &#39;profile_background_color&#39;: &#39;77B0DC&#39;, &#39;profile_background_image_url&#39;: &#39;http://abs.twimg.com/images/themes/theme1/bg.png&#39;, &#39;profile_background_image_url_https&#39;: &#39;https://abs.twimg.com/images/themes/theme1/bg.png&#39;, &#39;profile_background_tile&#39;: False, &#39;profile_image_url&#39;: &#39;http://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, &#39;profile_image_url_https&#39;: &#39;https://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, &#39;profile_banner_url&#39;: &#39;https://pbs.twimg.com/profile_banners/813286/1633800288&#39;, &#39;profile_link_color&#39;: &#39;2574AD&#39;, &#39;profile_sidebar_border_color&#39;: &#39;FFFFFF&#39;, &#39;profile_sidebar_fill_color&#39;: &#39;C2E0F6&#39;, &#39;profile_text_color&#39;: &#39;333333&#39;, &#39;profile_use_background_image&#39;: True, &#39;has_extended_profile&#39;: True, &#39;default_profile&#39;: False, &#39;default_profile_image&#39;: False, &#39;following&#39;: None, &#39;follow_request_sent&#39;: None, &#39;notifications&#39;: None, &#39;translator_type&#39;: &#39;regular&#39;, &#39;withheld_in_countries&#39;: []}, id=813286, id_str=&#39;813286&#39;, name=&#39;Barack Obama&#39;, screen_name=&#39;BarackObama&#39;, location=&#39;Washington, DC&#39;, description=&#39;Dad, husband, President, citizen.&#39;, url=&#39;https://t.co/FPuJ0CENpo&#39;, entities={&#39;url&#39;: {&#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;expanded_url&#39;: &#39;http://obamabook.com&#39;, &#39;display_url&#39;: &#39;obamabook.com&#39;, &#39;indices&#39;: [0, 23]}]}, &#39;description&#39;: {&#39;urls&#39;: []}}, protected=False, followers_count=130126680, friends_count=588295, listed_count=222477, created_at=datetime.datetime(2007, 3, 5, 22, 8, 25), favourites_count=0, utc_offset=None, time_zone=None, geo_enabled=False, verified=True, statuses_count=16296, lang=None, contributors_enabled=False, is_translator=False, is_translation_enabled=True, profile_background_color=&#39;77B0DC&#39;, profile_background_image_url=&#39;http://abs.twimg.com/images/themes/theme1/bg.png&#39;, profile_background_image_url_https=&#39;https://abs.twimg.com/images/themes/theme1/bg.png&#39;, profile_background_tile=False, profile_image_url=&#39;http://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, profile_image_url_https=&#39;https://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, profile_banner_url=&#39;https://pbs.twimg.com/profile_banners/813286/1633800288&#39;, profile_link_color=&#39;2574AD&#39;, profile_sidebar_border_color=&#39;FFFFFF&#39;, profile_sidebar_fill_color=&#39;C2E0F6&#39;, profile_text_color=&#39;333333&#39;, profile_use_background_image=True, has_extended_profile=True, default_profile=False, default_profile_image=False, following=False, follow_request_sent=None, notifications=None, translator_type=&#39;regular&#39;, withheld_in_countries=[]), user=User(_api=&lt;tweepy.api.API object at 0x7fc9961feba8&gt;, _json={&#39;id&#39;: 813286, &#39;id_str&#39;: &#39;813286&#39;, &#39;name&#39;: &#39;Barack Obama&#39;, &#39;screen_name&#39;: &#39;BarackObama&#39;, &#39;location&#39;: &#39;Washington, DC&#39;, &#39;description&#39;: &#39;Dad, husband, President, citizen.&#39;, &#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;entities&#39;: {&#39;url&#39;: {&#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;expanded_url&#39;: &#39;http://obamabook.com&#39;, &#39;display_url&#39;: &#39;obamabook.com&#39;, &#39;indices&#39;: [0, 23]}]}, &#39;description&#39;: {&#39;urls&#39;: []}}, &#39;protected&#39;: False, &#39;followers_count&#39;: 130126680, &#39;friends_count&#39;: 588295, &#39;listed_count&#39;: 222477, &#39;created_at&#39;: &#39;Mon Mar 05 22:08:25 +0000 2007&#39;, &#39;favourites_count&#39;: 0, &#39;utc_offset&#39;: None, &#39;time_zone&#39;: None, &#39;geo_enabled&#39;: False, &#39;verified&#39;: True, &#39;statuses_count&#39;: 16296, &#39;lang&#39;: None, &#39;contributors_enabled&#39;: False, &#39;is_translator&#39;: False, &#39;is_translation_enabled&#39;: True, &#39;profile_background_color&#39;: &#39;77B0DC&#39;, &#39;profile_background_image_url&#39;: &#39;http://abs.twimg.com/images/themes/theme1/bg.png&#39;, &#39;profile_background_image_url_https&#39;: &#39;https://abs.twimg.com/images/themes/theme1/bg.png&#39;, &#39;profile_background_tile&#39;: False, &#39;profile_image_url&#39;: &#39;http://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, &#39;profile_image_url_https&#39;: &#39;https://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, &#39;profile_banner_url&#39;: &#39;https://pbs.twimg.com/profile_banners/813286/1633800288&#39;, &#39;profile_link_color&#39;: &#39;2574AD&#39;, &#39;profile_sidebar_border_color&#39;: &#39;FFFFFF&#39;, &#39;profile_sidebar_fill_color&#39;: &#39;C2E0F6&#39;, &#39;profile_text_color&#39;: &#39;333333&#39;, &#39;profile_use_background_image&#39;: True, &#39;has_extended_profile&#39;: True, &#39;default_profile&#39;: False, &#39;default_profile_image&#39;: False, &#39;following&#39;: None, &#39;follow_request_sent&#39;: None, &#39;notifications&#39;: None, &#39;translator_type&#39;: &#39;regular&#39;, &#39;withheld_in_countries&#39;: []}, id=813286, id_str=&#39;813286&#39;, name=&#39;Barack Obama&#39;, screen_name=&#39;BarackObama&#39;, location=&#39;Washington, DC&#39;, description=&#39;Dad, husband, President, citizen.&#39;, url=&#39;https://t.co/FPuJ0CENpo&#39;, entities={&#39;url&#39;: {&#39;urls&#39;: [{&#39;url&#39;: &#39;https://t.co/FPuJ0CENpo&#39;, &#39;expanded_url&#39;: &#39;http://obamabook.com&#39;, &#39;display_url&#39;: &#39;obamabook.com&#39;, &#39;indices&#39;: [0, 23]}]}, &#39;description&#39;: {&#39;urls&#39;: []}}, protected=False, followers_count=130126680, friends_count=588295, listed_count=222477, created_at=datetime.datetime(2007, 3, 5, 22, 8, 25), favourites_count=0, utc_offset=None, time_zone=None, geo_enabled=False, verified=True, statuses_count=16296, lang=None, contributors_enabled=False, is_translator=False, is_translation_enabled=True, profile_background_color=&#39;77B0DC&#39;, profile_background_image_url=&#39;http://abs.twimg.com/images/themes/theme1/bg.png&#39;, profile_background_image_url_https=&#39;https://abs.twimg.com/images/themes/theme1/bg.png&#39;, profile_background_tile=False, profile_image_url=&#39;http://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, profile_image_url_https=&#39;https://pbs.twimg.com/profile_images/1329647526807543809/2SGvnHYV_normal.jpg&#39;, profile_banner_url=&#39;https://pbs.twimg.com/profile_banners/813286/1633800288&#39;, profile_link_color=&#39;2574AD&#39;, profile_sidebar_border_color=&#39;FFFFFF&#39;, profile_sidebar_fill_color=&#39;C2E0F6&#39;, profile_text_color=&#39;333333&#39;, profile_use_background_image=True, has_extended_profile=True, default_profile=False, default_profile_image=False, following=False, follow_request_sent=None, notifications=None, translator_type=&#39;regular&#39;, withheld_in_countries=[]), geo=None, coordinates=None, place=None, contributors=None, is_quote_status=False, retweet_count=2609, favorite_count=14231, favorited=False, retweeted=False, possibly_sensitive=False, lang=&#39;en&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see each tweet has an id and a lot of other metadata attached to it such as retweets, locations, etc. Did you know that you produce so much information with each tweet?</p>
+<p>Tweepy maskes it easy to access the details. To get the text of tweet, e.g., type in <code class="docutils literal notranslate"><span class="pre">tweets[0].text</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;We’ve done some important work since the Paris Agreement was signed six year ago, but we’re still nowhere near wher… https://t.co/g48NxPhal0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the dot notation tweets[0].text, you can access all the attributes. For instance, each tweet has an id. Run <code class="docutils literal notranslate"><span class="pre">tweets[0].id</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1457713555361476611
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s do some quick timeline analysis next. Can you access the attribute ‘created_at’?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">created_at</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2021, 11, 8, 14, 16, 9)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This returns a datetime object, which as the year, month, day, minutes and seconds. Dates are complicated to represent in any programming language, but Python has some powerful tools at hand. We will come back to this several times. Here, we move on.</p>
+<p>With the timeline, we can plot Obama’s Twitter activity? We have provided a helper function. Type in  <code class="docutils literal notranslate"><span class="pre">sca.plot_twitter_activity(tweets)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sca</span><span class="o">.</span><span class="n">plot_twitter_activity</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
@@ -740,446 +824,927 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Social_Sensing_1_41_1.png" src="../../_images/Social_Sensing_1_41_1.png" />
+<img alt="../../_images/Social_Sensing_1_47_1.png" src="../../_images/Social_Sensing_1_47_1.png" />
 </div>
 </div>
-<p>Let’s move on from Obama. In order to access my own Twitter favourites, please type in api.favorites(‘tobias_blanke’)</p>
+<p>Nice. Timelines are a very popular analysis with only one piece of the rich metadata of Twitter. They show patterns of Twitter activities for individuals. Or you could test whether a certain topic/hashtag generates more excitement at specific times, etc.</p>
+<p>Let’s move on from Obama. In order to access my own Twitter favourites, please type in <code class="docutils literal notranslate"><span class="pre">api.favorites('tobias_blanke')</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">favorites</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">favorites</span><span class="p">(</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span>
-    <span class="n">favorite</span> <span class="o">=</span> <span class="n">favorites</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="n">favorite</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not possible without key&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">favorites</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">favorites</span><span class="p">(</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check the text of the first tweet I marked as favourite. Do you know how?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">favorites</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="n">d5f7d56633c0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">favorites</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">favorites</span><span class="p">(</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">favorite</span> <span class="o">=</span> <span class="n">favorites</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="n">favorite</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span>: &#39;API&#39; object has no attribute &#39;favorites&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;📢📢📢Happy to share the news that I am now Assistant Professor of Critical Data Studies at @UvA_Amsterdam Dpt of Medi… https://t.co/8pNGkx8Fgo&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>So far, so good. Of course, these requests were quite simple. So, let’s try something more complicated. We start with first a look at the retweet structures and then a typical content analysis in Twitter. Tweets are little pieces of texts with lots of metadata attached to them (<a class="reference external" href="https://en.wikipedia.org/wiki/Twitter">https://en.wikipedia.org/wiki/Twitter</a>). So, it is not surprising that many people try and run text analysis on the content of tweets. Let’s start with that.</p>
-<p>The first step is to search Twitter for something of interest by running api.search(q=‘#uva’, count = 10). This search will look for the most recent tweets (count=10) with the hashtag uva.</p>
+<p>So far, so good. Of course, these requests were quite simple. So, let’s try something more complicated. We start with  a look at retweet structures and then a typical content analysis in Twitter. Tweets are little pieces of texts with lots of metadata attached to them (<a class="reference external" href="https://en.wikipedia.org/wiki/Twitter">https://en.wikipedia.org/wiki/Twitter</a>). So, it is not surprising that many people try and run text analysis on the content of tweets. Let’s start with that.</p>
+<p>The first step is to search Twitter for something of interest by running <code class="docutils literal notranslate"><span class="pre">tweets</span> <span class="pre">=</span> <span class="pre">api.search(q=‘#uva’,</span> <span class="pre">count</span> <span class="pre">=</span> <span class="pre">10)</span></code>. This search will look for the most recent tweets (count=10) with the hashtag uva.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">uva_tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;#uva&#39;</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">uva_tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;uva_tweets.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;#uva&#39;</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we get a list of tweets back. But now we want to do something more complicated with the results than just access one tweet. In Python, we have loops for that - as you might remember. Let’s take a look at a foor-loop example that simply prints out a number of integers. You might remember range(), which will give us a list of integers?</p>
+<p>Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">dca90017e94f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">uva_tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;#uva&#39;</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">uva_tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;uva_tweets.csv&#39;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;API&#39; object has no attribute &#39;search&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+10
+12
+14
+16
+18
 </pre></div>
 </div>
 </div>
 </div>
-<p>As we can see each tweet has an id and a lot of other metadata attached to it such as retweets, locations, etc. Did you know that you produce so much information with each tweet?</p>
-<p>There are a lot of things we can do with tweets and their metadata. Have a look at the documentation of the package or the many examples online. A quick example would be to return retweets. The first step is to find them. Looking at the metadata of each tweet in kcl_tweets, there are two relevant fields with retweet_count and retweeted. With retweet_count, we can check whether a tweet has been retweeted (retweet_count &gt; 0), while retweeted tells us whether a tweet was a retweet itself. We want to find only those tweets that have not been retweets (retweeted == False) but are not a retweet. So, please select those kcl_tweets that have been retweeted.</p>
+<p>Of course, you noticed that we also multiplied x by 2 before we printed it. In a for-loop you can do any kind of complex calculations. However, for-loops also often become complicated quickly.</p>
+<p>Python provides list comprehensions to make the processing of lists much easier. Check out: <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">https://docs.python.org/3/tutorial/datastructures.html</a>. A very good tutorial can be found at <a class="reference external" href="https://www.programiz.com/python-programming/list-comprehension">https://www.programiz.com/python-programming/list-comprehension</a>.</p>
+<p>The general structure of a list comprehensionis [expression for item in list]. To replace a for-loop to create a list of 10 numbers with a list comprehension, simply run this one line: <code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(10)]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">retweeted_uva_tweets</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">uva_tweet</span> <span class="ow">in</span> <span class="n">uva_tweets</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">uva_tweet</span><span class="o">.</span><span class="n">retweeted</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">uva_tweet</span><span class="o">.</span><span class="n">retweet_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">retweeted_uva_tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uva_tweet</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">uva_tweets</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">uva_tweets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s1">&#39;retweeted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">uva_tweets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s1">&#39;retweet_count&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">retweeted_uva_tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uva_tweets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">retweeted_uva_tweets</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="n">fdace45f3296</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">retweeted_uva_tweets</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">uva_tweet</span> <span class="ow">in</span> <span class="n">uva_tweets</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">if</span> <span class="n">uva_tweet</span><span class="o">.</span><span class="n">retweeted</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">uva_tweet</span><span class="o">.</span><span class="n">retweet_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="n">retweeted_uva_tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uva_tweet</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;uva_tweets&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
 </div>
-<p>As promised, we would like to run some simple content analysis with the text in the tweets. We will produce a simple word cloud. But before we can do this we need to first create a corpus from the tweets, the same as we did with the speeches in the Text assignment.
-Let’s first extract the text from the uva_tweets.</p>
+<p>You can also apply a function to x by adding it at the beginning. Run <code class="docutils literal notranslate"><span class="pre">[x*2</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(10)]</span></code>  to multiply x by 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet_text</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">uva_tweets</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">text</span>
-        <span class="n">tweet_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">uva_tweets</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">uva_tweets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
-        <span class="n">tweet_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">175</span><span class="n">f18a23bf4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">tweet_text</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">uva_tweets</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">text</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">text</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">tweet_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;uva_tweets&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Finally, you can filter the numbers by adding an if-statement. <code class="docutils literal notranslate"><span class="pre">[x*2</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(10)</span> <span class="pre">if</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0]</span></code> will keep only even numbers. % is the modulo operator. Try it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">sca</span><span class="o">.</span><span class="n">plot_wordcloud</span><span class="p">(</span><span class="n">tweet_text</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">ed3bd7b48be7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sca</span><span class="o">.</span><span class="n">plot_wordcloud</span><span class="p">(</span><span class="n">tweet_text</span><span class="p">)</span>
-
-<span class="nn">~/Documents/dimpah/SocialAnalytics/SocialMedia_new/sca.py</span> in <span class="ni">plot_wordcloud</span><span class="nt">(words)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">134</span>     <span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> 
-<span class="g g-Whitespace">    </span><span class="mi">135</span>                     <span class="n">background_color</span> <span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>                     <span class="n">min_font_size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">corpus</span><span class="p">))</span> 
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/wordcloud/wordcloud.py</span> in <span class="ni">generate</span><span class="nt">(self, text)</span>
-<span class="g g-Whitespace">    </span><span class="mi">630</span>         <span class="bp">self</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">632</span><span class="sd">         return self.generate_from_text(text)</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="sd">     def _check_generated(self):</span>
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/wordcloud/wordcloud.py</span> in <span class="ni">generate_from_text</span><span class="nt">(self, text)</span>
-<span class="g g-Whitespace">    </span><span class="mi">612</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span>         <span class="n">words</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">614</span>         <span class="bp">self</span><span class="o">.</span><span class="n">generate_from_frequencies</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">615</span>         <span class="k">return</span> <span class="bp">self</span>
-<span class="g g-Whitespace">    </span><span class="mi">616</span> 
-
-<span class="nn">/usr/local/lib/python3.9/site-packages/wordcloud/wordcloud.py</span> in <span class="ni">generate_from_frequencies</span><span class="nt">(self, frequencies, max_font_size)</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>         <span class="n">frequencies</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">frequencies</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">frequencies</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">403</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;We need at least 1 word to plot a word cloud, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>                              <span class="s2">&quot;got </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">frequencies</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>         <span class="n">frequencies</span> <span class="o">=</span> <span class="n">frequencies</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">max_words</span><span class="p">]</span>
-
-<span class="ne">ValueError</span>: We need at least 1 word to plot a word cloud, got 0.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 8, 12, 16]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Hmmm https shows up there pretty big, let’s check if everything went alright.
-Print the tweets that we just added to the corpus.</p>
+<p>You will get used to list comprehensions with practice …</p>
+<p>Let’s use our new knowledge to print out all the texts in tweets. Run <code class="docutils literal notranslate"><span class="pre">[tweet.text</span> <span class="pre">for</span> <span class="pre">tweet</span> <span class="pre">in</span> <span class="pre">tweets]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet</span> <span class="o">=</span> <span class="n">tweet_text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">tweet</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;#RT @VirginiaSports: RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/sWVOB2DutN\n📻… https://t.co/w2puJmhglP&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;[VIDEO] Less is more and @UVA professor @Leidyklotz is here to prove just that. Learn the ways you can upgrade and… https://t.co/JZ77pj0HOH&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>As we can see there is a link to the tweet in each text, we should have removed that first. We can use regular expressions for this.</p>
+<p>Before our excursion into list comprehensions, we promised to look into retweets , which are either directly indicated in the tweet metadata tweet.retweeted=True or are done the old fashioned way with RT &#64; in the text. So, let’s use our new knowledge about how to filter list comprehensions and add an if-statement to set retweeted_tweets.</p>
+<p>We need to combine the two conditions with an or statement. Type in <code class="docutils literal notranslate"><span class="pre">retweeted_tweets</span> <span class="pre">=</span> <span class="pre">[tweet</span> <span class="pre">for</span> <span class="pre">tweet</span> <span class="pre">in</span> <span class="pre">tweets</span> <span class="pre">if</span> <span class="pre">((tweet.retweeted)</span> <span class="pre">or</span> <span class="pre">('RT</span> <span class="pre">&#64;'</span> <span class="pre">in</span> <span class="pre">tweet.text))]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">retweeted_tweets</span> <span class="o">=</span> <span class="p">[</span><span class="n">tweet</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span> <span class="k">if</span> <span class="p">((</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;RT @&#39;</span> <span class="ow">in</span> <span class="n">tweet</span><span class="o">.</span><span class="n">text</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next print out all the texts of retweeted_tweets with a list comprehension. You can do it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">tweet</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">retweeted_tweets</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;#RT @VirginiaSports: RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/sWVOB2DutN\n📻… https://t.co/w2puJmhglP&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Retweets can be used as a proxy for tweet importance. However, be careful, as people retweet for all kinds of reasons.</p>
+<p>As promised, we would also like to run a simple content analysis with the text in the tweets. We will produce a simple word cloud. Let’s first extract the text from the tweets with <code class="docutils literal notranslate"><span class="pre">tweet_text</span> <span class="pre">=</span> <span class="pre">[tweet.text</span> <span class="pre">for</span> <span class="pre">tweet</span> <span class="pre">in</span> <span class="pre">tweets]</span></code>. You should be used to it by now?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet_text</span> <span class="o">=</span> <span class="p">[</span><span class="n">tweet</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have created a very pretty make_wordcloud function to create a word cloud from the texts of tweets. Run <code class="docutils literal notranslate"><span class="pre">sca.make_wordcloud_tweets(tweet_text)</span></code>. Later you will learn how to create word clouds yourself but for now this is enough.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sca</span><span class="o">.</span><span class="n">make_wordcloud_tweets</span><span class="p">(</span><span class="n">tweet_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc99679ea58&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Social_Sensing_1_71_1.png" src="../../_images/Social_Sensing_1_71_1.png" />
+</div>
+</div>
+<p>Hmmm, https shows up there pretty big, let’s check if everything was ok. Print tweet_text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweet_text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;#RT @VirginiaSports: RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/sWVOB2DutN\n📻… https://t.co/w2puJmhglP&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;,
+ &#39;[VIDEO] Less is more and @UVA professor @Leidyklotz is here to prove just that. Learn the ways you can upgrade and… https://t.co/JZ77pj0HOH&#39;,
+ &#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 https://t.co/D2kMoMshSb\n📻 https://t.co/v1ZzhwSm17\n📊 https://t.co/b8WR5qhyhA\n🔶⚔️🔷 #GoHoos…&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see there is a link to the tweet in each text, we should have removed that first. We can use regular expressions for this. They are complicated but powerful and implemented in the Python library re. Load it with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">re</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="n">tweet</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;http\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><a class="reference external" href="https://www.w3schools.com/python/python_regex.asp">https://www.w3schools.com/python/python_regex.asp</a> is a simple but effective tutorial of regular expressions in Python.</p>
+<p>Regular expressions require some practice, and it is best to learn from examples. Try <code class="docutils literal notranslate"><span class="pre">re.sub(r'http\S+',</span> <span class="pre">'',</span> <span class="pre">tweet_text[0])</span></code> to remove all https from the first tweet. re.sub (for substitute) takes two arguments. The first one is the regular expression pattern to match and the second one is the substitutions. We want to remove the https, so we substitute with an empty string ‘’. You need to read the regular expression pattern as ‘find http and then any non-whitespace characters (\S+) until you reach a whitespace’, This will remove the whole URL as in <a class="reference external" href="http://wwe.example.com">http://wwe.example.com</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_tweets</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_text</span><span class="p">:</span>
-    <span class="n">tweet</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;http\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span> 
-    <span class="n">cleaned_tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;http\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">tweet_text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;RT @UVAMensHoops: GAMEDAY at #UVA!\n📺 ACC Network\n💻 \n📻 \n📊 \n🔶⚔️🔷 #GoHoos…&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we want to use our re.sub(r’http\S+’, ‘’, …) to remove all https in all tweets. Of course, we can do it with a list comprehension, because we can use a function directly on the expression. Assign <code class="docutils literal notranslate"><span class="pre">cleaned_tweet_text</span> <span class="pre">=</span> <span class="pre">[re.sub(r'http\S+',</span> <span class="pre">'',</span> <span class="pre">tweet)</span> <span class="pre">for</span> <span class="pre">tweet</span> <span class="pre">in</span> <span class="pre">tweet_text]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_tweet_text</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;http\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_text</span><span class="p">]</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you run our wordcloud function again to print out cleaned_tweet_text?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sca</span><span class="o">.</span><span class="n">make_wordcloud_tweets</span><span class="p">(</span><span class="n">cleaned_tweet_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc99162add8&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Social_Sensing_1_81_1.png" src="../../_images/Social_Sensing_1_81_1.png" />
+</div>
+</div>
+<p>Very popular with Twitter is also the analysis of followers. I don’t have very many. In fact, I am not really using Twitter much. But let’s still try. You can get my Twitter information by entering <code class="docutils literal notranslate"><span class="pre">me</span> <span class="pre">=</span> <span class="pre">api.get_user(screen_name</span> <span class="pre">=</span> <span class="pre">'tobias_blanke')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out my description with <code class="docutils literal notranslate"><span class="pre">me.description</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="o">.</span><span class="n">description</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;past philosopher and computer scientist; now digital arts and humanities; research infrastructure; analytics and synthetics&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s me!</p>
+<p>My followers are a little bit more interesting. We can retrieve them by using api.followers(‘tobias_blanke’). Run <code class="docutils literal notranslate"><span class="pre">[follower.screen_name</span> <span class="pre">for</span> <span class="pre">follower</span> <span class="pre">in</span> <span class="pre">api.followers('tobias_blanke')]</span></code> to retrieve the screen names of 20 of my followers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">follower</span><span class="o">.</span><span class="n">screen_name</span> <span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">(</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;HelenaRae&#39;,
+ &#39;AlexWermerColan&#39;,
+ &#39;DilanCkr&#39;,
+ &#39;shivshaktighosh&#39;,
+ &#39;inge_stegeman&#39;,
+ &#39;ullahdhude&#39;,
+ &#39;anwagnerdreas&#39;,
+ &#39;ChapBookPro&#39;,
+ &#39;MingshuWang&#39;,
+ &#39;Zehui_Y&#39;,
+ &#39;KMalik0990&#39;,
+ &#39;dennmis&#39;,
+ &#39;mar__isi&#39;,
+ &#39;SBrkhrdt&#39;,
+ &#39;Sxander&#39;,
+ &#39;AnastasiaSiap&#39;,
+ &#39;damian0604&#39;,
+ &#39;armanes&#39;,
+ &#39;yuliia_kazmina&#39;,
+ &#39;dariorodighiero&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are only 20 because we need to paginate through all pages of the lists of my followers to get them all - like in an address book where we move from one page to the next. We do this with tweepy.Cursor(): <a class="reference external" href="https://docs.tweepy.org/en/stable/pagination.html">https://docs.tweepy.org/en/stable/pagination.html</a>. While this might sound complicated, it actually makes our life much easier. Check out this a bit outdated tutorial, that makes this point very well: <a class="reference external" href="https://docs.tweepy.org/en/v3.5.0/cursor_tutorial.html">https://docs.tweepy.org/en/v3.5.0/cursor_tutorial.html</a></p>
+<p>We tell Cursor() to retrieve followers from the api of my screen name. Using the items() function, we retrieve the items on each page. Run <code class="docutils literal notranslate"><span class="pre">[follower</span> <span class="pre">for</span> <span class="pre">follower</span> <span class="pre">in</span> <span class="pre">tweepy.Cursor(api.followers,</span> <span class="pre">screen_name=&quot;tobias_blanke&quot;).items(1)]</span></code>. We only want to take a look at the first item (1).</p>
+<p><a class="reference external" href="http://sparida.blogspot.com/2019/12/twitter-data-collection-tutorial-using.html">http://sparida.blogspot.com/2019/12/twitter-data-collection-tutorial-using.html</a> is a great tutorial how to set up a larger data collection from Twitter using the Google cloud services. This is probably for later though …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">follower</span> <span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">,</span> <span class="n">screen_name</span><span class="o">=</span><span class="s2">&quot;tobias_blanke&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[User(_api=&lt;tweepy.api.API object at 0x7fc9961feba8&gt;, _json={&#39;id&#39;: 868301766785413120, &#39;id_str&#39;: &#39;868301766785413120&#39;, &#39;name&#39;: &#39;Helena Weibel&#39;, &#39;screen_name&#39;: &#39;HelenaRae&#39;, &#39;location&#39;: &#39;&#39;, &#39;description&#39;: &#39;&#39;, &#39;url&#39;: None, &#39;entities&#39;: {&#39;description&#39;: {&#39;urls&#39;: []}}, &#39;protected&#39;: False, &#39;followers_count&#39;: 9, &#39;friends_count&#39;: 77, &#39;listed_count&#39;: 0, &#39;created_at&#39;: &#39;Sat May 27 03:04:08 +0000 2017&#39;, &#39;favourites_count&#39;: 28, &#39;utc_offset&#39;: None, &#39;time_zone&#39;: None, &#39;geo_enabled&#39;: False, &#39;verified&#39;: False, &#39;statuses_count&#39;: 0, &#39;lang&#39;: None, &#39;contributors_enabled&#39;: False, &#39;is_translator&#39;: False, &#39;is_translation_enabled&#39;: False, &#39;profile_background_color&#39;: &#39;F5F8FA&#39;, &#39;profile_background_image_url&#39;: None, &#39;profile_background_image_url_https&#39;: None, &#39;profile_background_tile&#39;: False, &#39;profile_image_url&#39;: &#39;http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png&#39;, &#39;profile_image_url_https&#39;: &#39;https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png&#39;, &#39;profile_link_color&#39;: &#39;1DA1F2&#39;, &#39;profile_sidebar_border_color&#39;: &#39;C0DEED&#39;, &#39;profile_sidebar_fill_color&#39;: &#39;DDEEF6&#39;, &#39;profile_text_color&#39;: &#39;333333&#39;, &#39;profile_use_background_image&#39;: True, &#39;has_extended_profile&#39;: False, &#39;default_profile&#39;: True, &#39;default_profile_image&#39;: True, &#39;following&#39;: None, &#39;follow_request_sent&#39;: None, &#39;notifications&#39;: None, &#39;muting&#39;: None, &#39;blocking&#39;: None, &#39;blocked_by&#39;: None, &#39;translator_type&#39;: &#39;none&#39;, &#39;withheld_in_countries&#39;: []}, id=868301766785413120, id_str=&#39;868301766785413120&#39;, name=&#39;Helena Weibel&#39;, screen_name=&#39;HelenaRae&#39;, location=&#39;&#39;, description=&#39;&#39;, url=None, entities={&#39;description&#39;: {&#39;urls&#39;: []}}, protected=False, followers_count=9, friends_count=77, listed_count=0, created_at=datetime.datetime(2017, 5, 27, 3, 4, 8), favourites_count=28, utc_offset=None, time_zone=None, geo_enabled=False, verified=False, statuses_count=0, lang=None, contributors_enabled=False, is_translator=False, is_translation_enabled=False, profile_background_color=&#39;F5F8FA&#39;, profile_background_image_url=None, profile_background_image_url_https=None, profile_background_tile=False, profile_image_url=&#39;http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png&#39;, profile_image_url_https=&#39;https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png&#39;, profile_link_color=&#39;1DA1F2&#39;, profile_sidebar_border_color=&#39;C0DEED&#39;, profile_sidebar_fill_color=&#39;DDEEF6&#39;, profile_text_color=&#39;333333&#39;, profile_use_background_image=True, has_extended_profile=False, default_profile=True, default_profile_image=True, following=False, follow_request_sent=None, notifications=None, muting=None, blocking=None, blocked_by=None, translator_type=&#39;none&#39;, withheld_in_countries=[])]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A key measure of my own importance on Twitter is the importance of the people who follow me. Does this make sense? Of course it does, as with important followers you can influence a lot of people. Let’s get an overview of the friends and followers of those who follow me. To do so we first want to create a data frame that contains all my followers and their follower and friend count.</p>
+<p>To analyse all the followers of an account, we simply need to collect the relevant metadata from each follower. First, however, we limit ourselves to 20 followers for demonstration purposes and to save on our rate limits. Run the next cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">follower_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">follower</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">follower</span><span class="o">.</span><span class="n">screen_name</span><span class="p">,</span> <span class="n">follower</span><span class="o">.</span><span class="n">followers_count</span><span class="p">,</span> <span class="n">follower</span><span class="o">.</span><span class="n">friends_count</span><span class="p">)</span> 
+     <span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">,</span> <span class="n">screen_name</span><span class="o">=</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>This will access 20 followers (n=20). For each follower, we are interested in their id, screen name, the count of their followers and their friends (those who they follow). We can collect all this metadata by creating a tuple operator: (). Tuples are very easy to transform into data frames, which we want to do later. They are explained here: <a class="reference external" href="https://www.w3schools.com/python/python_tuples.asp">https://www.w3schools.com/python/python_tuples.asp</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">follower</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">follower</span><span class="o">.</span><span class="n">screen_name</span><span class="p">,</span> <span class="n">follower</span><span class="o">.</span><span class="n">followers_count</span><span class="p">,</span> <span class="n">follower</span><span class="o">.</span><span class="n">friends_count</span><span class="p">)</span> 
+     <span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">,</span> <span class="n">screen_name</span><span class="o">=</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s print out the first two items with <code class="docutils literal notranslate"><span class="pre">follower_list[:2]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_list</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(868301766785413120, &#39;HelenaRae&#39;, 9, 77),
+ (254865613, &#39;AlexWermerColan&#39;, 2178, 2348)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A list of tuples can be loaded directly into a data frame. We create and print out a new data frame called follower_df with the column names ‘ID’, ‘Screen_name’, ‘Followers_count’ and ‘Friends_count’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">follower_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;Screen_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Followers_count&#39;</span><span class="p">,</span> <span class="s1">&#39;Friends_count&#39;</span><span class="p">])</span>
+<span class="n">follower_df</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">follower_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;Screen_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Followers_count&#39;</span><span class="p">,</span> <span class="s1">&#39;Friends_count&#39;</span><span class="p">])</span>
+<span class="n">follower_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">cleaned_tweets</span>   
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_wordcloud</span><span class="p">(</span><span class="n">cleaned_tweets</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Very popular with Twitter is also the analysis of followers. I don’t have so many. In fact, I am not really using Twitter much. But let’s still try. You can get my Twitter information by entering me = api.get_user(screen_name = ‘tobias_blanke’)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">me</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">screen_name</span> <span class="o">=</span> <span class="s1">&#39;tobias_blanke&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not possible without key&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>It’s me! My followers are a little bit more interesting. We can retrieve by going throug api.followers(‘tobias_blanke’)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get first 20 followers</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">follower</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">(</span><span class="s1">&#39;tobias_blanke&#39;</span><span class="p">):</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="n">follower</span><span class="o">.</span><span class="n">screen_name</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not possible without key&#39;</span><span class="p">)</span>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Screen_name</th>
+      <th>Followers_count</th>
+      <th>Friends_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>868301766785413120</td>
+      <td>HelenaRae</td>
+      <td>9</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>254865613</td>
+      <td>AlexWermerColan</td>
+      <td>2178</td>
+      <td>2348</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>824723708602437632</td>
+      <td>DilanCkr</td>
+      <td>79</td>
+      <td>546</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1324242489511800833</td>
+      <td>shivshaktighosh</td>
+      <td>2</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3284766308</td>
+      <td>inge_stegeman</td>
+      <td>93</td>
+      <td>377</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>94292452</td>
+      <td>ullahdhude</td>
+      <td>66</td>
+      <td>343</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4162410142</td>
+      <td>anwagnerdreas</td>
+      <td>993</td>
+      <td>1732</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>788827729</td>
+      <td>ChapBookPro</td>
+      <td>1532</td>
+      <td>1807</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>748532262</td>
+      <td>MingshuWang</td>
+      <td>288</td>
+      <td>469</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1368213558761295873</td>
+      <td>Zehui_Y</td>
+      <td>31</td>
+      <td>437</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>929624569111040000</td>
+      <td>KMalik0990</td>
+      <td>34</td>
+      <td>2148</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>567678624</td>
+      <td>dennmis</td>
+      <td>1249</td>
+      <td>2845</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>537443449</td>
+      <td>mar__isi</td>
+      <td>18</td>
+      <td>340</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1425457614155026434</td>
+      <td>SBrkhrdt</td>
+      <td>12</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>58138044</td>
+      <td>Sxander</td>
+      <td>442</td>
+      <td>579</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2979719464</td>
+      <td>AnastasiaSiap</td>
+      <td>517</td>
+      <td>773</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>78583449</td>
+      <td>damian0604</td>
+      <td>2182</td>
+      <td>1497</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>63159632</td>
+      <td>armanes</td>
+      <td>1206</td>
+      <td>1113</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>982289417393004544</td>
+      <td>yuliia_kazmina</td>
+      <td>21</td>
+      <td>117</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>87419607</td>
+      <td>dariorodighiero</td>
+      <td>2102</td>
+      <td>1417</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>20 of my followers with some of their metadata!</p>
+<p>At this point we want to add two columns at the beginning of followers_df. We can add a column to a data frame at a particular location with insert(). Run <code class="docutils literal notranslate"><span class="pre">follower_df.insert(0,</span> <span class="pre">'Me_sn',</span> <span class="pre">me.screen_name)</span></code> to add my screen name at the beginning of the data frame (position 0).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Me_sn&#39;</span><span class="p">,</span> <span class="n">me</span><span class="o">.</span><span class="n">screen_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>I haven’t explained it yet, but Twitter limits the amount of API calls you can do at any moment in time, which is often an issue if you retrieve a lot of followers from accounts like Donalds Trump’s. Rate limits are often one of the biggest issues in Twitter analysis once the data gets a bit bigger. Check it out at <a class="reference external" href="https://dev.twitter.com/rest/public/rate-limiting">https://dev.twitter.com/rest/public/rate-limiting</a>. You will find plenty of people online who complain.</p>
-<p>Which is also something that can happen while trying to access the information that we try to extract in this assignment, just in case that happens you can find a csv file with the same info in data.</p>
-<p>Let’s first get the ids of all the followers</p>
+<p>Also insert Me_ID at the beginning of the data frame by running insert() again. Tip: You just need to replave Me-sn with Me_ID.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_list</span> <span class="o">=</span> <span class="n">sca</span><span class="o">.</span><span class="n">get_follower_list</span><span class="p">(</span><span class="n">me</span><span class="p">,</span> <span class="n">twit_key</span><span class="o">=</span><span class="n">twit_key</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Me_ID&#39;</span><span class="p">,</span> <span class="n">me</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>A key measure of my own importance on Twitter is the importance of the people who follow me. Does this make sense? Of course it does, as with important followers you can influence a lot of people. Let’s plot this measure and get an overview of the friends and followers of those who follow me.
-To do so we first want to create a dataframe that contains all my followers and their follower and friend count.</p>
+<p>Print out the first few rows of follower_df.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dataframe</span>
-<span class="c1"># if no key is used it is already a dataframe</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="s1">&#39;follower&#39;</span><span class="p">])</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;follower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">follower_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tb_id</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;followers_tobias.csv&#39;</span><span class="p">)</span>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Me_ID</th>
+      <th>Me_sn</th>
+      <th>ID</th>
+      <th>Screen_name</th>
+      <th>Followers_count</th>
+      <th>Friends_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>57082583</td>
+      <td>tobias_blanke</td>
+      <td>868301766785413120</td>
+      <td>HelenaRae</td>
+      <td>9</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57082583</td>
+      <td>tobias_blanke</td>
+      <td>254865613</td>
+      <td>AlexWermerColan</td>
+      <td>2178</td>
+      <td>2348</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>57082583</td>
+      <td>tobias_blanke</td>
+      <td>824723708602437632</td>
+      <td>DilanCkr</td>
+      <td>79</td>
+      <td>546</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>57082583</td>
+      <td>tobias_blanke</td>
+      <td>1324242489511800833</td>
+      <td>shivshaktighosh</td>
+      <td>2</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>57082583</td>
+      <td>tobias_blanke</td>
+      <td>3284766308</td>
+      <td>inge_stegeman</td>
+      <td>93</td>
+      <td>377</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can scatter plot the chosen followers to see how many friends and followers they have. Do you remember how? It’s easy in Pandas with <code class="docutils literal notranslate"><span class="pre">follower_df.plot.scatter(x='Friends_count',</span> <span class="pre">y='Followers_count')</span></code>. x and y name the respective axes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Friends_count&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Followers_count&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc9902cc828&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Social_Sensing_1_105_1.png" src="../../_images/Social_Sensing_1_105_1.png" />
+</div>
+</div>
+<p>Most of my followers do not have too many followers themselves. My influence is really limited. But this might also be because we only chose 20 for this session.</p>
+<p>Let’s run some basic statistics on the data to show you what else you could do. Type in <code class="docutils literal notranslate"><span class="pre">follower_df.loc[:,['Followers_count',</span> <span class="pre">'Friends_count']].median()</span></code> to access the median value of both counts for followers and friends</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;Followers_count&#39;</span><span class="p">,</span> <span class="s1">&#39;Friends_count&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Followers_count    190.5
+Friends_count      562.5
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
+<p>Generally, my followers follow many more people than they are followed. For big Twitter influencers the opposite is often the case. They follow fewer people but are followed by millions.</p>
+<p>We can use Pandas describe() to get a quick statistical summary with <code class="docutils literal notranslate"><span class="pre">follower_df.loc[:,['Followers_count',</span> <span class="pre">'Friends_count']].describe()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">followers</span> <span class="o">=</span> <span class="n">follower_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">fol_count</span> <span class="o">=</span> <span class="n">sca</span><span class="o">.</span><span class="n">get_follower_count</span><span class="p">(</span><span class="n">followers</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-    <span class="n">df200</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">df200</span><span class="p">[</span><span class="s1">&#39;follower_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fol_count</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">df200</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;200_followers&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;Followers_count&#39;</span><span class="p">,</span> <span class="s1">&#39;Friends_count&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df200</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">followers</span> <span class="o">=</span> <span class="n">follower_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">200</span><span class="p">]</span>
-    <span class="n">friends_count</span> <span class="o">=</span> <span class="n">sca</span><span class="o">.</span><span class="n">get_friends_count</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">followers</span><span class="p">)</span>
-    <span class="n">df200</span><span class="p">[</span><span class="s1">&#39;friends_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">friends_count</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df200</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;friends_count&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;follower_count&#39;</span><span class="p">,)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ok, there are not too many strong performers in my followers’ list. In order to confirm this, let’s check the counts for all my followers with a plot.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">df200</span><span class="p">[</span><span class="s1">&#39;follower_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>So, most of my followers do not have too many followers themselves apart from one outlier. My influence is really limited. Let’s quickly move on then.</p>
-<p>Social network analysis is really important both in social and cultural analytics. It uses graphs to explain and analyse social relations. We have already started talking about social networks. We looked into my followers and those friends that I am following. Then, we investigated the friends of these friends and the followers of these followers. To build these kinds of relationships and map them onto graphs to visualise and analyse them is really what social networks are all about.</p>
-<p>We would like to build a graph of my friends and followers. We already have the followers, let’s now reterive their screen names.</p>
-<p>Because graph visualisation can quickly get confusing if there are too many items to represent, we would like to limit the number of friends and followers to 20.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="n">sca</span><span class="o">.</span><span class="n">get_follower_count</span><span class="p">(</span><span class="n">followers</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>  
-    <span class="n">df20</span> <span class="o">=</span> <span class="n">df200</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">df20</span><span class="p">[</span><span class="s1">&#39;screen_name_follower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">screen_names</span>
-    <span class="n">df20</span><span class="p">[</span><span class="s1">&#39;screen_name_user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">tb_id</span><span class="p">)</span><span class="o">.</span><span class="n">screen_name</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">df20</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;20_followers&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the friends of user/source</span>
-<span class="n">get_friends_of20</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> 
-    <span class="n">df_friends</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="s1">&#39;follower&#39;</span><span class="p">])</span>
-    <span class="n">df_friends</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">friends</span>
-    <span class="n">df_friends</span><span class="p">[</span><span class="s1">&#39;follower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tb_id</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">df_friends</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;df_friends.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> 
-    <span class="n">df_friends</span><span class="p">[</span><span class="s1">&#39;screen_name_follower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">tb_id</span><span class="p">)</span><span class="o">.</span><span class="n">screen_name</span>
-    <span class="n">df_friends</span><span class="p">[</span><span class="s1">&#39;screen_name_user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">screen_name_friends</span>
-    <span class="n">df_friends</span><span class="p">[</span><span class="s1">&#39;follower_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">followers</span><span class="p">)</span>
-    <span class="n">df_friends</span><span class="p">[</span><span class="s1">&#39;friends_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">friends</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">twit_key</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> 
-    <span class="n">graphdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df20</span><span class="p">,</span><span class="n">df_friends</span><span class="p">])</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">graphdata</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;graphdata.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;userid&#39;</span><span class="p">,</span> <span class="s1">&#39;user_name&#39;</span><span class="p">])</span>
-<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;userid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">graphdata</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;user_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">graphdata</span><span class="o">.</span><span class="n">screen_name_user</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">relations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;follower&#39;</span><span class="p">])</span>
-<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">graphdata</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span>
-<span class="n">relations</span><span class="p">[</span><span class="s1">&#39;follower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">graphdata</span><span class="p">[</span><span class="s1">&#39;follower&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">relations</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;follower&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Followers_count</th>
+      <th>Friends_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>20.000000</td>
+      <td>20.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>652.700000</td>
+      <td>956.550000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>805.191386</td>
+      <td>849.911356</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.000000</td>
+      <td>77.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>28.500000</td>
+      <td>342.250000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>190.500000</td>
+      <td>562.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1216.750000</td>
+      <td>1555.750000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2182.000000</td>
+      <td>2845.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Take a close look at the table and try and formulate a few insights. For instance, at the time of writing, the maximum followers were 2182 and the minimum 2. 25% of those who follow me had less than 29 followers but about 340 friends.</p>
+<p>What does it mean, for instance, that the mean and median are very different, where median is of course the 50% quantile? The Khan Academy is a good source for such statistical knowledge: <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/a/mean-median-and-mode-review">https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/a/mean-median-and-mode-review</a>.</p>
+<p>Interesting could also be whether the counts of friends and followers are correlated. To calculate the Pearson correlation (<a class="reference external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">https://en.wikipedia.org/wiki/Pearson_correlation_coefficient</a>), we can run <code class="docutils literal notranslate"><span class="pre">follower_df.corr(follower_df.loc[:,['Followers_count',</span> <span class="pre">'Friends_count']])</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;Followers_count&#39;</span><span class="p">,</span> <span class="s1">&#39;Friends_count&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">node_attr</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;userid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_attr</span><span class="p">)</span>
-<span class="n">node_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;user_name&#39;</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Followers_count</th>
+      <th>Friends_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Followers_count</th>
+      <td>1.000000</td>
+      <td>0.710982</td>
+    </tr>
+    <tr>
+      <th>Friends_count</th>
+      <td>0.710982</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You should get back a table that shows all four possible correlations between the variables.</p>
+<p>The table hopefully also shows that Followers_count and Friends_count are correlated. I got a value of around 0.7. The value is positive, which means that the counts are positively correlated: the more followers the more friends and vice versa. For bigger influencers, this is not necessarily the case, but for standard Twitter users that connect to their communities, this might make sense. Definitely something to check with a larger population of Twitter users?</p>
+<p>Finally, we would like to plot both counts. Histograms will be useful here. Run <code class="docutils literal notranslate"><span class="pre">follower_df['Followers_count'].plot.hist()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="p">[</span><span class="s1">&#39;Followers_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc99674ea58&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Social_Sensing_1_113_1.png" src="../../_images/Social_Sensing_1_113_1.png" />
+</div>
+</div>
+<p>While this plot could be much nicer, we can easily see the pattern that most of my followers do not have a lot of followers themselves. There are a couple of outliers, too.</p>
+<p>Can you plot a histogram for Friends_count?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">follower_df</span><span class="p">[</span><span class="s1">&#39;Friends_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc996399860&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Social_Sensing_1_115_1.png" src="../../_images/Social_Sensing_1_115_1.png" />
+</div>
+</div>
+<p>The plot should look similar to the followers?</p>
+<p>Social network analysis is really important both in social and cultural analytics. It uses graphs to explain and analyse social relations. We have already started talking about social networks. In an earlier session, we talked about teens and their networks. Here, we looked into my followers and those friends that I am following. Then, we investigated the friends of these friends and the followers of these followers. To build these kinds of relationships and map them onto graphs to visualise and analyse them is really what social networks are all about.</p>
+<p>We would like to next build a network graph to represent social networks. This is a bit more complicated. So, let’s do this step by step.</p>
+<p>We want to add the screen names of my followers to the graph. So, let’s create a list of them with <code class="docutils literal notranslate"><span class="pre">screen_name_list</span> <span class="pre">=</span> <span class="pre">list(follower_df['Screen_name'])</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">screen_name_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">follower_df</span><span class="p">[</span><span class="s1">&#39;Screen_name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>We already have my followers of course. Let’s put them into a list, which we want to later expand with the followers of my followers. Run <code class="docutils literal notranslate"><span class="pre">all_sn_list</span> <span class="pre">=</span> <span class="pre">list(zip(follower_df['Me_sn'],</span> <span class="pre">follower_df['Screen_name']))</span></code> to create a list of tuples where my screen name is the first entry and the screen name of my followers is the second. zip() is a function to create a tuple form two variables: <a class="reference external" href="https://www.w3schools.com/python/ref_func_zip.asp">https://www.w3schools.com/python/ref_func_zip.asp</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#And a function to plot the graph</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_sn_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">follower_df</span><span class="p">[</span><span class="s1">&#39;Me_sn&#39;</span><span class="p">],</span> <span class="n">follower_df</span><span class="p">[</span><span class="s1">&#39;Screen_name&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print out <code class="docutils literal notranslate"><span class="pre">all_sn_list[:5]</span></code> for the first five entries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_sn_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;tobias_blanke&#39;, &#39;HelenaRae&#39;),
+ (&#39;tobias_blanke&#39;, &#39;AlexWermerColan&#39;),
+ (&#39;tobias_blanke&#39;, &#39;DilanCkr&#39;),
+ (&#39;tobias_blanke&#39;, &#39;shivshaktighosh&#39;),
+ (&#39;tobias_blanke&#39;, &#39;inge_stegeman&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This worked. Now, let’s get the followers of my followers by iterating over their screen names and running tweepy.Cursor(api.followers, screen_name = …) on them. We want to limit ourselves to 5 followers each to save on the rates. So let’s set <code class="docutils literal notranslate"><span class="pre">n_followers</span> <span class="pre">=</span> <span class="pre">5</span></code> first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_followers</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For each <code class="docutils literal notranslate"><span class="pre">sn</span> <span class="pre">in</span> <span class="pre">screen_name_list</span></code> we want to retieve <code class="docutils literal notranslate"><span class="pre">s_</span> <span class="pre">=</span> <span class="pre">[(sn,</span> <span class="pre">follower_.screen_name)</span> <span class="pre">for</span> <span class="pre">follower_</span> <span class="pre">in</span> <span class="pre">tweepy.Cursor(api.followers,</span> <span class="pre">screen_name=sn).items(n_followers)]</span></code> and then add the result to the my existing followers. As the result is a list we need to use extend() which adds lists to lists, while you already met append(), which adds a single element. So, we add <code class="docutils literal notranslate"><span class="pre">all_sn_list.extend(s_)</span></code>. Try extend() at <a class="reference external" href="https://www.w3schools.com/python/ref_list_extend.asp">https://www.w3schools.com/python/ref_list_extend.asp</a>.</p>
+<p>We could now run this in a simple for-loop and would quickly meet a problem that for some followers we cannot retrieve their list of followers. They might not provide access, for instance. So, all our efforts would be interrupted at that point, which is pretty annoying as we are dealing with expensive Twitter API calls. This is why, we will add another standard feature of Python and catch any exception Twitter returns called tweepy.TweepError.</p>
+<p>This is done with the try and except construct: <a class="reference external" href="https://www.w3schools.com/python/python_try_except.asp">https://www.w3schools.com/python/python_try_except.asp</a>. The try block tests a block of code for errors. The except block handels them. Whenever you run a larger project for scraping or API access, this construct is highly recommended to not lose all yur work 2/3 through the access call.</p>
+<p>The code below tells Python to catch any tweepy.TweepError() and skip it by continuing with the next iteration of the loop (with continue). Before that, it prints out the screen name to be skipped and sleeps for 60 seconds to give the Twitter API time to recover. It uses time.sleep() for that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Keep cell</span>
 
-<span class="c1"># import igraph</span>
-<span class="c1"># from igraph import *</span>
-<span class="c1"># graph = Graph(directed=True)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">for</span> <span class="n">sn</span> <span class="ow">in</span> <span class="n">screen_name_list</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">s_</span> <span class="o">=</span> <span class="p">[(</span><span class="n">sn</span><span class="p">,</span> <span class="n">follower_</span><span class="o">.</span><span class="n">screen_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">follower_</span> <span class="ow">in</span> 
+              <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">followers</span><span class="p">,</span> <span class="n">screen_name</span><span class="o">=</span><span class="n">sn</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">n_followers</span><span class="p">)]</span>
+        <span class="n">all_sn_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">s_</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">TweepError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skipping </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sn</span><span class="p">))</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="k">continue</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Skipping shivshaktighosh.
 </pre></div>
 </div>
 </div>
 </div>
+<p>That should have taken a little while. But you got it all now. Check the result with <code class="docutils literal notranslate"><span class="pre">all_sn_list[-1]</span></code>. -1 prints out the last element of a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># graph = Graph.DictList(</span>
-<span class="c1">#           vertices=nodes.to_dict(&#39;records&#39;),</span>
-<span class="c1">#           edges=relations.to_dict(&#39;records&#39;),</span>
-<span class="c1">#           directed=True,</span>
-<span class="c1">#           vertex_name_attr=&#39;userid&#39;,</span>
-<span class="c1">#           edge_foreign_keys=(&#39;follower&#39;, &#39;user&#39;));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_sn_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;dariorodighiero&#39;, &#39;anakomissarof&#39;)
 </pre></div>
 </div>
 </div>
 </div>
+<p>On to the visualisation! Run our very own <code class="docutils literal notranslate"><span class="pre">sca.create_twitter_network(all_sn_list)</span></code> to create a Twiter network graph of my followers. In the next lesson, we will learn how to make these networks ourselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(graph)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sca</span><span class="o">.</span><span class="n">create_twitter_network</span><span class="p">(</span><span class="n">all_sn_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot(graph, vertex_label=graph.vs[&#39;user_name&#39;])</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc9962742e8&gt;
 </pre></div>
 </div>
+<img alt="../../_images/Social_Sensing_1_129_1.png" src="../../_images/Social_Sensing_1_129_1.png" />
 </div>
 </div>
+<p>To be honest, this network does not look very exciting. It points straight from me to my followers and their followers. It would be more interesting to also add the other direction with the friend relations and overlay their network. Together friends and followers should offer more interesting patterns/ connections. All you have to do is to collect the friends from my followers, too. You can easily reuse the existing code and just have to replace the API calls. We leave this for you to do yourself …</p>
+<p>The next session will introduce many more exciting ways to create, visualise and analyse social networks.</p>
 </div>
 
     <script type="text/x-thebe-config">

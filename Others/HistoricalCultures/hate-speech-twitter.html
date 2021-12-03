@@ -1,0 +1,1377 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hate Speech Detector &#8212; DIMPAH</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DIMPAH</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../Introduction.html">
+   Introduction to Python
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../social_analytics.html">
+   Social Analytics
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../AI_for_society.html">
+   AI for society
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../PredictingModelling.html">
+   PredictingModelling
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../DigitalMarketing.html">
+   Digital Marketing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../HistoricalCultures.html">
+   Historical Cultures
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../SocialSensing.html">
+   Social Sensing
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../VisualsArts.html">
+   Visuals Arts
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Others/HistoricalCultures/hate-speech-twitter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zarahvh/dimpah"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zarahvh/dimpah/issues/new?title=Issue%20on%20page%20%2FOthers/HistoricalCultures/hate-speech-twitter.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zarahvh/dimpah/master?urlpath=tree/Others/HistoricalCultures/hate-speech-twitter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hate-speech-detector">
+<h1>Hate Speech Detector<a class="headerlink" href="#hate-speech-detector" title="Permalink to this headline">¶</a></h1>
+<p>In today’s session, we learned that in order to detect sentiments we can simply compare freqeuencies of positive and negative words. To this end, we downloaded a dictionary of such terms from the web and then determined their respective frequency. If there are more positive terms in a document than negative ones, we considered it to have a positive sentiment and otherwise a negative one.</p>
+<p>There are many such dictinonaries produced by linguists but also other communities such as journalists. We can use these with the same approach we used for detecting sentiments to understand texts in different contexts. Journalists, for instance, have developed <a class="reference external" href="https://www.hatebase.org/">https://www.hatebase.org/</a>, the world’s largest online repository of structured, multilingual, usage-based hate speech.</p>
+<p>Here, we will use hatebase to develop a hate speech detector for tweets by counting the number of hate words in tweets. We will concentrate on the English language. You can go to <a class="reference external" href="https://www.hatebase.org/">https://www.hatebase.org/</a> and explore the search functions to take a look at the English terms in hatebase.</p>
+<p>Next, we need to download the hatebase dictionary, which is unfortunately not that easy. You need to register for an API key and then work relatively hard to get the API to return all English hate speech terms.</p>
+<p>I have commented out the hate_vocabulary(api_key) function that speaks to <a class="reference external" href="https://www.hatebase.org/">https://www.hatebase.org/</a> and instead provided you with a direct import from a local CSV file. If you want to, for instance, download the dictionary for another language than English, you need to un-commnent those lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">hate_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/goto4711/social-cultural-analytics/master/hate-vocab-eng.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hate_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>word</th>
+      <th>meaning</th>
+      <th>offensiveness</th>
+      <th>number_of_sightings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>abbo</td>
+      <td>Australian Aboriginal person. Originally, this...</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>ABC</td>
+      <td>[1] American-born Chinese [2] Australian-born ...</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>ABCD</td>
+      <td>American-Born Confused Desi, Indian Americans,...</td>
+      <td>0.0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>abo</td>
+      <td>Australian Aboriginal person. Originally, this...</td>
+      <td>0.0</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>af</td>
+      <td>An African, used by white Rhodesians.</td>
+      <td>0.0</td>
+      <td>461</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next we access Twitter the way we learned today. The code is set to a query Twitter about ‘Trump’ below but is not active. In order to activate it, you need to add your Twitter API details. You can of course also change the search_term.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">ipynb.fs.full.keys</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">consumer_key</span> <span class="o">=</span> <span class="n">twit_key</span>
+<span class="n">consumer_secret</span> <span class="o">=</span> <span class="n">twit_secr</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">twit_token</span>
+
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">search_term</span> <span class="o">=</span> <span class="s1">&#39;Trump&#39;</span>
+<span class="n">tweets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="n">search_term</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>@breaultlb @TimHannan He absolutely was that’s why he complained about the plexiglass he thought for sure Biden wou… https://t.co/fINFxQBTI9
+RT @rochiyito: @AlPunto @jorgeramosnews @camafs Qué no votaron ellos por Trump?
+RT @pkcapitol: &quot;Just shut up -- that&#39;s all he has to do.&quot;
+
+@repdonyoung unplugged, riffing on Trump &amp;amp; happily voting for infrastructure bil…
+RT @CREWcrew: We’ve requested any records of conversations about invoking the 25th Amendment involving some of Trump’s closest allies: then…
+RT @bettycrackerfl: Seriously y&#39;all, this arrogant shithead would be *worse than Trump.* https://t.co/Leg957X6Z1
+RT @Sulliview: In case you missed this. The disgusting details of what happened to these election workers.  ….  Two Georgia election worker…
+RT @donwinslow: Dear Merrick Garland,
+
+First we were told DOJ can&#39;t prosecute a sitting President. 
+
+A year later it looks like DOJ won&#39;t p…
+RT @lawindsor: NEW:  Last night, Donald Trump teased an estimated 600-strong Herschel Walker fundraiser crowd, “I ran twice, I won twice… y…
+@JetjedeWit @mom_in_NL @rivm No. Allowing self-testing is nothing but a very sick way of hiding the status of the p… https://t.co/vYpUp0B6vg
+RT @ZaleskiLuke: Trump attacked the nation WHILE HE WAS PRESIDENT. WHAT ARE WE DOING?!?
+RT @joncoopertweets: Trump says the January 6 insurrectionists are being &quot;persecuted so unfairly.&quot;
+
+Is he stupid or a traitor?
+RT @newsmax: The Biden administration will restart a controversial Trump-era border program that forces asylum seekers to wait in Mexico fo…
+RT @KenPaxtonTX: The ‘Remain in Mexico’ program is a huge win for Texas! I will continue to fight to restore safety &amp;amp; order along our borde…
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rather than performing a live Twitter search, I have saved the a search on ‘Trump’ from the day of his 2017 inauguration. That’s the read.csv command further down. Please, note that the file was created with the old twitteR library, which means that some of the column names are different from what you are used to. But the one we are interested in is still called ‘text’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/goto4711/social-cultural-analytics/master/trump-tweets-20-1.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin-1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look at tweets. You will see all texts as well as a lot of other information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>text</th>
+      <th>favorited</th>
+      <th>favoriteCount</th>
+      <th>replyToSN</th>
+      <th>created</th>
+      <th>truncated</th>
+      <th>replyToSID</th>
+      <th>id</th>
+      <th>replyToUID</th>
+      <th>statusSource</th>
+      <th>screenName</th>
+      <th>retweetCount</th>
+      <th>isRetweet</th>
+      <th>retweeted</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>RT @ChrisTran1997: Wanting Trump to fail makes...</td>
+      <td>False</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2017-01-20 19:58:31</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>822533789251489794</td>
+      <td>NaN</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>brrriiieee</td>
+      <td>7</td>
+      <td>True</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>RT @TuhafAmaGercek: Donald Trump, ABD BaÅkanl...</td>
+      <td>False</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2017-01-20 19:58:31</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>822533789234659328</td>
+      <td>NaN</td>
+      <td>&lt;a href="http://twitter.com/#!/download/ipad" ...</td>
+      <td>sailorreihino</td>
+      <td>282</td>
+      <td>True</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>And you losers on the left continue to wonder ...</td>
+      <td>False</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2017-01-20 19:58:31</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>822533789230518274</td>
+      <td>NaN</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>DavidYDG</td>
+      <td>0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>RT @rogerwilko: #Trump speech is like the nati...</td>
+      <td>False</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2017-01-20 19:58:31</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>822533789209554946</td>
+      <td>NaN</td>
+      <td>&lt;a href="http://twitter.com/download/android" ...</td>
+      <td>samella_donavan</td>
+      <td>384</td>
+      <td>True</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>KPHO Phoenix Devotes 24 Hours to Trump's Impac...</td>
+      <td>False</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>2017-01-20 19:58:31</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>822533789196881925</td>
+      <td>NaN</td>
+      <td>&lt;a href="http://twitter.com" rel="nofollow"&gt;Tw...</td>
+      <td>bcbeat</td>
+      <td>0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next we start with our standard text mining workflow</p>
+<p>Unfortunately, tweets can be difficult to process, as people use very different types of language, of formatting, etc. I have therefore provided you with a clean_tweets function, which applies to all the texts in the tweets and save the results in a tweet_list</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_tweets</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+    <span class="n">tweet_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">tweet</span> <span class="o">=</span> <span class="n">tweet</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">tweet</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tweet</span><span class="p">]</span>
+        <span class="n">tweet_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tweet_list</span>
+    
+<span class="n">tweet_list</span> <span class="o">=</span> <span class="n">clean_tweets</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+<span class="n">tweet_list_new</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_list</span><span class="p">:</span>
+    <span class="n">tweet_str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+    <span class="n">tweet_list_new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, our ususal steps to prepare a TM corpus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="n">stopwords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">Corpuser</span><span class="p">(</span><span class="n">corpus</span><span class="p">):</span>
+    <span class="n">corpus</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">]</span>
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+
+    <span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">corpus</span>
+
+<span class="c1"># tweet_corp = Corpuser(tweet_list_new)</span>
+<span class="c1"># print(tweet_corp)</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_list_new</span><span class="p">:</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">Corpuser</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+    <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our next TM workflow step will be to create a term-document-matrix to count the terms in the documents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">tf</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;FreqDist with 806 samples and 1000 outcomes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span> 
+
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="n">dtm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="n">dtm</span> <span class="o">=</span> <span class="n">dtm</span><span class="o">.</span><span class="n">T</span>
+<span class="n">dtm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>990</th>
+      <th>991</th>
+      <th>992</th>
+      <th>993</th>
+      <th>994</th>
+      <th>995</th>
+      <th>996</th>
+      <th>997</th>
+      <th>998</th>
+      <th>999</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ab</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>abbiamo</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>abc</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>abcpolitics</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>abcworldnews</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>youtube</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>yup</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>zacharynalepa</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>zero</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>zootopia</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3442 rows × 1000 columns</p>
+</div></div></div>
+</div>
+<p>All we have to do now is find out which rownames (terms) of tdm correspond to terms in our hate speech dictionary. The columns (docs) of tdm that are larger than 0 are then the tweets which contain hate speech words.</p>
+<p>The python function isin answers the question: ‘Where do the values in the hate vocabulary appear in the dataframe’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hate_voc</span> <span class="o">=</span> <span class="n">hate_dict</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">hate_voc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">hate_voc</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+
+<span class="n">hate_speech</span> <span class="o">=</span> <span class="n">dtm</span><span class="p">[</span><span class="n">dtm</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">hate_voc</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">38680619626</span><span class="n">f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hate_voc</span> <span class="o">=</span> <span class="n">hate_dict</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">hate_voc</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">hate_voc</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">hate_speech</span> <span class="o">=</span> <span class="n">dtm</span><span class="p">[</span><span class="n">dtm</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">hate_voc</span><span class="p">)]</span>
+
+<span class="ne">NameError</span>: name &#39;hate_dict&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hate_speech</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>990</th>
+      <th>991</th>
+      <th>992</th>
+      <th>993</th>
+      <th>994</th>
+      <th>995</th>
+      <th>996</th>
+      <th>997</th>
+      <th>998</th>
+      <th>999</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>abc</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>bitch</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>boo</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>bubble</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>clam</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>idiot</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>nigga</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>property</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>tan</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>trash</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 1000 columns</p>
+</div></div></div>
+</div>
+<p>Now we only need to find the indexes of these words to see to which tweet they belong. The columns (docs) of tdm that are larger than 0 are then the tweets which contain hate speech words.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hate_speecht</span> <span class="o">=</span> <span class="n">hate_speech</span><span class="o">.</span><span class="n">T</span>
+<span class="n">bitch</span> <span class="o">=</span> <span class="n">hate_speecht</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">hate_speecht</span><span class="p">[</span><span class="s1">&#39;bitch&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">idiot</span> <span class="o">=</span> <span class="n">hate_speecht</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">hate_speecht</span><span class="p">[</span><span class="s1">&#39;idiot&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bitch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idiot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[141, 216, 519]
+[342]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check out the tweets that contain ‘bitch</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tweets_bitch</span> <span class="o">=</span> <span class="n">tweets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">bitch</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweets_bitch</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Trump bitch stopped the fire pit ugh í ½í¹
+RT @TomiLahren: They will march and protest and whine and bitch and then a magical thing will happen..nothing. President Trump will just coâ¦
+Fuck trump bitch
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some of these are very angry about Trump, but probably still not really hate speech. This shows the limitations of the approach to use simple words and phrases.</p>
+<p>But this approach can still be useful to filter tweets for manual review by editors. Twitters and others actually have engines like this. It is frequently used in apps like <a class="reference external" href="http://www.huffingtonpost.com/entry/donald-trump-stock-alert_us_586e67dce4b0c4be0af325fc">http://www.huffingtonpost.com/entry/donald-trump-stock-alert_us_586e67dce4b0c4be0af325fc</a>, which sends alerts when Donald Trump tweets about your stocks.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Others/HistoricalCultures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By DIMPAH<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
