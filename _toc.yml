@@ -3,31 +3,31 @@
 
 - file: intro
 
-- file: Introduction to Data Analysis with Python 1
+- file: Introduction_to_Data_Analysis_with_Python 
   sections:
    - file: Notebooks/Introduction/Introduction_1.1
    - file: Notebooks/Introduction/Introduction_1.2
-- file: Introduction to Data Analysis with Python 2
+- file: Introduction_to_Data_Analysis_with_Python
   sections:
    - file: Notebooks/Introduction/Introduction_2.1
    - file: Notebooks/Introduction/Introduction_2.2
-- file: Communities of Digital Cultures and Society
+- file: Communities_of_Digital_Cultures_and_Society
   sections:
    - file: Notebooks/ass3/Communities_of_Digital_Culture_and_Society_1
    - file: Notebooks/ass3/Communities_of_Digital_Culture_and_Society_2
-- file: Social Sensing
+- file: SocialSensing
   sections:
    - file: Notebooks/SocialMedia/Social_Sensing_1
    - file: Notebooks/SocialMedia/Social_Sensing_2
-- file: Historical Cultures
+- file: HistoricalCultures
   sections:
    - file: Notebooks/Text/Text_1
    - file: Notebooks/Text/Text_2
-- file: Visual and Arts
+- file: VisualsArts
   sections:
    - file: Notebooks/VisualsArts/Visuals_and_Arts_1
    - file: Notebooks/VisualsArts/Visuals_and_Arts_2 
-- file: Predicting and Modelling
+- file: PredictingModelling
   sections:
    - file: Notebooks/PredictingModelling/Predicting_Modelling_1
    - file: Notebooks/PredictingModelling/Predicting_Modelling_2
