@@ -3,11 +3,11 @@
 
 - file: intro
 
-- file: Introduction_to_Data_Analysis_with_Python 
+- file: Introduction_to_Data_Analysis_with_Python_1
   sections:
    - file: Notebooks/Introduction/Introduction_1.1
    - file: Notebooks/Introduction/Introduction_1.2
-- file: Introduction_to_Data_Analysis_with_Python
+- file: Introduction_to_Data_Analysis_with_Python_2
   sections:
    - file: Notebooks/Introduction/Introduction_2.1
    - file: Notebooks/Introduction/Introduction_2.2
@@ -31,6 +31,9 @@
   sections:
    - file: Notebooks/PredictingModelling/Predicting_Modelling_1
    - file: Notebooks/PredictingModelling/Predicting_Modelling_2
+   
+   
+   
 # - file: Introduction
 #   sections:
 #    - file: Introduction/Introduction_1.1
